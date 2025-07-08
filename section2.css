@@ -1,0 +1,919 @@
+/* ============================================
+   SECTION 2 - ABOUT SECTION STYLES
+   ============================================ */
+
+/* Main Section Container */
+#section2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 4rem 2rem;
+    background: transparent;
+    display: none;
+    opacity: 0;
+    overflow-y: auto;
+    z-index: 5;
+}
+
+#section2.visible {
+    display: block;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+#section2.hiding {
+    animation: fadeOutDown 0.8s ease-out forwards;
+}
+
+/* Section Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+/* About Container Layout */
+#section2 .about-container {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    align-items: start;
+    padding-top: 2rem;
+}
+
+/* Left Column Container */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ============================================
+   MAIN ABOUT CARD
+   ============================================ */
+
+.about-main-card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    border-radius: 20px;
+    padding: 3rem;
+    height: fit-content;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.about-main-card:hover {
+    border-color: rgba(var(--accent-rgb), 0.4);
+    transform: translateY(-2px);
+}
+
+/* Card Glow Effect */
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.about-main-card:hover .card-glow {
+    opacity: 1;
+}
+
+/* About Header */
+.about-header {
+    margin-bottom: 2rem;
+}
+
+.about-label {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.about-name {
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, var(--fg) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* About Description */
+.about-description p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: var(--fg);
+    font-family: 'Inter', sans-serif;
+}
+
+.about-description .highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* About Quote */
+.about-quote {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(var(--accent-rgb), 0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    position: relative;
+}
+
+.quote-mark {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 3rem;
+    color: var(--accent);
+    opacity: 0.3;
+}
+
+.about-quote p {
+    font-style: italic;
+    color: var(--fg);
+    margin: 0;
+}
+
+/* ============================================
+   STATS GRID - Under About Card
+   ============================================ */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+/* ============================================
+   CARDS GRID - Right Side
+   ============================================ */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(120px, auto);
+    gap: 1rem;
+    height: fit-content;
+}
+
+/* Base Card Styles */
+.card {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.2);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--fg);
+}
+
+/* Icon Styles */
+.card-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--accent);
+}
+
+.stat-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.expand-arrow {
+    width: 20px;
+    height: 20px;
+    color: var(--muted);
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+/* ============================================
+   TIMELINE CARD WITH CONNECTING LINE
+   ============================================ */
+
+.timeline-card {
+    grid-column: span 2;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+    border-color: rgba(var(--accent-rgb), 0.3);
+}
+
+.timeline-preview {
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Timeline with connecting line - FIXED */
+.timeline-full {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.timeline-full::before {
+    content: '';
+    position: absolute;
+    left: 1.85rem;
+    top: 1.5rem;
+    bottom: 1.5rem;
+    width: 2.2px;
+    background: rgba(var(--accent-rgb), 0.3);
+}
+
+.timeline-item-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.timeline-item-card::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.timeline-item-card:hover {
+    transform: translateX(10px);
+    border-color: rgba(var(--accent-rgb), 0.3);
+}
+
+.timeline-item-card:hover::before {
+    display: none;
+}
+
+/* Fluid border animation - SIMPLIFIED */
+.timeline-item-card:hover::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+            45deg,
+            transparent,
+            rgba(var(--accent-rgb), 0.3),
+            transparent
+    );
+    border-radius: 12px;
+    opacity: 1;
+    z-index: -1;
+    animation: fluidBorder 3s linear infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes fluidBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.timeline-item-card:hover::before {
+    transform: scale(1.5);
+    box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.8);
+}
+
+.timeline-dot {
+    display: none;
+}
+
+.timeline-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.timeline-year {
+    color: var(--accent);
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.timeline-title {
+    color: var(--fg);
+    font-family: 'Inter', sans-serif;
+}
+
+/* ============================================
+   PROJECT STACK CARD - ENHANCED STACKING
+   ============================================ */
+
+.project-stack-card {
+    grid-row: span 2;
+    overflow: visible !important;
+    z-index: 10;
+}
+
+.enlarged{
+    width: 800px !important;
+    height: 600px !important;
+}
+
+.project-stack {
+    position: relative;
+    height: 200px;
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   SMOOTH PROJECT CARD ANIMATIONS
+   ============================================ */
+
+.project-card {
+    position: absolute;
+    width: 180px;
+    height: 110px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(var(--rotation));
+    z-index: var(--z-index);
+    /* Smooth transitions with custom easing */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, z-index;
+}
+
+/* Prevent transition flickering */
+.project-card * {
+    pointer-events: none;
+}
+
+/* Ensure smooth color transitions */
+.project-card:hover {
+    background: rgba(var(--accent-rgb), 0.15);
+    border-color: var(--accent);
+    box-shadow: 0 20px 60px rgba(var(--accent-rgb), 0.5);
+}
+
+/* Add backdrop filter transition for smoother visual */
+@supports (backdrop-filter: blur(20px)) {
+    .project-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        backdrop-filter 0.3s ease;
+    }
+}
+
+/* Optimize for performance */
+.project-stack {
+    transform: translateZ(0); /* Force GPU acceleration */
+    backface-visibility: hidden;
+}
+
+/* Fixed hover expansion—in place scale only */
+.project-card:hover {
+    background: rgba(var(--accent-rgb), 0.1);
+    border-color: var(--accent);
+    transform: translate(-50%, -50%) scale(1.5) rotate(0deg) !important;
+    z-index: 100 !important;
+    box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.4);
+}
+
+/* Fan out on parent hover */
+.project-name {
+    font-weight: 600;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+}
+
+.project-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+}
+
+/* ============================================
+   PROJECT DETAIL WINDOW
+   ============================================ */
+
+.project-window {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    border-radius: 12px;
+    width: 600px;
+    height: 400px;
+    z-index: 1100;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    resize: both;
+    min-width: 400px;
+    min-height: 300px;
+}
+
+.project-window.active {
+    display: flex;
+}
+
+.project-window.minimized {
+    width: 250px !important;
+    height: auto !important;
+    min-height: auto !important;
+    resize: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-window.minimized:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(var(--accent-rgb), 0.3);
+}
+
+.project-window.minimized .project-content {
+    display: none;
+}
+
+.project-window-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.2);
+    cursor: move;
+}
+
+.project-window.minimized .project-window-header {
+    border-bottom: none;
+}
+
+.project-window-title {
+    flex: 1;
+    color: var(--fg);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+}
+
+.window-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.window-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.window-control.minimize {
+    background: #FFBD2E;
+}
+
+.window-control.maximize {
+    background: #27C93F;
+    display: none;
+}
+
+.project-window.minimized .window-control.minimize {
+    display: none;
+}
+
+.project-window.minimized .window-control.maximize {
+    display: block;
+}
+
+.window-control.close {
+    background: #FF5F56;
+}
+
+.window-control:hover {
+    opacity: 0.8;
+}
+
+.project-content {
+    padding: 2rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.project-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+.project-timestamp {
+    color: var(--accent);
+}
+
+.project-article {
+    line-height: 1.8;
+    color: var(--fg);
+}
+
+.project-article h3 {
+    color: var(--accent);
+    margin: 1.5rem 0 1rem;
+}
+
+.project-article p {
+    margin-bottom: 1rem;
+}
+
+/* ============================================
+   STAT CARDS
+   ============================================ */
+
+.stat-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 1;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+}
+
+/* ============================================
+   FUN FACTS CARD
+   ============================================ */
+
+.fun-fact-card {
+    grid-column: span 2;
+}
+
+.fun-facts-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.fun-fact-item {
+    padding: 0.5rem;
+    background: rgba(var(--accent-rgb), 0.05);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.fun-fact-item:hover {
+    background: rgba(var(--accent-rgb), 0.1);
+    transform: translateX(4px);
+}
+
+/* ============================================
+   LANGUAGE CARD
+   ============================================ */
+
+.language-card {
+    grid-column: span 2;
+}
+
+.language-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.lang-name {
+    min-width: 60px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--fg);
+}
+
+.lang-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(var(--accent-rgb), 0.1);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lang-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: var(--progress);
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    border-radius: 3px;
+    transition: width 0.6s ease;
+}
+
+/* ============================================
+   MODAL STYLES
+   ============================================ */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-window {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-window {
+    transform: scale(1);
+}
+
+.detail-window {
+    max-width: 500px;
+}
+
+.modal-content {
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: calc(80vh - 60px);
+}
+
+.modal-content h3 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Timeline Detail */
+.detail-period {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 1rem;
+}
+
+.detail-context {
+    color: var(--fg);
+    line-height: 1.8;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ============================================
+   BACK INDICATOR
+   ============================================ */
+
+.back-indicator {
+    position: fixed;
+    bottom: 2rem;
+    right: calc(2rem + 200px); /* Position it to the left of scroll indicator */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    border-radius: 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+/* Mobile adjustment */
+@media (max-width: 640px) {
+    .back-indicator {
+        bottom: 4rem; /* Stack vertically on mobile */
+        right: 1rem;
+    }
+}
+
+.back-indicator.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-indicator:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.back-indicator svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transform: rotate(180deg);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+    #section2 .about-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .left-column {
+        width: 100%;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-main-card {
+        padding: 2rem;
+    }
+
+    .project-window {
+        width: 90%;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 640px) {
+    #section2 {
+        padding: 2rem 1rem;
+    }
+
+    .about-main-card {
+        padding: 1.5rem;
+    }
+
+    .about-name {
+        font-size: 2rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-card,
+    .fun-fact-card,
+    .language-card {
+        grid-column: span 1;
+    }
+
+    .fun-facts-list {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        width: 120px;
+        height: 80px;
+        font-size: 0.8rem;
+    }
+
+    .modal-window {
+        width: 95%;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .back-indicator {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    .project-window {
+        width: 95%;
+        min-width: 320px;
+    }
+}

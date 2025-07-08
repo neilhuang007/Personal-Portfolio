@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="junie">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neil Huang - AI Researcher & Full-Stack Developer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Share+Tech+Mono&family=Special+Elite&family=VT323&display=swap" rel="stylesheet">
+
+
+    <script src="script.js" defer></script>
+    <script src="bg.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="section2.css">
+    <link rel="stylesheet" href="section3.css">
+    <script src="section2.js" defer></script>
+    <script src="section3.js" defer></script>
+</head>
+<body>
+
+<canvas class="junie-hero-section__animation"></canvas>
+<div id="app">
+    <div id="theme-switcher" title="Switch Theme">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm5.657 2.343a1 1 0 011.414 1.414l-1.414 1.414a1 1 0 01-1.414-1.414L17.657 4.343zM20 11a1 1 0 110 2h-2a1 1 0 110-2h2zM17.657 17.657a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414zM12 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM6.343 17.657a1 1 0 011.414 0l1.414 1.414a1 1 0 11-1.414 1.414L6.343 19.071a1 1 0 010-1.414zM4 11a1 1 0 110 2H2a1 1 0 110-2h2zm2.343-7.657a1 1 0 010 1.414L5 6.171A1 1 0 016.414 7.585l1.414-1.414a1 1 0 00-1.414-1.414L6.343 3.343z"/>
+        </svg>
+    </div>
+
+    <section id="section1">
+        <div class="editor-container">
+            <div class="window-chrome">
+                <div class="window-buttons">
+                    <div class="window-button close"></div>
+                    <div class="window-button minimize"></div>
+                    <div class="window-button maximize"></div>
+                </div>
+                <div class="window-title">resume.py</div>
+            </div>
+            <div class="editor">
+                <pre><code id="resume-code"></code><span class="caret"></span></pre>
+            </div>
+        </div>
+        <div class="intro">
+            <p class="greeting">Hi, I'm</p>
+            <h1>Neil (Gezhi) Huang</h1>
+            <p class="location">Shenzhen, China → USA</p>
+            <div class="tagline"><span id="taglineText"></span></div>
+            <p class="description">Ninth-grade student at Tsinglan transitioning to The Hill. Building machine learning models while balancing debate and fencing.</p>
+            <div class="stats">
+                <div class="stat"><div class="value">700,832</div><div class="label">lines written</div></div>
+                <div class="stat"><div class="value">547</div><div class="label">GitHub commits</div></div>
+                <div class="stat"><div class="value">11</div><div class="label">languages mastered</div></div>
+            </div>
+            <div class="cta">
+                <a href="http://aeternus-argus.javavirtualenvironment.com/" target="_blank" rel="noopener noreferrer"><span>Watch My AI Demo</span></a>
+                <a href="#research"><span>Read My Research</span></a>
+                <a href="/resume.pdf"><span>Download Resume</span></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
+            </svg>
+            <span>Scroll to continue</span>
+        </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="section2">
+        <div class="about-container">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- Main About Card -->
+                <div class="about-main-card">
+                    <div class="card-glow"></div>
+                    <div class="about-content-wrapper">
+                        <div class="about-header">
+                            <span class="about-label">// Lorem Ipsum</span>
+                            <h2 class="about-name">Lorem Ipsum Dolor</h2>
+                        </div>
+                        <div class="about-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <span class="highlight">Ut enim ad minim</span> veniam, quis nostrud exercitation.</p>
+                            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <span class="highlight">reprehenderit in voluptate</span> velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt <span class="highlight">mollit anim id</span> est laborum.</p>
+                        </div>
+                        <div class="about-quote">
+                            <span class="quote-mark">"</span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Grid - Now under the main card -->
+                <div class="stats-grid">
+                    <div class="card stat-card">
+                        <svg class="stat-icon" viewBox="0 0 24 24" width="32" height="32">
+                            <path fill="currentColor" d="M5 7h14l-.23 2.39c-.5-.37-1.11-.6-1.77-.61-.66.01-1.27.26-1.77.63l-2.23 2.23-2.23-2.23c-.5-.37-1.11-.62-1.77-.63s-1.27.24-1.77.61L5 7m7 14l-5-5 1.41-1.41L11 17.17V11h2v6.17l2.59-2.58L17 16l-5 5z"/>
+                        </svg>
+                        <div class="stat-value">#42</div>
+                        <div class="stat-label">Lorem Ipsum</div>
+                    </div>
+
+                    <div class="card stat-card">
+                        <svg class="stat-icon" viewBox="0 0 24 24" width="32" height="32">
+                            <path fill="currentColor" d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        </svg>
+                        <div class="stat-value">Lorem</div>
+                        <div class="stat-label">Dolor Sit</div>
+                    </div>
+
+                    <div class="card stat-card">
+                        <svg class="stat-icon" viewBox="0 0 24 24" width="32" height="32">
+                            <path fill="currentColor" d="M5 7h14l-.23 2.39c-.5-.37-1.11-.6-1.77-.61-.66.01-1.27.26-1.77.63l-2.23 2.23-2.23-2.23c-.5-.37-1.11-.62-1.77-.63s-1.27.24-1.77.61L5 7m7 14l-5-5 1.41-1.41L11 17.17V11h2v6.17l2.59-2.58L17 16l-5 5z"/>
+                        </svg>
+                        <div class="stat-value">#42</div>
+                        <div class="stat-label">Lorem Ipsum</div>
+                    </div>
+
+                    <div class="card stat-card">
+                        <svg class="stat-icon" viewBox="0 0 24 24" width="32" height="32">
+                            <path fill="currentColor" d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+                        </svg>
+                        <div class="stat-value">Lorem</div>
+                        <div class="stat-label">Dolor Sit</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Interactive Cards Grid -->
+            <div class="cards-grid">
+                <!-- Timeline Card -->
+                <div class="card timeline-card" id="timeline-card" onclick="openTimelineModal()">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
+                        </svg>
+                        <span class="card-title">Lorem Timeline</span>
+                        <svg class="expand-arrow" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M10 17l5-5-5-5v10z"/>
+                        </svg>
+                    </div>
+                    <div class="timeline-preview">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                </div>
+
+                <!-- Project Stack Card -->
+                <div class="card project-stack-card enlarged">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M8 3a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2H3v2h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h2v-2H8v-5a2 2 0 0 0-2-2 2 2 0 0 0 2-2V5h2V3m6 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3h2z"/>
+                        </svg>
+                        <span class="card-title">Lorem Projects</span>
+                    </div>
+                    <div class="project-stack">
+                        <div class="project-card" style="--rotation: -8deg; --index: 0;">
+                            <span class="project-name">Lorem Project Alpha</span>
+                            <span class="project-desc">Lorem ipsum • Dolor sit</span>
+                        </div>
+                        <div class="project-card" style="--rotation: 5deg; --index: 1;">
+                            <span class="project-name">Lorem Project Beta</span>
+                            <span class="project-desc">Consectetur • Adipiscing</span>
+                        </div>
+                        <div class="project-card" style="--rotation: -3deg; --index: 2;">
+                            <span class="project-name">Lorem Project Gamma</span>
+                            <span class="project-desc">Sed do • Eiusmod</span>
+                        </div>
+                        <div class="project-card" style="--rotation: 7deg; --index: 3;">
+                            <span class="project-name">Lorem Project Delta</span>
+                            <span class="project-desc">Tempor • Incididunt</span>
+                        </div>
+                        <div class="project-card" style="--rotation: -6deg; --index: 4;">
+                            <span class="project-name">Lorem Project Epsilon</span>
+                            <span class="project-desc">Ut labore • Et dolore</span>
+                        </div>
+                        <div class="project-card" style="--rotation: 4deg; --index: 5;">
+                            <span class="project-name">Lorem Project Zeta</span>
+                            <span class="project-desc">Magna aliqua • Veniam</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fun-fact-card">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                        </svg>
+                        <span class="card-title">Lorem Facts</span>
+                    </div>
+                    <div class="fun-facts-list">
+                        <div class="fun-fact-item">Lorem ipsum dolor sit</div>
+                        <div class="fun-fact-item">Consectetur adipiscing</div>
+                        <div class="fun-fact-item">Sed do eiusmod tempor</div>
+                        <div class="fun-fact-item">Incididunt ut labore</div>
+                    </div>
+                </div>
+
+                <div class="card language-card" onclick="goToSection(3)">
+                    <div class="card-header">
+                        <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
+                        </svg>
+                        <span class="card-title">Lorem Languages</span>
+                    </div>
+                    <div class="language-grid">
+                        <div class="language-item">
+                            <span class="lang-name">Lorem</span>
+                            <div class="lang-bar" style="--progress: 95%;"></div>
+                        </div>
+                        <div class="language-item">
+                            <span class="lang-name">Ipsum</span>
+                            <div class="lang-bar" style="--progress: 90%;"></div>
+                        </div>
+                        <div class="language-item">
+                            <span class="lang-name">Dolor</span>
+                            <div class="lang-bar" style="--progress: 85%;"></div>
+                        </div>
+                        <div class="language-item">
+                            <span class="lang-name">Sit</span>
+                            <div class="lang-bar" style="--progress: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Modal -->
+        <div class="modal-overlay" id="timeline-modal">
+            <div class="modal-window">
+                <div class="window-chrome">
+                    <div class="window-buttons">
+                        <div class="window-button close" onclick="closeTimelineModal()"></div>
+                        <div class="window-button minimize"></div>
+                        <div class="window-button maximize"></div>
+                    </div>
+                    <div class="window-title">timeline.view</div>
+                </div>
+                <div class="modal-content">
+                    <h3>Lorem Timeline Journey</h3>
+                    <div class="timeline-full">
+                        <div class="timeline-item-card" onclick="openTimelineDetail(0)">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card-content">
+                                <span class="timeline-year">2014</span>
+                                <span class="timeline-title">Lorem Ipsum Beginning</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item-card" onclick="openTimelineDetail(1)">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card-content">
+                                <span class="timeline-year">2021</span>
+                                <span class="timeline-title">Dolor Sit Amet</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item-card" onclick="openTimelineDetail(2)">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card-content">
+                                <span class="timeline-year">2024</span>
+                                <span class="timeline-title">Consectetur Adipiscing</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item-card" onclick="openTimelineDetail(3)">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card-content">
+                                <span class="timeline-year">2025</span>
+                                <span class="timeline-title">Sed Do Eiusmod</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item-card" onclick="openTimelineDetail(4)">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-card-content">
+                                <span class="timeline-year">2026</span>
+                                <span class="timeline-title">Tempor Incididunt</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline Detail Modal -->
+        <div class="modal-overlay" id="timeline-detail-modal">
+            <div class="modal-window detail-window">
+                <div class="window-chrome">
+                    <div class="window-buttons">
+                        <div class="window-button close" onclick="closeTimelineDetail()"></div>
+                        <div class="window-button minimize"></div>
+                        <div class="window-button maximize"></div>
+                    </div>
+                    <div class="window-title">detail.view</div>
+                </div>
+                <div class="modal-content">
+                    <h3 id="detail-title">Lorem Event Title</h3>
+                    <div class="detail-period" id="detail-period">Lorem Period</div>
+                    <div class="detail-context" id="detail-context">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Updated: Changed to scroll indicator like section 1 -->
+        <div class="scroll-indicator section2-scroll">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
+            </svg>
+            <span>Scroll to continue</span>
+        </div>
+
+        <!-- Back indicator for going back to section 1 -->
+        <div class="back-indicator" onclick="goToSection(1)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
+            </svg>
+            <span>Back to top</span>
+        </div>
+    </section>
+
+    <!-- Section 3 - Technical Skills -->
+    <section id="section3">
+        <div class="skills-container">
+            <!-- Header with glitch effect -->
+            <div class="section-header">
+                <div class="glitch-wrapper">
+                    <h2 class="glitch-text" data-text="// TECHNICAL ARSENAL">// TECHNICAL ARSENAL</h2>
+                </div>
+                <p class="section-subtitle">Lorem ipsum • Dolor sit • Amet consectetur</p>
+            </div>
+
+            <!-- Filter Navigation -->
+            <nav class="skill-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="filter-icon">⚡</span>
+                    <span class="filter-text">All Skills</span>
+                    <span class="filter-count">50+</span>
+                </button>
+                <button class="filter-btn" data-filter="languages">
+                    <span class="filter-icon">{ }</span>
+                    <span class="filter-text">Languages</span>
+                    <span class="filter-count">11</span>
+                </button>
+                <button class="filter-btn" data-filter="frameworks">
+                    <span class="filter-icon">⚙️</span>
+                    <span class="filter-text">Frameworks</span>
+                    <span class="filter-count">15</span>
+                </button>
+                <button class="filter-btn" data-filter="tools">
+                    <span class="filter-icon">🛠</span>
+                    <span class="filter-text">Tools</span>
+                    <span class="filter-count">12</span>
+                </button>
+                <button class="filter-btn" data-filter="certifications">
+                    <span class="filter-icon">🏆</span>
+                    <span class="filter-text">Certified</span>
+                    <span class="filter-count">5</span>
+                </button>
+            </nav>
+
+            <!-- Main Skills Grid -->
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-category" data-category="languages">
+                    <h3 class="category-title">
+                        <span class="category-icon">{ }</span>
+                        Lorem Programming Languages
+                    </h3>
+                    <div class="skill-cards">
+                        <!-- Python Card -->
+                        <div class="skill-card featured" data-skill="python" data-category="languages">
+                            <div class="skill-card-inner">
+                                <div class="skill-front">
+                                    <div class="skill-icon">
+                                        <!-- Python Logo SVG -->
+                                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M24.0002 4C19.3002 4 19.0002 6.2 19.0002 8.4V12H29.0002V14H15.2002C13.0002 14 11.0002 15.5 11.0002 19.5V28.5C11.0002 32.5 13.0002 34 15.2002 34H19.0002V30C19.0002 27.8 20.8002 26 23.0002 26H32.0002C34.2002 26 36.0002 24.2 36.0002 22V8.4C36.0002 6.2 34.2002 4 29.5002 4H24.0002Z" fill="#3776AB"/>
+                                            <path d="M21.5002 9C22.3287 9 23.0002 8.32843 23.0002 7.5C23.0002 6.67157 22.3287 6 21.5002 6C20.6718 6 20.0002 6.67157 20.0002 7.5C20.0002 8.32843 20.6718 9 21.5002 9Z" fill="white"/>
+                                            <path d="M24.0002 44C28.7002 44 29.0002 41.8 29.0002 39.6V36H19.0002V34H32.8002C35.0002 34 37.0002 32.5 37.0002 28.5V19.5C37.0002 15.5 35.0002 14 32.8002 14H29.0002V18C29.0002 20.2 27.2002 22 25.0002 22H16.0002C13.8002 22 12.0002 23.8 12.0002 26V39.6C12.0002 41.8 13.8002 44 18.5002 44H24.0002Z" fill="#FFD43B"/>
+                                            <path d="M26.5002 39C25.6718 39 25.0002 39.6716 25.0002 40.5C25.0002 41.3284 25.6718 42 26.5002 42C27.3287 42 28.0002 41.3284 28.0002 40.5C28.0002 39.6716 27.3287 39 26.5002 39Z" fill="#3776AB"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="skill-name">Python</h4>
+                                    <div class="skill-level">Advanced</div>
+                                    <div class="skill-meter">
+                                        <div class="skill-progress" style="--progress: 95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-back">
+                                    <div class="skill-stats">
+                                        <div class="stat-item">
+                                            <span class="stat-label">Experience</span>
+                                            <span class="stat-value">6 years</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Projects</span>
+                                            <span class="stat-value">35%</span>
+                                        </div>
+                                        <div class="stat-item">
+                                            <span class="stat-label">Lines</span>
+                                            <span class="stat-value">245K+</span>
+                                        </div>
+                                    </div>
+                                    <div class="skill-tags">
+                                        <span class="tag" data-project="ai-ml">AI/ML</span>
+                                        <span class="tag" data-project="data-science">Data Science</span>
+                                        <span class="tag" data-project="automation">Automation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Other cards remain the same structure... -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Code Rain Background Effect -->
+            <div class="code-rain-container">
+                <canvas id="codeRain"></canvas>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="back-indicator section3-back" onclick="goToSection(2)">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
+            </svg>
+            <span>Back to About</span>
+        </div>
+
+        <div class="scroll-indicator section3-scroll">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
+            </svg>
+            <span>View Projects</span>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
