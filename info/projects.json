@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "id": "aeternus-argus",
+      "title": "Aeternus Argus",
+      "category": "ai-ml",
+      "subcategories": ["data-science", "research"],
+      "time": "2024-08",
+      "timeDisplay": "August 2024",
+      "description": "VPN traffic classifier with XGBoost achieving 95% accuracy",
+      "tech": ["Python", "XGBoost", "Scikit-learn", "Pandas"],
+      "github": "https://github.com/lorem/aeternus-argus",
+      "demo": "http://aeternus-argus.javavirtualenvironment.com/",
+      "featured": true,
+      "content": "## Overview\nDeveloped under mentorship of Georgia Tech professor, Aeternus Argus is a machine learning system that classifies VPN traffic with 95% accuracy.\n\n## Technical Implementation\n- Built XGBoost classifier for encrypted traffic analysis\n- Implemented feature engineering pipeline for network packets\n- Created real-time classification system\n\n## Results\n- 95% classification accuracy\n- Paper submitted to academic conference\n- Deployed live demo system"
+    },
+    {
+      "id": "skidsuite",
+      "title": "SkidSuite",
+      "category": "automation",
+      "subcategories": ["backend", "tools"],
+      "time": "2023-12",
+      "timeDisplay": "December 2023",
+      "description": "Comprehensive automation toolkit for development workflows",
+      "tech": ["Python", "JavaScript", "Node.js"],
+      "github": "https://github.com/lorem/skidsuite",
+      "featured": false,
+      "content": "## Overview\nSkidSuite is a collection of automation tools designed to streamline development workflows.\n\n## Features\n- Automated code generation\n- Project scaffolding\n- CI/CD integration"
+    }
+  ]
+}

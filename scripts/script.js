@@ -347,24 +347,65 @@ switcher.addEventListener('click', () => {
     document.documentElement.setAttribute('data-theme', themes[themeIndex]);
 });
 
-/* Expandable sections */
-function toggleSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    section.classList.toggle('expanded');
+// Update the typeCode function to use resume data
+async function initializeResume() {
+    const data = await DataLoader.loadData();
+    if (!data) return;
+
+    const resume = data.resume;
+    const codeStr = JSON.stringify({
+        name: resume.personal.name,
+        age: resume.personal.age,
+        location: resume.personal.location,
+        education: resume.education,
+        skills: {
+            languages: resume.skills.languages.map(l => l.name),
+            experience: resume.skills.experience,
+            specialties: resume.skills.specialties
+        },
+        projects: {
+            featured: data.projects.projects.find(p => p.featured),
+            others: data.projects.projects.filter(p => !p.featured).map(p => p.title)
+        },
+        achievements: resume.achievements,
+        unique: ["Antarctica at 15", "Ambidextrous fencer", "Kangaroo taste tester", "3AM debugger"]
+    }, null, 4);
+
+    // Update stats dynamically
+    document.querySelector('.stats .stat:nth-child(1) .value').textContent =
+        resume.stats.linesOfCode.toLocaleString();
+    document.querySelector('.stats .stat:nth-child(2) .value').textContent =
+        resume.stats.githubCommits;
+    document.querySelector('.stats .stat:nth-child(3) .value').textContent =
+        resume.stats.languagesKnown;
+
+    // Start typewriter with loaded data
+    typeCodeWithString(codeStr);
 }
 
-/* Initialize Effects */
-window.addEventListener('DOMContentLoaded', () => {
+function typeCodeWithString(str) {
+    const codeEl = document.getElementById('resume-code');
+    let idx = 0;
+
+    function type() {
+        if (idx < str.length && isTyping) {
+            codeEl.textContent += str[idx++];
+            setTimeout(type, 30 + Math.random() * 70);
+        }
+    }
+    type();
+}
+
+window.addEventListener('DOMContentLoaded', async () => {
+    console.log('Loading data...');
+
+    // Load all data first
+    await DataLoader.loadData();
+
     console.log('Page loaded. Fake scroll enabled.');
     console.log('Controls: Mouse wheel, arrow keys, touch swipe, or click "Scroll to continue"');
 
-    // Start animations
-    typeCode();
+    // Initialize with loaded data
+    await initializeResume();
     typeTagline();
 });
-
-/* Timeline Toggle Function */
-function toggleTimeline() {
-    const timelineCard = document.getElementById('timeline-card');
-    timelineCard.classList.toggle('expanded');
-}

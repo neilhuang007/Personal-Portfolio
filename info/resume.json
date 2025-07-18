@@ -1,0 +1,73 @@
+{
+  "personal": {
+    "name": "Neil (Gezhi) Huang",
+    "age": 15,
+    "location": "Shenzhen, China → USA",
+    "email": "neil@example.com",
+    "github": "https://github.com/neilhuang"
+  },
+  "education": {
+    "current": {
+      "school": "Tsinglan School",
+      "gpa": "3.94",
+      "period": "2021-2026"
+    },
+    "future": {
+      "school": "The Hill School",
+      "startDate": "Fall 2026"
+    },
+    "summer": [
+      {
+        "program": "Stanford Pre-Collegiate AI/ML",
+        "date": "2024"
+      },
+      {
+        "program": "USC Bitcoin & AI Finance",
+        "date": "June 2025"
+      }
+    ]
+  },
+  "skills": {
+    "languages": [
+      {"name": "Python", "level": "Advanced", "years": 6, "proficiency": 95},
+      {"name": "Java", "level": "Advanced", "years": 5, "proficiency": 90},
+      {"name": "JavaScript", "level": "Advanced", "years": 4, "proficiency": 85},
+      {"name": "C++", "level": "Intermediate", "years": 3, "proficiency": 75}
+    ],
+    "experience": "6 years, 15+ hours/week",
+    "specialties": ["Machine Learning", "AI Research", "Full-Stack Development"]
+  },
+  "achievements": {
+    "debate": ["National Ranking #6", "Harvard NSDA Octafinalist"],
+    "coding": ["USACO Gold", "OUCC Merit Award", "GitHub Arctic"],
+    "athletics": ["Fencing Captain", "City Top 8"],
+    "arts": ["Voice of Tsinglan 1st Prize"],
+    "service": "300+ volunteer hours"
+  },
+  "stats": {
+    "linesOfCode": 700832,
+    "githubCommits": 547,
+    "languagesKnown": 11,
+    "projectsCompleted": 35
+  },
+  "timeline": [
+    {
+      "year": "2014",
+      "title": "Started Coding Journey",
+      "period": "September 2014",
+      "description": "Began learning programming at age 5, starting with visual programming languages"
+    },
+    {
+      "year": "2021",
+      "title": "Entered Tsinglan School",
+      "period": "September 2021",
+      "description": "Started middle school at Tsinglan, joining debate team and coding club"
+    },
+    {
+      "year": "2024",
+      "title": "ML Research with Georgia Tech",
+      "period": "June 2024 - Present",
+      "description": "Began research collaboration on VPN traffic classification using machine learning"
+    }
+  ]
+}

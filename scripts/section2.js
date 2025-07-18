@@ -7,12 +7,26 @@ let activeProjectWindows = [];
 let minimizedWindows = [];
 let windowZIndex = 1100;
 
-// Timeline Modal Functions
 function openTimelineModal() {
     const modal = document.getElementById('timeline-modal');
+    const timelineContainer = modal.querySelector('.timeline-full');
+    const timeline = DataLoader.getTimelineData();
+
+    // Clear and rebuild timeline
+    timelineContainer.innerHTML = timeline.map((item, index) => `
+        <div class="timeline-item-card" onclick="openTimelineDetail(${index})">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card-content">
+                <span class="timeline-year">${item.year}</span>
+                <span class="timeline-title">${item.title}</span>
+            </div>
+        </div>
+    `).join('');
+
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
+
 
 function closeTimelineModal() {
     const modal = document.getElementById('timeline-modal');
@@ -21,45 +35,14 @@ function closeTimelineModal() {
 }
 
 function openTimelineDetail(index) {
-    const detailModal = document.getElementById('timeline-detail-modal');
-    const title = document.getElementById('detail-title');
-    const period = document.getElementById('detail-period');
-    const context = document.getElementById('detail-context');
+    const timeline = DataLoader.getTimelineData();
+    const data = timeline[index];
 
-    const timelineData = [
-        {
-            title: "Lorem Ipsum Beginning",
-            period: "September 2014 - December 2014",
-            context: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        {
-            title: "Dolor Sit Amet",
-            period: "January 2021 - August 2021",
-            context: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-            title: "Consectetur Adipiscing",
-            period: "June 2024 - August 2024",
-            context: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
-        },
-        {
-            title: "Sed Do Eiusmod",
-            period: "June 2025 - July 2025",
-            context: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident."
-        },
-        {
-            title: "Tempor Incididunt",
-            period: "Fall 2026",
-            context: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        }
-    ];
+    document.getElementById('detail-title').textContent = data.title;
+    document.getElementById('detail-period').textContent = data.period;
+    document.getElementById('detail-context').textContent = data.description;
 
-    const data = timelineData[index];
-    title.textContent = data.title;
-    period.textContent = data.period;
-    context.textContent = data.context;
-
-    detailModal.classList.add('active');
+    document.getElementById('timeline-detail-modal').classList.add('active');
 }
 
 function closeTimelineDetail() {
@@ -241,33 +224,44 @@ function makeDraggable(element) {
     }
 }
 
-// Auto-calculate project card rotations and z-index
-function setupProjectCards() {
-    const projectCards = document.querySelectorAll('.project-card');
-    const totalCards = projectCards.length;
+// Replace setupProjectCards function
+async function setupProjectCards() {
+    const projects = DataLoader.getProjectsSortedByTime();
+    const stack = document.querySelector('.project-stack');
 
-    projectCards.forEach((card, index) => {
-        // Calculate rotation: alternating positive/negative, decreasing magnitude
-        const baseRotation = 15;
-        const rotation = (index % 2 === 0 ? 1 : -1) * (baseRotation - (index * 2));
+    // Clear existing cards
+    stack.innerHTML = '';
 
-        // Set CSS variables
-        card.style.setProperty('--rotation', `${rotation}deg`);
-        card.style.setProperty('--z-index', totalCards - index);
+    // Create cards from data
+    projects.slice(0, 6).forEach((project, index) => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.style.setProperty('--rotation', `${(index % 2 === 0 ? 1 : -1) * (15 - (index * 2))}deg`);
+        card.style.setProperty('--index', index);
 
-        // Add click handler
+        card.innerHTML = `
+            <span class="project-name">${project.title}</span>
+            <span class="project-desc">${project.tech.slice(0, 2).join(' • ')}</span>
+        `;
+
         card.addEventListener('click', (e) => {
             e.stopPropagation();
-            const projectData = {
-                name: card.querySelector('.project-name').textContent,
-                description: card.querySelector('.project-desc').textContent,
-                timestamp: 'Lorem ' + (2020 + index),
-                category: 'Lorem Category',
-                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is a detailed article about ${card.querySelector('.project-name').textContent}. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
-            };
-            openProjectWindow(projectData);
+            openProjectWindow({
+                name: project.title,
+                description: project.description,
+                timestamp: project.timeDisplay,
+                category: project.category,
+                content: project.content,
+                github: project.github,
+                demo: project.demo
+            });
         });
+
+        stack.appendChild(card);
     });
+
+    // Re-initialize hover animations
+    initializeProjectCardAnimations();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
