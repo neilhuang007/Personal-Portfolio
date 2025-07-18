@@ -217,9 +217,14 @@ function goToSection(sectionNum) {
     }
 }
 
-// Wheel event handler for fake scroll
 window.addEventListener('wheel', (e) => {
     if (animating) return;
+
+    // Check if scrolling inside a project window
+    const projectWindow = e.target.closest('.project-window');
+    if (projectWindow && projectWindow.classList.contains('active')) {
+        return; // Let project window handle its own scroll
+    }
 
     // Section 2 and 3 can scroll naturally within themselves
     if (currentSection === 2) {

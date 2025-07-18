@@ -576,7 +576,12 @@
 .project-content {
     padding: 2rem;
     overflow-y: auto;
+    overflow-x: hidden;
     flex: 1;
+    /* Ensure smooth scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent scroll chaining */
+    overscroll-behavior: contain;
 }
 
 .project-meta {
@@ -972,4 +977,9 @@
 /* Slower opacity transitions */
 .project-stack-card.enlarged:hover .project-card {
     transition: opacity 0.6s ease;
+}
+
+/*lock scrolliing*/
+body.modal-open {
+    overflow: hidden;
 }
