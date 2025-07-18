@@ -454,8 +454,6 @@
 .project-card:hover {
     background: rgba(var(--accent-rgb), 0.1);
     border-color: var(--accent);
-    transform: translate(-50%, -50%) scale(1.5) rotate(0deg) !important;
-    z-index: 100 !important;
     box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.4);
 }
 
@@ -916,4 +914,62 @@
         width: 95%;
         min-width: 320px;
     }
+}
+
+/* Enhanced Project Card Animations - Slower timing */
+.project-stack {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.project-card {
+    /* Existing styles remain... */
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Slower shadow transitions */
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(var(--accent-rgb), 0.2);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+/* Slower progressive glow */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(var(--accent-rgb), 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.3);
+    }
+}
+
+.project-card:hover {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Committed center state */
+.project-card[data-centered="true"] {
+    /*transform: translate(-50%, -50%) scale(1.5) rotate(0deg) !important;*/
+    z-index: 1000 !important;
+}
+
+/* Slower opacity transitions */
+.project-stack-card.enlarged:hover .project-card {
+    transition: opacity 0.6s ease;
 }

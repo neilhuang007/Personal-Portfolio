@@ -271,92 +271,166 @@ function setupProjectCards() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const wrapper    = document.querySelector('.project-stack-card.enlarged');
-    const stack      = wrapper.querySelector('.project-stack');
-    const cards      = Array.from(stack.querySelectorAll('.project-card'));
+    const wrapper = document.querySelector('.project-stack-card.enlarged');
+    const stack = wrapper.querySelector('.project-stack');
+    const cards = Array.from(stack.querySelectorAll('.project-card'));
 
-    const SPREAD       = 260;  // how far cards fan out
-    const DURATION     = 300;  // must match your CSS transition
-    const SWITCH_DELAY = 30;   // ms before actually swapping center
+    // Fan‐out timings
+    const SPREAD = 220;
+    const INITIAL_SCALE_DURATION = 500;
+    const CONTINUE_SCALE_DURATION = 300;
+    const CENTER_DELAY = 150;    // was 900
+    const CENTER_DURATION = 700;
 
-    let activeCard  = null;
-    let switchTimer = null;
+    let activeCard = null;
+    let centeringCard = null;            // Track card that's moving to center
+    let hoverTimers = new Map();
+    let isStackHovered = false;
 
-    // give every card a smooth transition
+    // Apply initial transitions
     cards.forEach(card => {
-        card.style.transition = `transform ${DURATION}ms ease-out`;
+        card.style.transition = `transform ${CENTER_DURATION}ms cubic-bezier(0.23, 1, 0.32, 1)`;
     });
 
-    // 1) fan out on entering the outer wrapper
+    // Fan out on wrapper hover
     wrapper.addEventListener('pointerenter', () => {
-        activeCard = null;
-        clearTimeout(switchTimer);
-        cards.forEach(card => {
-            const θ  = Math.random() * Math.PI * 2;
-            const r  = SPREAD * (0.8 + 0.4 * Math.random());
-            const nx = Math.cos(θ) * r, ny = Math.sin(θ) * r;
-            card.dataset.fanX = nx; card.dataset.fanY = ny;
-            card.style.transform =
-                `translate(-50%,-50%) rotate(var(--rotation)) translate(${nx}px,${ny}px)`;
-            card.style.zIndex = '900';
-            card.style.pointerEvents = 'auto';
+        isStackHovered = true;
+
+        // Clear all timers
+        hoverTimers.forEach(timer => clearTimeout(timer));
+        hoverTimers.clear();
+
+        // Fan out with stagger
+        cards.forEach((card, index) => {
+            const θ = Math.random() * Math.PI * 2;
+            const r = SPREAD * (0.8 + 0.4 * Math.random());
+            const nx = Math.cos(θ) * r;
+            const ny = Math.sin(θ) * r;
+
+            card.dataset.fanX = nx;
+            card.dataset.fanY = ny;
+
+            // Staggered fan-out animation
+            setTimeout(() => {
+                if (isStackHovered && card !== activeCard) {
+                    card.style.transform =
+                        `translate(-50%,-50%) rotate(var(--rotation)) translate(${nx}px,${ny}px) scale(1)`;
+                    card.style.zIndex = '900';
+                    card.style.pointerEvents = 'auto';
+                }
+            }, index * 50);
         });
     });
 
-    // helper to re-enable pointerEvents after a transition
-    function reenablePointers(afterCard) {
-        const onEnd = e => {
-            if (e.propertyName !== 'transform') return;
-            afterCard.removeEventListener('transitionend', onEnd);
-            cards.forEach(c => c.style.pointerEvents = 'auto');
-        };
-        afterCard.addEventListener('transitionend', onEnd);
-    }
-
-    // 2) swap center on hovering a card
+    // Individual card hover with progressive animation
     cards.forEach(card => {
-        card.addEventListener('pointerenter', () => {
-            if (activeCard === card) return;
-            clearTimeout(switchTimer);
+        let scaleTimer = null;
+        let continueTimer = null;
+        let centerTimer = null;
 
-            switchTimer = setTimeout(() => {
-                // a) send old center back to its fan-out spot
-                if (activeCard) {
-                    activeCard.style.transform =
-                        `translate(-50%,-50%) rotate(var(--rotation)) ` +
-                        `translate(${activeCard.dataset.fanX}px,${activeCard.dataset.fanY}px)`;
+        card.addEventListener('pointerenter', () => {
+            if (!isStackHovered || card === activeCard || card === centeringCard) return;
+
+            // Clear existing timers for this card
+            if (hoverTimers.has(card)) {
+                const timers = hoverTimers.get(card);
+                clearTimeout(timers.scale);
+                clearTimeout(timers.continue);
+                clearTimeout(timers.center);
+            }
+
+            // Phase 1: Slow initial scale
+            card.style.transition = `transform ${INITIAL_SCALE_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`;
+            card.style.transform =
+                `translate(-50%,-50%) rotate(var(--rotation)) translate(${card.dataset.fanX}px,${card.dataset.fanY}px) scale(1.1)`;
+
+            // Phase 2: Continue scaling
+            continueTimer = setTimeout(() => {
+                card.style.transition = `transform ${CONTINUE_SCALE_DURATION}ms cubic-bezier(0.23, 1, 0.32, 1)`;
+                card.style.transform =
+                    `translate(-50%,-50%) rotate(calc(var(--rotation) * 0.5)) translate(${card.dataset.fanX * 0.7}px,${card.dataset.fanY * 0.7}px) scale(1.2)`;
+            }, INITIAL_SCALE_DURATION);
+
+            // Phase 3: Commit to expanded state in place and push neighbors
+            centerTimer = setTimeout(() => {
+                centeringCard = card;
+
+                // restore z‐index of previous active card
+                if (activeCard && activeCard !== card) {
                     activeCard.style.zIndex = '900';
                 }
 
-                // b) disable all pointer events during the transition
-                cards.forEach(c => c.style.pointerEvents = 'none');
-
-                // c) center & enlarge the new card
-                card.style.transform = `translate(-50%,-50%) scale(1.5) rotate(0deg)`;
-                card.style.zIndex    = '1000';
-
-                // d) once it’s done animating, re-enable pointers
-                reenablePointers(card);
-
+                // expand hovered card in place
+                card.style.transition = `transform ${CENTER_DURATION}ms cubic-bezier(0.23, 1, 0.32, 1)`;
+                card.style.transform =
+                    `translate(-50%,-50%) rotate(var(--rotation)) translate(${card.dataset.fanX}px,${card.dataset.fanY}px) scale(1.5)`;
+                card.style.zIndex = '1000';
                 activeCard = card;
-            }, SWITCH_DELAY);
+
+                // push other cards away
+                cards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        const pushFactor = 1.4;
+                        otherCard.style.transform =
+                            `translate(-50%,-50%) rotate(var(--rotation)) translate(${otherCard.dataset.fanX * pushFactor}px,${otherCard.dataset.fanY * pushFactor}px) scale(0.95)`;
+                        otherCard.style.opacity = '0.7';
+                    }
+                });
+
+                // clear centering flag after animation
+                setTimeout(() => { centeringCard = null; }, CENTER_DURATION);
+            }, CENTER_DELAY);
+
+            hoverTimers.set(card, { scale: scaleTimer, continue: continueTimer, center: centerTimer });
+        });
+
+        card.addEventListener('pointerleave', () => {
+            // clear all timers
+            hoverTimers.forEach(t => {
+                clearTimeout(t.scale);
+                clearTimeout(t.continue);
+                clearTimeout(t.center);
+            });
+            hoverTimers.clear();
+            // reset active flags
+            activeCard = null;
+            centeringCard = null;
+            // restore every card to its fan position, full opacity and default z-index
+            cards.forEach(c => {
+                c.style.transition = `transform ${CONTINUE_SCALE_DURATION}ms cubic-bezier(0.23, 1, 0.32, 1)`;
+                c.style.transform =
+                    `translate(-50%,-50%) rotate(var(--rotation)) translate(${c.dataset.fanX}px,${c.dataset.fanY}px) scale(1)`;
+                c.style.opacity = '1';
+                c.style.zIndex = '900';
+            });
         });
     });
 
-    // 3) collapse back only when leaving the outer wrapper
+    // Collapse only on wrapper leave
     wrapper.addEventListener('pointerleave', () => {
-        clearTimeout(switchTimer);
-        cards.forEach(card => {
-            card.style.transform     = `translate(-50%,-50%) rotate(var(--rotation))`;
-            card.style.zIndex        = card.dataset.zIndex || 'auto';
-            card.style.pointerEvents = 'auto';
-        });
+        isStackHovered = false;
         activeCard = null;
+        centeringCard = null;
+
+        // Clear all timers
+        hoverTimers.forEach(timer => {
+            clearTimeout(timer.scale);
+            clearTimeout(timer.continue);
+            clearTimeout(timer.center);
+        });
+        hoverTimers.clear();
+
+        // Staggered collapse
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.transform = `translate(-50%,-50%) rotate(var(--rotation))`;
+                card.style.zIndex = card.dataset.zIndex || 'auto';
+                card.style.pointerEvents = 'auto';
+                card.style.opacity = '1';
+            }, index * 30);
+        });
     });
 });
-
-
-
 
 // Initialize Section 2 Event Listeners
 function initializeSection2() {
