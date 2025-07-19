@@ -1,53 +1,64 @@
 /* Typewriter for Resume Code */
 const codeEl = document.getElementById('resume-code');
-const codeStr = `{
-    "name": "Neil (Gezhi) Huang",
-    "age": 15,
-    "location": "Shenzhen, China → USA",
-    "education": {
-    "current": "Tsinglan School (GPA: 3.94)",
-    "future": "The Hill School (Fall 2026)",
-    "summer": [
-    "Stanford Pre-Collegiate AI/ML (2024)",
-    "USC Bitcoin & AI Finance (June 2025)"
-    ]
-},
-    "skills": {
-    "languages": ["Python", "Java", "JavaScript", "C++",
-    "Kotlin", "SQL", "PHP", "TypeScript"],
-    "experience": "6 years, 15+ hours/week",
-    "specialties": ["Machine Learning", "AI Research",
-    "Full-Stack Development"]
-},
-    "projects": {
-    "featured": {
-    "name": "Aeternus Argus",
-    "description": "VPN traffic classifier with XGBoost",
-    "accuracy": "95%",
-    "mentor": "Georgia Tech Professor",
-    "status": "Paper submitted"
-},
-    "others": ["SkidSuite", "Ultralight Minecraft",
-    "School Sign-In System", "Haedus", "Yapeteam"]
-},
-    "achievements": {
-    "debate": ["National Ranking #6", "Harvard NSDA Octafinalist"],
-    "coding": ["USACO Gold", "OUCC Merit Award", "GitHub Arctic"],
-    "athletics": ["Fencing Captain", "City Top 8"],
-    "arts": ["Voice of Tsinglan 1st Prize"],
-    "service": "300+ volunteer hours"
-},
-    "unique": ["Antarctica at 15", "Ambidextrous fencer",
-    "Kangaroo taste tester", "3AM debugger"]
-}`;
-let idx = 0;
 let isTyping = true;
+let isTypingTagline = true;
 
-function typeCode() {
-    if (idx < codeStr.length && isTyping) {
-        codeEl.textContent += codeStr[idx++];
-        setTimeout(typeCode, 30 + Math.random() * 70);
+// Initialize resume from loaded data
+async function initializeResume() {
+    const data = await DataLoader.loadData();
+    if (!data) return;
+
+    const resume = data.resume;
+    const featuredProject = data.projects.projects.find(p => p.featured);
+    const otherProjects = data.projects.projects.filter(p => !p.featured).map(p => p.title);
+
+    const codeStr = JSON.stringify({
+        name: resume.personal?.name || "Neil (Gezhi) Huang",
+        age: resume.personal?.age || 15,
+        location: resume.personal?.location || "Shenzhen, China → USA",
+        education: resume.education || {},
+        skills: {
+            languages: resume.skills?.languages?.map(l => l.name) || [],
+            experience: resume.skills?.experience || "6 years",
+            specialties: resume.skills?.specialties || []
+        },
+        projects: {
+            featured: featuredProject ? {
+                name: featuredProject.title,
+                description: featuredProject.description,
+                accuracy: featuredProject.accuracy || "95%"
+            } : {},
+            others: otherProjects
+        },
+        achievements: resume.achievements || {},
+        unique: ["Antarctica at 15", "Ambidextrous fencer", "Kangaroo taste tester", "3AM debugger"]
+    }, null, 4);
+
+    // Update stats dynamically
+    if (resume.stats) {
+        const stat1 = document.querySelector('.stats .stat:nth-child(1) .value');
+        const stat2 = document.querySelector('.stats .stat:nth-child(2) .value');
+        const stat3 = document.querySelector('.stats .stat:nth-child(3) .value');
+
+        if (stat1) stat1.textContent = (resume.stats.linesOfCode || 700832).toLocaleString();
+        if (stat2) stat2.textContent = resume.stats.githubCommits || 547;
+        if (stat3) stat3.textContent = resume.stats.languagesKnown || 11;
     }
+
+    // Start typewriter with loaded data
+    typeCodeWithString(codeStr);
+}
+
+function typeCodeWithString(str) {
+    let idx = 0;
+
+    function type() {
+        if (idx < str.length && isTyping) {
+            codeEl.textContent += str[idx++];
+            setTimeout(type, 30 + Math.random() * 70);
+        }
+    }
+    type();
 }
 
 /* Rotating Taglines with Typewriter */
@@ -90,7 +101,6 @@ let taglines = window.innerWidth > 768 ? [
     "Learning blockchain & AI finance"
 ];
 let tIndex = 0;
-let isTypingTagline = true;
 
 function typeTagline() {
     if (!isTypingTagline) return;
@@ -174,7 +184,6 @@ function goToSection(sectionNum) {
             // Resume animations
             isTyping = true;
             isTypingTagline = true;
-            if (idx < codeStr.length) typeCode();
             typeTagline();
         }, 1500);
 
@@ -347,55 +356,13 @@ switcher.addEventListener('click', () => {
     document.documentElement.setAttribute('data-theme', themes[themeIndex]);
 });
 
-// Update the typeCode function to use resume data
-async function initializeResume() {
-    const data = await DataLoader.loadData();
-    if (!data) return;
-
-    const resume = data.resume;
-    const codeStr = JSON.stringify({
-        name: resume.personal.name,
-        age: resume.personal.age,
-        location: resume.personal.location,
-        education: resume.education,
-        skills: {
-            languages: resume.skills.languages.map(l => l.name),
-            experience: resume.skills.experience,
-            specialties: resume.skills.specialties
-        },
-        projects: {
-            featured: data.projects.projects.find(p => p.featured),
-            others: data.projects.projects.filter(p => !p.featured).map(p => p.title)
-        },
-        achievements: resume.achievements,
-        unique: ["Antarctica at 15", "Ambidextrous fencer", "Kangaroo taste tester", "3AM debugger"]
-    }, null, 4);
-
-    // Update stats dynamically
-    document.querySelector('.stats .stat:nth-child(1) .value').textContent =
-        resume.stats.linesOfCode.toLocaleString();
-    document.querySelector('.stats .stat:nth-child(2) .value').textContent =
-        resume.stats.githubCommits;
-    document.querySelector('.stats .stat:nth-child(3) .value').textContent =
-        resume.stats.languagesKnown;
-
-    // Start typewriter with loaded data
-    typeCodeWithString(codeStr);
+/* Expandable sections */
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.classList.toggle('expanded');
 }
 
-function typeCodeWithString(str) {
-    const codeEl = document.getElementById('resume-code');
-    let idx = 0;
-
-    function type() {
-        if (idx < str.length && isTyping) {
-            codeEl.textContent += str[idx++];
-            setTimeout(type, 30 + Math.random() * 70);
-        }
-    }
-    type();
-}
-
+/* Initialize Effects */
 window.addEventListener('DOMContentLoaded', async () => {
     console.log('Loading data...');
 
@@ -409,3 +376,12 @@ window.addEventListener('DOMContentLoaded', async () => {
     await initializeResume();
     typeTagline();
 });
+
+/* Timeline Toggle Function */
+function toggleTimeline() {
+    const timelineCard = document.getElementById('timeline-card');
+    timelineCard.classList.toggle('expanded');
+}
+
+// Make goToSection globally available
+window.goToSection = goToSection;

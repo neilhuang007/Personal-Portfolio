@@ -983,3 +983,90 @@
 body.modal-open {
     overflow: hidden;
 }
+
+/* Timeline Project Styling */
+.timeline-project {
+    position: relative;
+}
+
+.timeline-project::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+            135deg,
+            rgba(var(--accent-rgb), 0.05),
+            transparent
+    );
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.timeline-project:hover::after {
+    opacity: 1;
+}
+
+.timeline-project-icon {
+    background: var(--accent) !important;
+    position: relative;
+}
+
+.timeline-project-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: var(--bg);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timeline-tag {
+    display: inline-block;
+    background: rgba(var(--accent-rgb), 0.2);
+    color: var(--accent);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: 0.5rem;
+}
+
+/* Different hover effect for project items */
+.timeline-project:hover {
+    transform: translateX(15px);
+    border-color: var(--accent);
+}
+
+.timeline-project:hover .timeline-tag {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+/* Make project dots pulse */
+@keyframes projectPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(var(--accent-rgb), 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0);
+    }
+}
+
+.timeline-project .timeline-dot {
+    animation: projectPulse 2s infinite;
+}

@@ -7,26 +7,33 @@ let activeProjectWindows = [];
 let minimizedWindows = [];
 let windowZIndex = 1100;
 
+// Timeline Modal Functions
 function openTimelineModal() {
     const modal = document.getElementById('timeline-modal');
     const timelineContainer = modal.querySelector('.timeline-full');
-    const timeline = DataLoader.getTimelineData();
+    const combinedTimeline = DataLoader.getCombinedTimeline();
 
     // Clear and rebuild timeline
-    timelineContainer.innerHTML = timeline.map((item, index) => `
-        <div class="timeline-item-card" onclick="openTimelineDetail(${index})">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card-content">
-                <span class="timeline-year">${item.year}</span>
-                <span class="timeline-title">${item.title}</span>
+    timelineContainer.innerHTML = combinedTimeline.map((item, index) => {
+        const isProject = item.type === 'project';
+        const iconClass = isProject ? 'timeline-project-icon' : '';
+
+        return `
+            <div class="timeline-item-card ${isProject ? 'timeline-project' : ''}" 
+                 onclick="${isProject ? `openProjectFromTimeline(${index})` : `openTimelineDetail(${index})`}">
+                <div class="timeline-dot ${iconClass}"></div>
+                <div class="timeline-card-content">
+                    <span class="timeline-year">${item.year}</span>
+                    <span class="timeline-title">${item.title}</span>
+                    ${isProject ? '<span class="timeline-tag">PROJECT</span>' : ''}
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-
 
 function closeTimelineModal() {
     const modal = document.getElementById('timeline-modal');
@@ -34,9 +41,44 @@ function closeTimelineModal() {
     document.body.style.overflow = '';
 }
 
+// Open project from timeline
+function openProjectFromTimeline(index) {
+    const combinedTimeline = DataLoader.getCombinedTimeline();
+    const item = combinedTimeline[index];
+
+    if (item && item.type === 'project' && item.projectData) {
+        // Close timeline modal first
+        closeTimelineModal();
+
+        // Open project window
+        setTimeout(() => {
+            openProjectWindow({
+                name: item.projectData.title,
+                description: item.projectData.description,
+                timestamp: item.projectData.timeDisplay,
+                category: item.projectData.category,
+                content: item.projectData.content,
+                github: item.projectData.github,
+                demo: item.projectData.demo
+            });
+        }, 300);
+    }
+}
+
 function openTimelineDetail(index) {
-    const timeline = DataLoader.getTimelineData();
-    const data = timeline[index];
+    const combinedTimeline = DataLoader.getCombinedTimeline();
+    const data = combinedTimeline[index];
+
+    if (!data) {
+        console.error('Timeline data not found for index:', index);
+        return;
+    }
+
+    // If it's a project, open project window instead
+    if (data.type === 'project') {
+        openProjectFromTimeline(index);
+        return;
+    }
 
     document.getElementById('detail-title').textContent = data.title;
     document.getElementById('detail-period').textContent = data.period;
@@ -60,6 +102,16 @@ function openProjectWindow(projectData) {
     projectWindow.style.left = '50%';
     projectWindow.style.transform = 'translate(-50%, -50%)';
 
+    // Convert markdown content to HTML (simple conversion)
+    const contentHtml = projectData.content ?
+        projectData.content.split('\n').map(line => {
+            if (line.startsWith('## ')) return `<h3>${line.substring(3)}</h3>`;
+            if (line.startsWith('- ')) return `<p>• ${line.substring(2)}</p>`;
+            if (line.trim()) return `<p>${line}</p>`;
+            return '';
+        }).join('') :
+        '<p>No detailed content available.</p>';
+
     projectWindow.innerHTML = `
         <div class="project-window-header">
             <div class="project-window-title">${projectData.name}</div>
@@ -71,19 +123,14 @@ function openProjectWindow(projectData) {
         </div>
         <div class="project-content">
             <div class="project-meta">
-                <span class="project-timestamp">${projectData.timestamp || 'Lorem 2024'}</span>
+                <span class="project-timestamp">${projectData.timestamp || 'Recent'}</span>
                 <span>•</span>
-                <span>${projectData.category || 'Lorem Category'}</span>
+                <span>${projectData.category || 'Project'}</span>
             </div>
             <div class="project-article">
-                <h3>${projectData.name}</h3>
-                <p>${projectData.description}</p>
-                <h3>Lorem Ipsum Details</h3>
-                <p>${projectData.content || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}</p>
-                <h3>Technical Implementation</h3>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <h3>Results & Impact</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                ${contentHtml}
+                ${projectData.github ? `<p><a href="${projectData.github}" target="_blank" style="color: var(--accent);">View on GitHub →</a></p>` : ''}
+                ${projectData.demo ? `<p><a href="${projectData.demo}" target="_blank" style="color: var(--accent);">View Live Demo →</a></p>` : ''}
             </div>
         </div>
     `;
@@ -224,10 +271,16 @@ function makeDraggable(element) {
     }
 }
 
-// Replace setupProjectCards function
+// Auto-calculate project card rotations and z-index
 async function setupProjectCards() {
+    await DataLoader.loadData(); // Ensure data is loaded
     const projects = DataLoader.getProjectsSortedByTime();
     const stack = document.querySelector('.project-stack');
+
+    if (!stack) {
+        console.error('Project stack element not found');
+        return;
+    }
 
     // Clear existing cards
     stack.innerHTML = '';
@@ -238,6 +291,7 @@ async function setupProjectCards() {
         card.className = 'project-card';
         card.style.setProperty('--rotation', `${(index % 2 === 0 ? 1 : -1) * (15 - (index * 2))}deg`);
         card.style.setProperty('--index', index);
+        card.style.setProperty('--z-index', projects.length - index);
 
         card.innerHTML = `
             <span class="project-name">${project.title}</span>
@@ -260,24 +314,31 @@ async function setupProjectCards() {
         stack.appendChild(card);
     });
 
-    // Re-initialize hover animations
+    // Initialize hover animations
     initializeProjectCardAnimations();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize project card animations
+function initializeProjectCardAnimations() {
     const wrapper = document.querySelector('.project-stack-card.enlarged');
-    const stack = wrapper.querySelector('.project-stack');
+    const stack = wrapper?.querySelector('.project-stack');
+
+    if (!wrapper || !stack) {
+        console.error('Project stack wrapper not found');
+        return;
+    }
+
     const cards = Array.from(stack.querySelectorAll('.project-card'));
 
     // Fan‐out timings
     const SPREAD = 220;
     const INITIAL_SCALE_DURATION = 500;
     const CONTINUE_SCALE_DURATION = 300;
-    const CENTER_DELAY = 150;    // was 900
+    const CENTER_DELAY = 150;
     const CENTER_DURATION = 700;
 
     let activeCard = null;
-    let centeringCard = null;            // Track card that's moving to center
+    let centeringCard = null;
     let hoverTimers = new Map();
     let isStackHovered = false;
 
@@ -424,12 +485,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }, index * 30);
         });
     });
-});
+}
 
 // Initialize Section 2 Event Listeners
-function initializeSection2() {
+async function initializeSection2() {
     // Setup project cards
-    setupProjectCards();
+    await setupProjectCards();
 
     // Close modals on overlay click
     const modals = document.querySelectorAll('.modal-overlay');
@@ -574,6 +635,7 @@ window.section2Functions = {
     openTimelineDetail,
     closeTimelineDetail,
     openProjectWindow,
+    openProjectFromTimeline,
     toggleMinimize,
     closeProjectWindow,
     goToSection: function(sectionNum) {
@@ -582,3 +644,12 @@ window.section2Functions = {
         }
     }
 };
+
+// Make functions globally available
+window.openProjectFromTimeline = openProjectFromTimeline;
+window.openTimelineDetail = openTimelineDetail;
+window.closeTimelineModal = closeTimelineModal;
+window.closeTimelineDetail = closeTimelineDetail;
+window.openProjectWindow = openProjectWindow;
+window.toggleMinimize = toggleMinimize;
+window.closeProjectWindow = closeProjectWindow;

@@ -6,7 +6,9 @@
 let activeTagWindows = [];
 let tagWindowZIndex = 1200;
 
+// Create project window
 function createProjectWindow(category, projects) {
+    // Check if window already exists
     const existingWindow = document.getElementById(`project-window-${category}`);
     if (existingWindow) {
         existingWindow.style.zIndex = tagWindowZIndex++;
@@ -21,7 +23,7 @@ function createProjectWindow(category, projects) {
     projectWindow.style.left = '50%';
     projectWindow.style.transform = 'translate(-50%, -50%)';
 
-    const projectsHtml = projects.map(project => `
+    const projectsHtml = projects && projects.length > 0 ? projects.map(project => `
         <div class="tag-project-item">
             <h4>${project.title}</h4>
             <p>${project.description}</p>
@@ -34,8 +36,16 @@ function createProjectWindow(category, projects) {
                     View on GitHub
                 </a>
             ` : ''}
+            ${project.demo ? `
+                <a href="${project.demo}" target="_blank" class="project-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+                    </svg>
+                    View Demo
+                </a>
+            ` : ''}
         </div>
-    `).join('');
+    `).join('') : '<p style="color: var(--muted);">No projects found for this category.</p>';
 
     projectWindow.innerHTML = `
         <div class="tag-window-header">
@@ -53,6 +63,8 @@ function createProjectWindow(category, projects) {
 
     document.body.appendChild(projectWindow);
     activeTagWindows.push(projectWindow);
+
+    // Make window draggable
     makeTagWindowDraggable(projectWindow);
 }
 
@@ -117,32 +129,6 @@ function makeTagWindowDraggable(element) {
     }
 }
 
-function initializeSkillProjects() {
-    const projects = DataLoader.getProjects();
-
-    // Build category map
-    const categoryMap = {};
-    projects.forEach(project => {
-        [project.category, ...project.subcategories].forEach(cat => {
-            if (!categoryMap[cat]) categoryMap[cat] = [];
-            categoryMap[cat].push(project);
-        });
-    });
-
-    // Update tag click handlers
-    const tags = document.querySelectorAll('.skill-tags .tag');
-    tags.forEach(tag => {
-        tag.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const category = tag.getAttribute('data-project');
-            if (categoryMap[category]) {
-                createProjectWindow(category, categoryMap[category]);
-            }
-        });
-    });
-}
-
-
 // Initialize skill filtering
 function initializeSkillFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
@@ -168,16 +154,37 @@ function initializeSkillFilters() {
     });
 }
 
-// Initialize tag click handlers
-function initializeTagClicks() {
+// Initialize tag click handlers with dynamic data
+async function initializeTagClicks() {
+    await DataLoader.loadData(); // Ensure data is loaded
+    const projects = DataLoader.getProjects();
+
+    // Build category map
+    const categoryMap = {};
+    projects.forEach(project => {
+        // Add main category
+        if (!categoryMap[project.category]) categoryMap[project.category] = [];
+        categoryMap[project.category].push(project);
+
+        // Add subcategories
+        if (project.subcategories) {
+            project.subcategories.forEach(cat => {
+                if (!categoryMap[cat]) categoryMap[cat] = [];
+                categoryMap[cat].push(project);
+            });
+        }
+    });
+
     const tags = document.querySelectorAll('.skill-tags .tag');
 
     tags.forEach(tag => {
         tag.addEventListener('click', (e) => {
             e.stopPropagation();
-            const projectId = tag.getAttribute('data-project');
-            if (projectId) {
-                createProjectWindow(projectId);
+            const category = tag.getAttribute('data-project');
+            if (category && categoryMap[category]) {
+                createProjectWindow(category, categoryMap[category]);
+            } else {
+                console.warn(`No projects found for category: ${category}`);
             }
         });
     });
