@@ -116,9 +116,6 @@ function openProjectWindow(projectData) {
             <div class="project-hero">
                 <h1 class="project-title">${projectData.name}</h1>
                 <p class="project-description">${projectData.description}</p>
-                <div class="project-tags">
-                    ${tagsHTML}
-                </div>
                 <div class="project-meta">
                     <span class="project-timestamp">${projectData.timestamp || 'Lorem 2024'}</span>
                     <span>•</span>
