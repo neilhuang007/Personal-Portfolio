@@ -121,6 +121,13 @@ function openProjectWindow(projectData) {
                     <span>•</span>
                     <span>${projectData.category || 'Lorem Category'}</span>
                 </div>
+                ${projectData.tags ? `
+                    <div class="project-window-tags">
+                        ${projectData.tags.map(tag =>
+        `<span class="project-window-tag">${tag}</span>`
+    ).join('')}
+                    </div>
+                ` : ''}
             </div>
             <div class="project-article">
                 ${parseMarkdown(projectData.content)}
@@ -297,6 +304,11 @@ async function setupProjectCards() {
         card.innerHTML = `
             <span class="project-name">${project.title}</span>
             <span class="project-desc">${project.tech.slice(0, 2).join(' • ')}</span>
+            <div class="project-card-tags">
+                ${project.tags ? project.tags.slice(0, 3).map(tag =>
+            `<span class="project-card-tag">${tag}</span>`
+        ).join('') : ''}
+            </div>
         `;
 
         card.addEventListener('click', (e) => {
@@ -310,7 +322,7 @@ async function setupProjectCards() {
                 github: project.github,
                 demo: project.demo,
                 featured: project.featured,
-                tags: project.tags,
+                tags: project.subcategories,
             });
         });
 

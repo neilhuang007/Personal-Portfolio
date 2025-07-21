@@ -1254,8 +1254,8 @@ body.modal-open {
 
 .project-hero {
     border-bottom: 1px solid rgba(var(--accent-rgb), 0.2);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    padding-bottom: 1.15rem;
+    margin-bottom: 1.15rem;
 }
 
 .project-title {
@@ -1269,7 +1269,7 @@ body.modal-open {
 .project-description {
     font-size: 1.125rem;
     color: var(--fg);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
     line-height: 1.6;
     font-family: 'Inter', sans-serif;
 }
@@ -1420,19 +1420,71 @@ body.modal-open {
     z-index: -1;
 }
 
-/* Responsive adjustments */
+
+/* Project Card Tags */
+.project-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.project-card-tag {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.4rem;
+    background: rgba(var(--accent-rgb), 0.15);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    border-radius: 10px;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+/* Adjust project card height to accommodate tags */
+.project-card {
+    height: 130px; /* Increased from 110px */
+}
+
+/* Mobile adjustment */
 @media (max-width: 640px) {
-    .project-title {
-        font-size: 1.5rem;
+    .project-card {
+        height: 100px; /* Increased from 80px */
     }
 
-    .project-tags {
-        gap: 0.35rem;
+    .project-card-tag {
+        font-size: 0.55rem;
+        padding: 0.1rem 0.3rem;
     }
+}
 
-    .project-tag {
-        padding: 0.25rem 0.6rem;
-        font-size: 0.7rem;
-    }
+/* Project Window Tags */
+.project-window-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.project-window-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(var(--accent-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    border-radius: 20px;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+}
+
+.project-window-tag:hover {
+    background: rgba(var(--accent-rgb), 0.2);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+}
+
 
 
