@@ -1,3 +1,32 @@
+/* Mobile Detection and Phone Blocker */
+function isMobileDevice() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+    const isSmallScreen = window.innerWidth <= 768;
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
+    return isMobile || (isSmallScreen && isTouchDevice);
+}
+
+function showPhoneBlocker() {
+    const phoneBlocker = document.getElementById('phoneBlocker');
+    if (phoneBlocker) {
+        phoneBlocker.classList.add('active');
+    }
+}
+
+function checkForMobileAndBlock() {
+    if (isMobileDevice()) {
+        showPhoneBlocker();
+    }
+}
+
+// Check immediately when script loads
+checkForMobileAndBlock();
+
+// Also check on window resize in case orientation changes
+window.addEventListener('resize', checkForMobileAndBlock);
+
 /* Typewriter for Resume Code */
 const codeEl = document.getElementById('resume-code');
 let isTyping = true;
