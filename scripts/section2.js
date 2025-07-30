@@ -294,7 +294,7 @@ async function setupProjectCards() {
     stack.innerHTML = '';
 
     // Create cards from data
-    projects.slice(0, 6).forEach((project, index) => {
+    projects.forEach((project, index) => {
         const card = document.createElement('div');
         card.className = 'project-card';
         card.style.setProperty('--rotation', `${(index % 2 === 0 ? 1 : -1) * (15 - (index * 2))}deg`);
@@ -305,7 +305,7 @@ async function setupProjectCards() {
             <span class="project-name">${project.title}</span>
             <span class="project-desc">${project.tech.slice(0, 2).join(' • ')}</span>
             <div class="project-card-tags">
-                ${project.tags ? project.tags.slice(0, 3).map(tag =>
+                ${project.subcategories ? project.subcategories.slice(0, 3).map(tag =>
             `<span class="project-card-tag">${tag}</span>`
         ).join('') : ''}
             </div>
