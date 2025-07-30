@@ -1,24 +1,19 @@
 {
   "personal": {
-    "name": "Neil (Gezhi) Huang",
-    "age": 15,
-    "location": "Shenzhen, China → USA",
-    "email": "neil@example.com",
+    "name": "Neil Huang",
+    "age": "Full\u2011stack developer and security researcher (6+ years experience)",
+    "location": "Remote (USA/China)",
+    "email": "Contact via GitHub",
     "github": "https://github.com/neilhuang"
   },
   "education": {
-    "current": {
-      "school": "Tsinglan School",
-      "gpa": "3.94",
-      "period": "2021-2026"
-    },
-    "future": {
-      "school": "The Hill School",
-      "startDate": "Fall 2026"
-    },
     "summer": [
       {
-        "program": "Stanford Pre-Collegiate AI/ML",
+        "program": "Self\u2011Directed Open Source & Security Research",
+        "date": "2019\u2011Present"
+      },
+      {
+        "program": "Stanford Pre\u2011Collegiate AI/ML",
         "date": "2024"
       },
       {
@@ -29,26 +24,66 @@
   },
   "skills": {
     "languages": [
-      {"name": "Python", "level": "Advanced", "years": 6, "proficiency": 95},
-      {"name": "Java", "level": "Advanced", "years": 5, "proficiency": 90},
-      {"name": "JavaScript", "level": "Advanced", "years": 4, "proficiency": 85},
-      {"name": "C++", "level": "Intermediate", "years": 3, "proficiency": 75}
+      {
+        "name": "Python",
+        "level": "Advanced",
+        "years": 6,
+        "proficiency": 95
+      },
+      {
+        "name": "Java",
+        "level": "Advanced",
+        "years": 5,
+        "proficiency": 90
+      },
+      {
+        "name": "JavaScript",
+        "level": "Advanced",
+        "years": 4,
+        "proficiency": 85
+      },
+      {
+        "name": "C++",
+        "level": "Intermediate",
+        "years": 3,
+        "proficiency": 75
+      }
     ],
     "experience": "6 years, 15+ hours/week",
-    "specialties": ["Machine Learning", "AI Research", "Full-Stack Development"]
+    "specialties": [
+      "Machine Learning",
+      "AI Research",
+      "Full-Stack Development"
+    ]
   },
   "achievements": {
-    "debate": ["National Ranking #6", "Harvard NSDA Octafinalist"],
-    "coding": ["USACO Gold", "OUCC Merit Award", "GitHub Arctic"],
-    "athletics": ["Fencing Captain", "City Top 8"],
-    "arts": ["Voice of Tsinglan 1st Prize"],
+    "debate": [
+      "National Ranking #6",
+      "Harvard NSDA Octafinalist"
+    ],
+    "coding": [
+      "USACO Gold",
+      "OUCC Merit Award",
+      "GitHub Arctic"
+    ],
+    "athletics": [
+      "Fencing Captain",
+      "City #8"
+    ],
+    "arts": [
+      "choir",
+      "American history",
+      "micro expressions",
+      "psychology",
+      "art history"
+    ],
     "service": "300+ volunteer hours"
   },
   "stats": {
-    "linesOfCode": 700832,
-    "githubCommits": 547,
-    "languagesKnown": 11,
-    "projectsCompleted": 35
+    "linesOfCode": 900000,
+    "githubCommits": 700,
+    "languagesKnown": 15,
+    "projectsCompleted": 37
   },
   "timeline": [
     {
@@ -59,15 +94,27 @@
     },
     {
       "year": "2021",
-      "title": "Entered Tsinglan School",
+      "title": "Entered github organization",
       "period": "September 2021",
-      "description": "Started middle school at Tsinglan, joining debate team and coding club"
+      "description": "Started working with other developers on reverse engineering projects"
     },
     {
       "year": "2024",
       "title": "ML Research with Georgia Tech",
       "period": "June 2024 - Present",
       "description": "Began research collaboration on VPN traffic classification using machine learning"
+    },
+    {
+      "year": "2023",
+      "title": "Joined Haedus Industries & YapeTeam",
+      "period": "2023 - Present",
+      "description": "Contributed to UI frameworks (Skija UI Project) and Minecraft modding clients (YolBi suite), enhancing performance and introducing cross\u2011platform capabilities."
+    },
+    {
+      "year": "2025",
+      "title": "Expanded Open Source Portfolio",
+      "period": "2024 - 2025",
+      "description": "Developed and maintained over 45 repositories across security research, machine learning, and game modding."
     }
   ]
 }
