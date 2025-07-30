@@ -2,27 +2,31 @@
 const DataLoader = (function() {
     let projectsData = null;
     let resumeData = null;
+    let techArsenalData = null;
     let loaded = false;
 
     // Load JSON data
     async function loadData() {
-        if (loaded) return { projects: projectsData, resume: resumeData };
+        if (loaded) return { projects: projectsData, resume: resumeData, techArsenal: techArsenalData };
 
         try {
-            const [projectsResponse, resumeResponse] = await Promise.all([
+            const [projectsResponse, resumeResponse, techArsenalResponse] = await Promise.all([
                 fetch('./info/projects.json'),
-                fetch('./info/resume.json')
+                fetch('./info/resume.json'),
+                fetch('./info/tech-arsenal.json')
             ]);
 
             const projects = await projectsResponse.json();
             const resume = await resumeResponse.json();
+            const techArsenal = await techArsenalResponse.json();
 
             projectsData = projects;
             resumeData = resume;
+            techArsenalData = techArsenal;
             loaded = true;
 
-            console.log('Data loaded successfully:', { projects, resume });
-            return { projects: projectsData, resume: resumeData };
+            console.log('Data loaded successfully:', { projects, resume, techArsenal });
+            return { projects: projectsData, resume: resumeData, techArsenal: techArsenalData };
         } catch (error) {
             console.error('Error loading data:', error);
             // Return default data structure if loading fails
@@ -35,7 +39,8 @@ const DataLoader = (function() {
                 timeline: [],
                 achievements: {}
             };
-            return { projects: projectsData, resume: resumeData };
+            techArsenalData = { skills: [] };
+            return { projects: projectsData, resume: resumeData, techArsenal: techArsenalData };
         }
     }
 
@@ -103,6 +108,24 @@ const DataLoader = (function() {
         return resumeData || {};
     }
 
+    // Get top 4 languages from tech arsenal data
+    function getTopLanguages(count = 4) {
+        if (!techArsenalData || !techArsenalData.skills) return [];
+        
+        // Filter languages and sort by progress/proficiency
+        const languages = techArsenalData.skills
+            .filter(skill => skill.category === 'languages')
+            .sort((a, b) => b.progress - a.progress)
+            .slice(0, count);
+            
+        return languages.map(lang => ({
+            name: lang.name,
+            level: lang.level,
+            progress: lang.progress,
+            proficiency: lang.progress // Use progress as proficiency for consistency
+        }));
+    }
+
     // Check if data is loaded
     function isLoaded() {
         return loaded;
@@ -117,6 +140,7 @@ const DataLoader = (function() {
         getProjectsSortedByTime,
         getProjects,
         getResume,
+        getTopLanguages,
         isLoaded
     };
 })();

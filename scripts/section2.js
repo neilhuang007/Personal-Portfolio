@@ -303,12 +303,7 @@ async function setupProjectCards() {
 
         card.innerHTML = `
             <span class="project-name">${project.title}</span>
-            <span class="project-desc">${project.tech.slice(0, 2).join(' • ')}</span>
-            <div class="project-card-tags">
-                ${project.subcategories ? project.subcategories.slice(0, 3).map(tag =>
-            `<span class="project-card-tag">${tag}</span>`
-        ).join('') : ''}
-            </div>
+            <span class="project-desc">${project.tech.join(' • ')}</span>
         `;
 
         card.addEventListener('click', (e) => {
@@ -502,10 +497,44 @@ function initializeProjectCardAnimations() {
     });
 }
 
+// Populate language grid with top 4 languages
+async function populateLanguageGrid() {
+    const languageGrid = document.querySelector('.language-grid');
+    if (!languageGrid) return;
+
+    try {
+        // Get top 4 languages from tech arsenal
+        const topLanguages = DataLoader.getTopLanguages(4);
+        
+        if (topLanguages.length === 0) return;
+
+        // Clear existing content
+        languageGrid.innerHTML = '';
+
+        // Create language items
+        topLanguages.forEach(language => {
+            const languageItem = document.createElement('div');
+            languageItem.className = 'language-item';
+            
+            languageItem.innerHTML = `
+                <span class="lang-name">${language.name}</span>
+                <div class="lang-bar" style="--progress: ${language.progress}%;"></div>
+            `;
+            
+            languageGrid.appendChild(languageItem);
+        });
+    } catch (error) {
+        console.error('Error populating language grid:', error);
+    }
+}
+
 // Initialize Section 2 Event Listeners
 async function initializeSection2() {
     // Setup project cards
     await setupProjectCards();
+    
+    // Populate language grid
+    await populateLanguageGrid();
 
     // Close modals on overlay click
     const modals = document.querySelectorAll('.modal-overlay');

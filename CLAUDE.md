@@ -40,6 +40,11 @@ All dynamic content is loaded from JSON files using `dataloader.js`:
 - Resume data populates the typewriter effect and stats
 - Projects data fills the project cards
 - Tech arsenal data generates the skills grid
+- **DataLoader module** provides centralized data access with methods like:
+  - `loadData()` - fetches all JSON files
+  - `getProjects()`, `getFeaturedProjects()` - project filtering
+  - `getCombinedTimeline()` - merges resume timeline with project timeline
+  - `getProjectsByCategory()` - filters by category/subcategory
 
 ### Theme System
 - CSS custom properties for theme variables
@@ -57,8 +62,11 @@ All dynamic content is loaded from JSON files using `dataloader.js`:
 Since this is a vanilla HTML/CSS/JS project with no build tools:
 
 ```bash
-# Open in browser directly
-# Use Live Server extension in VS Code or similar
+# Serve locally using Live Server extension in VS Code
+# Or use Python's built-in server:
+python -m http.server 8000
+# Or Node.js serve:
+npx serve .
 
 # No build/compile steps required
 # No npm/yarn dependencies
@@ -83,7 +91,24 @@ Since this is a vanilla HTML/CSS/JS project with no build tools:
 - Taglines array switches to shorter versions on mobile
 - Grid layouts adjust automatically
 
+## Project Data Structure
+
+### JSON Schema Requirements
+- **projects.json**: Array of project objects with required fields:
+  - `id`, `title`, `category`, `time`, `timeDisplay`, `description`
+  - Optional: `featured`, `subcategories`, `tech`, `accuracy`
+- **resume.json**: Object with sections:
+  - `personal`, `education`, `skills`, `stats`, `timeline`, `achievements`
+- **tech-arsenal.json**: Categorized technical skills for Section 3
+
+### Navigation System
+- `goToSection(sectionNumber)` handles smooth scrolling between sections
+- Section indicators and back buttons provide navigation controls
+- Each section loads independently via deferred scripts
+
 ## Notes
 - Some personal data in resume.json is hashed (age, email)
 - Project descriptions support markdown formatting
 - Featured projects display differently than regular projects
+- Three.js dependency loaded from CDN for background animations
+- All scripts use module pattern or immediately invoked functions to avoid global scope pollution
