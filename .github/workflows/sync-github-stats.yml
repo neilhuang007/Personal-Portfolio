@@ -33,30 +33,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Log environment info
-        run: |
-          echo "========================================="
-          echo "🔧 Environment Information"
-          echo "========================================="
-          echo "Node version: $(node --version)"
-          echo "NPM version: $(npm --version)"
-          echo "Working directory: $(pwd)"
-          echo "Date: $(date -u)"
-          echo "========================================="
-
-      - name: Verify token permissions
-        env:
-          GITHUB_TOKEN: ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}
-        run: |
-          echo "========================================="
-          echo "🔑 Verifying GitHub Token"
-          echo "========================================="
-          RATE_INFO=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/rate_limit)
-          echo "Rate limit: $(echo $RATE_INFO | jq '.rate.limit')"
-          echo "Remaining: $(echo $RATE_INFO | jq '.rate.remaining')"
-          echo "Reset at: $(date -d @$(echo $RATE_INFO | jq '.rate.reset') 2>/dev/null || echo 'N/A')"
-          echo "========================================="
-
       - name: Run GitHub sync script
         id: sync
         env:
