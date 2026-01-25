@@ -33,34 +33,170 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Run GitHub sync script
+      - name: Log environment info
+        run: |
+          echo "========================================="
+          echo "🔧 Environment Information"
+          echo "========================================="
+          echo "Node version: $(node --version)"
+          echo "NPM version: $(npm --version)"
+          echo "Working directory: $(pwd)"
+          echo "Date: $(date -u)"
+          echo "========================================="
+
+      - name: Verify token permissions
         env:
           GITHUB_TOKEN: ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}
-        run: node scripts/github-sync.js
+        run: |
+          echo "========================================="
+          echo "🔑 Verifying GitHub Token"
+          echo "========================================="
+          RATE_INFO=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/rate_limit)
+          echo "Rate limit: $(echo $RATE_INFO | jq '.rate.limit')"
+          echo "Remaining: $(echo $RATE_INFO | jq '.rate.remaining')"
+          echo "Reset at: $(date -d @$(echo $RATE_INFO | jq '.rate.reset') 2>/dev/null || echo 'N/A')"
+          echo "========================================="
+
+      - name: Run GitHub sync script
+        id: sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}
+        run: |
+          echo "========================================="
+          echo "🔄 Starting GitHub Sync"
+          echo "========================================="
+          node scripts/github-sync.js 2>&1 | tee sync_output.log
+          echo "========================================="
+          echo "✅ Sync script completed"
+          echo "========================================="
+
+      - name: Log sync results
+        run: |
+          echo "========================================="
+          echo "📊 Sync Results"
+          echo "========================================="
+          if [ -f info/github-stats.json ]; then
+            echo "GitHub Stats JSON exists"
+            echo ""
+            echo "📁 Repository Statistics:"
+            echo "  Total Repos:     $(jq '.stats.totalRepos' info/github-stats.json)"
+            echo "  Public Repos:    $(jq '.repositories | map(select(.isPrivate == false)) | length' info/github-stats.json)"
+            echo "  Private Repos:   $(jq '.repositories | map(select(.isPrivate == true)) | length' info/github-stats.json)"
+            echo ""
+            echo "📝 Code Statistics:"
+            echo "  Total Commits:   $(jq '.stats.totalCommits' info/github-stats.json)"
+            echo "  Total Lines:     $(jq '.stats.totalLines' info/github-stats.json)"
+            echo "  Total Bytes:     $(jq '.stats.totalBytes' info/github-stats.json)"
+            echo ""
+            echo "🔤 Top 10 Languages:"
+            jq -r '.languages[:10] | .[] | "  \(.name): \(.percentage)% (\(.lines) lines)"' info/github-stats.json
+            echo ""
+            echo "⏰ Last Synced: $(jq -r '._syncedAt' info/github-stats.json)"
+          else
+            echo "❌ github-stats.json not found!"
+            exit 1
+          fi
+          echo "========================================="
+
+      - name: Log projects.json updates
+        run: |
+          echo "========================================="
+          echo "📋 Projects JSON Status"
+          echo "========================================="
+          if [ -f info/projects.json ]; then
+            echo "Total projects: $(jq '.projects | length' info/projects.json)"
+            echo "Featured projects: $(jq '.projects | map(select(.featured == true)) | length' info/projects.json)"
+            echo ""
+            echo "Categories:"
+            jq -r '.categories | to_entries[] | "  \(.key): \(.value.count) projects"' info/projects.json
+          fi
+          echo "========================================="
+
+      - name: Log resume.json updates
+        run: |
+          echo "========================================="
+          echo "📄 Resume JSON Status"
+          echo "========================================="
+          if [ -f info/resume.json ]; then
+            echo "Stats section:"
+            jq '.stats' info/resume.json
+          fi
+          echo "========================================="
 
       - name: Check for changes
         id: changes
         run: |
-          git diff --quiet info/ || echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "========================================="
+          echo "🔍 Checking for Changes"
+          echo "========================================="
+          git status
+          echo ""
+          if git diff --quiet info/; then
+            echo "No changes detected in info/"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected:"
+            git diff --stat info/
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+          echo "========================================="
 
       - name: Commit and push changes
         if: steps.changes.outputs.has_changes == 'true'
         run: |
+          echo "========================================="
+          echo "📤 Committing and Pushing Changes"
+          echo "========================================="
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add info/
-          git commit -m "chore: sync GitHub stats [automated]"
-          git push
 
-      - name: Summary
+          # Create detailed commit message
+          REPOS=$(jq '.stats.totalRepos' info/github-stats.json)
+          COMMITS=$(jq '.stats.totalCommits' info/github-stats.json)
+          LINES=$(jq '.stats.totalLines' info/github-stats.json)
+
+          git commit -m "chore: sync GitHub stats [automated]
+
+Stats updated:
+- Repositories: $REPOS
+- Total Commits: $COMMITS
+- Lines of Code: $LINES
+
+Synced at: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+
+          git push
+          echo "✅ Changes pushed successfully"
+          echo "========================================="
+
+      - name: Generate job summary
         run: |
-          echo "## Sync Complete" >> $GITHUB_SUMMARY
+          echo "# 📊 GitHub Stats Sync Report" >> $GITHUB_SUMMARY
           echo "" >> $GITHUB_SUMMARY
+          echo "**Sync completed at:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")" >> $GITHUB_SUMMARY
+          echo "" >> $GITHUB_SUMMARY
+
           if [ -f info/github-stats.json ]; then
-            REPOS=$(jq '.stats.totalRepos' info/github-stats.json)
-            COMMITS=$(jq '.stats.totalCommits' info/github-stats.json)
-            LINES=$(jq '.stats.totalLines' info/github-stats.json)
-            echo "- **Repositories:** $REPOS" >> $GITHUB_SUMMARY
-            echo "- **Total Commits:** $COMMITS" >> $GITHUB_SUMMARY
-            echo "- **Lines of Code:** $LINES" >> $GITHUB_SUMMARY
+            echo "## 📁 Repository Statistics" >> $GITHUB_SUMMARY
+            echo "| Metric | Value |" >> $GITHUB_SUMMARY
+            echo "|--------|-------|" >> $GITHUB_SUMMARY
+            echo "| Total Repositories | $(jq '.stats.totalRepos' info/github-stats.json) |" >> $GITHUB_SUMMARY
+            echo "| Total Commits | $(jq '.stats.totalCommits' info/github-stats.json) |" >> $GITHUB_SUMMARY
+            echo "| Lines of Code | $(jq '.stats.totalLines' info/github-stats.json) |" >> $GITHUB_SUMMARY
+            echo "" >> $GITHUB_SUMMARY
+
+            echo "## 🔤 Language Breakdown" >> $GITHUB_SUMMARY
+            echo "| Language | Percentage | Lines |" >> $GITHUB_SUMMARY
+            echo "|----------|------------|-------|" >> $GITHUB_SUMMARY
+            jq -r '.languages[:8] | .[] | "| \(.name) | \(.percentage)% | \(.lines) |"' info/github-stats.json >> $GITHUB_SUMMARY
+            echo "" >> $GITHUB_SUMMARY
+
+            echo "## 🔄 Changes" >> $GITHUB_SUMMARY
+            if [ "${{ steps.changes.outputs.has_changes }}" == "true" ]; then
+              echo "✅ Changes were committed and pushed" >> $GITHUB_SUMMARY
+            else
+              echo "ℹ️ No changes detected - data is up to date" >> $GITHUB_SUMMARY
+            fi
+          else
+            echo "❌ Sync failed - github-stats.json not generated" >> $GITHUB_SUMMARY
           fi
