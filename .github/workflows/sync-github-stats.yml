@@ -8,9 +8,9 @@ on:
       - 'scripts/github-sync.js'
       - '.github/workflows/sync-github-stats.yml'
 
-  # Run daily at midnight UTC
+  # Run every 4 days at midnight UTC
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 */4 * *'
 
   # Allow manual trigger
   workflow_dispatch:
