@@ -1,0 +1,66 @@
+name: Sync GitHub Stats
+
+on:
+  # Run on push to master
+  push:
+    branches: [master]
+    paths:
+      - 'scripts/github-sync.js'
+      - '.github/workflows/sync-github-stats.yml'
+
+  # Run daily at midnight UTC
+  schedule:
+    - cron: '0 0 * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run GitHub sync script
+        env:
+          GITHUB_TOKEN: ${{ secrets.PORTFOLIO_GITHUB_TOKEN }}
+        run: node scripts/github-sync.js
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet info/ || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add info/
+          git commit -m "chore: sync GitHub stats [automated]"
+          git push
+
+      - name: Summary
+        run: |
+          echo "## Sync Complete" >> $GITHUB_SUMMARY
+          echo "" >> $GITHUB_SUMMARY
+          if [ -f info/github-stats.json ]; then
+            REPOS=$(jq '.stats.totalRepos' info/github-stats.json)
+            COMMITS=$(jq '.stats.totalCommits' info/github-stats.json)
+            LINES=$(jq '.stats.totalLines' info/github-stats.json)
+            echo "- **Repositories:** $REPOS" >> $GITHUB_SUMMARY
+            echo "- **Total Commits:** $COMMITS" >> $GITHUB_SUMMARY
+            echo "- **Lines of Code:** $LINES" >> $GITHUB_SUMMARY
+          fi

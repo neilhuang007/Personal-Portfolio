@@ -3,6 +3,7 @@ const DataLoader = (function() {
     let projectsData = null;
     let resumeData = null;
     let techArsenalData = null;
+    let githubStatsData = null;
     let loaded = false;
 
     // Load JSON data
@@ -10,23 +11,26 @@ const DataLoader = (function() {
         if (loaded) return { projects: projectsData, resume: resumeData, techArsenal: techArsenalData };
 
         try {
-            const [projectsResponse, resumeResponse, techArsenalResponse] = await Promise.all([
+            const [projectsResponse, resumeResponse, techArsenalResponse, githubStatsResponse] = await Promise.all([
                 fetch('./info/projects.json'),
                 fetch('./info/resume.json'),
-                fetch('./info/tech-arsenal.json')
+                fetch('./info/tech-arsenal.json'),
+                fetch('./info/github-stats.json').catch(() => ({ ok: false }))
             ]);
 
             const projects = await projectsResponse.json();
             const resume = await resumeResponse.json();
             const techArsenal = await techArsenalResponse.json();
+            const githubStats = githubStatsResponse.ok ? await githubStatsResponse.json() : null;
 
             projectsData = projects;
             resumeData = resume;
             techArsenalData = techArsenal;
+            githubStatsData = githubStats;
             loaded = true;
 
-            console.log('Data loaded successfully:', { projects, resume, techArsenal });
-            return { projects: projectsData, resume: resumeData, techArsenal: techArsenalData };
+            console.log('Data loaded successfully:', { projects, resume, techArsenal, githubStats });
+            return { projects: projectsData, resume: resumeData, techArsenal: techArsenalData, githubStats: githubStatsData };
         } catch (error) {
             console.error('Error loading data:', error);
             // Return default data structure if loading fails
@@ -131,6 +135,35 @@ const DataLoader = (function() {
         return loaded;
     }
 
+    // Get GitHub stats (for AI access and detailed analytics)
+    function getGitHubStats() {
+        return githubStatsData || null;
+    }
+
+    // Get language breakdown from GitHub stats
+    function getLanguageBreakdown() {
+        if (!githubStatsData || !githubStatsData.languages) return [];
+        return githubStatsData.languages;
+    }
+
+    // Get repository list with full details
+    function getRepositories() {
+        if (!githubStatsData || !githubStatsData.repositories) return [];
+        return githubStatsData.repositories;
+    }
+
+    // Get total stats summary
+    function getStatsSummary() {
+        if (!githubStatsData) {
+            // Fallback to resume stats
+            return resumeData?.stats || {};
+        }
+        return {
+            ...githubStatsData.stats,
+            profile: githubStatsData.profile
+        };
+    }
+
     return {
         loadData,
         getProjectsByCategory,
@@ -141,7 +174,11 @@ const DataLoader = (function() {
         getProjects,
         getResume,
         getTopLanguages,
-        isLoaded
+        isLoaded,
+        getGitHubStats,
+        getLanguageBreakdown,
+        getRepositories,
+        getStatsSummary
     };
 })();
 
