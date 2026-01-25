@@ -1,5 +1,6 @@
 /* ============================================
-   SECTION 3 - TECHNICAL SKILLS
+   SECTION 3 - TECHNICAL ARSENAL
+   Modern Minimalistic Redesign
    ============================================ */
 
 /* Section Container */
@@ -53,7 +54,7 @@
     }
 }
 
-/* Section 2 Cascade Out Animations */
+/* Section 2 Cascade Out Animations - PRESERVED */
 #section2.scrolling-out .about-main-card {
     animation: cascadeOut 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
@@ -133,7 +134,7 @@
     z-index: 2;
 }
 
-/* Section Header with Glitch Effect */
+/* Section Header with Glitch Effect - PRESERVED */
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -201,78 +202,626 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Filter Navigation */
-.skill-filters {
+/* ============================================
+   NEON SIGN FILTER - Realistic Neon Effect
+   Based on CSS-Tricks neon text tutorial
+   ============================================ */
+
+/* Container - Black background like a wall */
+.skill-filters,
+.neon-filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding: 3rem 2rem 4rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: visible;
+}
+
+/* Neon Signs Row */
+.neon-signs-row {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
-.filter-btn {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(var(--accent-rgb), 0.2);
-    border-radius: 25px;
-    padding: 0.75rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Individual Sign Wrapper */
+.neon-sign-wrapper {
     position: relative;
-    overflow: hidden;
-    color: var(--fg);
-    font-family: 'JetBrains Mono', monospace;
+    display: inline-block;
+    background: #000000;
 }
 
-.filter-btn::before {
-    content: '';
+/* ============================================
+   NEON SIGN - The Button
+   ============================================ */
+.neon-sign {
+    position: relative;
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+
+    /* Inactive state - dim, off neon */
+    color: rgba(100, 100, 110, 0.6);
+
+    /* Neon tube border - rounded like real neon tubes */
+    border: 3px solid rgba(100, 100, 110, 0.3);
+    border-radius: 8px;
+
+    /* Subtle inner shadow for depth */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+    transition: all 0.1s ease;
+}
+
+.neon-sign-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover - slight brightening */
+.neon-sign:hover {
+    color: rgba(150, 150, 160, 0.8);
+    border-color: rgba(150, 150, 160, 0.4);
+}
+
+/* ============================================
+   ACTIVE NEON SIGN - Theme Accent Color
+   ============================================ */
+.neon-sign.active {
+    /* Use theme accent color */
+    color: var(--accent);
+
+    /* Reduced text shadow - subtle glow */
+    text-shadow:
+        0 0 2px #fff,
+        0 0 5px #fff,
+        0 0 10px var(--accent),
+        0 0 20px var(--accent),
+        0 0 30px var(--accent);
+
+    /* Neon tube border */
+    border-color: var(--accent);
+
+    /* Box shadow - both outside AND inside glow */
+    box-shadow:
+        /* Outer glow */
+        0 0 5px #fff,
+        0 0 10px var(--accent),
+        0 0 20px var(--accent),
+        0 0 30px rgba(var(--accent-rgb), 0.5),
+        /* Inner glow - fills inside */
+        inset 0 0 10px var(--accent),
+        inset 0 0 20px rgba(var(--accent-rgb), 0.5),
+        inset 0 0 30px rgba(var(--accent-rgb), 0.3);
+
+    /* Flicker animation */
+    animation: neonFlicker 1.5s infinite alternate;
+}
+
+/* Neon Flicker Animation - like real neon signs */
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5px #fff,
+            0 0 10px var(--accent),
+            0 0 20px var(--accent),
+            0 0 30px var(--accent);
+        box-shadow:
+            0 0 5px #fff,
+            0 0 10px var(--accent),
+            0 0 20px var(--accent),
+            0 0 30px rgba(var(--accent-rgb), 0.5),
+            inset 0 0 10px var(--accent),
+            inset 0 0 20px rgba(var(--accent-rgb), 0.5),
+            inset 0 0 30px rgba(var(--accent-rgb), 0.3);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Subtle pulsate for active signs */
+.neon-sign.active {
+    animation: neonFlicker 3s infinite alternate, neonPulsate 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulsate {
+    0% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 5px #fff,
+            0 0 10px var(--accent),
+            0 0 20px var(--accent);
+        box-shadow:
+            0 0 5px #fff,
+            0 0 10px var(--accent),
+            0 0 20px var(--accent),
+            inset 0 0 10px var(--accent),
+            inset 0 0 20px rgba(var(--accent-rgb), 0.4);
+    }
+    100% {
+        text-shadow:
+            0 0 3px #fff,
+            0 0 8px #fff,
+            0 0 15px var(--accent),
+            0 0 25px var(--accent);
+        box-shadow:
+            0 0 8px #fff,
+            0 0 15px var(--accent),
+            0 0 25px var(--accent),
+            inset 0 0 15px var(--accent),
+            inset 0 0 25px rgba(var(--accent-rgb), 0.5),
+            inset 0 0 35px rgba(var(--accent-rgb), 0.3);
+    }
+}
+
+/* ============================================
+   POWER RECEIVER - Socket attached to sign border
+   ============================================ */
+.power-receiver {
+    position: absolute;
+    bottom: -12px;
+    right: 12px;
+    z-index: 5;
+}
+
+/* Receiver body - like an electrical outlet */
+.receiver-body {
+    width: 20px;
+    height: 14px;
+    background: linear-gradient(
+        180deg,
+        #2a2a2a 0%,
+        #1a1a1a 50%,
+        #0a0a0a 100%
+    );
+    border-radius: 0 0 3px 3px;
+    border: 2px solid #333;
+    border-top: none;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        inset 0 1px 2px rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 3px;
+}
+
+/* Prong holes - where the plug goes in */
+.prong-hole {
+    width: 3px;
+    height: 8px;
+    background: #000;
+    border-radius: 1px;
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 1),
+        inset 0 0 1px rgba(50, 50, 50, 0.5);
+}
+
+/* Cable back indicator - shows when cable is connected */
+.cable-back {
+    display: none;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0;
-    height: 0;
-    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.3) 0%, transparent 70%);
     transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
+    width: 12px;
+    height: 10px;
+    background: linear-gradient(180deg, #555 0%, #333 50%, #222 100%);
+    border-radius: 2px;
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.8),
+        inset 0 0 2px rgba(255, 255, 255, 0.1);
+    pointer-events: none;
 }
 
-.filter-btn:hover::before {
-    width: 200%;
-    height: 200%;
+.cable-back::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 3px;
+    background: #333;
+    border-radius: 2px 2px 0 0;
 }
 
-.filter-btn:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.3);
+/* Show cable-back when receiver has cable */
+.power-receiver.has-cable .cable-back {
+    display: block;
 }
 
-.filter-btn.active {
-    background: rgba(var(--accent-rgb), 0.1);
-    border-color: var(--accent);
-    color: var(--accent);
+/* When sign is active - receiver border stays dark, only inner glow */
+.neon-sign.active + .power-receiver .prong-hole {
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 1),
+        inset 0 0 4px rgba(var(--accent-rgb), 0.6);
 }
 
-.filter-icon {
-    font-size: 1.2rem;
+/* When receiver is connected via cable - show filled prongs */
+.power-receiver.connected .prong-hole {
+    background: linear-gradient(180deg, #888 0%, #666 100%);
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 0.5),
+        inset 0 0 4px rgba(var(--accent-rgb), 0.6),
+        0 0 3px rgba(var(--accent-rgb), 0.4);
 }
 
-.filter-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+/* When plug is hovering near receiver */
+.power-receiver.hover .receiver-body {
+    border-color: #555;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(var(--accent-rgb), 0.3),
+        inset 0 1px 2px rgba(0, 0, 0, 0.9);
 }
 
-.filter-count {
-    background: rgba(var(--accent-rgb), 0.2);
-    padding: 0.2rem 0.5rem;
-    border-radius: 10px;
-    font-size: 0.75rem;
-    font-weight: 600;
+.power-receiver.hover .prong-hole {
+    box-shadow:
+        inset 0 1px 2px rgba(0, 0, 0, 1),
+        inset 0 0 6px rgba(var(--accent-rgb), 0.4);
+}
+
+/* ============================================
+   WALL OUTLET - Cable Origin Point
+   ============================================ */
+.cable-origin-outlet {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 8;
+}
+
+.outlet-plate {
+    width: 60px;
+    height: 80px;
+    background: linear-gradient(
+        135deg,
+        #2a2a2a 0%,
+        #1a1a1a 50%,
+        #0a0a0a 100%
+    );
+    border: 2px solid #333;
+    border-radius: 6px;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.8),
+        inset 0 1px 2px rgba(255, 255, 255, 0.05),
+        inset 0 -1px 2px rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.outlet-plate::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #444;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.outlet-plate::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #444;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+
+.outlet-socket {
+    width: 32px;
+    height: 40px;
+    background: #0a0a0a;
+    border-radius: 4px;
+    border: 1px solid #000;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    position: relative;
+    padding: 8px;
+}
+
+.outlet-hole {
+    width: 5px;
+    height: 10px;
+    background: #000;
+    border-radius: 2px;
+    box-shadow:
+        inset 0 2px 3px rgba(0, 0, 0, 1),
+        inset 0 0 2px rgba(var(--accent-rgb), 0.3);
+}
+
+.outlet-ground {
+    width: 8px;
+    height: 8px;
+    background: #000;
+    border-radius: 50%;
+    margin-top: 2px;
+    box-shadow:
+        inset 0 2px 3px rgba(0, 0, 0, 1),
+        inset 0 0 2px rgba(var(--accent-rgb), 0.3);
+}
+
+/* Power flowing effect on outlet */
+.cable-origin-outlet .outlet-hole,
+.cable-origin-outlet .outlet-ground {
+    animation: outletPower 2s ease-in-out infinite;
+}
+
+@keyframes outletPower {
+    0%, 100% {
+        box-shadow:
+            inset 0 2px 3px rgba(0, 0, 0, 1),
+            inset 0 0 2px rgba(var(--accent-rgb), 0.3);
+    }
+    50% {
+        box-shadow:
+            inset 0 2px 3px rgba(0, 0, 0, 1),
+            inset 0 0 6px rgba(var(--accent-rgb), 0.6),
+            0 0 8px rgba(var(--accent-rgb), 0.2);
+    }
+}
+
+/* ============================================
+   DRAGGABLE CABLE SYSTEM
+   ============================================ */
+
+/* SVG Cable Container - behind wall outlet */
+.cable-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    overflow: visible;
+}
+
+/* Cable Wire Path - Base dark stroke */
+.cable-path {
+    fill: none;
+    stroke: #2a2a2a;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.9));
+}
+
+/* Cable inner highlight - Animated twist effect */
+.cable-path-highlight {
+    fill: none;
+    stroke: #555;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 12 12;
+    animation: cableTwist 1s linear infinite;
+}
+
+/* Twist animation - creates spiral wrap illusion */
+@keyframes cableTwist {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: -24;
+    }
+}
+
+/* Draggable Plug */
+.cable-plug {
+    position: absolute;
+    width: 24px;
+    height: 20px;
+    cursor: grab;
+    z-index: 15;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.cable-plug:active {
+    cursor: grabbing;
+}
+
+.cable-plug.dragging {
+    cursor: grabbing;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.cable-plug.connected {
+    opacity: 0;
+    pointer-events: auto;
+}
+
+/* Plug body */
+.plug-body {
+    width: 100%;
+    height: 14px;
+    background: linear-gradient(
+        180deg,
+        #555 0%,
+        #333 40%,
+        #222 100%
+    );
+    border-radius: 3px;
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+/* Plug prongs */
+.plug-prong {
+    position: absolute;
+    bottom: -6px;
+    width: 3px;
+    height: 7px;
+    background: linear-gradient(180deg, #888 0%, #666 100%);
+    border-radius: 0 0 1px 1px;
+}
+
+.plug-prong.left {
+    left: 5px;
+}
+
+.plug-prong.right {
+    right: 5px;
+}
+
+/* Cable attachment point on plug */
+.plug-cable-attach {
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 6px;
+    background: #333;
+    border-radius: 3px 3px 0 0;
+}
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+@media (max-width: 768px) {
+    .skill-filters,
+    .neon-filter-container {
+        padding: 2rem 1rem 2.5rem;
+    }
+
+    .neon-signs-row {
+        gap: 1.5rem;
+    }
+
+    .neon-sign {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        border-width: 2px;
+    }
+
+    .power-receiver {
+        right: 8px;
+        bottom: -10px;
+    }
+
+    .receiver-body {
+        width: 18px;
+        height: 12px;
+    }
+
+    .prong-hole {
+        width: 2px;
+        height: 6px;
+    }
+
+    /* Wall outlet responsive */
+    .outlet-plate {
+        width: 50px;
+        height: 70px;
+    }
+
+    .outlet-socket {
+        width: 28px;
+        height: 36px;
+    }
+
+    .outlet-hole {
+        width: 4px;
+        height: 9px;
+    }
+
+    .outlet-ground {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+@media (max-width: 480px) {
+    .neon-signs-row {
+        gap: 1rem;
+    }
+
+    .neon-sign {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+    }
+
+    .power-receiver {
+        right: 6px;
+        bottom: -9px;
+    }
+
+    .receiver-body {
+        width: 16px;
+        height: 10px;
+        gap: 3px;
+    }
+
+    .prong-hole {
+        width: 2px;
+        height: 5px;
+    }
+
+    /* Wall outlet responsive */
+    .outlet-plate {
+        width: 45px;
+        height: 60px;
+    }
+
+    .outlet-socket {
+        width: 24px;
+        height: 32px;
+        gap: 3px;
+        padding: 6px;
+    }
+
+    .outlet-hole {
+        width: 3px;
+        height: 8px;
+    }
+
+    .outlet-ground {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* Accessibility - Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .neon-sign.active {
+        animation: none;
+    }
 }
 
 /* Skills Grid */
@@ -310,105 +859,118 @@
     color: var(--accent);
 }
 
-/* Skills Grid */
+.category-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Bento Grid Layout for Skills */
 .skill-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 140px;
+    gap: 1rem;
 }
 
-/* Individual Skill Card - MATCHING SECTION 2 GLASSMORPHISM */
+/* Bento Card Base */
 .skill-card {
     position: relative;
-    height: 280px;
-    max-width: 420px;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(var(--accent-rgb), 0.03);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    border: 1px solid rgba(var(--accent-rgb), 0.15);
     border-radius: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
 }
 
-.skill-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.2);
-}
-
-.skill-card.featured {
+/* Bento Card Sizes */
+.skill-card.featured-large {
     grid-column: span 2;
-    grid-row: span 1;
+    grid-row: span 2;
 }
 
-/* Card Inner Container - NO MORE FLIP */
+.skill-card.featured-wide {
+    grid-column: span 2;
+}
+
+.skill-card.featured-tall {
+    grid-row: span 2;
+}
+
+.skill-card.standard {
+    /* Default 1x1 size */
+}
+
+/* Bento Card Content - Main Section (shrinks on hover) */
 .skill-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* Front and Back with FADE animation */
-.skill-front,
-.skill-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 2rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    padding: 1.25rem;
+    flex: 1;
+    min-width: 0;
+    transition: flex 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skill-card:hover .skill-card-inner {
+    flex: 0.618;
+}
+
+.skill-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Bento Header - Icon and Name */
+.bento-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.bento-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+/* Bento Icon */
+.skill-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Front visible by default */
-.skill-front {
-    opacity: 1;
-    z-index: 2;
-}
-
-/* Back hidden by default */
-.skill-back {
-    opacity: 0;
-    z-index: 1;
-}
-
-/* Hover states - FADE TRANSITION */
-.skill-card:hover .skill-front {
-    opacity: 0;
-    z-index: 1;
-}
-
-.skill-card:hover .skill-back {
-    opacity: 1;
-    z-index: 2;
-}
-
-/* REMOVE ALL GLOW EFFECTS */
-.skill-glow {
-    display: none;
-}
-
-/* Remove pseudo-element glows */
-.skill-card::before,
-.skill-card::after {
-    display: none;
-}
-
-/* Skill Icon */
-.skill-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px rgba(var(--accent-rgb), 0.3));
-    animation: float 3s ease-in-out infinite;
+    background: rgba(var(--accent-rgb), 0.1);
+    border-radius: 10px;
+    color: var(--accent);
+    font-size: 1.5rem;
+    flex-shrink: 0;
 }
 
 .skill-icon svg {
-    width: 48px;
-    height: 48px;
+    width: 24px;
+    height: 24px;
+}
+
+.skill-card.featured-large .skill-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 2rem;
+}
+
+.skill-card.featured-large .skill-icon svg {
+    width: 32px;
+    height: 32px;
 }
 
 @keyframes float {
@@ -417,25 +979,59 @@
 }
 
 .skill-name {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
     color: var(--fg);
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .skill-level {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     color: var(--accent);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 1rem;
+}
+
+/* Meta row with level and experience */
+.skill-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.skill-exp {
+    font-size: 0.7rem;
+    color: var(--muted);
+}
+
+.skill-exp::before {
+    content: '•';
+    margin-right: 0.5rem;
+}
+
+/* Icon placeholder for skills without SVG */
+.icon-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(var(--accent-rgb), 0.15);
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .skill-meter {
     width: 100%;
-    height: 6px;
+    max-width: 140px;
+    height: 4px;
     background: rgba(var(--accent-rgb), 0.1);
-    border-radius: 3px;
+    border-radius: 2px;
     overflow: hidden;
     position: relative;
 }
@@ -444,7 +1040,7 @@
     height: 100%;
     width: var(--progress);
     background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-    border-radius: 3px;
+    border-radius: 2px;
     position: relative;
     animation: progressLoad 1s ease-out forwards;
 }
@@ -462,10 +1058,10 @@
     bottom: 0;
     right: 0;
     background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
     );
     animation: shimmer 2s infinite;
 }
@@ -475,285 +1071,286 @@
     100% { transform: translateX(100%); }
 }
 
+/* Bento Meta Footer */
+.bento-meta {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bento-experience {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+.bento-progress {
+    height: 3px;
+    background: rgba(var(--accent-rgb), 0.1);
+    border-radius: 999px;
+    overflow: hidden;
+    width: 60px;
+}
+
+.bento-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 999px;
+}
+
+/* Expansion Panel - Inside card, grows on hover */
+.skill-expansion {
+    flex: 0;
+    width: 0;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-left: none;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: flex 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--accent-rgb), 0.3) transparent;
+}
+
+.skill-expansion::-webkit-scrollbar {
+    width: 3px;
+}
+
+.skill-expansion::-webkit-scrollbar-thumb {
+    background: rgba(var(--accent-rgb), 0.3);
+    border-radius: 3px;
+}
+
+.skill-card:hover .skill-expansion {
+    flex: 0.382;
+    opacity: 1;
+    padding: 0.75rem;
+    border-left: 1px solid rgba(var(--accent-rgb), 0.2);
+}
+
+.skill-card:hover {
+    z-index: 10;
+    border-color: var(--accent);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 15px rgba(var(--accent-rgb), 0.15);
+    transform: translateY(-2px);
+}
+
+/* Expansion Content */
+.expansion-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.expansion-header {
+    font-size: 0.55rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: 'JetBrains Mono', monospace;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 0.25rem;
+}
+
+.expansion-header:first-child {
+    margin-top: 0;
+}
+
 /* Skill Stats */
 .skill-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-    width: 100%;
+    display: flex;
+    gap: 0.75rem;
 }
 
 .stat-item {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
 .stat-label {
-    display: block;
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     color: var(--muted);
-    margin-bottom: 0.25rem;
+    text-transform: uppercase;
 }
 
 .stat-value {
-    display: block;
-    font-size: 1.2rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
 }
 
 /* Skill Tags */
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-    width: 100%;
+    gap: 0.25rem;
+    max-height: 60px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.skill-tags::-webkit-scrollbar {
+    display: none;
 }
 
 .skill-tags .tag {
-    background: rgba(var(--accent-rgb), 0.05);
-    border: 1px solid rgba(var(--accent-rgb), 0.2);
-    padding: 0.35rem 0.85rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    transition: all 0.2s ease;
+    background: rgba(var(--accent-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-rgb), 0.25);
+    padding: 0.15rem 0.35rem;
+    border-radius: 3px;
+    font-size: 0.5rem;
+    color: var(--fg);
+    font-family: 'JetBrains Mono', monospace;
     cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .skill-tags .tag:hover {
-    background: rgba(var(--accent-rgb), 0.1);
-    border-color: rgba(var(--accent-rgb), 0.4);
-    transform: translateY(-2px);
+    background: rgba(var(--accent-rgb), 0.2);
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
+/* Hide expansion on mobile/tablet */
 @media (max-width: 1024px) {
-    .skill-cards {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
-        justify-content: center; /* Center on smaller screens */
+    .skill-expansion {
+        display: none !important;
     }
 
-    .skill-card {
-        height: 260px;
-        max-width: 280px;
+    .skill-card:hover .skill-card-inner {
+        flex: 1;
     }
 
-    .skill-card.featured {
-        grid-column: span 1;
-        max-width: 280px;
+    .skill-card:hover {
+        border-radius: 16px;
     }
 }
 
-@media (max-width: 640px) {
-    .skill-cards {
-        grid-template-columns: 1fr;
-        justify-content: stretch; /* Full width on mobile */
-    }
-
-    .skill-card {
-        height: 240px;
-        max-width: 100%;
-    }
-
-    .skill-card.featured {
-        max-width: 100%;
-    }
-}
-
-/* Skill Front Side */
-.skill-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 20px rgba(var(--accent-rgb), 0.5));
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.skill-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--fg);
-}
-
-.skill-level {
-    font-size: 0.875rem;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 1rem;
-}
-
-.skill-meter {
-    width: 100%;
-    height: 6px;
-    background: rgba(var(--accent-rgb), 0.1);
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-}
-
-.skill-progress {
-    height: 100%;
-    width: var(--progress);
-    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-    border-radius: 3px;
-    position: relative;
-    animation: progressLoad 1s ease-out forwards;
-}
-
-@keyframes progressLoad {
-    0% { width: 0; }
-    100% { width: var(--progress); }
-}
-
-.skill-progress::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.3),
-            transparent
-    );
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-/* Skill Back Side */
-.skill-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    width: 100%;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-label {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-bottom: 0.25rem;
-}
-
-.stat-value {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--accent);
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
-}
-
-.tag {
-    background: rgba(var(--accent-rgb), 0.1);
+/* Tag Project Windows - Updated to match new design */
+.tag-project-window {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(var(--accent-rgb), 0.3);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+    border-radius: 16px;
+    width: 500px;
+    max-width: 90vw;
+    max-height: 70vh;
+    z-index: 1200;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.tag-project-window.active {
+    display: flex;
+}
+
+.tag-window-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.2);
+    cursor: move;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.tag-window-title {
+    flex: 1;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tag-window-content {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.tag-window-desc {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.tag-projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tag-project-item {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.tag-project-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(var(--accent-rgb), 0.3);
+    box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.1);
+}
+
+.tag-project-item h4 {
+    color: var(--fg);
+    margin-bottom: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.tag-project-item p {
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.project-tech {
+    color: var(--accent);
     font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 0.75rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.875rem;
     transition: all 0.2s ease;
 }
 
-.tag:hover {
-    background: rgba(var(--accent-rgb), 0.2);
-    transform: translateY(-2px);
+.project-link:hover {
+    transform: translateX(4px);
+    text-decoration: underline;
 }
 
-/* Skill Glow Effect */
-.skill-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(var(--accent-rgb), 0.2) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+.project-link svg {
+    width: 16px;
+    height: 16px;
 }
 
-.skill-card:hover .skill-glow {
-    opacity: 1;
-}
-
-/* Code Rain Background */
-.code-rain-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.1;
-    pointer-events: none;
-}
-
-#codeRain {
-    width: 100%;
-    height: 100%;
-}
-
-/* Scroll Indicator for Section 2 */
-.section2-scroll {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    background: transparent;
-    border: 1px solid var(--accent);
-    border-radius: 0;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.section2-scroll.visible {
-    opacity: 1;
-    visibility: visible;
-}
-
-.section2-scroll:hover {
-    background: var(--accent);
-    color: var(--bg);
-}
-
-.section2-scroll svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    animation: bounce 2s infinite;
-}
-
-/* Section 3 Navigation */
+/* Section Navigation */
 .section3-back {
     position: fixed;
     bottom: 2rem;
@@ -814,55 +1411,6 @@
     animation: bounce 2s infinite;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .skill-cards {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-
-    .skill-card.featured {
-        grid-column: span 1;
-    }
-}
-
-@media (max-width: 640px) {
-    #section3 {
-        padding: 1rem;
-    }
-
-    .glitch-text {
-        font-size: 2rem;
-    }
-
-    .skill-filters {
-        gap: 0.5rem;
-    }
-
-    .filter-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.875rem;
-    }
-
-    .skill-cards {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .skill-card {
-        height: 200px;
-    }
-
-    .section3-back {
-        left: 1rem;
-        bottom: 1rem;
-    }
-
-    .section3-scroll {
-        right: 1rem;
-        bottom: 1rem;
-    }
-}
-
 /* Animation Classes for Section Entry */
 .skill-category {
     animation: slideInUp 0.6s ease-out forwards;
@@ -887,132 +1435,99 @@
 .skill-category:nth-child(3) { --index: 3; }
 .skill-category:nth-child(4) { --index: 4; }
 
-/* Update filter icon styles for SVGs */
-.filter-icon svg {
-    width: 20px;
-    height: 20px;
+/* Responsive Bento Grid */
+@media (max-width: 1200px) {
+    .skill-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skill-card.featured-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
 }
 
-.category-icon svg {
-    width: 28px;
-    height: 28px;
+@media (max-width: 1024px) {
+    .skill-cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 130px;
+    }
+
+    .skill-card.featured-large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
 }
 
-.skill-icon svg {
-    width: 48px;
-    height: 48px;
-    filter: drop-shadow(0 0 20px rgba(var(--accent-rgb), 0.5));
+@media (max-width: 768px) {
+    #section3 {
+        padding: 1rem;
+    }
+
+    .glitch-text {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .skill-cards {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 120px;
+    }
+
+    .skill-card.featured-large,
+    .skill-card.featured-wide {
+        grid-column: span 2;
+    }
+
+    .skill-card.featured-tall,
+    .skill-card.featured-large {
+        grid-row: span 1;
+    }
+
+    .section3-back {
+        left: 1rem;
+        bottom: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+    }
+
+    .section3-scroll {
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+    }
 }
 
-/* Tag Project Windows */
-.tag-project-window {
-    position: fixed;
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(var(--accent-rgb), 0.3);
-    border-radius: 12px;
-    width: 500px;
-    max-width: 90vw;
-    max-height: 70vh;
-    z-index: 1200;
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-}
+@media (max-width: 480px) {
+    .skill-cards {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 110px;
+    }
 
-.tag-project-window.active {
-    display: flex;
-}
+    .skill-card.featured-large,
+    .skill-card.featured-wide {
+        grid-column: span 1;
+    }
 
-.tag-window-header {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(var(--accent-rgb), 0.2);
-    cursor: move;
-    background: rgba(0, 0, 0, 0.5);
-}
+    .skill-icon {
+        width: 36px;
+        height: 36px;
+    }
 
-.tag-window-title {
-    flex: 1;
-    color: var(--accent);
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
+    .skill-icon svg {
+        width: 20px;
+        height: 20px;
+    }
 
-.tag-window-content {
-    padding: 1.5rem;
-    overflow-y: auto;
-    flex: 1;
-}
+    .skill-name {
+        font-size: 0.95rem;
+    }
 
-.tag-window-desc {
-    color: var(--muted);
-    margin-bottom: 1.5rem;
-    font-family: 'Inter', sans-serif;
-}
-
-.tag-projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.tag-project-item {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.tag-project-item:hover {
-    transform: translateY(-2px);
-    border-color: rgba(var(--accent-rgb), 0.3);
-    box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.1);
-}
-
-.tag-project-item h4 {
-    color: var(--fg);
-    margin-bottom: 0.5rem;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.tag-project-item p {
-    color: var(--muted);
-    margin-bottom: 0.75rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
-}
-
-.project-tech {
-    color: var(--accent);
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-    margin-bottom: 0.75rem;
-}
-
-.project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 0.875rem;
-    transition: all 0.2s ease;
-}
-
-.project-link:hover {
-    transform: translateX(4px);
-    text-decoration: underline;
-}
-
-.project-link svg {
-    width: 16px;
-    height: 16px;
+    .skill-level {
+        font-size: 0.65rem;
+    }
 }

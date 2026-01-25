@@ -2,22 +2,22 @@
   "categories": {
     "languages": {
       "name": "Programming Languages",
-      "icon": "{ }",
+      "icon": "<>",
       "description": "Core programming languages mastered over the years"
     },
     "frameworks": {
       "name": "Frameworks & Libraries",
-      "icon": "⚙️",
+      "icon": "//",
       "description": "Modern frameworks and libraries for building applications"
     },
     "tools": {
       "name": "Tools & Technologies",
-      "icon": "🛠",
+      "icon": "#",
       "description": "Development tools and technologies"
     },
     "certifications": {
       "name": "Certifications & Achievements",
-      "icon": "🏆",
+      "icon": "*",
       "description": "Professional certifications and competitive achievements"
     }
   },
@@ -386,7 +386,7 @@
       "projects": 1,
       "lines": "10K+",
       "featured": false,
-      "icon": null,
+      "icon": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"8\" y=\"8\" width=\"32\" height=\"32\" rx=\"4\" fill=\"#5C6BC0\"/><path d=\"M16 32L24 16L32 32\" stroke=\"white\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"24\" cy=\"24\" r=\"3\" fill=\"white\"/></svg>",
       "tags": [
         "ui-framework",
         "native-graphics",
@@ -403,7 +403,7 @@
       "projects": 1,
       "lines": "5K+",
       "featured": false,
-      "icon": null,
+      "icon": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"24\" cy=\"24\" r=\"18\" fill=\"#4285F4\"/><circle cx=\"24\" cy=\"24\" r=\"8\" fill=\"white\"/><path d=\"M24 6c9.941 0 18 8.059 18 18h-10c0-4.418-3.582-8-8-8V6z\" fill=\"#EA4335\"/><path d=\"M42 24c0 9.941-8.059 18-18 18v-10c4.418 0 8-3.582 8-8h10z\" fill=\"#FBBC05\"/><path d=\"M24 42c-9.941 0-18-8.059-18-18h10c0 4.418 3.582 8 8 8v10z\" fill=\"#34A853\"/></svg>",
       "tags": [
         "browser-integration",
         "web-rendering",
@@ -420,7 +420,7 @@
       "projects": 3,
       "lines": "15K+",
       "featured": false,
-      "icon": null,
+      "icon": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"6\" y=\"6\" width=\"36\" height=\"36\" rx=\"4\" fill=\"#1a1a2e\"/><path d=\"M14 34V14h4v16h8v4H14z\" fill=\"#E91E63\"/><path d=\"M28 34V14h4l4 20h-4l-0.5-4h-3l-0.5 4h-4zm4.5-8l-1-6h-0.5l-1 6h2.5z\" fill=\"#00BCD4\"/></svg>",
       "tags": [
         "Game Development",
         "Graphics"
@@ -436,7 +436,7 @@
       "projects": 1,
       "lines": "5K+",
       "featured": false,
-      "icon": null,
+      "icon": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"24\" cy=\"24\" r=\"18\" stroke=\"#64B5F6\" stroke-width=\"3\" fill=\"none\"/><path d=\"M15 18h18M15 24h18M15 30h12\" stroke=\"#64B5F6\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"24\" cy=\"24\" r=\"6\" fill=\"#64B5F6\" opacity=\"0.3\"/></svg>",
       "tags": [
         "HTML Rendering"
       ]
@@ -451,7 +451,7 @@
       "projects": 1,
       "lines": "8K+",
       "featured": false,
-      "icon": null,
+      "icon": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"8\" y=\"8\" width=\"32\" height=\"32\" rx=\"4\" fill=\"#7C4DFF\"/><path d=\"M16 16l8 8-8 8\" stroke=\"white\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M26 32h6\" stroke=\"white\" stroke-width=\"2.5\" stroke-linecap=\"round\"/></svg>",
       "tags": [
         "Bytecode Instrumentation"
       ]
@@ -466,7 +466,7 @@
       "projects": 1,
       "lines": "20K+",
       "featured": false,
-      "icon": null,
+      "icon": "<svg viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"8\" y=\"8\" width=\"32\" height=\"32\" rx=\"4\" fill=\"#37474F\"/><path d=\"M16 24c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8\" stroke=\"#4CAF50\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><circle cx=\"24\" cy=\"24\" r=\"3\" fill=\"#4CAF50\"/><path d=\"M24 32v4M24 12v4\" stroke=\"#4CAF50\" stroke-width=\"2\" stroke-linecap=\"round\"/></svg>",
       "tags": [
         "Obfuscation"
       ]

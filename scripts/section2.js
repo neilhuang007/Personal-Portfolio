@@ -10,35 +10,108 @@ let windowZIndex = 1100;
 // Timeline Modal Functions
 function openTimelineModal() {
     const modal = document.getElementById('timeline-modal');
-    const timelineContainer = modal.querySelector('.timeline-full');
+    const modalContent = modal.querySelector('.modal-content');
     const combinedTimeline = DataLoader.getCombinedTimeline();
 
-    // Clear and rebuild timeline
-    timelineContainer.innerHTML = combinedTimeline.map((item, index) => {
-        const isProject = item.type === 'project';
-        const iconClass = isProject ? 'timeline-project-icon' : '';
-
-        return `
-            <div class="timeline-item-card ${isProject ? 'timeline-project' : ''}" 
-                 onclick="${isProject ? `openProjectFromTimeline(${index})` : `openTimelineDetail(${index})`}">
-                <div class="timeline-dot ${iconClass}"></div>
-                <div class="timeline-card-content">
-                    <span class="timeline-year">${item.year}</span>
-                    <span class="timeline-title">${item.title}</span>
-                    ${isProject ? '<span class="timeline-tag">PROJECT</span>' : ''}
-                </div>
+    // Build horizontal timeline HTML
+    const timelineHTML = `
+        <h3>My Journey</h3>
+        <div class="timeline-container">
+            <button class="timeline-nav-btn timeline-prev" onclick="scrollTimelineLeft()" aria-label="Previous">
+                <svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5v10z"/></svg>
+            </button>
+            <div class="timeline-horizontal" id="timeline-track">
+                ${combinedTimeline.map((item, index) => {
+                    const isProject = item.type === 'project';
+                    const description = item.description ? item.description.substring(0, 100) + (item.description.length > 100 ? '...' : '') : '';
+                    return `
+                        <div class="timeline-card-item ${isProject ? 'timeline-project' : ''}"
+                             onclick="${isProject ? `openProjectFromTimeline(${index})` : `openTimelineDetail(${index})`}">
+                            <span class="timeline-year-badge">${item.year}</span>
+                            <div class="timeline-card-title">
+                                ${item.title}${isProject ? '<span class="timeline-project-tag">PROJECT</span>' : ''}
+                            </div>
+                            <div class="timeline-card-desc">${description}</div>
+                        </div>
+                    `;
+                }).join('')}
             </div>
-        `;
-    }).join('');
+            <button class="timeline-nav-btn timeline-next" onclick="scrollTimelineRight()" aria-label="Next">
+                <svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5v10z"/></svg>
+            </button>
+        </div>
+    `;
 
+    modalContent.innerHTML = timelineHTML;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Initialize keyboard navigation
+    initTimelineKeyNav();
+}
+
+// Prevent scroll from propagating to parent
+function preventScrollPropagation(element) {
+    element.addEventListener('wheel', function(e) {
+        const scrollTop = element.scrollTop;
+        const scrollHeight = element.scrollHeight;
+        const height = element.clientHeight;
+        const delta = e.deltaY;
+
+        // At top and scrolling up, or at bottom and scrolling down
+        const atTop = scrollTop === 0 && delta < 0;
+        const atBottom = scrollTop + height >= scrollHeight && delta > 0;
+
+        if (atTop || atBottom) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchmove', function(e) {
+        e.stopPropagation();
+    }, { passive: true });
 }
 
 function closeTimelineModal() {
     const modal = document.getElementById('timeline-modal');
     modal.classList.remove('active');
     document.body.style.overflow = '';
+}
+
+// Scroll timeline left by one card
+function scrollTimelineLeft() {
+    const track = document.getElementById('timeline-track');
+    if (track) {
+        track.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+}
+
+// Scroll timeline right by one card
+function scrollTimelineRight() {
+    const track = document.getElementById('timeline-track');
+    if (track) {
+        track.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+}
+
+// Initialize keyboard navigation for timeline
+function initTimelineKeyNav() {
+    const modal = document.getElementById('timeline-modal');
+
+    const keyHandler = function(e) {
+        if (!modal.classList.contains('active')) {
+            document.removeEventListener('keydown', keyHandler);
+            return;
+        }
+
+        if (e.key === 'ArrowLeft') {
+            scrollTimelineLeft();
+        } else if (e.key === 'ArrowRight') {
+            scrollTimelineRight();
+        }
+    };
+
+    document.addEventListener('keydown', keyHandler);
 }
 
 // Open project from timeline
@@ -532,11 +605,11 @@ async function populateLanguageGrid() {
 async function initializeSection2() {
     // Setup project cards
     await setupProjectCards();
-    
+
     // Populate language grid
     await populateLanguageGrid();
 
-    // Close modals on overlay click
+    // Close modals on overlay click and prevent scroll propagation
     const modals = document.querySelectorAll('.modal-overlay');
     modals.forEach(modal => {
         modal.addEventListener('click', (e) => {
@@ -545,6 +618,17 @@ async function initializeSection2() {
                 document.body.style.overflow = '';
             }
         });
+
+        // Prevent scroll propagation on modal overlays
+        modal.addEventListener('wheel', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+    });
+
+    // Apply scroll containment to modal content areas
+    const modalContents = document.querySelectorAll('.modal-content');
+    modalContents.forEach(content => {
+        preventScrollPropagation(content);
     });
 
     // Keyboard navigation for modals
@@ -739,3 +823,5 @@ window.closeTimelineDetail = closeTimelineDetail;
 window.openProjectWindow = openProjectWindow;
 window.toggleMinimize = toggleMinimize;
 window.closeProjectWindow = closeProjectWindow;
+window.scrollTimelineLeft = scrollTimelineLeft;
+window.scrollTimelineRight = scrollTimelineRight;

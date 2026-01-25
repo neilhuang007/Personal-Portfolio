@@ -12,6 +12,8 @@
     --grid-color: #47E054;
     --grid-opacity: 0.6;
     --window-bg: rgba(20, 20, 20, 0.9);
+    --scrollbar-thumb: rgba(71, 224, 84, 0.4);
+    --scrollbar-thumb-hover: rgba(71, 224, 84, 0.7);
 }
 :root[data-theme="aqua"] {
     --bg: #0A192F;
@@ -24,6 +26,8 @@
     --grid-color: #64FFDA;
     --grid-opacity: 0.4;
     --window-bg: rgba(17, 34, 64, 0.9);
+    --scrollbar-thumb: rgba(100, 255, 218, 0.4);
+    --scrollbar-thumb-hover: rgba(100, 255, 218, 0.7);
 }
 :root[data-theme="dark"] {
     --bg: #2B2B2B;
@@ -36,6 +40,39 @@
     --grid-color: #6897BB;
     --grid-opacity: 0.4;
     --window-bg: rgba(49, 51, 53, 0.9);
+    --scrollbar-thumb: rgba(104, 151, 187, 0.4);
+    --scrollbar-thumb-hover: rgba(104, 151, 187, 0.7);
+}
+
+/* Custom Scrollbar - Minimalistic */
+/* WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 999px;
+    transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
 }
 
 /* Mobile Phone Blocker Overlay */
