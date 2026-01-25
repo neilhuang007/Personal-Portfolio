@@ -31,6 +31,28 @@ const CONFIG = {
     repoAliases: {
         'Personal-Portfolio': 'personal-portfolio',
         'Aeternus-Argus': 'aeternus-argus',
+    },
+    // URL for cloc output from profile README repo (user-authored lines only)
+    clocOutputUrl: 'https://raw.githubusercontent.com/neilhuang007/neilhuang007/main/output/cloc-output.json',
+    // Map cloc language names to tech-arsenal skill IDs
+    languageToSkillId: {
+        'Java': 'java',
+        'JavaScript': 'javascript',
+        'TypeScript': 'typescript',
+        'Python': 'python',
+        'C++': 'cpp',
+        'C': 'cpp',
+        'C/C++ Header': 'cpp',
+        'Kotlin': 'kotlin',
+        'PHP': 'php',
+        'SQL': 'sql',
+        'Bourne Shell': 'linux',
+        'Bourne Again Shell': 'linux',
+        'Go': 'go',
+        'Rust': 'rust',
+        'JSX': 'react',
+        'Vue': 'vuejs',
+        'GLSL': 'opengl'
     }
 };
 
@@ -97,6 +119,128 @@ async function fetchAllRepos(token) {
 async function fetchUserProfile(token) {
     console.log('Fetching user profile...');
     return await githubAPI('/user', token);
+}
+
+// Fetch cloc output from profile README repo (contains user-authored lines only)
+async function fetchClocOutput() {
+    return new Promise((resolve, reject) => {
+        console.log('Fetching cloc output from profile repo...');
+        const url = new URL(CONFIG.clocOutputUrl);
+
+        const options = {
+            hostname: url.hostname,
+            path: url.pathname,
+            method: 'GET',
+            headers: {
+                'User-Agent': 'Portfolio-Sync-Script'
+            }
+        };
+
+        const req = https.request(options, (res) => {
+            let data = '';
+            res.on('data', chunk => data += chunk);
+            res.on('end', () => {
+                try {
+                    if (res.statusCode === 200) {
+                        resolve(JSON.parse(data));
+                    } else {
+                        console.warn(`Warning: Could not fetch cloc output (${res.statusCode})`);
+                        resolve(null);
+                    }
+                } catch (e) {
+                    console.warn('Warning: Could not parse cloc output:', e.message);
+                    resolve(null);
+                }
+            });
+        });
+
+        req.on('error', (e) => {
+            console.warn('Warning: Could not fetch cloc output:', e.message);
+            resolve(null);
+        });
+        req.end();
+    });
+}
+
+// Format line count for display (e.g., 3143540 -> "3.1M")
+function formatLineCount(lines) {
+    if (lines >= 1000000) {
+        return (lines / 1000000).toFixed(1) + 'M';
+    } else if (lines >= 1000) {
+        return Math.round(lines / 1000) + 'K';
+    }
+    return lines.toString();
+}
+
+// Update tech-arsenal.json with real line counts from cloc output
+function updateTechArsenalWithClocData(clocData) {
+    if (!clocData) {
+        console.log('Skipping tech-arsenal update (no cloc data)');
+        return null;
+    }
+
+    const techArsenalPath = path.join(CONFIG.outputDir, 'tech-arsenal.json');
+    let techArsenal;
+
+    try {
+        techArsenal = JSON.parse(fs.readFileSync(techArsenalPath, 'utf8'));
+    } catch (e) {
+        console.warn('Could not read tech-arsenal.json:', e.message);
+        return null;
+    }
+
+    // Extract language stats from cloc data
+    const languageStats = {};
+    let totalLines = 0;
+
+    for (const [key, value] of Object.entries(clocData)) {
+        if (key === 'header' || key === 'SUM') continue;
+        if (value && typeof value.code === 'number') {
+            languageStats[key] = value.code;
+            totalLines += value.code;
+        }
+    }
+
+    console.log(`\n📊 Cloc data: ${Object.keys(languageStats).length} languages, ${totalLines.toLocaleString()} total lines`);
+
+    // Update skills with real line counts
+    let updatedCount = 0;
+    for (const skill of techArsenal.skills) {
+        // Find matching language in cloc data
+        let matchedLines = 0;
+        let matchedLangs = [];
+
+        for (const [clocLang, skillId] of Object.entries(CONFIG.languageToSkillId)) {
+            if (skillId === skill.id && languageStats[clocLang]) {
+                matchedLines += languageStats[clocLang];
+                matchedLangs.push(clocLang);
+            }
+        }
+
+        if (matchedLines > 0) {
+            skill.linesRaw = matchedLines;
+            skill.lines = formatLineCount(matchedLines);
+            skill.linesPercentage = Math.round((matchedLines / totalLines) * 1000) / 10;
+            updatedCount++;
+            console.log(`  ✓ ${skill.name}: ${skill.lines} lines (${skill.linesPercentage}%)`);
+        }
+    }
+
+    // Add metadata
+    techArsenal._clocSyncedAt = new Date().toISOString();
+    techArsenal._clocTotalLines = totalLines;
+    techArsenal._clocLanguages = Object.keys(languageStats).length;
+
+    // Save updated tech-arsenal.json
+    fs.writeFileSync(techArsenalPath, JSON.stringify(techArsenal, null, 2));
+    console.log(`✅ Updated tech-arsenal.json with ${updatedCount} skill line counts`);
+
+    return {
+        totalLines,
+        languageCount: Object.keys(languageStats).length,
+        updatedSkills: updatedCount,
+        languageStats
+    };
 }
 
 // Fetch repository languages
@@ -234,11 +378,15 @@ async function syncGitHubData() {
     console.log('\n🔄 Starting GitHub Portfolio Sync...\n');
 
     try {
-        // Fetch all data
-        const [profile, repos] = await Promise.all([
+        // Fetch all data (including cloc output from profile repo)
+        const [profile, repos, clocData] = await Promise.all([
             fetchUserProfile(token),
-            fetchAllRepos(token)
+            fetchAllRepos(token),
+            fetchClocOutput()
         ]);
+
+        // Update tech-arsenal.json with real line counts from cloc
+        const clocStats = updateTechArsenalWithClocData(clocData);
 
         console.log(`\n📊 Found ${repos.length} repositories (${repos.filter(r => r.private).length} private)\n`);
 
@@ -368,13 +516,21 @@ async function syncGitHubData() {
         console.log('='.repeat(50));
         console.log(`👤 User: ${profile.login} (${profile.name || 'N/A'})`);
         console.log(`📁 Total Repos: ${repos.length} (${publicRepos.length} public, ${privateRepos.length} private)`);
-        console.log(`💻 Total Lines: ${totalLines.toLocaleString()}`);
         console.log(`📝 Total Commits: ${totalCommits.toLocaleString()}`);
-        console.log(`🔤 Languages: ${languageStats.length}`);
-        console.log('\nTop Languages:');
-        languageStats.slice(0, 5).forEach((lang, i) => {
-            console.log(`  ${i + 1}. ${lang.name}: ${lang.percentage}% (${lang.lines.toLocaleString()} lines)`);
-        });
+
+        if (clocStats) {
+            console.log(`\n📊 Lines of Code (from cloc - user-authored only):`);
+            console.log(`   Total: ${clocStats.totalLines.toLocaleString()} lines`);
+            console.log(`   Languages: ${clocStats.languageCount}`);
+            console.log(`   Skills updated: ${clocStats.updatedSkills}`);
+        } else {
+            console.log(`💻 Total Lines (estimated): ${totalLines.toLocaleString()}`);
+            console.log(`🔤 Languages: ${languageStats.length}`);
+            console.log('\nTop Languages:');
+            languageStats.slice(0, 5).forEach((lang, i) => {
+                console.log(`  ${i + 1}. ${lang.name}: ${lang.percentage}% (${lang.lines.toLocaleString()} lines)`);
+            });
+        }
         console.log('='.repeat(50));
 
         // Save detailed stats for AI access
@@ -393,9 +549,15 @@ async function syncGitHubData() {
             stats: {
                 totalRepos: repos.length,
                 totalCommits,
-                totalLines,
-                totalBytes: languageStats.reduce((sum, l) => sum + l.bytes, 0)
+                totalLines: clocStats ? clocStats.totalLines : totalLines,
+                totalBytes: languageStats.reduce((sum, l) => sum + l.bytes, 0),
+                // Cloc stats (user-authored lines only)
+                clocTotalLines: clocStats?.totalLines || null,
+                clocLanguageCount: clocStats?.languageCount || null
             },
+            // Language stats from cloc (accurate, user-authored only)
+            clocLanguages: clocStats?.languageStats || null,
+            // Language stats from GitHub API (all code, includes dependencies)
             languages: languageStats,
             repositories: repos.map(r => ({
                 name: r.name,

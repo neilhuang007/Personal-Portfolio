@@ -539,6 +539,14 @@ function getCardSize(skill) {
     return 'standard';
 }
 
+// Get badge class based on line count magnitude
+function getLinesBadgeClass(linesRaw) {
+    if (linesRaw >= 1000000) return 'lines-millions';      // Gold - 1M+
+    if (linesRaw >= 100000) return 'lines-hundred-thousands'; // Silver - 100K+
+    if (linesRaw >= 10000) return 'lines-ten-thousands';   // Bronze - 10K+
+    return 'lines-thousands';                               // Default - under 10K
+}
+
 // Create individual skill card (Bento style with expansion)
 function createSkillCard(skill) {
     const card = document.createElement('div');
@@ -555,6 +563,12 @@ function createSkillCard(skill) {
         `<span class="tag" data-tag="${tag}">${tag}</span>`
     ).join('');
 
+    // Determine line count display and badge class
+    const hasLines = skill.lines && skill.lines !== 'N/A';
+    const linesBadgeClass = hasLines ? getLinesBadgeClass(skill.linesRaw || 0) : '';
+    const linesDisplay = hasLines ? `${skill.lines} lines` : '';
+    const percentageDisplay = skill.linesPercentage ? `${skill.linesPercentage}%` : '';
+
     card.innerHTML = `
         <div class="skill-card-inner">
             <div class="skill-main">
@@ -568,9 +582,7 @@ function createSkillCard(skill) {
             </div>
             <div class="bento-meta">
                 <span class="bento-experience">${skill.experience}</span>
-                <div class="bento-progress">
-                    <div class="bento-progress-fill" style="width: ${skill.progress}%"></div>
-                </div>
+                ${hasLines ? `<span class="lines-badge ${linesBadgeClass}">${skill.lines}</span>` : ''}
             </div>
         </div>
         <div class="skill-expansion">
@@ -581,10 +593,12 @@ function createSkillCard(skill) {
                         <span class="stat-value">${skill.projects}</span>
                         <span class="stat-label">Projects</span>
                     </div>
+                    ${hasLines ? `
                     <div class="stat-item">
-                        <span class="stat-value">${skill.lines}</span>
-                        <span class="stat-label">Lines</span>
+                        <span class="stat-value">${linesDisplay}</span>
+                        <span class="stat-label">${percentageDisplay || 'Code'}</span>
                     </div>
+                    ` : ''}
                 </div>
                 <div class="expansion-header">Topics</div>
                 <div class="skill-tags">${tagsHtml}</div>
