@@ -1,7 +1,7 @@
 {
   "personal": {
     "name": "Neil Huang",
-    "age": "Full\u2011stack developer and security researcher (6+ years experience)",
+    "age": "Full‑stack developer and security researcher (6+ years experience)",
     "location": "Remote (USA/China)",
     "email": "Contact via GitHub",
     "github": "https://github.com/neilhuang"
@@ -9,11 +9,11 @@
   "education": {
     "summer": [
       {
-        "program": "Self\u2011Directed Open Source & Security Research",
-        "date": "2019\u2011Present"
+        "program": "Self‑Directed Open Source & Security Research",
+        "date": "2019‑Present"
       },
       {
-        "program": "Stanford Pre\u2011Collegiate AI/ML",
+        "program": "Stanford Pre‑Collegiate AI/ML",
         "date": "2024"
       },
       {
@@ -80,10 +80,10 @@
     "service": "300+ volunteer hours"
   },
   "stats": {
-    "linesOfCode": 900000,
-    "githubCommits": 700,
-    "languagesKnown": 15,
-    "projectsCompleted": 37
+    "linesOfCode": 43327130,
+    "githubCommits": 26406,
+    "languagesKnown": 9,
+    "projectsCompleted": 98
   },
   "timeline": [
     {
@@ -108,7 +108,7 @@
       "year": "2023",
       "title": "Joined Haedus Industries & YapeTeam",
       "period": "2023 - Present",
-      "description": "Contributed to UI frameworks (Skija UI Project) and Minecraft modding clients (YolBi suite), enhancing performance and introducing cross\u2011platform capabilities."
+      "description": "Contributed to UI frameworks (Skija UI Project) and Minecraft modding clients (YolBi suite), enhancing performance and introducing cross‑platform capabilities."
     },
     {
       "year": "2025",
@@ -116,5 +116,6 @@
       "period": "2024 - 2025",
       "description": "Developed and maintained over 45 repositories across security research, machine learning, and game modding."
     }
-  ]
+  ],
+  "_syncedAt": "2026-01-25T21:42:58.663Z"
 }
