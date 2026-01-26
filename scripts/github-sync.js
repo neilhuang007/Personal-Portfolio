@@ -194,14 +194,21 @@ function updateTechArsenalWithClocData(clocData) {
     let totalLines = 0;
 
     for (const [key, value] of Object.entries(clocData)) {
-        if (key === 'header' || key === 'SUM') continue;
+        if (key === 'header' || key === 'SUM' || key === 'commits') continue;
         if (value && typeof value.code === 'number') {
             languageStats[key] = value.code;
             totalLines += value.code;
         }
     }
 
-    console.log(`\n📊 Cloc data: ${Object.keys(languageStats).length} languages, ${totalLines.toLocaleString()} total lines`);
+    // Extract commit stats from cloc data (user-authored commits only)
+    const commitStats = clocData.commits || null;
+    if (commitStats) {
+        console.log(`\n📊 Cloc data: ${Object.keys(languageStats).length} languages, ${totalLines.toLocaleString()} total lines`);
+        console.log(`📝 Commits: ${commitStats.user.toLocaleString()} personal / ${commitStats.total.toLocaleString()} total`);
+    } else {
+        console.log(`\n📊 Cloc data: ${Object.keys(languageStats).length} languages, ${totalLines.toLocaleString()} total lines`);
+    }
 
     // Update skills with real line counts
     let updatedCount = 0;
@@ -239,7 +246,10 @@ function updateTechArsenalWithClocData(clocData) {
         totalLines,
         languageCount: Object.keys(languageStats).length,
         updatedSkills: updatedCount,
-        languageStats
+        languageStats,
+        // Commit stats from countlines workflow (user-authored only)
+        userCommits: commitStats?.user || null,
+        totalCommits: commitStats?.total || null
     };
 }
 
@@ -498,9 +508,14 @@ async function syncGitHubData() {
             console.log('No existing resume.json found');
         }
 
+        // Use cloc commit data if available (user-authored commits only), otherwise use GitHub API count
+        const userCommits = clocStats?.userCommits ?? totalCommits;
+        const allCommits = clocStats?.totalCommits ?? totalCommits;
+
         resumeData.stats = {
-            linesOfCode: totalLines,
-            githubCommits: totalCommits,
+            linesOfCode: clocStats ? clocStats.totalLines : totalLines,
+            githubCommits: userCommits,  // User's personal commits
+            totalCommits: allCommits,     // All commits (including collaborators)
             languagesKnown: languageStats.filter(l => l.percentage >= 0.5).length,
             projectsCompleted: repos.length
         };
@@ -516,7 +531,11 @@ async function syncGitHubData() {
         console.log('='.repeat(50));
         console.log(`👤 User: ${profile.login} (${profile.name || 'N/A'})`);
         console.log(`📁 Total Repos: ${repos.length} (${publicRepos.length} public, ${privateRepos.length} private)`);
-        console.log(`📝 Total Commits: ${totalCommits.toLocaleString()}`);
+        if (clocStats?.userCommits) {
+            console.log(`📝 Commits: ${clocStats.userCommits.toLocaleString()} personal / ${clocStats.totalCommits.toLocaleString()} total`);
+        } else {
+            console.log(`📝 Total Commits (GitHub API): ${totalCommits.toLocaleString()}`);
+        }
 
         if (clocStats) {
             console.log(`\n📊 Lines of Code (from cloc - user-authored only):`);
@@ -548,7 +567,11 @@ async function syncGitHubData() {
             },
             stats: {
                 totalRepos: repos.length,
-                totalCommits,
+                // Commit stats (from cloc if available, otherwise GitHub API)
+                userCommits: clocStats?.userCommits ?? totalCommits,
+                totalCommits: clocStats?.totalCommits ?? totalCommits,
+                githubApiCommits: totalCommits,  // Always include GitHub API count for reference
+                // Line counts
                 totalLines: clocStats ? clocStats.totalLines : totalLines,
                 totalBytes: languageStats.reduce((sum, l) => sum + l.bytes, 0),
                 // Cloc stats (user-authored lines only)
