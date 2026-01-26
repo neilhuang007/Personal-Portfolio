@@ -11,9 +11,11 @@
   },
   "stats": {
     "totalRepos": 98,
-    "totalCommits": 26408,
+    "userCommits": 26419,
+    "totalCommits": 26419,
+    "githubApiCommits": 26419,
     "totalLines": 5119249,
-    "totalBytes": 1733093519,
+    "totalBytes": 1733109084,
     "clocTotalLines": 5119249,
     "clocLanguageCount": 134
   },
@@ -168,9 +170,9 @@
     },
     {
       "name": "Java",
-      "bytes": 323401505,
+      "bytes": 323417070,
       "percentage": 18.7,
-      "lines": 8085038
+      "lines": 8085427
     },
     {
       "name": "C",
@@ -842,11 +844,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-01-25T16:32:26Z",
-      "pushedAt": "2026-01-25T16:32:23Z",
-      "commits": 1965,
+      "updatedAt": "2026-01-26T10:31:50Z",
+      "pushedAt": "2026-01-26T10:31:46Z",
+      "commits": 1973,
       "languages": {
-        "Java": 7296044,
+        "Java": 7311609,
         "C": 359899,
         "C++": 238676,
         "Rust": 31316,
@@ -1912,7 +1914,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-01-25T02:05:39Z",
-      "pushedAt": "2026-01-25T02:05:35Z",
+      "pushedAt": "2026-01-26T01:49:43Z",
       "commits": 41,
       "languages": {}
     },
@@ -2030,9 +2032,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-01-25T22:10:22Z",
-      "pushedAt": "2026-01-25T22:10:18Z",
-      "commits": 25,
+      "updatedAt": "2026-01-25T22:19:22Z",
+      "pushedAt": "2026-01-26T14:33:06Z",
+      "commits": 28,
       "languages": {
         "JavaScript": 112356,
         "CSS": 84053,
@@ -2429,12 +2431,12 @@
       "url": "https://github.com/yapeteam/YMixin",
       "isPrivate": false,
       "isFork": false,
-      "stars": 18,
+      "stars": 19,
       "forks": 3,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-06-20T01:53:10Z",
-      "updatedAt": "2026-01-17T02:28:42Z",
+      "updatedAt": "2026-01-26T12:17:19Z",
       "pushedAt": "2025-11-01T04:00:24Z",
       "commits": 40,
       "languages": {
@@ -2704,5 +2706,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-01-25T22:11:02.327Z"
+  "_syncedAt": "2026-01-26T14:33:40.191Z"
 }
