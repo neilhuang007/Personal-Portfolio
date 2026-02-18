@@ -205,9 +205,11 @@
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.2);
+    border-color: rgba(var(--accent-rgb), 0.5);
+    box-shadow:
+        0 0 20px rgba(var(--accent-rgb), 0.1),
+        inset 0 0 20px rgba(var(--accent-rgb), 0.03);
+    filter: brightness(1.05);
 }
 
 .card-header {
@@ -341,101 +343,228 @@
 }
 
 /* ============================================
-   PROJECT STACK CARD - ENHANCED STACKING
+   PROJECT DECKS CONTAINER - MULTIPLE DECKS
+   ============================================ */
+
+.project-decks-container {
+    grid-column: span 2;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    overflow: visible;
+}
+
+.decks-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.decks-row {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+
+/* Individual deck wrapper */
+.deck-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 200px;
+}
+
+.deck-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+/* ============================================
+   PROJECT STACK CARD - DECK OF CARDS EFFECT
    ============================================ */
 
 .project-stack-card {
-    grid-row: span 2;
     overflow: visible !important;
     z-index: 10;
-}
-
-.enlarged{
-    width: 800px !important;
-    height: 600px !important;
+    /* 3D perspective for depth effect */
+    perspective: 1200px;
+    perspective-origin: center center;
+    position: relative;
 }
 
 .project-stack {
     position: relative;
-    height: 200px;
-    margin-top: 20%;
+    height: 180px;
+    width: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* 3D space for cards */
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 /* ============================================
-   SMOOTH PROJECT CARD ANIMATIONS
+   DECK OF CARDS - STACKED LAYOUT
    ============================================ */
 
 .project-card {
     position: absolute;
-    width: 180px;
-    height: 110px;
-    background: rgba(0, 0, 0, 0.8);
+    width: 160px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 2px solid rgba(var(--accent-rgb), 0.4);
-    border-radius: 12px;
-    padding: 1.25rem;
+    border-radius: 10px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
+
+    /* Positioned via CSS variables set by JS */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(var(--rotation));
-    z-index: var(--z-index);
-    /* Smooth transitions with custom easing */
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform, z-index;
+
+    /* Default stacked transform - uses CSS variables */
+    --stack-x: 0px;
+    --stack-y: 0px;
+    --stack-rotate: 0deg;
+    --stack-scale: 1;
+    --push-x: 0px;
+    --push-y: 0px;
+    --push-rotate: 0deg;
+    --push-scale: 1;
+
+    transform:
+        translate(-50%, -50%)
+        translate(var(--stack-x), var(--stack-y))
+        translate(var(--push-x), var(--push-y))
+        rotate(calc(var(--stack-rotate) + var(--push-rotate)))
+        scale(calc(var(--stack-scale) * var(--push-scale)))
+        translateZ(calc(var(--card-depth, 0) * 1px));
+
+    z-index: var(--z-index, 1);
+    transform-style: preserve-3d;
+
+    /* Smooth spring-like transition */
+    transition:
+        transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 300ms ease,
+        border-color 200ms ease,
+        opacity 300ms ease;
+
+    will-change: transform;
 }
 
-/* Prevent transition flickering */
+/* Prevent child elements from interfering with hover */
 .project-card * {
     pointer-events: none;
 }
 
-/* Ensure smooth color transitions */
-.project-card:hover {
-    background: rgba(var(--accent-rgb), 0.15);
-    border-color: var(--accent);
-    box-shadow: 0 20px 60px rgba(var(--accent-rgb), 0.5);
-}
-
-/* Add backdrop filter transition for smoother visual */
-@supports (backdrop-filter: blur(20px)) {
-    .project-card {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-        backdrop-filter 0.3s ease;
-    }
-}
-
-/* Optimize for performance */
-.project-stack {
-    transform: translateZ(0); /* Force GPU acceleration */
-    backface-visibility: hidden;
-}
-
-/* Fixed hover expansion—in place scale only */
-.project-card:hover {
-    background: rgba(var(--accent-rgb), 0.1);
-    border-color: var(--accent);
-    box-shadow: 0 10px 40px rgba(var(--accent-rgb), 0.4);
-}
-
-/* Fan out on parent hover */
+/* Card content styling */
 .project-name {
     font-weight: 600;
     color: var(--accent);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
+    margin-bottom: 0.25rem;
 }
 
 .project-desc {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--muted);
     font-family: 'Inter', sans-serif;
+    line-height: 1.3;
+    opacity: 0.9;
+}
+
+/* ============================================
+   DECK INTERACTION STATES
+   ============================================ */
+
+/* Deck idle state - cards slightly visible */
+.project-stack.deck-idle .project-card {
+    opacity: 1;
+    transition:
+        transform 400ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 300ms ease;
+}
+
+/* Deck spread state - cards fanned out */
+.project-stack.deck-spread .project-card {
+    transition:
+        transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 300ms ease,
+        opacity 250ms ease;
+}
+
+/* Focused card - NEVER MOVES, comes forward */
+.project-card.card-focused {
+    --push-scale: 1.08;
+    --card-depth: 60;
+    z-index: 1000 !important;
+    border-color: var(--accent);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(var(--accent-rgb), 0.3),
+        inset 0 0 20px rgba(var(--accent-rgb), 0.05);
+    background: rgba(var(--accent-rgb), 0.12);
+}
+
+/* Cards pushed away from focused card */
+.project-card.card-pushed {
+    opacity: 0.85;
+    --push-scale: 0.95;
+}
+
+/* Cards far from focused card */
+.project-card.card-pushed-far {
+    opacity: 0.7;
+    --push-scale: 0.9;
+}
+
+/* Subtle hover effect on non-focused cards */
+.project-stack.deck-spread .project-card:not(.card-focused):hover {
+    border-color: rgba(var(--accent-rgb), 0.6);
+    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.2);
+}
+
+/* ============================================
+   DECK VISUAL DEPTH CUES
+   ============================================ */
+
+/* Shadow beneath the deck */
+.project-stack::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 20px;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.4) 0%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+    transition: opacity 300ms ease, width 300ms ease;
+}
+
+.project-stack.deck-spread::after {
+    width: 400px;
+    opacity: 0.3;
 }
 
 /* ============================================
@@ -578,104 +707,274 @@
 }
 
 /* ============================================
-   STAT CARDS
+   STAT CARDS - Minimalist Typography Design
    ============================================ */
 
 .stat-card {
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    grid-column: span 1;
-}
-
-.stat-value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent);
-    font-family: 'JetBrains Mono', monospace;
-}
-
-.stat-label {
-    font-size: 0.875rem;
-    color: var(--muted);
-    font-family: 'Inter', sans-serif;
-}
-
-/* ============================================
-   FUN FACTS CARD
-   ============================================ */
-
-.fun-fact-card {
-    grid-column: span 2;
-}
-
-.fun-facts-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-}
-
-.fun-fact-item {
-    padding: 0.5rem;
-    background: rgba(var(--accent-rgb), 0.05);
-    border-radius: 8px;
-    font-size: 0.875rem;
-    transition: all 0.2s ease;
-}
-
-.fun-fact-item:hover {
-    background: rgba(var(--accent-rgb), 0.1);
-    transform: translateX(4px);
-}
-
-/* ============================================
-   LANGUAGE CARD
-   ============================================ */
-
-.language-card {
-    grid-column: span 2;
-}
-
-.language-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.language-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.lang-name {
-    min-width: 60px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.875rem;
-    color: var(--fg);
-}
-
-.lang-bar {
-    flex: 1;
-    height: 6px;
-    background: rgba(var(--accent-rgb), 0.1);
-    border-radius: 3px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
 
-.lang-bar::after {
+.stat-card::before {
     content: '';
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    width: var(--progress);
-    background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    background: radial-gradient(circle at 30% 30%, rgba(var(--accent-rgb), 0.08) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.stat-card:hover {
+    box-shadow:
+        0 0 0 1px rgba(var(--accent-rgb), 0.3),
+        inset 0 0 30px rgba(var(--accent-rgb), 0.05);
+    filter: brightness(1.1);
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+}
+
+/* ============================================
+   TERMINAL LOG - Fun Facts (replaces old fun-fact-card)
+   ============================================ */
+
+.terminal-log-card {
+    grid-column: span 2;
+}
+
+.terminal-log {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.log-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.log-entry::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.log-entry:hover {
+    background: rgba(var(--accent-rgb), 0.04);
+}
+
+.log-entry:hover::after {
+    width: 100%;
+}
+
+.log-entry:hover .log-prefix {
+    text-shadow: 0 0 8px currentColor;
+}
+
+.log-prefix {
+    font-weight: 700;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    padding-top: 1px;
+}
+
+.log-info .log-prefix {
+    color: var(--accent);
+}
+
+.log-debug .log-prefix {
+    color: var(--muted);
+}
+
+.log-warn .log-prefix {
+    color: #f0ad4e;
+}
+
+.log-text {
+    color: var(--fg);
+    opacity: 0.85;
+}
+
+.log-entry:hover .log-text {
+    opacity: 1;
+}
+
+/* ============================================
+   SKILL MATRIX - Hacker Terminal Table (replaces old language-card)
+   ============================================ */
+
+.skill-matrix-card {
+    grid-column: span 2;
+}
+
+.skill-matrix {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    width: 100%;
+}
+
+.skill-matrix-header {
+    display: grid;
+    grid-template-columns: 90px 60px 80px 55px 70px;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(var(--accent-rgb), 0.3);
+    color: var(--muted);
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+}
+
+.skill-matrix-row {
+    display: grid;
+    grid-template-columns: 90px 60px 80px 55px 70px;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.08);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.skill-matrix-row:hover {
+    background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.06) 0%, transparent 80%);
+}
+
+.skill-matrix-row:hover .matrix-lang {
+    text-shadow: 0 0 12px rgba(var(--accent-rgb), 0.6);
+    letter-spacing: 0.04em;
+}
+
+.skill-matrix-row:last-child {
+    border-bottom: none;
+}
+
+.matrix-lang {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.matrix-years {
+    color: var(--fg);
+}
+
+.matrix-lines {
+    color: var(--fg);
+    font-variant-numeric: tabular-nums;
+}
+
+.matrix-repos {
+    color: var(--fg);
+    text-align: center;
+}
+
+.matrix-level {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.4rem;
     border-radius: 3px;
-    transition: width 0.6s ease;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.matrix-level.expert {
+    background: rgba(var(--accent-rgb), 0.15);
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+}
+
+.matrix-level.advanced {
+    background: rgba(100, 200, 255, 0.1);
+    color: #64c8ff;
+    border: 1px solid rgba(100, 200, 255, 0.3);
+}
+
+.matrix-level.intermediate {
+    background: rgba(255, 200, 50, 0.1);
+    color: #ffc832;
+    border: 1px solid rgba(255, 200, 50, 0.3);
+}
+
+/* ============================================
+   STAT CARDS - CRT/Scanline Enhancement
+   ============================================ */
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(var(--accent-rgb), 0.03) 2px,
+        rgba(var(--accent-rgb), 0.03) 4px
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-card:hover::after {
+    opacity: 1;
+}
+
+.stat-value {
+    text-shadow: 0 0 10px rgba(var(--accent-rgb), 0.5);
+}
+
+.stat-card:hover .stat-value {
+    text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.8), 0 0 40px rgba(var(--accent-rgb), 0.3);
 }
 
 /* ============================================
@@ -856,19 +1155,28 @@
     }
 
     .timeline-card,
-    .fun-fact-card,
-    .language-card {
+    .terminal-log-card,
+    .skill-matrix-card {
         grid-column: span 1;
     }
 
-    .fun-facts-list {
-        grid-template-columns: 1fr;
+    .project-card {
+        width: 130px;
+        height: 85px;
+        padding: 0.75rem;
     }
 
-    .project-card {
-        width: 120px;
-        height: 80px;
-        font-size: 0.8rem;
+    .project-stack {
+        height: 200px;
+        margin-top: 5%;
+    }
+
+    .project-name {
+        font-size: 0.75rem;
+    }
+
+    .project-desc {
+        font-size: 0.6rem;
     }
 
     .modal-window {
@@ -890,32 +1198,64 @@
     }
 }
 
-/* Enhanced Project Card Animations - Clean transitions */
-.project-stack {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
+/* ============================================
+   DECK RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .decks-row {
+        gap: 1rem;
+    }
+
+    .deck-wrapper {
+        min-width: 180px;
+    }
+
+    .project-card {
+        width: 140px;
+        height: 90px;
+        padding: 0.875rem;
+    }
+
+    .project-stack {
+        height: 160px;
+        width: 180px;
+    }
 }
 
-.project-card {
-    transform-style: preserve-3d;
-    will-change: transform, opacity;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
+@media (max-width: 768px) {
+    .project-decks-container {
+        grid-column: span 1;
+    }
 
-.project-card:hover {
-    box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.25);
-}
+    .decks-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
 
-/* Committed center state */
-.project-card[data-centered="true"] {
-    /*transform: translate(-50%, -50%) scale(1.5) rotate(0deg) !important;*/
-    z-index: 1000 !important;
-}
+    .deck-wrapper {
+        min-width: 200px;
+    }
 
-/* Slower opacity transitions */
-.project-stack-card.enlarged:hover .project-card {
-    transition: opacity 0.6s ease;
+    .project-card {
+        width: 150px;
+        height: 95px;
+        padding: 0.875rem;
+    }
+
+    .project-name {
+        font-size: 0.8rem;
+    }
+
+    .project-desc {
+        font-size: 0.65rem;
+    }
+
+    .project-stack {
+        height: 170px;
+        width: 200px;
+    }
 }
 
 /*lock scrolliing*/
@@ -946,215 +1286,482 @@ body.modal-open {
 }
 
 /* ============================================
-   HORIZONTAL TIMELINE - NEW DESIGN
+   TIMELINE - Pixel Boat Sailing Experience
    ============================================ */
 
-/* Timeline Container with Navigation */
-.timeline-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+/* Timeline Ocean Container */
+.timeline-ocean {
     position: relative;
-    padding: 1rem 0;
+    width: 100%;
+    height: 65vh;
+    overflow: hidden;
+    background: linear-gradient(180deg,
+        rgba(0, 20, 40, 0.9) 0%,
+        rgba(0, 40, 60, 0.8) 50%,
+        rgba(0, 60, 80, 0.7) 100%);
+    border-radius: 8px;
 }
 
-/* Horizontal scroll track */
-.timeline-horizontal {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1.5rem;
-    padding: 2rem 1rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(var(--accent-rgb), 0.4) transparent;
-    -webkit-overflow-scrolling: touch;
-    flex: 1;
-    position: relative;
-}
-
-.timeline-horizontal::-webkit-scrollbar {
-    height: 6px;
-}
-
-.timeline-horizontal::-webkit-scrollbar-track {
-    background: rgba(var(--accent-rgb), 0.1);
-    border-radius: 3px;
-}
-
-.timeline-horizontal::-webkit-scrollbar-thumb {
-    background: rgba(var(--accent-rgb), 0.4);
-    border-radius: 3px;
-}
-
-.timeline-horizontal::-webkit-scrollbar-thumb:hover {
-    background: rgba(var(--accent-rgb), 0.6);
-}
-
-/* Timeline connector line */
-.timeline-horizontal::after {
+/* Pixel Water Effect */
+.timeline-ocean::before {
     content: '';
     position: absolute;
-    bottom: 1rem;
-    left: 1rem;
-    right: 1rem;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.3), transparent);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0px,
+        transparent 4px,
+        rgba(var(--accent-rgb), 0.1) 4px,
+        rgba(var(--accent-rgb), 0.1) 8px
+    );
+    animation: waterShimmer 3s ease-in-out infinite;
     pointer-events: none;
 }
 
-/* Individual timeline cards */
-.timeline-card-item {
-    flex: 0 0 280px;
-    scroll-snap-align: start;
-    background: rgba(var(--accent-rgb), 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(var(--accent-rgb), 0.2);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    cursor: pointer;
-    position: relative;
+@keyframes waterShimmer {
+    0%, 100% { opacity: 0.3; transform: translateX(0); }
+    50% { opacity: 0.5; transform: translateX(8px); }
 }
 
-.timeline-card-item:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.15);
-}
-
-/* Dot indicator on card bottom */
-.timeline-card-item::after {
-    content: '';
+/* Pixel Boat Container */
+.pixel-boat {
     position: absolute;
-    bottom: -0.75rem;
+    left: 10%;
+    bottom: 35%;
+    width: 120px;
+    height: 80px;
+    transition: left 0.1s linear;
+    z-index: 50;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+/* Pixel Boat Built with CSS */
+.boat-hull {
+    position: absolute;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
+    width: 80px;
+    height: 24px;
+    background: linear-gradient(180deg, #8B4513 0%, #654321 100%);
+    border-radius: 0 0 40px 40px;
+    box-shadow:
+        inset 0 -4px 0 #4a2810,
+        0 4px 0 rgba(var(--accent-rgb), 0.3);
+}
+
+/* Pixel effect on hull */
+.boat-hull::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    right: 8px;
+    height: 4px;
+    background: repeating-linear-gradient(90deg, #9B5523 0px, #9B5523 8px, #8B4513 8px, #8B4513 16px);
+}
+
+.boat-cabin {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 20px;
+    background: #654321;
+    border-radius: 4px 4px 0 0;
+}
+
+.boat-cabin::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background: rgba(var(--accent-rgb), 0.6);
+    border-radius: 2px;
+    box-shadow: 16px 0 0 rgba(var(--accent-rgb), 0.6);
+}
+
+.boat-mast {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 50px;
+    background: linear-gradient(180deg, #4a2810 0%, #654321 100%);
+}
+
+.boat-sail {
+    position: absolute;
+    bottom: 40px;
+    left: calc(50% + 4px);
+    width: 0;
+    height: 0;
+    border-left: 40px solid rgba(var(--accent-rgb), 0.8);
+    border-top: 20px solid transparent;
+    border-bottom: 24px solid transparent;
+    animation: sailWave 2s ease-in-out infinite;
+}
+
+@keyframes sailWave {
+    0%, 100% { transform: skewY(0deg); }
+    50% { transform: skewY(2deg); }
+}
+
+.boat-flag {
+    position: absolute;
+    bottom: 82px;
+    left: calc(50% + 2px);
+    width: 16px;
     height: 10px;
-    background: var(--bg);
-    border: 2px solid var(--accent);
-    border-radius: 50%;
-    transition: background 0.25s ease;
-}
-
-.timeline-card-item:hover::after {
     background: var(--accent);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    animation: flagWave 1s ease-in-out infinite;
 }
 
-/* Year badge */
-.timeline-year-badge {
-    display: inline-block;
-    background: rgba(var(--accent-rgb), 0.15);
-    color: var(--accent);
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
+@keyframes flagWave {
+    0%, 100% { transform: scaleX(1); }
+    50% { transform: scaleX(0.9); }
+}
+
+/* Boat bobbing animation */
+.pixel-boat {
+    animation: boatBob 2s ease-in-out infinite;
+}
+
+@keyframes boatBob {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-4px) rotate(1deg); }
+}
+
+/* Timeline Trail - Cards flowing from boat wake */
+.timeline-trail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem 2rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--accent-rgb), 0.3) transparent;
+}
+
+.timeline-trail::-webkit-scrollbar {
+    width: 4px;
+}
+
+.timeline-trail::-webkit-scrollbar-thumb {
+    background: rgba(var(--accent-rgb), 0.3);
+    border-radius: 2px;
+}
+
+/* Wake Bubbles */
+.wake-bubble {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(var(--accent-rgb), 0.4);
+    border-radius: 50%;
+    animation: bubbleFloat 2s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes bubbleFloat {
+    0% { opacity: 1; transform: scale(1) translateX(0); }
+    100% { opacity: 0; transform: scale(0.5) translateX(-100px); }
+}
+
+/* Timeline Cards in Wake */
+.timeline-wake-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.timeline-wake-card {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(50px) rotate(5deg);
+    opacity: 0;
+    position: relative;
+    margin-left: auto;
+    width: 70%;
+    max-width: 400px;
+}
+
+.timeline-wake-card.visible {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+}
+
+.timeline-wake-card:hover {
+    border-color: var(--accent);
+    transform: translateX(-8px) scale(1.02);
+    box-shadow: 0 8px 32px rgba(var(--accent-rgb), 0.2);
+}
+
+/* Year marker on cards */
+.wake-card-year {
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.8rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.8;
 }
 
-/* Card title */
-.timeline-card-title {
-    font-size: 1.1rem;
-    color: var(--fg);
+.wake-card-title {
     font-family: 'Inter', sans-serif;
+    font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    color: var(--fg);
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wake-card-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
     line-height: 1.4;
 }
 
-/* Card description */
-.timeline-card-desc {
-    font-size: 0.85rem;
+/* Scroll progress indicator */
+.voyage-progress {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    height: 4px;
+    background: rgba(var(--accent-rgb), 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.voyage-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-secondary, var(--accent)));
+    width: 0%;
+    transition: width 0.1s linear;
+    border-radius: 2px;
+}
+
+/* Journey stats */
+.voyage-stats {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
     color: var(--muted);
-    line-height: 1.5;
+}
+
+/* Legacy doc-sidebar styles kept for fallback */
+.timeline-doc-sidebar {
+    display: flex;
+    flex-direction: column;
+    max-height: 60vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--accent-rgb), 0.3) transparent;
+}
+
+.timeline-doc-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.timeline-doc-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.timeline-doc-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(var(--accent-rgb), 0.3);
+    border-radius: 2px;
+}
+
+.timeline-doc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--accent-rgb), 0.5);
+}
+
+/* Year Group */
+.timeline-year-group {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+/* Sticky Year Label */
+.timeline-year-label {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.9) 80%, transparent 100%);
+    padding: 0.75rem 0 0.5rem 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.timeline-year-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+}
+
+.timeline-year-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.3) 0%, transparent 100%);
+}
+
+/* Timeline Entries */
+.timeline-entries {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+.timeline-entries::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.2) 0%, rgba(var(--accent-rgb), 0.05) 100%);
+    border-radius: 1px;
+}
+
+/* Individual Timeline Entry */
+.timeline-entry {
+    position: relative;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timeline-entry::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background: transparent;
+    border: 2px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    transform: translate(-50%, -50%);
+}
+
+.timeline-entry:hover {
+    background: rgba(var(--accent-rgb), 0.05);
+}
+
+.timeline-entry:hover::before {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.5);
+}
+
+.timeline-entry-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--fg);
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timeline-entry-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.4;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-/* Navigation buttons */
-.timeline-nav-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(var(--accent-rgb), 0.1);
-    border: 1px solid rgba(var(--accent-rgb), 0.3);
-    color: var(--accent);
-    cursor: pointer;
-    transition: all 0.25s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.timeline-nav-btn:hover {
-    background: rgba(var(--accent-rgb), 0.2);
-    border-color: var(--accent);
-}
-
-.timeline-nav-btn:active {
-    transform: scale(0.95);
-}
-
-.timeline-nav-btn svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-}
-
-.timeline-nav-btn.timeline-prev svg {
-    transform: rotate(180deg);
-}
-
-/* Project tag in timeline */
+/* Project Tag */
 .timeline-project-tag {
-    display: inline-block;
-    background: rgba(var(--accent-rgb), 0.1);
+    display: inline-flex;
+    align-items: center;
+    background: rgba(var(--accent-rgb), 0.15);
     color: var(--accent);
-    padding: 0.15rem 0.4rem;
+    padding: 0.1rem 0.5rem;
     border-radius: 4px;
-    font-size: 0.65rem;
-    font-weight: 500;
+    font-size: 0.6rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-left: 0.5rem;
-    vertical-align: middle;
 }
 
-/* Responsive horizontal timeline */
+/* Timeline Header */
+.timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.1);
+}
+
+.timeline-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.timeline-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+    background: rgba(var(--accent-rgb), 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .timeline-container {
-        flex-direction: column;
+    .timeline-doc-sidebar {
+        max-height: 50vh;
     }
 
-    .timeline-nav-btn {
-        display: none;
+    .timeline-entry {
+        padding: 0.5rem 0.75rem;
     }
 
-    .timeline-horizontal {
-        flex-direction: column;
-        overflow-x: visible;
-        overflow-y: visible;
-        gap: 1rem;
-        padding: 1rem;
+    .timeline-entry-title {
+        font-size: 0.85rem;
     }
 
-    .timeline-horizontal::after {
-        display: none;
-    }
-
-    .timeline-card-item {
-        flex: none;
-        width: 100%;
-    }
-
-    .timeline-card-item::after {
-        display: none;
+    .timeline-entry-desc {
+        font-size: 0.75rem;
     }
 }
 
@@ -1428,17 +2035,8 @@ body.modal-open {
     white-space: nowrap;
 }
 
-/* Adjust project card height to accommodate tags */
-.project-card {
-    height: 130px; /* Increased from 110px */
-}
-
-/* Mobile adjustment */
+/* Project card tags mobile adjustment */
 @media (max-width: 640px) {
-    .project-card {
-        height: 100px; /* Increased from 80px */
-    }
-
     .project-card-tag {
         font-size: 0.55rem;
         padding: 0.1rem 0.3rem;

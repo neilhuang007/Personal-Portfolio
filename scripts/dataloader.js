@@ -112,21 +112,35 @@ const DataLoader = (function() {
         return resumeData || {};
     }
 
-    // Get top 4 languages from tech arsenal data
+    // Get top languages - prefer resume data (has proficiency %), fallback to tech arsenal
     function getTopLanguages(count = 4) {
+        // Try resume data first (has proper proficiency percentages)
+        if (resumeData && resumeData.skills && resumeData.skills.languages) {
+            const languages = resumeData.skills.languages
+                .sort((a, b) => b.proficiency - a.proficiency)
+                .slice(0, count);
+
+            return languages.map(lang => ({
+                name: lang.name,
+                level: lang.level,
+                progress: lang.proficiency,
+                proficiency: lang.proficiency
+            }));
+        }
+
+        // Fallback to tech arsenal data
         if (!techArsenalData || !techArsenalData.skills) return [];
-        
-        // Filter languages and sort by progress/proficiency
+
         const languages = techArsenalData.skills
             .filter(skill => skill.category === 'languages')
-            .sort((a, b) => b.progress - a.progress)
+            .sort((a, b) => (b.linesPercentage || 0) - (a.linesPercentage || 0))
             .slice(0, count);
-            
+
         return languages.map(lang => ({
             name: lang.name,
             level: lang.level,
-            progress: lang.progress,
-            proficiency: lang.progress // Use progress as proficiency for consistency
+            progress: Math.min(Math.round(lang.linesPercentage * 1.5) || 80, 100),
+            proficiency: lang.linesPercentage || 80
         }));
     }
 

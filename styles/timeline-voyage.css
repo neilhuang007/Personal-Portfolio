@@ -1,0 +1,1127 @@
+/* ============================================
+   TIMELINE VOYAGE - Three.js Ocean Experience
+   "Life as a boat sailing on an ocean of possibilities"
+   ============================================ */
+
+/* ============================================
+   OCEAN COLOR PALETTE
+   ============================================ */
+:root {
+    --px-ocean-1: #0f1b2d;
+    --px-ocean-2: #1a3a5c;
+    --px-ocean-3: #2d5a87;
+    --px-ocean-4: #4a8ab5;
+    --px-ocean-5: #7bc4e8;
+    --px-foam:    #d4f1f9;
+
+    --px-sky-1: #0a0a1a;
+    --px-sky-2: #0d1a2e;
+    --px-sky-3: #1a2d4a;
+    --px-sky-4: #2d4060;
+
+    --px-sun-1: #ff6b35;
+    --px-sun-2: #f7931e;
+    --px-sun-3: #ffd700;
+
+    --px-wood-1: #2d1b0e;
+    --px-wood-2: #5c3a1d;
+    --px-wood-3: #8b5a2b;
+    --px-wood-4: #b8860b;
+
+    --px-sand-1: #c2a366;
+    --px-sand-2: #dbc490;
+    --px-sand-3: #f0e4c4;
+
+    --px-green-1: #1a472a;
+    --px-green-2: #2d6b45;
+    --px-green-3: #4a9f6e;
+
+    /* Animation speeds */
+    --voyage-speed: 60s;
+    --bob-speed: 3.2s;
+}
+
+/* ============================================
+   PIXEL RENDERING FOR PIXEL-ART ELEMENTS
+   ============================================ */
+.voyage-island,
+.voyage-island *,
+.voyage-boat,
+.voyage-boat * {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* ============================================
+   VOYAGE MODAL CONTAINER
+   ============================================ */
+.voyage-modal {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--px-ocean-1);
+    z-index: 2000;
+    display: none;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+.voyage-modal.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ============================================
+   THREE.JS CANVAS CONTAINER - Background Layer
+   ============================================ */
+.voyage-three-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.voyage-three-container canvas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    height: 55% !important;
+}
+
+/* ============================================
+   SKY LAYER - Above water line
+   ============================================ */
+.voyage-sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48%;
+    background: linear-gradient(
+        180deg,
+        var(--px-sky-1) 0%,
+        var(--px-sky-2) 30%,
+        var(--px-sky-3) 65%,
+        var(--px-sky-4) 85%,
+        #3a2010 95%,
+        var(--px-sun-1) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Pixel stars */
+.voyage-sky::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 55%;
+    background-image:
+        radial-gradient(1.5px 1.5px at 8%  12%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 22% 8%,  #fff, transparent),
+        radial-gradient(1.5px 1.5px at 38% 18%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 55% 6%,  #fff, transparent),
+        radial-gradient(1.5px 1.5px at 70% 14%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 85% 9%,  #fff, transparent),
+        radial-gradient(1px   1px   at 14% 28%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px   1px   at 30% 22%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px   1px   at 48% 30%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px   1px   at 63% 20%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px   1px   at 78% 25%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px   1px   at 92% 18%, rgba(255,255,255,0.6), transparent);
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    0%   { opacity: 0.45; }
+    100% { opacity: 1; }
+}
+
+/* ============================================
+   PIXEL SUN
+   ============================================ */
+.voyage-sun {
+    position: absolute;
+    bottom: 20%;
+    left: 14%;
+    width: 72px;
+    height: 72px;
+    z-index: 3;
+    animation: sunGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes sunGlow {
+    0%   { filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5)); }
+    100% { filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.9)); }
+}
+
+.voyage-sun-core {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 48px;
+    height: 48px;
+    background: var(--px-sun-3);
+}
+
+.voyage-sun-ray {
+    position: absolute;
+    background: var(--px-sun-2);
+}
+
+.voyage-sun-ray--top    { width: 8px; height: 14px; top: -2px;  left: 32px; }
+.voyage-sun-ray--bottom { width: 8px; height: 14px; bottom: -2px; left: 32px; }
+.voyage-sun-ray--left   { width: 14px; height: 8px; left: -2px; top: 32px; }
+.voyage-sun-ray--right  { width: 14px; height: 8px; right: -2px; top: 32px; }
+
+/* ============================================
+   HORIZON BLEND - Seamless sky-to-water transition
+   ============================================ */
+.voyage-horizon {
+    position: absolute;
+    top: 44%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(15, 27, 45, 0.4) 40%,
+        rgba(26, 58, 92, 0.7) 100%
+    );
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* ============================================
+   PIXEL BOAT - Fixed Center
+   ============================================ */
+.voyage-boat {
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 130px;
+    z-index: 50;
+    animation: boatFloat var(--bob-speed) ease-in-out infinite;
+    pointer-events: none;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
+}
+
+@keyframes boatFloat {
+    0%   { transform: translate(-50%, -50%) translateY(0px)   rotate(-1.5deg); }
+    25%  { transform: translate(-50%, -50%) translateY(-7px)  rotate(0deg);    }
+    50%  { transform: translate(-50%, -50%) translateY(-3px)  rotate(1.5deg);  }
+    75%  { transform: translate(-50%, -50%) translateY(-10px) rotate(0.5deg);  }
+    100% { transform: translate(-50%, -50%) translateY(0px)   rotate(-1.5deg); }
+}
+
+.boat-pixel {
+    position: absolute;
+}
+
+/* Hull */
+.boat-hull {
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 34px;
+    background: var(--px-wood-3);
+    clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
+}
+
+.boat-hull::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    right: 8px;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--px-wood-4) 0px, var(--px-wood-4) 14px,
+        var(--px-wood-3) 14px, var(--px-wood-3) 18px
+    );
+}
+
+.boat-hull::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--px-wood-1);
+}
+
+/* Cabin */
+.boat-cabin {
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 26px;
+    background: var(--px-wood-2);
+    border-top: 3px solid var(--px-wood-1);
+}
+
+.boat-cabin::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 13px;
+    height: 13px;
+    background: rgba(var(--accent-rgb, 71, 224, 84), 0.75);
+    box-shadow: 20px 0 0 rgba(var(--accent-rgb, 71, 224, 84), 0.75);
+}
+
+/* Mast */
+.boat-mast {
+    bottom: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 68px;
+    background: linear-gradient(90deg, var(--px-wood-2) 0%, var(--px-wood-3) 50%, var(--px-wood-2) 100%);
+}
+
+/* Sail */
+.boat-sail {
+    bottom: 62px;
+    left: calc(50% + 7px);
+    width: 0;
+    height: 0;
+    border-left: 58px solid rgba(var(--accent-rgb, 71, 224, 84), 0.88);
+    border-top: 26px solid transparent;
+    border-bottom: 34px solid transparent;
+    animation: sailBillow 2.8s ease-in-out infinite;
+}
+
+@keyframes sailBillow {
+    0%,  100% { transform: scaleX(1)    skewY(0deg); border-left-color: rgba(var(--accent-rgb, 71, 224, 84), 0.88); }
+    50%        { transform: scaleX(0.93) skewY(2deg); border-left-color: rgba(var(--accent-rgb, 71, 224, 84), 0.70); }
+}
+
+/* Flag */
+.boat-flag {
+    bottom: 122px;
+    left: calc(50% + 3px);
+    width: 22px;
+    height: 14px;
+    background: var(--accent, #47E054);
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    animation: flagWave 0.85s ease-in-out infinite;
+}
+
+@keyframes flagWave {
+    0%,  100% { transform: scaleX(1);    }
+    50%        { transform: scaleX(0.82); }
+}
+
+/* Wake (water trail behind boat) */
+.boat-wake {
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 10px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(var(--accent-rgb, 71, 224, 84), 0.12) 30%,
+        rgba(123, 196, 232, 0.3) 50%,
+        rgba(123, 196, 232, 0.12) 70%,
+        transparent 100%
+    );
+    border-radius: 50%;
+    animation: wakeRipple 2s ease-in-out infinite;
+}
+
+@keyframes wakeRipple {
+    0%,  100% { opacity: 0.7; transform: translateX(-50%) scaleX(1);    }
+    50%        { opacity: 1;   transform: translateX(-50%) scaleX(1.12); }
+}
+
+/* ============================================
+   SCROLL TRACK - Auto-scrolling Timeline Layer
+   ============================================ */
+.voyage-scroll-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.voyage-scroll-track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 12%;
+    will-change: transform;
+    pointer-events: all;
+
+    /* CSS auto-scroll animation */
+    animation: autoScroll var(--voyage-speed) linear infinite;
+    animation-play-state: running;
+}
+
+.voyage-scroll-track.paused {
+    animation-play-state: paused;
+}
+
+@keyframes autoScroll {
+    0%   { transform: translateX(50vw); }
+    100% { transform: translateX(calc(-100% + 50vw)); }
+}
+
+/* ============================================
+   PIXEL ISLANDS - Year Markers
+   ============================================ */
+.voyage-island {
+    position: relative;
+    flex-shrink: 0;
+    animation: islandBob 5s ease-in-out infinite;
+    cursor: default;
+}
+
+@keyframes islandBob {
+    0%,  100% { transform: translateY(0px);  }
+    50%        { transform: translateY(-7px); }
+}
+
+/* Island base (sand) */
+.island-base {
+    position: relative;
+    width: 130px;
+    height: 52px;
+    background: var(--px-sand-2);
+    border-radius: 50%;
+    box-shadow:
+        inset 0 -10px 0 var(--px-sand-1),
+        0 10px 0 -6px var(--px-ocean-3);
+}
+
+.island-highlight {
+    position: absolute;
+    top: 6px;
+    left: 20px;
+    right: 20px;
+    height: 10px;
+    background: var(--px-sand-3);
+    border-radius: 50%;
+}
+
+/* Palm tree */
+.island-palm {
+    position: absolute;
+    bottom: 46px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.palm-trunk {
+    width: 12px;
+    height: 52px;
+    background: repeating-linear-gradient(
+        180deg,
+        var(--px-wood-3) 0px, var(--px-wood-3) 9px,
+        var(--px-wood-2) 9px, var(--px-wood-2) 13px
+    );
+    margin: 0 auto;
+}
+
+.palm-fronds {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 72px;
+    height: 36px;
+}
+
+.palm-frond {
+    position: absolute;
+    width: 34px;
+    height: 9px;
+    background: var(--px-green-2);
+    border-radius: 0 50% 50% 0;
+}
+
+.pf-1 { top: 0;   left: 18px;  transform: rotate(-20deg); }
+.pf-2 { top: 5px; left: 2px;   transform: rotate(-45deg); background: var(--px-green-1); }
+.pf-3 { top: 0;   right: 4px;  left: auto; transform: rotate(20deg); }
+.pf-4 { top: 5px; right: -12px; left: auto; transform: rotate(45deg); background: var(--px-green-1); }
+.pf-5 { top: 10px; left: 18px; background: var(--px-green-3); }
+
+.palm-coconuts {
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.coconut {
+    width: 9px;
+    height: 9px;
+    background: var(--px-wood-1);
+    border-radius: 50%;
+}
+
+/* Year badge */
+.island-year-badge {
+    position: absolute;
+    bottom: -38px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    border: 2px solid var(--accent, #47E054);
+    padding: 3px 12px;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+}
+
+.island-year-text {
+    font-family: 'VT323', monospace;
+    font-size: 22px;
+    color: var(--accent, #47E054);
+    text-shadow: 0 0 8px rgba(71, 224, 84, 0.6);
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   PIXEL BOTTLES - Floating Project Markers
+   ============================================ */
+.voyage-bottle {
+    position: relative;
+    flex-shrink: 0;
+    width: 36px;
+    height: 72px;
+    margin: 0 60px;
+    cursor: default;
+    animation: bottleBob 3.5s ease-in-out infinite;
+    transition: transform 0.25s ease;
+    z-index: 25;
+}
+
+.voyage-bottle--clickable {
+    cursor: pointer;
+}
+
+.voyage-bottle--clickable:hover {
+    transform: scale(1.25) rotate(-8deg) !important;
+}
+
+.voyage-bottle:hover .bottle-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+@keyframes bottleBob {
+    0%   { transform: translateY(0px)   rotate(-7deg);  }
+    25%  { transform: translateY(-14px) rotate(-3deg);  }
+    50%  { transform: translateY(-7px)  rotate(7deg);   }
+    75%  { transform: translateY(-18px) rotate(3deg);   }
+    100% { transform: translateY(0px)   rotate(-7deg);  }
+}
+
+/* Bottle body */
+.bottle-body {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: 26px;
+    height: 44px;
+    background: linear-gradient(
+        120deg,
+        rgba(100, 200, 140, 0.55) 0%,
+        rgba(140, 220, 170, 0.75) 35%,
+        rgba(100, 200, 140, 0.55) 100%
+    );
+    border-radius: 4px 4px 10px 10px;
+    border: 1px solid rgba(180, 240, 200, 0.4);
+}
+
+.bottle-shine {
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    width: 5px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 3px;
+}
+
+.bottle-paper {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    width: 14px;
+    height: 24px;
+    background: #fef9e7;
+    transform: rotate(4deg);
+    border-radius: 1px;
+}
+
+.paper-lines {
+    position: absolute;
+    top: 4px;
+    left: 2px;
+    width: 10px;
+    height: 2px;
+    background: #bdc3c7;
+    box-shadow:
+        0 4px 0 #bdc3c7,
+        0 8px 0 #bdc3c7,
+        0 12px 0 #bdc3c7;
+}
+
+.bottle-neck {
+    position: absolute;
+    bottom: 44px;
+    left: 9px;
+    width: 18px;
+    height: 14px;
+    background: rgba(120, 200, 150, 0.7);
+    border-radius: 2px 2px 0 0;
+}
+
+.bottle-cork {
+    position: absolute;
+    bottom: 58px;
+    left: 11px;
+    width: 14px;
+    height: 14px;
+    background: var(--px-wood-4);
+    border-radius: 3px;
+}
+
+.bottle-cork::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 10px;
+    height: 4px;
+    background: var(--px-wood-3);
+}
+
+/* Bottle tooltip */
+.bottle-tooltip {
+    position: absolute;
+    bottom: calc(100% + 18px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(10, 15, 25, 0.97);
+    border: 2px solid var(--accent, #47E054);
+    padding: 12px 14px;
+    min-width: 210px;
+    max-width: 260px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.22s ease;
+    z-index: 200;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 20px rgba(71, 224, 84, 0.15);
+}
+
+.bottle-tooltip-year {
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    color: var(--accent, #47E054);
+    margin-bottom: 3px;
+    letter-spacing: 1px;
+}
+
+.bottle-tooltip-title {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: var(--fg, #e0e0e0);
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.bottle-tooltip-desc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted, #888);
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.bottle-tooltip-cta {
+    font-family: 'VT323', monospace;
+    font-size: 15px;
+    color: var(--accent, #47E054);
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   FLOATING PROJECT CARDS
+   ============================================ */
+.voyage-card {
+    position: relative;
+    flex-shrink: 0;
+    margin: 0 40px;
+    width: 210px;
+    padding: 16px 18px;
+    background: rgba(10, 18, 30, 0.82);
+    border: 1px solid rgba(74, 138, 181, 0.5);
+    cursor: default;
+    transition: all 0.25s ease;
+    animation: cardFloat 4.5s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(123, 196, 232, 0.1);
+    z-index: 22;
+}
+
+.voyage-card--clickable {
+    cursor: pointer;
+}
+
+.voyage-card--clickable:hover {
+    border-color: var(--accent, #47E054);
+    transform: translateY(-14px) rotate(0deg) !important;
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(71, 224, 84, 0.2),
+        inset 0 1px 0 rgba(71, 224, 84, 0.15);
+}
+
+@keyframes cardFloat {
+    0%,  100% { transform: translateY(0px)   rotate(-2deg); }
+    50%        { transform: translateY(-10px) rotate(2deg);  }
+}
+
+.card-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.card-year {
+    font-family: 'VT323', monospace;
+    font-size: 17px;
+    color: var(--accent, #47E054);
+    letter-spacing: 1px;
+}
+
+.card-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    padding: 2px 6px;
+    background: rgba(71, 224, 84, 0.15);
+    color: var(--accent, #47E054);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(71, 224, 84, 0.3);
+}
+
+.card-title {
+    font-family: 'VT323', monospace;
+    font-size: 21px;
+    color: var(--fg, #e0e0e0);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.card-desc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted, #888);
+    line-height: 1.55;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-cta {
+    font-family: 'VT323', monospace;
+    font-size: 15px;
+    color: var(--accent, #47E054);
+    text-align: right;
+    letter-spacing: 1px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.voyage-card--clickable:hover .card-cta {
+    opacity: 1;
+}
+
+/* ============================================
+   MILESTONE CARDS - Non-project life events
+   ============================================ */
+.voyage-milestone {
+    position: relative;
+    flex-shrink: 0;
+    margin: 0 40px;
+    width: 180px;
+    padding: 14px 16px;
+    background: rgba(15, 27, 45, 0.85);
+    border: 1px solid rgba(71, 224, 84, 0.25);
+    border-left: 3px solid var(--accent, #47E054);
+    animation: milestoneFloat 5.5s ease-in-out infinite;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 22;
+}
+
+@keyframes milestoneFloat {
+    0%,  100% { transform: translateY(0px)  rotate(1deg);   }
+    50%        { transform: translateY(-6px) rotate(-1deg);  }
+}
+
+.milestone-anchor {
+    font-size: 16px;
+    margin-bottom: 4px;
+    opacity: 0.7;
+}
+
+.milestone-year {
+    font-family: 'VT323', monospace;
+    font-size: 15px;
+    color: var(--accent, #47E054);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.milestone-title {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: var(--fg, #e0e0e0);
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.milestone-desc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted, #888);
+    line-height: 1.5;
+}
+
+/* ============================================
+   HEADER UI
+   ============================================ */
+.voyage-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background: linear-gradient(
+        180deg,
+        rgba(5, 8, 15, 0.92) 0%,
+        rgba(5, 8, 15, 0.6) 70%,
+        transparent 100%
+    );
+    z-index: 100;
+    backdrop-filter: blur(4px);
+}
+
+.voyage-close {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--px-sun-3);
+    color: var(--px-sun-3);
+    font-size: 26px;
+    font-family: 'VT323', monospace;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.voyage-close:hover {
+    background: var(--px-sun-3);
+    color: var(--px-ocean-1);
+    transform: scale(1.1) rotate(90deg);
+}
+
+.voyage-title {
+    font-family: 'VT323', monospace;
+    font-size: 26px;
+    color: var(--px-sun-3);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 0 var(--px-ocean-1), 0 0 12px rgba(255, 215, 0, 0.4);
+    margin: 0;
+}
+
+/* Progress bar */
+.voyage-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.voyage-progress {
+    position: relative;
+    width: 200px;
+    height: 10px;
+    background: rgba(26, 58, 92, 0.8);
+    border: 1px solid var(--px-ocean-4);
+    overflow: visible;
+}
+
+.voyage-progress-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(
+        90deg,
+        var(--px-ocean-4) 0%,
+        var(--accent, #47E054) 100%
+    );
+    transition: width 0.4s linear;
+    box-shadow: 0 0 8px rgba(71, 224, 84, 0.4);
+}
+
+.voyage-progress-boat {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    transition: left 0.4s linear;
+    filter: drop-shadow(0 0 4px rgba(71, 224, 84, 0.6));
+    z-index: 5;
+}
+
+.voyage-percent {
+    font-family: 'VT323', monospace;
+    font-size: 17px;
+    color: var(--px-ocean-5);
+    min-width: 50px;
+    text-align: right;
+}
+
+/* ============================================
+   CONTROLS
+   ============================================ */
+.voyage-controls {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+    background: rgba(5, 10, 20, 0.75);
+    border: 1px solid rgba(74, 138, 181, 0.4);
+    padding: 10px 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.voyage-control-btn {
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 2px solid var(--px-ocean-4);
+    color: var(--px-ocean-5);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voyage-control-btn:hover {
+    background: var(--accent, #47E054);
+    border-color: var(--accent, #47E054);
+    color: var(--px-ocean-1);
+    transform: scale(1.1);
+}
+
+.voyage-control-btn.active {
+    background: var(--accent, #47E054);
+    border-color: var(--accent, #47E054);
+    color: var(--px-ocean-1);
+}
+
+.voyage-speed-label {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: var(--px-ocean-5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* ============================================
+   KEYBOARD HINTS
+   ============================================ */
+.voyage-hints {
+    position: absolute;
+    bottom: 28px;
+    right: 24px;
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.hint-pill {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(5, 10, 20, 0.75);
+    border: 1px solid rgba(74, 138, 181, 0.3);
+    padding: 6px 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--px-ocean-5);
+    backdrop-filter: blur(6px);
+}
+
+.hint-key {
+    background: rgba(74, 138, 181, 0.2);
+    border: 1px solid var(--px-ocean-4);
+    padding: 2px 6px;
+    font-size: 11px;
+    font-family: 'VT323', monospace;
+    color: var(--px-ocean-5);
+    letter-spacing: 0.5px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .voyage-header {
+        padding: 0 12px;
+        height: 54px;
+    }
+
+    .voyage-title {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .voyage-progress {
+        width: 100px;
+    }
+
+    .voyage-boat {
+        width: 120px;
+        height: 100px;
+        top: 48%;
+    }
+
+    .boat-hull {
+        width: 76px;
+        height: 26px;
+    }
+
+    .boat-cabin {
+        width: 34px;
+        height: 20px;
+        bottom: 24px;
+    }
+
+    .boat-mast {
+        height: 50px;
+        width: 6px;
+        bottom: 42px;
+    }
+
+    .boat-sail {
+        border-left-width: 42px;
+        border-top-width: 18px;
+        border-bottom-width: 24px;
+        bottom: 46px;
+    }
+
+    .boat-flag {
+        bottom: 88px;
+    }
+
+    .voyage-island {
+        margin: 0 50px;
+    }
+
+    .island-base {
+        width: 90px;
+        height: 36px;
+    }
+
+    .voyage-card {
+        width: 160px;
+        padding: 12px;
+        margin: 0 24px;
+    }
+
+    .voyage-milestone {
+        width: 140px;
+        padding: 10px 12px;
+        margin: 0 24px;
+    }
+
+    .voyage-bottle {
+        margin: 0 40px;
+    }
+
+    .voyage-hints {
+        display: none;
+    }
+
+    .voyage-controls {
+        gap: 12px;
+        padding: 8px 14px;
+        bottom: 16px;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    .voyage-scroll-track,
+    .voyage-boat,
+    .voyage-island,
+    .voyage-bottle,
+    .voyage-card,
+    .voyage-milestone,
+    .boat-sail,
+    .boat-flag,
+    .boat-wake,
+    .voyage-sun {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .voyage-scroll-track {
+        transform: translateX(50vw) !important;
+    }
+}

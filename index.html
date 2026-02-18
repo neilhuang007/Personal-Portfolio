@@ -7,7 +7,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Share+Tech+Mono&family=Special+Elite&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600;700&family=Share+Tech+Mono&family=Special+Elite&family=VT323&display=swap" rel="stylesheet">
 
 
     <script src="scripts/dataloader.js"></script>
@@ -18,8 +18,10 @@
 
     <link rel="stylesheet" href="styles/section2.css">
     <link rel="stylesheet" href="styles/section3.css">
+    <link rel="stylesheet" href="styles/timeline-voyage.css">
     <script src="scripts/section2.js" defer></script>
     <script src="scripts/section3.js" defer></script>
+    <script src="scripts/timeline-voyage.js" defer></script>
 </head>
 <body>
 
@@ -118,33 +120,21 @@
                 <!-- Stats Grid - Now under the main card -->
                 <div class="stats-grid">
                     <div class="card stat-card">
-                        <svg class="stat-icon" viewBox="0 0 24 24" width="32" height="32">
-                            <path fill="currentColor" d="M5 7h14l-.23 2.39c-.5-.37-1.11-.6-1.77-.61-.66.01-1.27.26-1.77.63l-2.23 2.23-2.23-2.23c-.5-.37-1.11-.62-1.77-.63s-1.27.24-1.77.61L5 7m7 14l-5-5 1.41-1.41L11 17.17V11h2v6.17l2.59-2.58L17 16l-5 5z"/>
-                        </svg>
                         <div class="stat-value">#4</div>
                         <div class="stat-label">NSDA Public Forum national ranking</div>
                     </div>
 
                     <div class="card stat-card">
-                        <svg class="stat-icon" viewBox="0 0 24 24" width="32" height="32">
-                            <path fill="currentColor" d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                        </svg>
                         <div class="stat-value">11</div>
-                        <div class="stat-label">Number of coding languages I know</div>
+                        <div class="stat-label">Coding languages mastered</div>
                     </div>
 
                     <div class="card stat-card">
-                        <svg class="stat-icon" viewBox="0 0 24 24" width="32" height="32">
-                            <path fill="currentColor" d="M5 7h14l-.23 2.39c-.5-.37-1.11-.6-1.77-.61-.66.01-1.27.26-1.77.63l-2.23 2.23-2.23-2.23c-.5-.37-1.11-.62-1.77-.63s-1.27.24-1.77.61L5 7m7 14l-5-5 1.41-1.41L11 17.17V11h2v6.17l2.59-2.58L17 16l-5 5z"/>
-                        </svg>
                         <div class="stat-value">#8</div>
                         <div class="stat-label">City fencing ranking</div>
                     </div>
 
                     <div class="card stat-card">
-                        <svg class="stat-icon" viewBox="0 0 24 24" width="32" height="32">
-                            <path fill="currentColor" d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-                        </svg>
                         <div class="stat-value">Gold</div>
                         <div class="stat-label">USACO Rank</div>
                     </div>
@@ -169,58 +159,55 @@
                     </div>
                 </div>
 
-                <!-- Project Stack Card -->
-                <div class="card project-stack-card enlarged">
-                    <div class="card-header">
+                <!-- Project Decks Container - Multiple category decks -->
+                <div class="project-decks-container">
+                    <div class="decks-header">
                         <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
                             <path fill="currentColor" d="M8 3a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2H3v2h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h2v-2H8v-5a2 2 0 0 0-2-2 2 2 0 0 0 2-2V5h2V3m6 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3h2z"/>
                         </svg>
                         <span class="card-title">My Projects</span>
                     </div>
-                    <div class="project-stack">
-<!--                        cards will be populated here -->
+                    <div class="decks-row">
+                        <!-- Decks will be populated dynamically by JavaScript -->
                     </div>
                 </div>
 
-                <div class="card fun-fact-card">
+                <div class="card terminal-log-card">
                     <div class="card-header">
                         <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                            <path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 14H4V8h16v10zm-2-1a1 1 0 01-1 1H7a1 1 0 010-2h10a1 1 0 011 1zM7 11l2 2-2 2 1.5 1.5L12 13l-3.5-3.5L7 11z"/>
                         </svg>
-                        <span class="card-title">Fun Facts</span>
+                        <span class="card-title">&gt;_ SYS_LOG</span>
                     </div>
-                    <div class="fun-facts-list">
-                        <div class="fun-fact-item">I am ambidextrous</div>
-                        <div class="fun-fact-item">I used to want to be a chef</div>
-                        <div class="fun-fact-item">Besides from computer science, i am also a professional artist</div>
-                        <div class="fun-fact-item">I have been to the antarctica</div>
+                    <div class="terminal-log">
+                        <div class="log-entry log-info">
+                            <span class="log-prefix">[INFO]</span>
+                            <span class="log-text">Ambidextrous — writes and draws with both hands</span>
+                        </div>
+                        <div class="log-entry log-debug">
+                            <span class="log-prefix">[LOG]</span>
+                            <span class="log-text">Former aspiring chef — still cooks a mean steak</span>
+                        </div>
+                        <div class="log-entry log-info">
+                            <span class="log-prefix">[INFO]</span>
+                            <span class="log-text">Professional artist — oil painting &amp; digital art</span>
+                        </div>
+                        <div class="log-entry log-warn">
+                            <span class="log-prefix">[WARN]</span>
+                            <span class="log-text">Has visited Antarctica — survived -40°C winds</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="card language-card" onclick="goToSection(3)">
+                <div class="card skill-matrix-card" onclick="goToSection(3)">
                     <div class="card-header">
                         <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
                             <path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
                         </svg>
-                        <span class="card-title">Lorem Languages</span>
+                        <span class="card-title">&gt;_ SKILL_MATRIX</span>
                     </div>
-                    <div class="language-grid">
-                        <div class="language-item">
-                            <span class="lang-name">Lorem</span>
-                            <div class="lang-bar" style="--progress: 95%;"></div>
-                        </div>
-                        <div class="language-item">
-                            <span class="lang-name">Ipsum</span>
-                            <div class="lang-bar" style="--progress: 90%;"></div>
-                        </div>
-                        <div class="language-item">
-                            <span class="lang-name">Dolor</span>
-                            <div class="lang-bar" style="--progress: 85%;"></div>
-                        </div>
-                        <div class="language-item">
-                            <span class="lang-name">Sit</span>
-                            <div class="lang-bar" style="--progress: 80%;"></div>
-                        </div>
+                    <div class="skill-matrix" id="skill-matrix">
+                        <!-- Populated by JavaScript -->
                     </div>
                 </div>
             </div>

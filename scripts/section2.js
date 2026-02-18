@@ -7,38 +7,57 @@ let activeProjectWindows = [];
 let minimizedWindows = [];
 let windowZIndex = 1100;
 
-// Timeline Modal Functions
+// Timeline Modal Functions - Pixel Boat Sailing Experience
 function openTimelineModal() {
     const modal = document.getElementById('timeline-modal');
     const modalContent = modal.querySelector('.modal-content');
     const combinedTimeline = DataLoader.getCombinedTimeline();
 
-    // Build horizontal timeline HTML
+    // Sort by year descending (newest first)
+    const sortedTimeline = [...combinedTimeline].sort((a, b) => b.year - a.year);
+
+    // Build pixel boat sailing timeline HTML
     const timelineHTML = `
-        <h3>My Journey</h3>
-        <div class="timeline-container">
-            <button class="timeline-nav-btn timeline-prev" onclick="scrollTimelineLeft()" aria-label="Previous">
-                <svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5v10z"/></svg>
-            </button>
-            <div class="timeline-horizontal" id="timeline-track">
-                ${combinedTimeline.map((item, index) => {
-                    const isProject = item.type === 'project';
-                    const description = item.description ? item.description.substring(0, 100) + (item.description.length > 100 ? '...' : '') : '';
-                    return `
-                        <div class="timeline-card-item ${isProject ? 'timeline-project' : ''}"
-                             onclick="${isProject ? `openProjectFromTimeline(${index})` : `openTimelineDetail(${index})`}">
-                            <span class="timeline-year-badge">${item.year}</span>
-                            <div class="timeline-card-title">
-                                ${item.title}${isProject ? '<span class="timeline-project-tag">PROJECT</span>' : ''}
-                            </div>
-                            <div class="timeline-card-desc">${description}</div>
-                        </div>
-                    `;
-                }).join('')}
+        <div class="timeline-header">
+            <h3>My Voyage</h3>
+            <span class="timeline-count">${combinedTimeline.length} milestones</span>
+        </div>
+        <div class="timeline-ocean">
+            <!-- Voyage Progress -->
+            <div class="voyage-progress">
+                <div class="voyage-progress-bar" id="voyage-progress-bar"></div>
             </div>
-            <button class="timeline-nav-btn timeline-next" onclick="scrollTimelineRight()" aria-label="Next">
-                <svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5v10z"/></svg>
-            </button>
+            <div class="voyage-stats" id="voyage-stats">0%</div>
+
+            <!-- Pixel Boat -->
+            <div class="pixel-boat" id="pixel-boat">
+                <div class="boat-flag"></div>
+                <div class="boat-mast"></div>
+                <div class="boat-sail"></div>
+                <div class="boat-cabin"></div>
+                <div class="boat-hull"></div>
+            </div>
+
+            <!-- Timeline Cards Trail -->
+            <div class="timeline-trail" id="timeline-trail">
+                <div class="timeline-wake-cards" id="wake-cards">
+                    ${sortedTimeline.map((item, index) => {
+                        const isProject = item.type === 'project';
+                        const description = item.description ? item.description.substring(0, 60) + (item.description.length > 60 ? '...' : '') : '';
+                        return `
+                            <div class="timeline-wake-card" data-index="${index}" data-original-index="${combinedTimeline.indexOf(item)}"
+                                 onclick="${isProject ? `openProjectFromTimeline(${combinedTimeline.indexOf(item)})` : `openTimelineDetail(${combinedTimeline.indexOf(item)})`}">
+                                <span class="wake-card-year">${item.year}</span>
+                                <div class="wake-card-title">
+                                    ${item.title}
+                                    ${isProject ? '<span class="timeline-project-tag">PROJECT</span>' : ''}
+                                </div>
+                                <div class="wake-card-desc">${description}</div>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
         </div>
     `;
 
@@ -46,8 +65,95 @@ function openTimelineModal() {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 
-    // Initialize keyboard navigation
+    // Initialize boat sailing animation
+    initBoatSailing();
     initTimelineKeyNav();
+}
+
+// Initialize the boat sailing scroll animation
+function initBoatSailing() {
+    const trail = document.getElementById('timeline-trail');
+    const boat = document.getElementById('pixel-boat');
+    const progressBar = document.getElementById('voyage-progress-bar');
+    const voyageStats = document.getElementById('voyage-stats');
+    const cards = document.querySelectorAll('.timeline-wake-card');
+
+    if (!trail || !boat) return;
+
+    // Create intersection observer for card visibility
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Add staggered delay based on position
+                const delay = parseInt(entry.target.dataset.index) * 50;
+                entry.target.style.transitionDelay = `${Math.min(delay, 200)}ms`;
+            }
+        });
+    }, {
+        root: trail,
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px'
+    });
+
+    // Observe all cards
+    cards.forEach(card => cardObserver.observe(card));
+
+    // Handle scroll for boat movement
+    trail.addEventListener('scroll', () => {
+        const scrollTop = trail.scrollTop;
+        const scrollHeight = trail.scrollHeight - trail.clientHeight;
+        const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+        // Move boat based on scroll (10% to 85% of container width)
+        const boatPosition = 10 + (scrollPercent * 0.75);
+        boat.style.left = `${boatPosition}%`;
+
+        // Update progress bar
+        if (progressBar) {
+            progressBar.style.width = `${scrollPercent}%`;
+        }
+
+        // Update voyage stats
+        if (voyageStats) {
+            voyageStats.textContent = `${Math.round(scrollPercent)}% explored`;
+        }
+
+        // Create wake bubbles occasionally
+        if (Math.random() < 0.1) {
+            createWakeBubble(boat);
+        }
+    });
+
+    // Initial card visibility check
+    setTimeout(() => {
+        cards.forEach((card, index) => {
+            const rect = card.getBoundingClientRect();
+            const trailRect = trail.getBoundingClientRect();
+            if (rect.top < trailRect.bottom && rect.bottom > trailRect.top) {
+                setTimeout(() => card.classList.add('visible'), index * 100);
+            }
+        });
+    }, 300);
+}
+
+// Create wake bubble effect behind boat
+function createWakeBubble(boat) {
+    if (!boat || !boat.parentElement) return;
+
+    const bubble = document.createElement('div');
+    bubble.className = 'wake-bubble';
+
+    const boatRect = boat.getBoundingClientRect();
+    const oceanRect = boat.parentElement.getBoundingClientRect();
+
+    bubble.style.left = `${boat.offsetLeft - 10 + Math.random() * 20}px`;
+    bubble.style.bottom = `${35 + Math.random() * 10}%`;
+
+    boat.parentElement.appendChild(bubble);
+
+    // Remove bubble after animation
+    setTimeout(() => bubble.remove(), 2000);
 }
 
 // Prevent scroll from propagating to parent
@@ -78,21 +184,25 @@ function closeTimelineModal() {
     document.body.style.overflow = '';
 }
 
-// Scroll timeline left by one card
-function scrollTimelineLeft() {
+// Scroll timeline up
+function scrollTimelineUp() {
     const track = document.getElementById('timeline-track');
     if (track) {
-        track.scrollBy({ left: -300, behavior: 'smooth' });
+        track.scrollBy({ top: -150, behavior: 'smooth' });
     }
 }
 
-// Scroll timeline right by one card
-function scrollTimelineRight() {
+// Scroll timeline down
+function scrollTimelineDown() {
     const track = document.getElementById('timeline-track');
     if (track) {
-        track.scrollBy({ left: 300, behavior: 'smooth' });
+        track.scrollBy({ top: 150, behavior: 'smooth' });
     }
 }
+
+// Legacy functions for compatibility
+function scrollTimelineLeft() { scrollTimelineUp(); }
+function scrollTimelineRight() { scrollTimelineDown(); }
 
 // Initialize keyboard navigation for timeline
 function initTimelineKeyNav() {
@@ -104,10 +214,10 @@ function initTimelineKeyNav() {
             return;
         }
 
-        if (e.key === 'ArrowLeft') {
-            scrollTimelineLeft();
-        } else if (e.key === 'ArrowRight') {
-            scrollTimelineRight();
+        if (e.key === 'ArrowUp') {
+            scrollTimelineUp();
+        } else if (e.key === 'ArrowDown') {
+            scrollTimelineDown();
         }
     };
 
@@ -352,253 +462,404 @@ function makeDraggable(element) {
     }
 }
 
-// Auto-calculate project card rotations and z-index
+// ============================================
+// DECK OF CARDS - SETUP AND CONFIGURATION
+// ============================================
+
+// Deck configuration
+const DECK_CONFIG = {
+    // Maximum cards per deck
+    maxCardsPerDeck: 4,     // 4 cards per deck for clean stacks
+
+    // Stacked state - cards form an arc pattern
+    stackOffsetX: 6,        // Horizontal offset per card (creates arc)
+    stackOffsetY: 10,       // Vertical offset per card
+    stackRotation: 3,       // Base rotation degrees
+    arcFactor: 0.15,        // How much the stack curves
+
+    // Spread state - cards fan out
+    spreadRadius: 100,      // Base spread distance (smaller for multiple decks)
+    spreadArc: Math.PI * 0.6, // Arc angle for fan
+
+    // Push interaction
+    pushDistance: 60,       // How far adjacent cards push away
+    pushRotation: 8,        // Rotation when pushed
+
+    // Timing
+    transitionDuration: 350,
+
+    // Category configuration - which categories to show
+    categories: [
+        { id: 'featured', label: 'Featured', filter: (p) => p.featured },
+        { id: 'java', label: 'Java', filter: (p) => p.category === 'java' },
+        { id: 'web', label: 'Web', filter: (p) => ['html', 'javascript', 'typescript'].includes(p.category) },
+        { id: 'systems', label: 'Systems', filter: (p) => ['c', 'python'].includes(p.category) },
+    ],
+};
+
+// Auto-calculate project card positions for deck layout
 async function setupProjectCards() {
-    await DataLoader.loadData(); // Ensure data is loaded
-    const projects = DataLoader.getProjectsSortedByTime();
-    const stack = document.querySelector('.project-stack');
+    await DataLoader.loadData();
+    const allProjects = DataLoader.getProjectsSortedByTime();
 
-    if (!stack) {
-        console.error('Project stack element not found');
+    const decksRow = document.querySelector('.decks-row');
+
+    if (!decksRow) {
+        console.error('Decks row container not found');
         return;
     }
 
-    // Clear existing cards
-    stack.innerHTML = '';
+    // Clear existing decks
+    decksRow.innerHTML = '';
 
-    // Create cards from data
-    projects.forEach((project, index) => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
-        card.style.setProperty('--rotation', `${(index % 2 === 0 ? 1 : -1) * (15 - (index * 2))}deg`);
-        card.style.setProperty('--index', index);
-        card.style.setProperty('--z-index', projects.length - index);
+    // Create a deck for each category
+    DECK_CONFIG.categories.forEach((category, deckIndex) => {
+        // Filter projects for this category
+        let categoryProjects = allProjects.filter(category.filter);
 
-        card.innerHTML = `
-            <span class="project-name">${project.title}</span>
-            <span class="project-desc">${project.tech.join(' • ')}</span>
-        `;
+        // Limit to max cards per deck
+        categoryProjects = categoryProjects.slice(0, DECK_CONFIG.maxCardsPerDeck);
 
-        card.addEventListener('click', (e) => {
-            e.stopPropagation();
-            openProjectWindow({
-                name: project.title,
-                description: project.description,
-                timestamp: project.timeDisplay,
-                category: project.category,
-                content: project.content,
-                github: project.github,
-                demo: project.demo,
-                featured: project.featured,
-                tags: project.subcategories,
-            });
-        });
+        // Skip if no projects in this category
+        if (categoryProjects.length === 0) return;
 
-        stack.appendChild(card);
-    });
+        // Create deck wrapper
+        const deckWrapper = document.createElement('div');
+        deckWrapper.className = 'deck-wrapper';
+        deckWrapper.dataset.category = category.id;
 
-    // Initialize hover animations
-    initializeProjectCardAnimations();
-}
+        // Create deck label
+        const label = document.createElement('span');
+        label.className = 'deck-label';
+        label.textContent = category.label;
 
-// Initialize project card animations
-function initializeProjectCardAnimations() {
-    const wrapper = document.querySelector('.project-stack-card.enlarged');
-    const stack = wrapper?.querySelector('.project-stack');
+        // Create the deck card container
+        const deckCard = document.createElement('div');
+        deckCard.className = 'project-stack-card';
+        deckCard.dataset.deckId = category.id;
 
-    if (!wrapper || !stack) {
-        console.error('Project stack wrapper not found');
-        return;
-    }
+        // Create the stack
+        const stack = document.createElement('div');
+        stack.className = 'project-stack deck-idle';
+        stack.dataset.deckId = category.id;
 
-    const cards = Array.from(stack.querySelectorAll('.project-card'));
+        const totalCards = categoryProjects.length;
+        const centerIndex = (totalCards - 1) / 2;
 
-    // Fan‐out timings
-    const SPREAD = 220;
-    const INITIAL_SCALE_DURATION = 500;
-    const CONTINUE_SCALE_DURATION = 300;
-    const CENTER_DELAY = 150;
-    const CENTER_DURATION = 700;
+        // Create cards for this deck
+        categoryProjects.forEach((project, index) => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.dataset.index = index;
+            card.dataset.total = totalCards;
+            card.dataset.deckId = category.id;
 
-    let activeCard = null;
-    let centeringCard = null;
-    let hoverTimers = new Map();
-    let isStackHovered = false;
+            // Calculate stacked position (arc pattern)
+            const distFromCenter = index - centerIndex;
+            const arcOffset = Math.pow(distFromCenter, 2) * DECK_CONFIG.arcFactor;
 
-    // Apply initial transitions
-    cards.forEach(card => {
-        card.style.transition = `transform ${CENTER_DURATION}ms cubic-bezier(0.23, 1, 0.32, 1)`;
-    });
+            // Alternating rotation with arc compensation
+            const baseRotation = (index % 2 === 0 ? 1 : -1) * DECK_CONFIG.stackRotation;
+            const rotation = baseRotation + (distFromCenter * 0.5);
 
-    // Fan out on wrapper hover
-    wrapper.addEventListener('pointerenter', () => {
-        isStackHovered = true;
+            // Stack offsets - horizontal shift increases with index for arc effect
+            const stackX = distFromCenter * DECK_CONFIG.stackOffsetX;
+            const stackY = -index * DECK_CONFIG.stackOffsetY + arcOffset * 5;
 
-        // Clear all timers
-        hoverTimers.forEach(timer => clearTimeout(timer));
-        hoverTimers.clear();
+            // Set CSS variables for positioning
+            card.style.setProperty('--stack-x', `${stackX}px`);
+            card.style.setProperty('--stack-y', `${stackY}px`);
+            card.style.setProperty('--stack-rotate', `${rotation}deg`);
+            card.style.setProperty('--z-index', totalCards - index);
 
-        // Fan out with stagger
-        cards.forEach((card, index) => {
-            const θ = Math.random() * Math.PI * 2;
-            const r = SPREAD * (0.8 + 0.4 * Math.random());
-            const nx = Math.cos(θ) * r;
-            const ny = Math.sin(θ) * r;
+            // Store original positions for restoration
+            card.dataset.stackX = stackX;
+            card.dataset.stackY = stackY;
+            card.dataset.stackRotate = rotation;
 
-            card.dataset.fanX = nx;
-            card.dataset.fanY = ny;
-
-            // Staggered fan-out animation
-            setTimeout(() => {
-                if (isStackHovered && card !== activeCard) {
-                    card.style.transform =
-                        `translate(-50%,-50%) rotate(var(--rotation)) translate(${nx}px,${ny}px) scale(1)`;
-                    card.style.zIndex = '900';
-                    card.style.pointerEvents = 'auto';
-                }
-            }, index * 50);
-        });
-    });
-
-    // Individual card hover with progressive animation
-    cards.forEach(card => {
-        let scaleTimer = null;
-        let continueTimer = null;
-        let centerTimer = null;
-
-        card.addEventListener('pointerenter', () => {
-            if (!isStackHovered || card === activeCard || card === centeringCard) return;
-
-            // Clear existing timers for this card
-            if (hoverTimers.has(card)) {
-                const timers = hoverTimers.get(card);
-                clearTimeout(timers.scale);
-                clearTimeout(timers.continue);
-                clearTimeout(timers.center);
-            }
-
-            // Phase 1: Slow initial scale
-            card.style.transition = `transform ${INITIAL_SCALE_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`;
-            card.style.transform =
-                `translate(-50%,-50%) rotate(var(--rotation)) translate(${card.dataset.fanX}px,${card.dataset.fanY}px) scale(1.1)`;
-
-            // Phase 2: Continue scaling
-            continueTimer = setTimeout(() => {
-                card.style.transition = `transform ${CONTINUE_SCALE_DURATION}ms cubic-bezier(0.23, 1, 0.32, 1)`;
-                card.style.transform =
-                    `translate(-50%,-50%) rotate(calc(var(--rotation) * 0.5)) translate(${card.dataset.fanX * 0.7}px,${card.dataset.fanY * 0.7}px) scale(1.2)`;
-            }, INITIAL_SCALE_DURATION);
-
-            // Phase 3: Commit to expanded state in place and push neighbors
-            centerTimer = setTimeout(() => {
-                centeringCard = card;
-
-                // restore z‐index of previous active card
-                if (activeCard && activeCard !== card) {
-                    activeCard.style.zIndex = '900';
-                }
-
-                // expand hovered card in place
-                card.style.transition = `transform ${CENTER_DURATION}ms cubic-bezier(0.23, 1, 0.32, 1)`;
-                card.style.transform =
-                    `translate(-50%,-50%) rotate(var(--rotation)) translate(${card.dataset.fanX}px,${card.dataset.fanY}px) scale(1.5)`;
-                card.style.zIndex = '1000';
-                activeCard = card;
-
-                // push other cards away
-                cards.forEach(otherCard => {
-                    if (otherCard !== card) {
-                        const pushFactor = 1.4;
-                        otherCard.style.transform =
-                            `translate(-50%,-50%) rotate(var(--rotation)) translate(${otherCard.dataset.fanX * pushFactor}px,${otherCard.dataset.fanY * pushFactor}px) scale(0.95)`;
-                        otherCard.style.opacity = '0.7';
-                    }
-                });
-
-                // clear centering flag after animation
-                setTimeout(() => { centeringCard = null; }, CENTER_DURATION);
-            }, CENTER_DELAY);
-
-            hoverTimers.set(card, { scale: scaleTimer, continue: continueTimer, center: centerTimer });
-        });
-
-        card.addEventListener('pointerleave', () => {
-            // clear all timers
-            hoverTimers.forEach(t => {
-                clearTimeout(t.scale);
-                clearTimeout(t.continue);
-                clearTimeout(t.center);
-            });
-            hoverTimers.clear();
-            // reset active flags
-            activeCard = null;
-            centeringCard = null;
-            // restore every card to its fan position, full opacity and default z-index
-            cards.forEach(c => {
-                c.style.transition = `transform ${CONTINUE_SCALE_DURATION}ms cubic-bezier(0.23, 1, 0.32, 1)`;
-                c.style.transform =
-                    `translate(-50%,-50%) rotate(var(--rotation)) translate(${c.dataset.fanX}px,${c.dataset.fanY}px) scale(1)`;
-                c.style.opacity = '1';
-                c.style.zIndex = '900';
-            });
-        });
-    });
-
-    // Collapse only on wrapper leave
-    wrapper.addEventListener('pointerleave', () => {
-        isStackHovered = false;
-        activeCard = null;
-        centeringCard = null;
-
-        // Clear all timers
-        hoverTimers.forEach(timer => {
-            clearTimeout(timer.scale);
-            clearTimeout(timer.continue);
-            clearTimeout(timer.center);
-        });
-        hoverTimers.clear();
-
-        // Staggered collapse
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.style.transform = `translate(-50%,-50%) rotate(var(--rotation))`;
-                card.style.zIndex = card.dataset.zIndex || 'auto';
-                card.style.pointerEvents = 'auto';
-                card.style.opacity = '1';
-            }, index * 30);
-        });
-    });
-}
-
-// Populate language grid with top 4 languages
-async function populateLanguageGrid() {
-    const languageGrid = document.querySelector('.language-grid');
-    if (!languageGrid) return;
-
-    try {
-        // Get top 4 languages from tech arsenal
-        const topLanguages = DataLoader.getTopLanguages(4);
-        
-        if (topLanguages.length === 0) return;
-
-        // Clear existing content
-        languageGrid.innerHTML = '';
-
-        // Create language items
-        topLanguages.forEach(language => {
-            const languageItem = document.createElement('div');
-            languageItem.className = 'language-item';
-            
-            languageItem.innerHTML = `
-                <span class="lang-name">${language.name}</span>
-                <div class="lang-bar" style="--progress: ${language.progress}%;"></div>
+            card.innerHTML = `
+                <span class="project-name">${project.title}</span>
+                <span class="project-desc">${project.tech.slice(0, 2).join(' • ')}</span>
             `;
-            
-            languageGrid.appendChild(languageItem);
+
+            card.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openProjectWindow({
+                    name: project.title,
+                    description: project.description,
+                    timestamp: project.timeDisplay,
+                    category: project.category,
+                    content: project.content,
+                    github: project.github,
+                    demo: project.demo,
+                    featured: project.featured,
+                    tags: project.subcategories,
+                });
+            });
+
+            stack.appendChild(card);
         });
-    } catch (error) {
-        console.error('Error populating language grid:', error);
+
+        deckCard.appendChild(stack);
+        deckWrapper.appendChild(deckCard);
+        deckWrapper.appendChild(label);
+        decksRow.appendChild(deckWrapper);
+    });
+
+    // Initialize deck interactions for all decks
+    initializeAllDeckInteractions();
+}
+
+// ============================================
+// DECK OF CARDS - INTERACTION SYSTEM
+// ============================================
+
+// Initialize interactions for all decks
+function initializeAllDeckInteractions() {
+    const stacks = document.querySelectorAll('.project-stack');
+
+    stacks.forEach(stack => {
+        const wrapper = stack.closest('.project-stack-card');
+        if (wrapper && stack) {
+            initializeSingleDeckInteractions(wrapper, stack);
+        }
+    });
+}
+
+function initializeSingleDeckInteractions(wrapper, stack) {
+    const cards = Array.from(stack.querySelectorAll('.project-card'));
+    const totalCards = cards.length;
+
+    if (totalCards === 0) return;
+
+    // State
+    let isSpread = false;
+    let focusedCard = null;
+
+    // Calculate spread positions for each card (fan arrangement)
+    function calculateSpreadPositions() {
+        const centerIndex = (totalCards - 1) / 2;
+        const angleStep = DECK_CONFIG.spreadArc / (totalCards - 1 || 1);
+        const startAngle = -DECK_CONFIG.spreadArc / 2;
+
+        cards.forEach((card, index) => {
+            // Fan out in an arc pattern
+            const angle = startAngle + (index * angleStep);
+            const spreadX = Math.sin(angle) * DECK_CONFIG.spreadRadius;
+            const spreadY = -Math.abs(Math.cos(angle)) * (DECK_CONFIG.spreadRadius * 0.3);
+
+            // Rotation follows the fan angle
+            const spreadRotation = angle * (180 / Math.PI) * 0.3;
+
+            card.dataset.spreadX = spreadX;
+            card.dataset.spreadY = spreadY;
+            card.dataset.spreadRotate = spreadRotation;
+        });
     }
+
+    // Spread the deck
+    function spreadDeck() {
+        if (isSpread) return;
+        isSpread = true;
+
+        stack.classList.remove('deck-idle');
+        stack.classList.add('deck-spread');
+
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.setProperty('--stack-x', `${card.dataset.spreadX}px`);
+                card.style.setProperty('--stack-y', `${card.dataset.spreadY}px`);
+                card.style.setProperty('--stack-rotate', `${card.dataset.spreadRotate}deg`);
+                card.style.setProperty('--z-index', 100 + index);
+            }, index * 40); // Staggered spread
+        });
+    }
+
+    // Collapse deck back to stack
+    function collapseDeck() {
+        if (!isSpread) return;
+        isSpread = false;
+        focusedCard = null;
+
+        stack.classList.remove('deck-spread');
+        stack.classList.add('deck-idle');
+
+        // Clear all push states
+        cards.forEach(card => {
+            card.classList.remove('card-focused', 'card-pushed', 'card-pushed-far');
+            card.style.setProperty('--push-x', '0px');
+            card.style.setProperty('--push-y', '0px');
+            card.style.setProperty('--push-rotate', '0deg');
+            card.style.setProperty('--push-scale', '1');
+        });
+
+        // Restore to stacked positions with stagger
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.setProperty('--stack-x', `${card.dataset.stackX}px`);
+                card.style.setProperty('--stack-y', `${card.dataset.stackY}px`);
+                card.style.setProperty('--stack-rotate', `${card.dataset.stackRotate}deg`);
+                card.style.setProperty('--z-index', totalCards - index);
+            }, index * 25);
+        });
+    }
+
+    // Focus on a specific card - CARD STAYS IN PLACE, others move
+    function focusCard(card) {
+        if (focusedCard === card) return;
+
+        const cardIndex = parseInt(card.dataset.index);
+
+        // Clear previous focus
+        cards.forEach(c => {
+            c.classList.remove('card-focused', 'card-pushed', 'card-pushed-far');
+            c.style.setProperty('--push-x', '0px');
+            c.style.setProperty('--push-y', '0px');
+            c.style.setProperty('--push-rotate', '0deg');
+            c.style.setProperty('--push-scale', '1');
+        });
+
+        // Set new focused card - IT STAYS IN PLACE
+        focusedCard = card;
+        card.classList.add('card-focused');
+
+        // Push other cards away from the focused card
+        cards.forEach((otherCard, index) => {
+            if (otherCard === card) return;
+
+            const distance = index - cardIndex;
+            const absDistance = Math.abs(distance);
+            const direction = distance > 0 ? 1 : -1;
+
+            // Calculate push amount based on distance
+            // Closer cards push more, farther cards push less but still move
+            const pushFactor = Math.max(0.3, 1 - (absDistance * 0.15));
+            const pushX = direction * DECK_CONFIG.pushDistance * pushFactor;
+            const pushY = Math.abs(distance) * 15; // Slight upward push
+            const pushRotate = direction * DECK_CONFIG.pushRotation * pushFactor;
+
+            otherCard.style.setProperty('--push-x', `${pushX}px`);
+            otherCard.style.setProperty('--push-y', `${pushY}px`);
+            otherCard.style.setProperty('--push-rotate', `${pushRotate}deg`);
+
+            // Visual distinction based on distance
+            if (absDistance <= 2) {
+                otherCard.classList.add('card-pushed');
+            } else {
+                otherCard.classList.add('card-pushed-far');
+            }
+        });
+    }
+
+    // Clear focus - restore spread positions
+    function clearFocus() {
+        if (!focusedCard) return;
+        focusedCard = null;
+
+        cards.forEach(card => {
+            card.classList.remove('card-focused', 'card-pushed', 'card-pushed-far');
+            card.style.setProperty('--push-x', '0px');
+            card.style.setProperty('--push-y', '0px');
+            card.style.setProperty('--push-rotate', '0deg');
+            card.style.setProperty('--push-scale', '1');
+        });
+    }
+
+    // Calculate initial spread positions
+    calculateSpreadPositions();
+
+    // Event: Wrapper hover - spread the deck
+    wrapper.addEventListener('pointerenter', () => {
+        spreadDeck();
+    });
+
+    // Event: Wrapper leave - collapse the deck
+    wrapper.addEventListener('pointerleave', () => {
+        collapseDeck();
+    });
+
+    // Event: Individual card hover - focus and push others
+    cards.forEach(card => {
+        card.addEventListener('pointerenter', () => {
+            if (!isSpread) return;
+            focusCard(card);
+        });
+
+        card.addEventListener('pointerleave', (e) => {
+            if (!isSpread) return;
+
+            // Check if we're moving to another card or leaving the stack
+            const relatedTarget = e.relatedTarget;
+            const isMovingToCard = relatedTarget && relatedTarget.classList?.contains('project-card');
+
+            if (!isMovingToCard) {
+                // Small delay to prevent flicker when moving between cards
+                setTimeout(() => {
+                    if (focusedCard === card && isSpread) {
+                        clearFocus();
+                    }
+                }, 50);
+            }
+        });
+    });
+
+    // Handle touch devices
+    let touchStartCard = null;
+
+    wrapper.addEventListener('touchstart', (e) => {
+        const card = e.target.closest('.project-card');
+        if (card) {
+            touchStartCard = card;
+            if (!isSpread) {
+                spreadDeck();
+            }
+            setTimeout(() => focusCard(card), 100);
+        }
+    }, { passive: true });
+
+    wrapper.addEventListener('touchend', () => {
+        touchStartCard = null;
+    }, { passive: true });
+}
+
+// Populate skill matrix with real data - no meaningless percentages
+async function populateSkillMatrix() {
+    const skillMatrix = document.getElementById('skill-matrix');
+    if (!skillMatrix) return;
+
+    // Static language data based on real project metrics
+    const languageData = [
+        { name: 'Java',       years: 7, lines: '3.1M', repos: 45, level: 'expert' },
+        { name: 'Python',     years: 6, lines: '45K',  repos: 35, level: 'advanced' },
+        { name: 'JavaScript', years: 5, lines: '261K', repos: 30, level: 'advanced' },
+        { name: 'C++',        years: 3, lines: '137K', repos: 15, level: 'intermediate' },
+    ];
+
+    const levelLabels = { expert: 'EXP', advanced: 'ADV', intermediate: 'INT' };
+
+    let html = `
+        <div class="skill-matrix-header">
+            <span>LANG</span>
+            <span>YEARS</span>
+            <span>LINES</span>
+            <span>REPOS</span>
+            <span>LEVEL</span>
+        </div>
+    `;
+
+    languageData.forEach(lang => {
+        html += `
+            <div class="skill-matrix-row">
+                <span class="matrix-lang">${lang.name}</span>
+                <span class="matrix-years">${lang.years} yr</span>
+                <span class="matrix-lines">${lang.lines}</span>
+                <span class="matrix-repos">${lang.repos}</span>
+                <span class="matrix-level ${lang.level}">${levelLabels[lang.level]}</span>
+            </div>
+        `;
+    });
+
+    skillMatrix.innerHTML = html;
 }
 
 // Initialize Section 2 Event Listeners
@@ -606,8 +867,8 @@ async function initializeSection2() {
     // Setup project cards
     await setupProjectCards();
 
-    // Populate language grid
-    await populateLanguageGrid();
+    // Populate skill matrix
+    await populateSkillMatrix();
 
     // Close modals on overlay click and prevent scroll propagation
     const modals = document.querySelectorAll('.modal-overlay');
