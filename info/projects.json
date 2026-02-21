@@ -1,6 +1,78 @@
 {
   "projects": [
     {
+      "id": "artorize-docs",
+      "title": "Artorize Docs",
+      "category": "unknown",
+      "subcategories": [],
+      "time": "2026-02",
+      "timeDisplay": "February 2026",
+      "description": "Nextra v4 documentation site for Artorize CDN",
+      "tech": [
+        "MDX",
+        "JavaScript",
+        "TypeScript",
+        "CSS"
+      ],
+      "github": "https://github.com/Artorize/artorize-docs",
+      "demo": "",
+      "featured": false,
+      "stars": 0,
+      "forks": 0,
+      "license": "",
+      "isPrivate": false,
+      "lastUpdated": "2026-02-08T13:39:11Z",
+      "content": "## artorize-docs\n\nNextra v4 documentation site for Artorize CDN"
+    },
+    {
+      "id": "extractor",
+      "title": "Extractor",
+      "category": "java",
+      "subcategories": [],
+      "time": "2026-02",
+      "timeDisplay": "February 2026",
+      "description": "extractor project",
+      "tech": [
+        "Java",
+        "Shell"
+      ],
+      "github": "https://github.com/Haedus-Industries/extractor",
+      "demo": "",
+      "featured": false,
+      "stars": 0,
+      "forks": 0,
+      "license": "",
+      "isPrivate": true,
+      "lastUpdated": "2026-02-06T13:49:21Z",
+      "content": "## extractor\n\nNo description available."
+    },
+    {
+      "id": "notuh",
+      "title": "Notuh",
+      "category": "unknown",
+      "subcategories": [],
+      "time": "2026-02",
+      "timeDisplay": "February 2026",
+      "description": "Modern. leightweight and neat note taking app",
+      "tech": [
+        "Svelte",
+        "TypeScript",
+        "Rust",
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
+      "github": "https://github.com/neilhuang007/notuh",
+      "demo": "",
+      "featured": false,
+      "stars": 0,
+      "forks": 0,
+      "license": "",
+      "isPrivate": false,
+      "lastUpdated": "2026-02-08T02:38:25Z",
+      "content": "## notuh\n\nModern. leightweight and neat note taking app"
+    },
+    {
       "id": "zkm-analyzer",
       "title": "Zkm Analyzer",
       "category": "java",
@@ -39,7 +111,7 @@
       "stars": 0,
       "forks": 0,
       "license": "MIT",
-      "isPrivate": true,
+      "isPrivate": false,
       "lastUpdated": "2025-12-13T20:36:12Z",
       "content": "## jvm-direct-call\n\nNo description available."
     },
@@ -85,7 +157,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-01-10T13:59:46Z",
+      "lastUpdated": "2026-02-11T09:41:25Z",
       "content": "## state-machine\n\nanother obf strategy"
     },
     {
@@ -131,34 +203,34 @@
       "forks": 1,
       "license": "MIT",
       "isPrivate": false,
-      "lastUpdated": "2026-01-16T18:01:16Z",
+      "lastUpdated": "2026-01-30T15:45:43Z",
       "content": "## better-ecology\n\nbetter ecology is a mod that adds advanced ecology to minecraft, including revised mod AI, herding algorithms and so much more"
     },
     {
-      "id": "masxinling-plus",
-      "title": "Masxinling Plus",
+      "id": "nativify",
+      "title": "Nativify",
       "category": "java",
       "subcategories": [],
       "time": "2025-11",
       "timeDisplay": "November 2025",
-      "description": "masxinling-plus project",
+      "description": "nativify project",
       "tech": [
         "Java",
+        "C++",
         "C",
         "Python",
-        "C++",
         "CMake",
         "Batchfile"
       ],
-      "github": "https://github.com/Haedus-Industries/masxinling-plus",
+      "github": "https://github.com/Haedus-Industries/nativify",
       "demo": "",
       "featured": false,
       "stars": 0,
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
-      "lastUpdated": "2026-01-10T09:33:23Z",
-      "content": "## masxinling-plus\n\nNo description available."
+      "lastUpdated": "2026-02-19T12:48:30Z",
+      "content": "## nativify\n\nNo description available."
     },
     {
       "id": "dolos",
@@ -248,7 +320,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-01-03T14:30:35Z",
+      "lastUpdated": "2026-02-08T20:32:04Z",
       "content": "## Artorizer-core-router\n\nrouter for the entire project"
     },
     {
@@ -271,7 +343,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-01-12T03:39:40Z",
+      "lastUpdated": "2026-02-18T00:20:07Z",
       "content": "## artorizer-frontend\n\nfrontennd for artorize project"
     },
     {
@@ -381,7 +453,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": false,
-      "lastUpdated": "2026-01-07T19:38:06Z",
+      "lastUpdated": "2026-02-08T20:32:04Z",
       "content": "## artorize-backend\n\nbackend storage for the artorize project"
     },
     {
@@ -403,7 +475,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": false,
-      "lastUpdated": "2025-12-12T16:25:46Z",
+      "lastUpdated": "2026-02-08T20:31:36Z",
       "content": "## artorize-processor-core\n\nimage processor for the artorize project"
     },
     {
@@ -470,7 +542,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-01-26T01:49:43Z",
+      "lastUpdated": "2026-02-20T01:58:27Z",
       "content": "## neilhuang007\n\nmy readme profile"
     },
     {
@@ -491,7 +563,7 @@
       "forks": 0,
       "license": "NOASSERTION",
       "isPrivate": true,
-      "lastUpdated": "2026-01-09T06:47:18Z",
+      "lastUpdated": "2026-01-31T18:01:03Z",
       "content": "## EdenClient\n\nEden 3.0协议的客户端Fabric模组实现. 具有神秘且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)"
     },
     {
@@ -554,7 +626,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2025-09-19T12:38:18Z",
+      "lastUpdated": "2026-02-14T08:52:18Z",
       "content": "## HaedusIRC\n\n轻量、高效的适用于我的手艺的跨客户端通信项目"
     },
     {
@@ -657,7 +729,7 @@
       "content": "## Digital Identity: The Portfolio as Personal Manifesto\n\nIn Silicon Valley, they say your GitHub profile is your resume. But what happens when code repositories alone can't capture the full spectrum of a developer's journey? This portfolio project emerges from that gap—a digital autobiography written in JavaScript, styled with ambition, and deployed with purpose.\n\n### The Philosophy of First Impressions\n\nSeven seconds. That's how long research suggests we have to make a first impression. In the digital realm, that window shrinks even further. This portfolio weaponizes those precious moments, deploying a carefully choreographed performance where React components dance into view, animations whisper rather than shout, and every pixel serves a purpose.\n\nThe opening sequence sets the tone: a subtle parallax effect that responds to mouse movement, creating depth without distraction. Typography that shifts weight as you scroll, emphasizing key achievements. Color schemes that adapt to user preferences—respecting both retinas and battery life with thoughtful dark mode implementation.\n\n### Architecture as Autobiography\n\nBeneath the polished surface lies an architecture that tells its own story. React wasn't chosen merely for its popularity but for its component philosophy—each project, each skill, each achievement rendered as a self-contained universe that can be recomposed, reimagined, redeployed.\n\nThe state management pattern reveals a developer who thinks in systems. Props cascade through component hierarchies like carefully planned water features. Context providers eliminate prop drilling with the elegance of a master chess player sacrificing pawns for position. Custom hooks abstract complexity, turning intricate animations into single-line invocations.\n\n### Performance as a Feature\n\nIn an attention economy where every millisecond counts, this portfolio treats performance not as an afterthought but as a core feature. Lazy loading ensures that visitors see content immediately while heavier assets load in the background. Images optimize themselves based on device capabilities. Code splitting creates chunks so refined that the initial bundle weighs less than many websites' hero images.\n\nThe result? Lighthouse scores that approach perfection—not for vanity but because a portfolio that preaches modern development practices must practice them.\n\n### The Narrative Arc\n\nGreat portfolios tell stories, and this one unfolds like a carefully crafted thriller. The hero's journey begins with early projects—rough around the edges but brimming with enthusiasm. Scroll deeper, and watch skills evolve, projects grow more ambitious, code more elegant. It's character development rendered in Git commits.\n\nInteractive elements invite exploration without demanding it. Hover over a project card, and it subtly lifts, shadows deepening to create physical presence in digital space. Click through, and detailed case studies reveal not just what was built but why—the problems solved, lessons learned, impact created.\n\n### Beyond the Screen\n\nThis portfolio transcends its medium by acknowledging a fundamental truth: great developers don't just write code; they solve problems, build communities, and push boundaries. The design reflects this, showcasing not just technical projects but contributions to open source, mentorship provided, talks delivered.\n\nIt's a portfolio that says, 'I don't just consume technology; I create it, teach it, and advance it.'\n\n### The Living Resume\n\nPerhaps most cleverly, the portfolio includes a hidden feature: it updates itself. Through GitHub Actions and clever API integration, new projects automatically appear, statistics refresh, and achievements accumulate. It's a resume that writes itself—a fitting metaphor for a career in constant motion.\n\nThis isn't just a portfolio; it's a statement of intent, a declaration that in the digital age, how you present your work matters almost as much as the work itself.",
       "stars": 1,
       "forks": 0,
-      "lastUpdated": "2026-01-26T14:33:06Z",
+      "lastUpdated": "2026-02-18T01:18:55Z",
       "isPrivate": false
     },
     {
@@ -1002,7 +1074,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
-      "lastUpdated": "2026-01-26T10:31:46Z",
+      "lastUpdated": "2026-02-20T04:52:54Z",
       "content": "## Haedus\n\nThe Advanced Runtime Injection Framework, Your Ultimate Solution."
     },
     {
@@ -1377,8 +1449,8 @@
       "github": "https://github.com/yapeteam/OpenYolBi",
       "demo": "",
       "featured": true,
-      "stars": 8,
-      "forks": 1,
+      "stars": 7,
+      "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": false,
       "lastUpdated": "2025-08-03T01:24:46Z",
@@ -1984,8 +2056,8 @@
       "demo": "",
       "featured": false,
       "content": "## OLLVM-19: Hacking the Compiler for Security Research\n\nThis repository contains a custom build of the Obfuscating LLVM (OLLVM) version 19. The languages API reveals a codebase dominated by C++ and C【900627365880386†L0-L7】. By modifying LLVM passes, OLLVM injects opaque predicates, control flow flattening, and bogus code into compiled binaries.\n\nThe project serves as a sandbox for exploring advanced obfuscation techniques. Researchers can tweak compilation flags, experiment with new obfuscation passes, or benchmark performance impacts. The repository includes build scripts and patches to streamline the compilation of this heavily modified LLVM.",
-      "stars": 16,
-      "forks": 5,
+      "stars": 17,
+      "forks": 6,
       "lastUpdated": "2025-07-02T11:40:36Z",
       "isPrivate": false
     },
@@ -2044,6 +2116,28 @@
       "forks": 0,
       "lastUpdated": "2023-08-23T15:59:55Z",
       "isPrivate": false
+    },
+    {
+      "id": "minecraft-1-8-9-lwjgl3",
+      "title": "Minecraft 1.8.9 Lwjgl3",
+      "category": "java",
+      "subcategories": [],
+      "time": "2023-08",
+      "timeDisplay": "August 2023",
+      "description": "MCP 1.8.9 using lwjgl3",
+      "tech": [
+        "Java",
+        "GLSL"
+      ],
+      "github": "https://github.com/yapeteam/minecraft-1.8.9-lwjgl3",
+      "demo": "",
+      "featured": true,
+      "stars": 30,
+      "forks": 1,
+      "license": "Apache-2.0",
+      "isPrivate": false,
+      "lastUpdated": "2026-02-20T10:14:59Z",
+      "content": "## minecraft-1.8.9-lwjgl3\n\nMCP 1.8.9 using lwjgl3"
     },
     {
       "id": "ymixin",
@@ -2171,33 +2265,6 @@
       "stars": 0,
       "forks": 0,
       "lastUpdated": "2023-06-19T14:10:21Z",
-      "isPrivate": false
-    },
-    {
-      "id": "minecraft-18-lwjgl3",
-      "title": "Minecraft 1.8.9 LWJGL3 Port",
-      "category": "java",
-      "subcategories": [
-        "minecraft",
-        "framework",
-        "lwjgl3",
-        "porting"
-      ],
-      "time": "2023-06",
-      "timeDisplay": "June 2023",
-      "description": "Port of Minecraft 1.8.9 MCP to LWJGL3 with contributions from multiple projects",
-      "tech": [
-        "Java",
-        "LWJGL3",
-        "MCP"
-      ],
-      "github": "https://github.com/yapeteam/Minecraft-1.8.9-lwjgl3",
-      "demo": "",
-      "featured": false,
-      "content": "## Minecraft 1.8.9 LWJGL3 Port: Breathing New Life into an Old Game\n\nThis repository migrates the Minecraft Client from LWJGL2 to LWJGL3. The README notes that it borrows code from several other projects and that some issues—such as an inability to set the window icon—remain unresolved【31772461143143†L0-L18】.\n\nBy updating the rendering backend, the project enhances compatibility with modern systems and lays the groundwork for further mod development. Community contributions are welcome to fix remaining bugs.",
-      "stars": 31,
-      "forks": 2,
-      "lastUpdated": "2025-07-12T23:39:57Z",
       "isPrivate": false
     },
     {
@@ -2430,7 +2497,7 @@
     "java": {
       "name": "Java",
       "description": "Game modifications, reverse engineering, and enterprise applications",
-      "count": 42
+      "count": 43
     },
     "javascript": {
       "name": "JavaScript",
@@ -2460,15 +2527,15 @@
     "unknown": {
       "name": "Other/Unknown",
       "description": "Projects with unspecified or multiple languages",
-      "count": 15
+      "count": 17
     }
   },
-  "_syncedAt": "2026-01-26T14:33:40.189Z",
+  "_syncedAt": "2026-02-21T01:50:13.325Z",
   "_syncStats": {
-    "totalRepos": 98,
-    "publicRepos": 56,
+    "totalRepos": 101,
+    "publicRepos": 59,
     "privateRepos": 42,
-    "totalCommits": 26419,
-    "totalLines": 43327730
+    "totalCommits": 26638,
+    "totalLines": 43328444
   }
 }

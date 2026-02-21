@@ -5,25 +5,25 @@
     "bio": "Full stack developer\r\n",
     "followers": 6,
     "following": 4,
-    "publicRepos": 36,
+    "publicRepos": 37,
     "privateRepos": 42,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 98,
-    "userCommits": 26419,
-    "totalCommits": 26419,
-    "githubApiCommits": 26419,
-    "totalLines": 5119249,
-    "totalBytes": 1733109084,
-    "clocTotalLines": 5119249,
-    "clocLanguageCount": 134
+    "totalRepos": 101,
+    "userCommits": 2031,
+    "totalCommits": 6064,
+    "githubApiCommits": 26638,
+    "totalLines": 3826274,
+    "totalBytes": 1733137640,
+    "clocTotalLines": 3826274,
+    "clocLanguageCount": 128
   },
   "clocLanguages": {
     "1": 96,
     "2": 25,
     "black": 8101,
-    "Python": 44553,
+    "Python": 45225,
     "9/src/cn/yapeteam/yolbi/{event": 3,
     "vsh": 1447,
     "kts": 216,
@@ -33,13 +33,12 @@
     "husky/pre-commit": 6,
     "form": 402,
     "fnt": 195,
-    "TypeScript": 70020,
+    "TypeScript": 71874,
     "2/src/map": 18,
     "9/src/cn/yapeteam/yolbi/{config": 2,
     "idea/Aeternus": 11,
     "cmake": 510,
     "conf": 168,
-    "srg": 352795,
     "backup": 1116,
     "pro": 191,
     "ttf": 0,
@@ -49,29 +48,27 @@
     "dd": 6,
     "DS_Store": 0,
     "9/src/cn/yapeteam/yolbi/{": 32,
-    "JavaScript": 261403,
+    "JavaScript": 269935,
     "def": 534,
-    "log": 13915,
-    "Java": 3143540,
-    "no_extension": 285410,
+    "Java": 3179536,
     "1/src/cn/yapeteam/yolbi/module/impl/movement": 2,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "1/src/cn/yapeteam/yolbi/{config": 3,
     "1/src/cn/yapeteam/yolbi/{": 1,
     "sfk": 0,
-    "C/C++ Header": 127575,
+    "C/C++ Header": 127617,
     "buf": 0,
     "C": 5629,
     "cmake/api/v1/query/cmakeFiles-v1": 0,
     "~": 0,
     "9/src/cn/yapeteam/yolbi/{bindable": 3,
     "info": 51,
-    "lang": 163084,
     "9/src/cn/yapeteam/yolbi/{font": 3,
     "jst": 1840,
-    "gitignore": 1718,
+    "gitignore": 1826,
     "otf": 0,
-    "JSX": 520,
+    "JSX": 664,
+    "svelte": 7808,
     "ahk": 3024,
     "pc": 202,
     "Go": 8,
@@ -82,13 +79,13 @@
     "9/src/main/java/dev/haedus/core/{": 28,
     "github/{": 0,
     "github/CODEOWNERS": 12,
-    "bat": 1493,
-    "mdx": 26228,
+    "bat": 1571,
+    "mdx": 30526,
     "manifest": 50,
     "bak": 1366,
     "nvmrc": 2,
     "map": 174,
-    "C++": 3344,
+    "C++": 3408,
     "1/src/cn/yapeteam/yolbi/utils/{": 20,
     "get/LICENSE": 47,
     "ninja_log": 20,
@@ -121,7 +118,6 @@
     "jpg": 0,
     "rc": 4,
     "modmap": 0,
-    "lock": 2576,
     "INI": 1243,
     "iml": 954,
     "frag": 748,
@@ -132,12 +128,11 @@
     "readme": 16,
     "vercelignore": 6,
     "9/src/cn/yapeteam/yolbi/module/impl/{combat": 6,
-    "nbt": 164,
     "ps1": 88,
     "npmignore": 2,
     "gitmodules": 6,
-    "white": 532994,
     "prettierignore": 10,
+    "jar": 0,
     "Bourne Shell": 3520,
     "gitattributes": 79,
     "icls": 1692,
@@ -146,14 +141,13 @@
     "9/src/cn/yapeteam/yolbi/{module/api/manager": 3,
     "patch": 48,
     "snap": 1242,
-    "example": 214,
+    "example": 248,
     "fsh": 7799,
     "9/src/main/java/{com/github/haedus_industries/calculation/impl": 2,
     "ogg": 0,
     "name": 6,
     "http": 11,
-    "mcmeta": 1943,
-    "Rust": 74
+    "Rust": 350
   },
   "languages": [
     {
@@ -164,33 +158,33 @@
     },
     {
       "name": "C++",
-      "bytes": 457452745,
+      "bytes": 457717096,
       "percentage": 26.4,
-      "lines": 11436319
+      "lines": 11442927
     },
     {
       "name": "Java",
-      "bytes": 323417070,
-      "percentage": 18.7,
-      "lines": 8085427
+      "bytes": 323028135,
+      "percentage": 18.6,
+      "lines": 8075703
     },
     {
       "name": "C",
-      "bytes": 242559257,
+      "bytes": 242452690,
       "percentage": 14,
-      "lines": 6063981
+      "lines": 6061317
     },
     {
       "name": "Assembly",
       "bytes": 120451239,
-      "percentage": 7,
+      "percentage": 6.9,
       "lines": 3011281
     },
     {
       "name": "Python",
-      "bytes": 22929916,
+      "bytes": 22941768,
       "percentage": 1.3,
-      "lines": 573248
+      "lines": 573544
     },
     {
       "name": "MLIR",
@@ -200,9 +194,9 @@
     },
     {
       "name": "HTML",
-      "bytes": 10925853,
+      "bytes": 10932181,
       "percentage": 0.6,
-      "lines": 273146
+      "lines": 273305
     },
     {
       "name": "Fortran",
@@ -217,16 +211,16 @@
       "lines": 112298
     },
     {
-      "name": "CSS",
-      "bytes": 3751074,
+      "name": "CMake",
+      "bytes": 3738653,
       "percentage": 0.2,
-      "lines": 93777
+      "lines": 93466
     },
     {
-      "name": "CMake",
-      "bytes": 3737023,
+      "name": "CSS",
+      "bytes": 3598752,
       "percentage": 0.2,
-      "lines": 93426
+      "lines": 89969
     },
     {
       "name": "FIRRTL",
@@ -236,9 +230,9 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 2496743,
-      "percentage": 0.1,
-      "lines": 62419
+      "bytes": 2626136,
+      "percentage": 0.2,
+      "lines": 65653
     },
     {
       "name": "Kotlin",
@@ -272,15 +266,15 @@
     },
     {
       "name": "Shell",
-      "bytes": 707378,
+      "bytes": 716045,
       "percentage": 0,
-      "lines": 17684
+      "lines": 17901
     },
     {
       "name": "TypeScript",
-      "bytes": 616296,
+      "bytes": 649426,
       "percentage": 0,
-      "lines": 15407
+      "lines": 16236
     },
     {
       "name": "HIP",
@@ -296,9 +290,9 @@
     },
     {
       "name": "MDX",
-      "bytes": 365050,
+      "bytes": 425832,
       "percentage": 0,
-      "lines": 9126
+      "lines": 10646
     },
     {
       "name": "OCaml",
@@ -323,6 +317,12 @@
       "bytes": 160404,
       "percentage": 0,
       "lines": 4010
+    },
+    {
+      "name": "Svelte",
+      "bytes": 158750,
+      "percentage": 0,
+      "lines": 3969
     },
     {
       "name": "Yacc",
@@ -350,9 +350,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 113934,
+      "bytes": 111425,
       "percentage": 0,
-      "lines": 2848
+      "lines": 2786
     },
     {
       "name": "GAP",
@@ -391,16 +391,16 @@
       "lines": 1528
     },
     {
+      "name": "Rust",
+      "bytes": 60299,
+      "percentage": 0,
+      "lines": 1507
+    },
+    {
       "name": "Roff",
       "bytes": 59403,
       "percentage": 0,
       "lines": 1485
-    },
-    {
-      "name": "Rust",
-      "bytes": 56293,
-      "percentage": 0,
-      "lines": 1407
     },
     {
       "name": "Julia",
@@ -608,11 +608,11 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-09-21T01:16:49Z",
-      "updatedAt": "2026-01-07T19:38:10Z",
-      "pushedAt": "2026-01-07T19:38:06Z",
-      "commits": 40,
+      "updatedAt": "2026-02-08T20:32:07Z",
+      "pushedAt": "2026-02-08T20:32:04Z",
+      "commits": 41,
       "languages": {
-        "JavaScript": 237803,
+        "JavaScript": 246839,
         "Shell": 10399
       }
     },
@@ -638,6 +638,28 @@
       }
     },
     {
+      "name": "artorize-docs",
+      "fullName": "Artorize/artorize-docs",
+      "description": "Nextra v4 documentation site for Artorize CDN",
+      "url": "https://github.com/Artorize/artorize-docs",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "MDX",
+      "topics": [],
+      "createdAt": "2026-02-08T13:38:49Z",
+      "updatedAt": "2026-02-08T13:48:44Z",
+      "pushedAt": "2026-02-08T13:39:11Z",
+      "commits": 1,
+      "languages": {
+        "MDX": 27880,
+        "JavaScript": 3054,
+        "TypeScript": 231,
+        "CSS": 97
+      }
+    },
+    {
       "name": "artorize-processor-core",
       "fullName": "Artorize/artorize-processor-core",
       "description": "image processor for the artorize project",
@@ -649,9 +671,9 @@
       "language": "Python",
       "topics": [],
       "createdAt": "2025-09-21T01:21:21Z",
-      "updatedAt": "2025-12-12T16:25:49Z",
-      "pushedAt": "2025-12-12T16:25:46Z",
-      "commits": 42,
+      "updatedAt": "2026-02-08T20:31:40Z",
+      "pushedAt": "2026-02-08T20:31:36Z",
+      "commits": 43,
       "languages": {
         "Python": 319683,
         "Shell": 12571
@@ -669,11 +691,11 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2025-10-01T13:34:50Z",
-      "updatedAt": "2026-01-03T14:30:39Z",
-      "pushedAt": "2026-01-03T14:30:35Z",
-      "commits": 85,
+      "updatedAt": "2026-02-08T20:32:08Z",
+      "pushedAt": "2026-02-08T20:32:04Z",
+      "commits": 87,
       "languages": {
-        "TypeScript": 163681,
+        "TypeScript": 173099,
         "Shell": 12619,
         "JavaScript": 6165,
         "PowerShell": 872
@@ -691,13 +713,13 @@
       "language": "HTML",
       "topics": [],
       "createdAt": "2025-10-05T16:29:17Z",
-      "updatedAt": "2026-01-12T03:39:43Z",
-      "pushedAt": "2026-01-12T03:39:40Z",
-      "commits": 132,
+      "updatedAt": "2026-02-18T00:20:10Z",
+      "pushedAt": "2026-02-18T00:20:07Z",
+      "commits": 149,
       "languages": {
-        "HTML": 3681632,
-        "CSS": 314197,
-        "JavaScript": 264240
+        "HTML": 3667054,
+        "JavaScript": 348231,
+        "CSS": 122882
       }
     },
     {
@@ -767,7 +789,7 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2024-12-14T15:59:38Z",
-      "updatedAt": "2025-12-01T11:25:28Z",
+      "updatedAt": "2026-02-10T00:30:05Z",
       "pushedAt": "2025-08-05T07:26:09Z",
       "commits": 20,
       "languages": {
@@ -788,7 +810,7 @@
       "topics": [],
       "createdAt": "2025-08-01T02:37:12Z",
       "updatedAt": "2025-10-03T06:06:16Z",
-      "pushedAt": "2026-01-09T06:47:18Z",
+      "pushedAt": "2026-01-31T18:01:03Z",
       "commits": 33,
       "languages": {
         "Java": 204291
@@ -833,6 +855,26 @@
       }
     },
     {
+      "name": "extractor",
+      "fullName": "Haedus-Industries/extractor",
+      "description": null,
+      "url": "https://github.com/Haedus-Industries/extractor",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-02-06T13:34:09Z",
+      "updatedAt": "2026-02-06T13:49:25Z",
+      "pushedAt": "2026-02-06T13:49:21Z",
+      "commits": 2,
+      "languages": {
+        "Java": 96214,
+        "Shell": 8667
+      }
+    },
+    {
       "name": "Haedus",
       "fullName": "Haedus-Industries/Haedus",
       "description": "The Advanced Runtime Injection Framework, Your Ultimate Solution.",
@@ -844,16 +886,17 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-01-26T10:31:50Z",
-      "pushedAt": "2026-01-26T10:31:46Z",
-      "commits": 1973,
+      "updatedAt": "2026-02-20T04:52:57Z",
+      "pushedAt": "2026-02-20T04:52:54Z",
+      "commits": 2039,
       "languages": {
-        "Java": 7311609,
+        "Java": 7146329,
         "C": 359899,
-        "C++": 238676,
-        "Rust": 31316,
+        "C++": 251906,
+        "Rust": 30179,
         "GLSL": 7875,
-        "Batchfile": 7497,
+        "HTML": 6100,
+        "Batchfile": 4989,
         "Assembly": 4325,
         "Slint": 4296,
         "Shell": 1339,
@@ -924,7 +967,7 @@
     {
       "name": "HaedusIRC",
       "fullName": "Haedus-Industries/HaedusIRC",
-      "description": "轻量、高效的适用于我的手艺的跨客户端通信项目",
+      "description": "轻量、高效的适用于我的��艺的跨客户端通信项目",
       "url": "https://github.com/Haedus-Industries/HaedusIRC",
       "isPrivate": true,
       "isFork": false,
@@ -933,11 +976,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-02T12:18:15Z",
-      "updatedAt": "2025-09-19T12:38:21Z",
-      "pushedAt": "2025-09-19T12:38:18Z",
-      "commits": 44,
+      "updatedAt": "2026-02-14T15:48:37Z",
+      "pushedAt": "2026-02-14T08:52:18Z",
+      "commits": 63,
       "languages": {
-        "Java": 66552
+        "Java": 66748
       }
     },
     {
@@ -1014,16 +1057,16 @@
     {
       "name": "jvm-direct-call",
       "fullName": "Haedus-Industries/jvm-direct-call",
-      "description": null,
+      "description": "Extremely Unstable",
       "url": "https://github.com/Haedus-Industries/jvm-direct-call",
-      "isPrivate": true,
+      "isPrivate": false,
       "isFork": false,
       "stars": 0,
       "forks": 0,
       "language": "C",
       "topics": [],
       "createdAt": "2025-12-06T05:41:31Z",
-      "updatedAt": "2025-12-13T20:36:15Z",
+      "updatedAt": "2026-02-09T00:27:37Z",
       "pushedAt": "2025-12-13T20:36:12Z",
       "commits": 23,
       "languages": {
@@ -1110,10 +1153,10 @@
       }
     },
     {
-      "name": "masxinling-plus",
-      "fullName": "Haedus-Industries/masxinling-plus",
+      "name": "nativify",
+      "fullName": "Haedus-Industries/nativify",
       "description": null,
-      "url": "https://github.com/Haedus-Industries/masxinling-plus",
+      "url": "https://github.com/Haedus-Industries/nativify",
       "isPrivate": true,
       "isFork": false,
       "stars": 0,
@@ -1121,16 +1164,16 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-01-10T09:33:26Z",
-      "pushedAt": "2026-01-10T09:33:23Z",
-      "commits": 272,
+      "updatedAt": "2026-02-19T12:48:33Z",
+      "pushedAt": "2026-02-19T12:48:30Z",
+      "commits": 338,
       "languages": {
-        "Java": 2873327,
-        "C": 149974,
-        "Python": 23392,
-        "C++": 8789,
-        "CMake": 5880,
-        "Batchfile": 3141,
+        "Java": 2547979,
+        "C++": 259910,
+        "C": 43407,
+        "Python": 23358,
+        "CMake": 7510,
+        "Batchfile": 3140,
         "Shell": 2917
       }
     },
@@ -1185,12 +1228,12 @@
       "url": "https://github.com/Haedus-Industries/ollvm-19",
       "isPrivate": false,
       "isFork": false,
-      "stars": 16,
-      "forks": 5,
+      "stars": 17,
+      "forks": 6,
       "language": "LLVM",
       "topics": [],
       "createdAt": "2025-04-04T00:29:49Z",
-      "updatedAt": "2026-01-20T10:07:18Z",
+      "updatedAt": "2026-02-14T07:21:34Z",
       "pushedAt": "2025-07-02T11:40:36Z",
       "commits": 3,
       "languages": {
@@ -1286,11 +1329,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-12-28T14:52:55Z",
-      "updatedAt": "2026-01-10T13:59:50Z",
-      "pushedAt": "2026-01-10T13:59:46Z",
-      "commits": 125,
+      "updatedAt": "2026-02-11T09:41:29Z",
+      "pushedAt": "2026-02-11T09:41:25Z",
+      "commits": 134,
       "languages": {
-        "Java": 245112
+        "Java": 254422
       }
     },
     {
@@ -1532,15 +1575,16 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-12-31T09:20:31Z",
-      "updatedAt": "2026-01-16T18:01:19Z",
-      "pushedAt": "2026-01-16T18:01:16Z",
-      "commits": 56,
+      "updatedAt": "2026-01-30T15:46:11Z",
+      "pushedAt": "2026-01-30T15:45:43Z",
+      "commits": 64,
       "languages": {
-        "Java": 1211303,
-        "MDX": 365050,
-        "JavaScript": 11228,
-        "CSS": 5828,
-        "Python": 3006
+        "Java": 1261718,
+        "MDX": 397952,
+        "HTML": 15873,
+        "Python": 14892,
+        "JavaScript": 11291,
+        "CSS": 5828
       }
     },
     {
@@ -1913,10 +1957,34 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-01-25T02:05:39Z",
-      "pushedAt": "2026-01-26T01:49:43Z",
-      "commits": 41,
+      "updatedAt": "2026-02-15T02:30:46Z",
+      "pushedAt": "2026-02-20T01:58:27Z",
+      "commits": 47,
       "languages": {}
+    },
+    {
+      "name": "notuh",
+      "fullName": "neilhuang007/notuh",
+      "description": "Modern. leightweight and neat note taking app",
+      "url": "https://github.com/neilhuang007/notuh",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Svelte",
+      "topics": [],
+      "createdAt": "2026-02-08T02:36:02Z",
+      "updatedAt": "2026-02-08T02:38:29Z",
+      "pushedAt": "2026-02-08T02:38:25Z",
+      "commits": 2,
+      "languages": {
+        "Svelte": 158750,
+        "TypeScript": 23481,
+        "Rust": 5143,
+        "HTML": 290,
+        "JavaScript": 116,
+        "CSS": 23
+      }
     },
     {
       "name": "Novoline-Buidable",
@@ -2032,13 +2100,13 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-01-25T22:19:22Z",
-      "pushedAt": "2026-01-26T14:33:06Z",
-      "commits": 28,
+      "updatedAt": "2026-02-18T01:18:59Z",
+      "pushedAt": "2026-02-18T01:18:55Z",
+      "commits": 30,
       "languages": {
-        "JavaScript": 112356,
-        "CSS": 84053,
-        "HTML": 18769,
+        "JavaScript": 145489,
+        "CSS": 122926,
+        "HTML": 17412,
         "Batchfile": 885
       }
     },
@@ -2292,22 +2360,22 @@
       "languages": {}
     },
     {
-      "name": "Minecraft-1.8.9-lwjgl3",
-      "fullName": "yapeteam/Minecraft-1.8.9-lwjgl3",
+      "name": "minecraft-1.8.9-lwjgl3",
+      "fullName": "yapeteam/minecraft-1.8.9-lwjgl3",
       "description": "MCP 1.8.9 using lwjgl3",
-      "url": "https://github.com/yapeteam/Minecraft-1.8.9-lwjgl3",
+      "url": "https://github.com/yapeteam/minecraft-1.8.9-lwjgl3",
       "isPrivate": false,
       "isFork": false,
-      "stars": 31,
-      "forks": 2,
+      "stars": 30,
+      "forks": 1,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
-      "updatedAt": "2026-01-22T14:39:08Z",
-      "pushedAt": "2025-07-12T23:39:57Z",
-      "commits": 28,
+      "updatedAt": "2026-02-20T08:50:11Z",
+      "pushedAt": "2026-02-20T10:14:59Z",
+      "commits": 45,
       "languages": {
-        "Java": 12490666,
+        "Java": 12436224,
         "GLSL": 46867
       }
     },
@@ -2318,8 +2386,8 @@
       "url": "https://github.com/yapeteam/OpenYolBi",
       "isPrivate": false,
       "isFork": false,
-      "stars": 8,
-      "forks": 1,
+      "stars": 7,
+      "forks": 0,
       "language": "Java",
       "topics": [
         "hack",
@@ -2327,7 +2395,7 @@
         "minecraft"
       ],
       "createdAt": "2024-08-09T12:12:03Z",
-      "updatedAt": "2025-08-12T10:27:56Z",
+      "updatedAt": "2026-02-05T03:34:33Z",
       "pushedAt": "2025-08-03T01:24:46Z",
       "commits": 223,
       "languages": {
@@ -2427,7 +2495,7 @@
     {
       "name": "YMixin",
       "fullName": "yapeteam/YMixin",
-      "description": "YMixin是一个与Mixin类似的字节码插桩工具。与Mixin相较，YMixin生成的字节码可用于热重载。",
+      "description": "YMixin是一个与Mixin类似的字节码插桩工具，生成的字节码可用于热重载。",
       "url": "https://github.com/yapeteam/YMixin",
       "isPrivate": false,
       "isFork": false,
@@ -2436,7 +2504,7 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2024-06-20T01:53:10Z",
-      "updatedAt": "2026-01-26T12:17:19Z",
+      "updatedAt": "2026-02-15T13:28:15Z",
       "pushedAt": "2025-11-01T04:00:24Z",
       "commits": 40,
       "languages": {
@@ -2706,5 +2774,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-01-26T14:33:40.191Z"
+  "_syncedAt": "2026-02-21T01:50:13.330Z"
 }
