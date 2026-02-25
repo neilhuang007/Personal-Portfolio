@@ -48,7 +48,7 @@
       "level": "Expert",
       "linesRaw": 3179536,
       "lines": "3.2M",
-      "linesPercentage": 83.1,
+      "linesPercentage": 83,
       "experience": "7 years",
       "projects": 45,
       "featured": true,
@@ -66,8 +66,8 @@
       "name": "JavaScript",
       "category": "languages",
       "level": "Advanced",
-      "linesRaw": 269935,
-      "lines": "270K",
+      "linesRaw": 272405,
+      "lines": "272K",
       "linesPercentage": 7.1,
       "experience": "5 years",
       "projects": 30,
@@ -478,7 +478,7 @@
       ]
     }
   ],
-  "_clocSyncedAt": "2026-02-21T01:49:47.346Z",
-  "_clocTotalLines": 3826274,
+  "_clocSyncedAt": "2026-02-25T01:57:58.013Z",
+  "_clocTotalLines": 3828744,
   "_clocLanguages": 128
 }

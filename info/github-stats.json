@@ -11,12 +11,12 @@
   },
   "stats": {
     "totalRepos": 101,
-    "userCommits": 2031,
-    "totalCommits": 6064,
-    "githubApiCommits": 26638,
-    "totalLines": 3826274,
-    "totalBytes": 1733137640,
-    "clocTotalLines": 3826274,
+    "userCommits": 2041,
+    "totalCommits": 6101,
+    "githubApiCommits": 26661,
+    "totalLines": 3828744,
+    "totalBytes": 1733378456,
+    "clocTotalLines": 3828744,
     "clocLanguageCount": 128
   },
   "clocLanguages": {
@@ -48,7 +48,7 @@
     "dd": 6,
     "DS_Store": 0,
     "9/src/cn/yapeteam/yolbi/{": 32,
-    "JavaScript": 269935,
+    "JavaScript": 272405,
     "def": 534,
     "Java": 3179536,
     "1/src/cn/yapeteam/yolbi/module/impl/movement": 2,
@@ -164,15 +164,15 @@
     },
     {
       "name": "Java",
-      "bytes": 323028135,
+      "bytes": 323272291,
       "percentage": 18.6,
-      "lines": 8075703
+      "lines": 8081807
     },
     {
       "name": "C",
-      "bytes": 242452690,
+      "bytes": 242449909,
       "percentage": 14,
-      "lines": 6061317
+      "lines": 6061248
     },
     {
       "name": "Assembly",
@@ -266,9 +266,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 716045,
+      "bytes": 715926,
       "percentage": 0,
-      "lines": 17901
+      "lines": 17898
     },
     {
       "name": "TypeScript",
@@ -350,9 +350,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 111425,
+      "bytes": 110985,
       "percentage": 0,
-      "lines": 2786
+      "lines": 2775
     },
     {
       "name": "GAP",
@@ -784,12 +784,12 @@
       "url": "https://github.com/Haedus-Industries/Daedalus",
       "isPrivate": false,
       "isFork": false,
-      "stars": 2,
+      "stars": 3,
       "forks": 1,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-12-14T15:59:38Z",
-      "updatedAt": "2026-02-10T00:30:05Z",
+      "updatedAt": "2026-02-24T10:10:09Z",
       "pushedAt": "2025-08-05T07:26:09Z",
       "commits": 20,
       "languages": {
@@ -886,11 +886,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-02-20T04:52:57Z",
-      "pushedAt": "2026-02-20T04:52:54Z",
-      "commits": 2039,
+      "updatedAt": "2026-02-24T10:30:20Z",
+      "pushedAt": "2026-02-24T10:30:17Z",
+      "commits": 2046,
       "languages": {
-        "Java": 7146329,
+        "Java": 7187698,
         "C": 359899,
         "C++": 251906,
         "Rust": 30179,
@@ -967,7 +967,7 @@
     {
       "name": "HaedusIRC",
       "fullName": "Haedus-Industries/HaedusIRC",
-      "description": "轻量、高效的适用于我的��艺的跨客户端通信项目",
+      "description": "轻量、高效的适用于我的手艺的跨客户端通信项目",
       "url": "https://github.com/Haedus-Industries/HaedusIRC",
       "isPrivate": true,
       "isFork": false,
@@ -1164,17 +1164,17 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-02-19T12:48:33Z",
-      "pushedAt": "2026-02-19T12:48:30Z",
-      "commits": 338,
+      "updatedAt": "2026-02-23T15:20:38Z",
+      "pushedAt": "2026-02-23T15:16:43Z",
+      "commits": 348,
       "languages": {
-        "Java": 2547979,
+        "Java": 2588755,
         "C++": 259910,
-        "C": 43407,
+        "C": 40626,
         "Python": 23358,
         "CMake": 7510,
-        "Batchfile": 3140,
-        "Shell": 2917
+        "Shell": 2798,
+        "Batchfile": 2700
       }
     },
     {
@@ -1329,11 +1329,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-12-28T14:52:55Z",
-      "updatedAt": "2026-02-11T09:41:29Z",
-      "pushedAt": "2026-02-11T09:41:25Z",
-      "commits": 134,
+      "updatedAt": "2026-02-24T13:31:14Z",
+      "pushedAt": "2026-02-24T13:31:10Z",
+      "commits": 138,
       "languages": {
-        "Java": 254422
+        "Java": 416433
       }
     },
     {
@@ -1957,9 +1957,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-02-15T02:30:46Z",
-      "pushedAt": "2026-02-20T01:58:27Z",
-      "commits": 47,
+      "updatedAt": "2026-02-22T02:27:03Z",
+      "pushedAt": "2026-02-24T02:00:03Z",
+      "commits": 48,
       "languages": {}
     },
     {
@@ -2100,9 +2100,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-02-18T01:18:59Z",
-      "pushedAt": "2026-02-18T01:18:55Z",
-      "commits": 30,
+      "updatedAt": "2026-02-21T01:50:47Z",
+      "pushedAt": "2026-02-21T01:50:43Z",
+      "commits": 31,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2774,5 +2774,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-02-21T01:50:13.330Z"
+  "_syncedAt": "2026-02-25T01:58:37.198Z"
 }
