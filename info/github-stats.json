@@ -13,9 +13,9 @@
     "totalRepos": 101,
     "userCommits": 2041,
     "totalCommits": 6101,
-    "githubApiCommits": 26661,
+    "githubApiCommits": 26724,
     "totalLines": 3828744,
-    "totalBytes": 1733378456,
+    "totalBytes": 1733439110,
     "clocTotalLines": 3828744,
     "clocLanguageCount": 128
   },
@@ -164,9 +164,9 @@
     },
     {
       "name": "Java",
-      "bytes": 323272291,
-      "percentage": 18.6,
-      "lines": 8081807
+      "bytes": 323332977,
+      "percentage": 18.7,
+      "lines": 8083324
     },
     {
       "name": "C",
@@ -350,9 +350,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 110985,
+      "bytes": 110953,
       "percentage": 0,
-      "lines": 2775
+      "lines": 2774
     },
     {
       "name": "GAP",
@@ -800,7 +800,7 @@
     {
       "name": "EdenClient",
       "fullName": "Haedus-Industries/EdenClient",
-      "description": "Eden 3.0协议的客户端Fabric模组实现. 具有神秘且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)",
+      "description": "Eden 3.0协议的客户端Fabric模组实现. 具有神��且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)",
       "url": "https://github.com/Haedus-Industries/EdenClient",
       "isPrivate": true,
       "isFork": false,
@@ -877,26 +877,26 @@
     {
       "name": "Haedus",
       "fullName": "Haedus-Industries/Haedus",
-      "description": "The Advanced Runtime Injection Framework, Your Ultimate Solution.",
+      "description": "An advanced runtime injection framework for Minecraft, built to be your ultimate solution.",
       "url": "https://github.com/Haedus-Industries/Haedus",
       "isPrivate": true,
       "isFork": false,
-      "stars": 4,
+      "stars": 5,
       "forks": 0,
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-02-24T10:30:20Z",
-      "pushedAt": "2026-02-24T10:30:17Z",
-      "commits": 2046,
+      "updatedAt": "2026-02-28T15:12:41Z",
+      "pushedAt": "2026-02-28T15:12:38Z",
+      "commits": 2101,
       "languages": {
-        "Java": 7187698,
+        "Java": 7210148,
         "C": 359899,
         "C++": 251906,
         "Rust": 30179,
         "GLSL": 7875,
         "HTML": 6100,
-        "Batchfile": 4989,
+        "Batchfile": 4957,
         "Assembly": 4325,
         "Slint": 4296,
         "Shell": 1339,
@@ -1164,11 +1164,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-02-23T15:20:38Z",
-      "pushedAt": "2026-02-23T15:16:43Z",
-      "commits": 348,
+      "updatedAt": "2026-02-26T14:49:19Z",
+      "pushedAt": "2026-02-26T14:49:16Z",
+      "commits": 353,
       "languages": {
-        "Java": 2588755,
+        "Java": 2628474,
         "C++": 259910,
         "C": 40626,
         "Python": 23358,
@@ -1329,11 +1329,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-12-28T14:52:55Z",
-      "updatedAt": "2026-02-24T13:31:14Z",
-      "pushedAt": "2026-02-24T13:31:10Z",
-      "commits": 138,
+      "updatedAt": "2026-02-25T09:23:57Z",
+      "pushedAt": "2026-02-25T09:23:52Z",
+      "commits": 140,
       "languages": {
-        "Java": 416433
+        "Java": 414950
       }
     },
     {
@@ -1958,7 +1958,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-02-22T02:27:03Z",
-      "pushedAt": "2026-02-24T02:00:03Z",
+      "pushedAt": "2026-02-28T01:47:21Z",
       "commits": 48,
       "languages": {}
     },
@@ -2100,9 +2100,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-02-21T01:50:47Z",
-      "pushedAt": "2026-02-21T01:50:43Z",
-      "commits": 31,
+      "updatedAt": "2026-02-25T01:59:11Z",
+      "pushedAt": "2026-02-25T01:59:07Z",
+      "commits": 32,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2366,12 +2366,12 @@
       "url": "https://github.com/yapeteam/minecraft-1.8.9-lwjgl3",
       "isPrivate": false,
       "isFork": false,
-      "stars": 30,
+      "stars": 31,
       "forks": 1,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
-      "updatedAt": "2026-02-20T08:50:11Z",
+      "updatedAt": "2026-02-25T21:51:39Z",
       "pushedAt": "2026-02-20T10:14:59Z",
       "commits": 45,
       "languages": {
@@ -2774,5 +2774,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-02-25T01:58:37.198Z"
+  "_syncedAt": "2026-03-01T02:05:14.921Z"
 }
