@@ -6,17 +6,17 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 37,
-    "privateRepos": 42,
+    "privateRepos": 45,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 101,
-    "userCommits": 2041,
-    "totalCommits": 6101,
-    "githubApiCommits": 26724,
-    "totalLines": 3828744,
-    "totalBytes": 1733439110,
-    "clocTotalLines": 3828744,
+    "totalRepos": 104,
+    "userCommits": 2043,
+    "totalCommits": 6191,
+    "githubApiCommits": 32336,
+    "totalLines": 3828745,
+    "totalBytes": 1736932226,
+    "clocTotalLines": 3828745,
     "clocLanguageCount": 128
   },
   "clocLanguages": {
@@ -79,7 +79,7 @@
     "9/src/main/java/dev/haedus/core/{": 28,
     "github/{": 0,
     "github/CODEOWNERS": 12,
-    "bat": 1571,
+    "bat": 1572,
     "mdx": 30526,
     "manifest": 50,
     "bak": 1366,
@@ -164,9 +164,9 @@
     },
     {
       "name": "Java",
-      "bytes": 323332977,
-      "percentage": 18.7,
-      "lines": 8083324
+      "bytes": 323863234,
+      "percentage": 18.6,
+      "lines": 8096581
     },
     {
       "name": "C",
@@ -182,9 +182,9 @@
     },
     {
       "name": "Python",
-      "bytes": 22941768,
+      "bytes": 22956260,
       "percentage": 1.3,
-      "lines": 573544
+      "lines": 573907
     },
     {
       "name": "MLIR",
@@ -209,6 +209,12 @@
       "bytes": 4491920,
       "percentage": 0.3,
       "lines": 112298
+    },
+    {
+      "name": "GLSL",
+      "bytes": 3836180,
+      "percentage": 0.2,
+      "lines": 95905
     },
     {
       "name": "CMake",
@@ -253,12 +259,6 @@
       "lines": 26355
     },
     {
-      "name": "GLSL",
-      "bytes": 890040,
-      "percentage": 0.1,
-      "lines": 22251
-    },
-    {
       "name": "Cuda",
       "bytes": 850277,
       "percentage": 0,
@@ -266,9 +266,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 715926,
+      "bytes": 716658,
       "percentage": 0,
-      "lines": 17898
+      "lines": 17916
     },
     {
       "name": "TypeScript",
@@ -523,6 +523,12 @@
       "lines": 67
     },
     {
+      "name": "PowerShell",
+      "bytes": 2367,
+      "percentage": 0,
+      "lines": 59
+    },
+    {
       "name": "POV-Ray SDL",
       "bytes": 1631,
       "percentage": 0,
@@ -551,12 +557,6 @@
       "bytes": 903,
       "percentage": 0,
       "lines": 23
-    },
-    {
-      "name": "PowerShell",
-      "bytes": 872,
-      "percentage": 0,
-      "lines": 22
     },
     {
       "name": "RenderScript",
@@ -744,6 +744,27 @@
       }
     },
     {
+      "name": "Euphoria-Patches",
+      "fullName": "EuphoriaPatches/Euphoria-Patches",
+      "description": "A Complementary Shaders add-on",
+      "url": "https://github.com/EuphoriaPatches/Euphoria-Patches",
+      "isPrivate": true,
+      "isFork": true,
+      "stars": 3,
+      "forks": 2,
+      "language": "GLSL",
+      "topics": [],
+      "createdAt": "2022-08-28T11:33:33Z",
+      "updatedAt": "2026-03-04T14:32:28Z",
+      "pushedAt": "2026-03-04T14:32:22Z",
+      "commits": 2797,
+      "languages": {
+        "GLSL": 1426700,
+        "Python": 5350,
+        "Shell": 366
+      }
+    },
+    {
       "name": "experience-primer-copilot-neilhuang007",
       "fullName": "Exp-Primer-Copilot-Cohort-1/experience-primer-copilot-neilhuang007",
       "description": "experience-primer-copilot-neilhuang007 created by GitHub Classroom",
@@ -800,7 +821,7 @@
     {
       "name": "EdenClient",
       "fullName": "Haedus-Industries/EdenClient",
-      "description": "Eden 3.0协议的客户端Fabric模组实现. 具有神��且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)",
+      "description": "Eden 3.0协议的客户端Fabric模组实现. 具有神秘且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)",
       "url": "https://github.com/Haedus-Industries/EdenClient",
       "isPrivate": true,
       "isFork": false,
@@ -886,11 +907,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-02-28T15:12:41Z",
-      "pushedAt": "2026-02-28T15:12:38Z",
-      "commits": 2101,
+      "updatedAt": "2026-03-03T06:45:37Z",
+      "pushedAt": "2026-03-03T06:45:34Z",
+      "commits": 2109,
       "languages": {
-        "Java": 7210148,
+        "Java": 7246576,
         "C": 359899,
         "C++": 251906,
         "Rust": 30179,
@@ -1329,11 +1350,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-12-28T14:52:55Z",
-      "updatedAt": "2026-02-25T09:23:57Z",
-      "pushedAt": "2026-02-25T09:23:52Z",
-      "commits": 140,
+      "updatedAt": "2026-03-02T11:58:37Z",
+      "pushedAt": "2026-03-02T11:58:32Z",
+      "commits": 147,
       "languages": {
-        "Java": 414950
+        "Java": 490395
       }
     },
     {
@@ -1752,6 +1773,27 @@
       "languages": {}
     },
     {
+      "name": "Euphoria-Patches",
+      "fullName": "neilhuang007/Euphoria-Patches",
+      "description": "A Complementary Shaders add-on",
+      "url": "https://github.com/neilhuang007/Euphoria-Patches",
+      "isPrivate": true,
+      "isFork": true,
+      "stars": 0,
+      "forks": 0,
+      "language": null,
+      "topics": [],
+      "createdAt": "2026-03-03T21:44:24Z",
+      "updatedAt": "2026-03-03T21:44:24Z",
+      "pushedAt": "2026-03-03T20:52:48Z",
+      "commits": 2796,
+      "languages": {
+        "GLSL": 1426700,
+        "Python": 5350,
+        "Shell": 366
+      }
+    },
+    {
       "name": "Evidex",
       "fullName": "neilhuang007/Evidex",
       "description": "AI card cutter prototype for public forum",
@@ -1957,9 +1999,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-02-22T02:27:03Z",
-      "pushedAt": "2026-02-28T01:47:21Z",
-      "commits": 48,
+      "updatedAt": "2026-03-01T02:34:01Z",
+      "pushedAt": "2026-03-04T01:55:59Z",
+      "commits": 49,
       "languages": {}
     },
     {
@@ -2100,9 +2142,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-02-25T01:59:11Z",
-      "pushedAt": "2026-02-25T01:59:07Z",
-      "commits": 32,
+      "updatedAt": "2026-03-01T02:05:49Z",
+      "pushedAt": "2026-03-01T02:05:45Z",
+      "commits": 33,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2171,6 +2213,28 @@
       }
     },
     {
+      "name": "Refract",
+      "fullName": "neilhuang007/Refract",
+      "description": "A fork of photonics with personal tweaks",
+      "url": "https://github.com/neilhuang007/Refract",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-03-03T19:15:29Z",
+      "updatedAt": "2026-03-03T20:00:00Z",
+      "pushedAt": "2026-03-03T19:59:54Z",
+      "commits": 2,
+      "languages": {
+        "Java": 418384,
+        "GLSL": 92740,
+        "Python": 3792,
+        "PowerShell": 1495
+      }
+    },
+    {
       "name": "ShadowStrike",
       "fullName": "neilhuang007/ShadowStrike",
       "description": null,
@@ -2214,12 +2278,12 @@
       "url": "https://github.com/neilhuang007/SkidSuite",
       "isPrivate": false,
       "isFork": true,
-      "stars": 6,
+      "stars": 7,
       "forks": 3,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-09-18T13:25:47Z",
-      "updatedAt": "2025-12-08T12:10:47Z",
+      "updatedAt": "2026-03-03T15:09:09Z",
       "pushedAt": "2025-02-01T12:03:49Z",
       "commits": 447,
       "languages": {
@@ -2367,7 +2431,7 @@
       "isPrivate": false,
       "isFork": false,
       "stars": 31,
-      "forks": 1,
+      "forks": 2,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
@@ -2382,7 +2446,7 @@
     {
       "name": "OpenYolBi",
       "fullName": "yapeteam/OpenYolBi",
-      "description": "本项目已移交Haedus Industries开发，原dev不再参与",
+      "description": "Runtime inject client for Minecraft, supports Mixin syntax",
       "url": "https://github.com/yapeteam/OpenYolBi",
       "isPrivate": false,
       "isFork": false,
@@ -2395,7 +2459,7 @@
         "minecraft"
       ],
       "createdAt": "2024-08-09T12:12:03Z",
-      "updatedAt": "2026-02-05T03:34:33Z",
+      "updatedAt": "2026-03-04T03:36:33Z",
       "pushedAt": "2025-08-03T01:24:46Z",
       "commits": 223,
       "languages": {
@@ -2495,7 +2559,7 @@
     {
       "name": "YMixin",
       "fullName": "yapeteam/YMixin",
-      "description": "YMixin是一个与Mixin类似的字节码插桩工具，生成的字节码可用于热重载。",
+      "description": "Inject your code like Mixin, available for runtime injection.",
       "url": "https://github.com/yapeteam/YMixin",
       "isPrivate": false,
       "isFork": false,
@@ -2504,7 +2568,7 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2024-06-20T01:53:10Z",
-      "updatedAt": "2026-02-15T13:28:15Z",
+      "updatedAt": "2026-03-04T03:33:50Z",
       "pushedAt": "2025-11-01T04:00:24Z",
       "commits": 40,
       "languages": {
@@ -2774,5 +2838,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-03-01T02:05:14.921Z"
+  "_syncedAt": "2026-03-05T01:55:18.582Z"
 }
