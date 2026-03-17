@@ -158,8 +158,8 @@
       "stars": 0,
       "forks": 0,
       "license": "MIT",
-      "isPrivate": false,
-      "lastUpdated": "2025-12-13T20:36:12Z",
+      "isPrivate": true,
+      "lastUpdated": "2026-03-14T00:09:35Z",
       "content": "## jvm-direct-call\n\nNo description available."
     },
     {
@@ -276,7 +276,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
-      "lastUpdated": "2026-03-07T15:13:38Z",
+      "lastUpdated": "2026-03-15T03:24:43Z",
       "content": "## nativify\n\nNo description available."
     },
     {
@@ -589,7 +589,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-03-12T02:00:10Z",
+      "lastUpdated": "2026-03-16T02:14:01Z",
       "content": "## neilhuang007\n\nmy readme profile"
     },
     {
@@ -776,7 +776,7 @@
       "content": "## Digital Identity: The Portfolio as Personal Manifesto\n\nIn Silicon Valley, they say your GitHub profile is your resume. But what happens when code repositories alone can't capture the full spectrum of a developer's journey? This portfolio project emerges from that gap—a digital autobiography written in JavaScript, styled with ambition, and deployed with purpose.\n\n### The Philosophy of First Impressions\n\nSeven seconds. That's how long research suggests we have to make a first impression. In the digital realm, that window shrinks even further. This portfolio weaponizes those precious moments, deploying a carefully choreographed performance where React components dance into view, animations whisper rather than shout, and every pixel serves a purpose.\n\nThe opening sequence sets the tone: a subtle parallax effect that responds to mouse movement, creating depth without distraction. Typography that shifts weight as you scroll, emphasizing key achievements. Color schemes that adapt to user preferences—respecting both retinas and battery life with thoughtful dark mode implementation.\n\n### Architecture as Autobiography\n\nBeneath the polished surface lies an architecture that tells its own story. React wasn't chosen merely for its popularity but for its component philosophy—each project, each skill, each achievement rendered as a self-contained universe that can be recomposed, reimagined, redeployed.\n\nThe state management pattern reveals a developer who thinks in systems. Props cascade through component hierarchies like carefully planned water features. Context providers eliminate prop drilling with the elegance of a master chess player sacrificing pawns for position. Custom hooks abstract complexity, turning intricate animations into single-line invocations.\n\n### Performance as a Feature\n\nIn an attention economy where every millisecond counts, this portfolio treats performance not as an afterthought but as a core feature. Lazy loading ensures that visitors see content immediately while heavier assets load in the background. Images optimize themselves based on device capabilities. Code splitting creates chunks so refined that the initial bundle weighs less than many websites' hero images.\n\nThe result? Lighthouse scores that approach perfection—not for vanity but because a portfolio that preaches modern development practices must practice them.\n\n### The Narrative Arc\n\nGreat portfolios tell stories, and this one unfolds like a carefully crafted thriller. The hero's journey begins with early projects—rough around the edges but brimming with enthusiasm. Scroll deeper, and watch skills evolve, projects grow more ambitious, code more elegant. It's character development rendered in Git commits.\n\nInteractive elements invite exploration without demanding it. Hover over a project card, and it subtly lifts, shadows deepening to create physical presence in digital space. Click through, and detailed case studies reveal not just what was built but why—the problems solved, lessons learned, impact created.\n\n### Beyond the Screen\n\nThis portfolio transcends its medium by acknowledging a fundamental truth: great developers don't just write code; they solve problems, build communities, and push boundaries. The design reflects this, showcasing not just technical projects but contributions to open source, mentorship provided, talks delivered.\n\nIt's a portfolio that says, 'I don't just consume technology; I create it, teach it, and advance it.'\n\n### The Living Resume\n\nPerhaps most cleverly, the portfolio includes a hidden feature: it updates itself. Through GitHub Actions and clever API integration, new projects automatically appear, statistics refresh, and achievements accumulate. It's a resume that writes itself—a fitting metaphor for a career in constant motion.\n\nThis isn't just a portfolio; it's a statement of intent, a declaration that in the digital age, how you present your work matters almost as much as the work itself.",
       "stars": 1,
       "forks": 0,
-      "lastUpdated": "2026-03-09T01:57:52Z",
+      "lastUpdated": "2026-03-13T01:54:26Z",
       "isPrivate": false
     },
     {
@@ -1121,7 +1121,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
-      "lastUpdated": "2026-03-08T11:58:40Z",
+      "lastUpdated": "2026-03-16T03:51:24Z",
       "content": "## Haedus\n\nThe Advanced Runtime Injection Framework, Your Ultimate Solution."
     },
     {
@@ -2180,7 +2180,7 @@
       "demo": "",
       "featured": true,
       "stars": 31,
-      "forks": 2,
+      "forks": 3,
       "license": "Apache-2.0",
       "isPrivate": false,
       "lastUpdated": "2026-02-20T10:14:59Z",
@@ -2527,7 +2527,7 @@
       "forks": 2,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-03-13T01:22:48Z",
+      "lastUpdated": "2026-03-16T22:42:17Z",
       "content": "## Euphoria-Patches\n\nA Complementary Shaders add-on"
     },
     {
@@ -2600,12 +2600,12 @@
       "count": 19
     }
   },
-  "_syncedAt": "2026-03-13T01:53:55.891Z",
+  "_syncedAt": "2026-03-17T01:56:56.606Z",
   "_syncStats": {
     "totalRepos": 104,
-    "publicRepos": 59,
-    "privateRepos": 45,
-    "totalCommits": 32426,
-    "totalLines": 43431210
+    "publicRepos": 58,
+    "privateRepos": 46,
+    "totalCommits": 32487,
+    "totalLines": 43434335
   }
 }
