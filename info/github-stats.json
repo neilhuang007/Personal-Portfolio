@@ -11,19 +11,19 @@
   },
   "stats": {
     "totalRepos": 104,
-    "userCommits": 1946,
-    "totalCommits": 5273,
-    "githubApiCommits": 32523,
-    "totalLines": 3745789,
-    "totalBytes": 1738042620,
-    "clocTotalLines": 3745789,
+    "userCommits": 1974,
+    "totalCommits": 5298,
+    "githubApiCommits": 32540,
+    "totalLines": 3810371,
+    "totalBytes": 1738073056,
+    "clocTotalLines": 3810371,
     "clocLanguageCount": 130
   },
   "clocLanguages": {
     "1": 187342,
     "2": 25,
     "black": 8101,
-    "Python": 46277,
+    "Python": 46923,
     "9/src/cn/yapeteam/yolbi/{event": 3,
     "vsh": 2000,
     "kts": 216,
@@ -41,7 +41,7 @@
     "backup": 1116,
     "pro": 191,
     "ttf": 0,
-    "glsl": 30012,
+    "glsl": 47108,
     "db": 0,
     "eslintrc": 29,
     "dd": 6,
@@ -49,7 +49,7 @@
     "9/src/cn/yapeteam/yolbi/{": 32,
     "JavaScript": 273269,
     "def": 534,
-    "Java": 2685514,
+    "Java": 2714956,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "1/src/cn/yapeteam/yolbi/{config": 3,
@@ -111,7 +111,7 @@
     "Vuejs Component": 324,
     "gitkeep": 8,
     "cfg\"": 0,
-    "gradle": 1541,
+    "gradle": 1707,
     "SF": 0,
     "cmake/api/v1/query/toolchains-v1": 0,
     "jpg": 0,
@@ -129,7 +129,7 @@
     "vercelignore": 6,
     "9/src/cn/yapeteam/yolbi/module/impl/{combat": 6,
     "mca": 0,
-    "ps1": 776,
+    "ps1": 1496,
     "npmignore": 2,
     "gitmodules": 6,
     "prettierignore": 10,
@@ -144,7 +144,7 @@
     "fxh": 926,
     "snap": 1242,
     "example": 248,
-    "fsh": 8396,
+    "fsh": 24908,
     "9/src/main/java/{com/github/haedus_industries/calculation/impl": 2,
     "ogg": 0,
     "name": 6,
@@ -166,9 +166,9 @@
     },
     {
       "name": "Java",
-      "bytes": 324496393,
+      "bytes": 324494385,
       "percentage": 18.7,
-      "lines": 8112410
+      "lines": 8112360
     },
     {
       "name": "C",
@@ -184,9 +184,9 @@
     },
     {
       "name": "Python",
-      "bytes": 22952468,
+      "bytes": 22965630,
       "percentage": 1.3,
-      "lines": 573812
+      "lines": 574141
     },
     {
       "name": "MLIR",
@@ -214,9 +214,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4318702,
+      "bytes": 4327380,
       "percentage": 0.2,
-      "lines": 107968
+      "lines": 108185
     },
     {
       "name": "CMake",
@@ -483,6 +483,12 @@
       "lines": 294
     },
     {
+      "name": "PowerShell",
+      "bytes": 11476,
+      "percentage": 0,
+      "lines": 287
+    },
+    {
       "name": "Cool",
       "bytes": 10909,
       "percentage": 0,
@@ -553,12 +559,6 @@
       "bytes": 903,
       "percentage": 0,
       "lines": 23
-    },
-    {
-      "name": "PowerShell",
-      "bytes": 872,
-      "percentage": 0,
-      "lines": 22
     },
     {
       "name": "RenderScript",
@@ -757,11 +757,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-03-20T16:43:14Z",
-      "pushedAt": "2026-03-20T16:43:08Z",
-      "commits": 2912,
+      "updatedAt": "2026-03-25T01:26:55Z",
+      "pushedAt": "2026-03-25T01:26:51Z",
+      "commits": 2920,
       "languages": {
-        "GLSL": 1472255,
+        "GLSL": 1472604,
         "Python": 5350,
         "Shell": 366
       }
@@ -909,11 +909,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-03-16T03:45:17Z",
-      "pushedAt": "2026-03-16T03:51:24Z",
-      "commits": 2118,
+      "updatedAt": "2026-03-24T13:40:37Z",
+      "pushedAt": "2026-03-24T13:40:33Z",
+      "commits": 2123,
       "languages": {
-        "Java": 7279308,
+        "Java": 7277228,
         "C": 359899,
         "C++": 251906,
         "Rust": 30179,
@@ -2001,9 +2001,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-03-15T02:37:08Z",
-      "pushedAt": "2026-03-20T01:59:43Z",
-      "commits": 51,
+      "updatedAt": "2026-03-22T02:29:53Z",
+      "pushedAt": "2026-03-24T01:58:38Z",
+      "commits": 52,
       "languages": {}
     },
     {
@@ -2144,9 +2144,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-03-17T01:57:30Z",
-      "pushedAt": "2026-03-17T01:57:27Z",
-      "commits": 37,
+      "updatedAt": "2026-03-21T01:50:48Z",
+      "pushedAt": "2026-03-21T01:50:45Z",
+      "commits": 38,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2226,12 +2226,14 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-03-03T19:15:29Z",
-      "updatedAt": "2026-03-20T23:52:29Z",
-      "pushedAt": "2026-03-20T23:52:25Z",
-      "commits": 19,
+      "updatedAt": "2026-03-21T13:23:46Z",
+      "pushedAt": "2026-03-21T13:23:43Z",
+      "commits": 21,
       "languages": {
-        "Java": 855214,
-        "GLSL": 529707
+        "Java": 855286,
+        "GLSL": 538036,
+        "Python": 13162,
+        "PowerShell": 10604
       }
     },
     {
@@ -2752,12 +2754,12 @@
       "url": "https://github.com/yapeteam/YolBi_Inject",
       "isPrivate": false,
       "isFork": false,
-      "stars": 19,
+      "stars": 18,
       "forks": 7,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-12-30T12:30:08Z",
-      "updatedAt": "2025-12-01T11:23:13Z",
+      "updatedAt": "2026-03-24T13:32:48Z",
       "pushedAt": "2024-06-19T22:34:27Z",
       "commits": 213,
       "languages": {
@@ -2795,7 +2797,7 @@
       "url": "https://github.com/yapeteam/YolBi_Lite_Recode",
       "isPrivate": false,
       "isFork": false,
-      "stars": 14,
+      "stars": 13,
       "forks": 1,
       "language": "Java",
       "topics": [
@@ -2805,7 +2807,7 @@
         "mixin"
       ],
       "createdAt": "2024-04-14T16:57:10Z",
-      "updatedAt": "2026-01-17T11:22:01Z",
+      "updatedAt": "2026-03-24T13:32:28Z",
       "pushedAt": "2024-11-08T14:26:29Z",
       "commits": 687,
       "languages": {
@@ -2838,5 +2840,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-03-21T01:50:14.710Z"
+  "_syncedAt": "2026-03-25T02:00:33.245Z"
 }
