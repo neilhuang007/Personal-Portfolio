@@ -11,19 +11,19 @@
   },
   "stats": {
     "totalRepos": 106,
-    "userCommits": 1974,
-    "totalCommits": 5298,
-    "githubApiCommits": 32613,
-    "totalLines": 3810371,
-    "totalBytes": 1738147365,
-    "clocTotalLines": 3810371,
-    "clocLanguageCount": 130
+    "userCommits": 1996,
+    "totalCommits": 5348,
+    "githubApiCommits": 32638,
+    "totalLines": 3815597,
+    "totalBytes": 1738220117,
+    "clocTotalLines": 3815597,
+    "clocLanguageCount": 123
   },
   "clocLanguages": {
     "1": 187342,
     "2": 25,
     "black": 8101,
-    "Python": 46923,
+    "Python": 46509,
     "9/src/cn/yapeteam/yolbi/{event": 3,
     "vsh": 2000,
     "kts": 216,
@@ -41,15 +41,15 @@
     "backup": 1116,
     "pro": 191,
     "ttf": 0,
-    "glsl": 47108,
+    "glsl": 47894,
     "db": 0,
     "eslintrc": 29,
     "dd": 6,
     "DS_Store": 0,
     "9/src/cn/yapeteam/yolbi/{": 32,
-    "JavaScript": 273269,
+    "JavaScript": 273657,
     "def": 534,
-    "Java": 2714956,
+    "Java": 2718198,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "1/src/cn/yapeteam/yolbi/{config": 3,
@@ -66,7 +66,7 @@
     "9/src/cn/yapeteam/yolbi/{font": 3,
     "jst": 1840,
     "csh": 0,
-    "gitignore": 1896,
+    "gitignore": 1904,
     "otf": 0,
     "JSX": 664,
     "svelte": 7808,
@@ -89,13 +89,6 @@
     "1/src/cn/yapeteam/yolbi/utils/{": 20,
     "get/LICENSE": 47,
     "ninja_log": 20,
-    "2024-07-11": 0,
-    "2024-07-13": 0,
-    "2024-07-12": 0,
-    "2024-07-15": 0,
-    "2024-07-14": 0,
-    "2024-07-17": 0,
-    "2024-07-16": 0,
     "cmake/api/v1/query/cache-v2": 0,
     "service": 160,
     "ddi": 28,
@@ -111,14 +104,14 @@
     "Vuejs Component": 324,
     "gitkeep": 8,
     "cfg\"": 0,
-    "gradle": 1707,
+    "gradle": 1713,
     "SF": 0,
     "cmake/api/v1/query/toolchains-v1": 0,
     "jpg": 0,
     "rc": 4,
     "modmap": 0,
     "INI": 1265,
-    "iml": 1057,
+    "iml": 1047,
     "frag": 748,
     "2/src/main/java/dev/haedus/core/utils/misc": 12,
     "tiny": 175690,
@@ -129,13 +122,13 @@
     "vercelignore": 6,
     "9/src/cn/yapeteam/yolbi/module/impl/{combat": 6,
     "mca": 0,
-    "ps1": 1496,
+    "ps1": 2152,
     "npmignore": 2,
     "gitmodules": 6,
     "prettierignore": 10,
     "jar": 0,
     "Bourne Shell": 3520,
-    "gitattributes": 83,
+    "gitattributes": 81,
     "icls": 1692,
     "9/src/main/java/dev/haedus/core/{module": 4,
     "Kotlin": 1018,
@@ -144,7 +137,7 @@
     "fxh": 926,
     "snap": 1242,
     "example": 248,
-    "fsh": 24908,
+    "fsh": 25474,
     "9/src/main/java/{com/github/haedus_industries/calculation/impl": 2,
     "ogg": 0,
     "name": 6,
@@ -166,9 +159,9 @@
     },
     {
       "name": "Java",
-      "bytes": 324510916,
+      "bytes": 324572906,
       "percentage": 18.7,
-      "lines": 8112773
+      "lines": 8114323
     },
     {
       "name": "C",
@@ -184,9 +177,9 @@
     },
     {
       "name": "Python",
-      "bytes": 22975822,
+      "bytes": 22975808,
       "percentage": 1.3,
-      "lines": 574396
+      "lines": 574395
     },
     {
       "name": "MLIR",
@@ -214,9 +207,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4311778,
+      "bytes": 4321481,
       "percentage": 0.2,
-      "lines": 107794
+      "lines": 108037
     },
     {
       "name": "CMake",
@@ -268,9 +261,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 718002,
+      "bytes": 718408,
       "percentage": 0,
-      "lines": 17950
+      "lines": 17960
     },
     {
       "name": "TypeScript",
@@ -352,9 +345,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 112434,
+      "bytes": 113101,
       "percentage": 0,
-      "lines": 2811
+      "lines": 2828
     },
     {
       "name": "GAP",
@@ -757,11 +750,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-03-27T19:40:08Z",
-      "pushedAt": "2026-03-27T19:40:05Z",
-      "commits": 2928,
+      "updatedAt": "2026-03-31T10:54:54Z",
+      "pushedAt": "2026-03-31T10:54:17Z",
+      "commits": 2938,
       "languages": {
-        "GLSL": 1475944,
+        "GLSL": 1476712,
         "Python": 5350,
         "Shell": 366
       }
@@ -909,11 +902,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-03-29T01:40:57Z",
-      "pushedAt": "2026-03-29T01:40:54Z",
-      "commits": 2130,
+      "updatedAt": "2026-03-31T05:18:16Z",
+      "pushedAt": "2026-03-31T05:18:13Z",
+      "commits": 2133,
       "languages": {
-        "Java": 7283353,
+        "Java": 7299885,
         "C": 359899,
         "C++": 251906,
         "Rust": 30179,
@@ -1187,17 +1180,17 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-03-28T15:46:17Z",
-      "pushedAt": "2026-03-28T15:46:14Z",
-      "commits": 413,
+      "updatedAt": "2026-03-29T04:05:20Z",
+      "pushedAt": "2026-03-29T04:05:17Z",
+      "commits": 421,
       "languages": {
-        "Java": 2544438,
+        "Java": 2546043,
         "C++": 259910,
         "C": 40626,
-        "Python": 23358,
+        "Python": 23344,
         "CMake": 7510,
-        "Batchfile": 4181,
-        "Shell": 4142
+        "Batchfile": 4848,
+        "Shell": 4548
       }
     },
     {
@@ -1272,12 +1265,12 @@
       "url": "https://github.com/Haedus-Industries/ollvm-19",
       "isPrivate": false,
       "isFork": false,
-      "stars": 17,
+      "stars": 18,
       "forks": 6,
       "language": "LLVM",
       "topics": [],
       "createdAt": "2025-04-04T00:29:49Z",
-      "updatedAt": "2026-02-14T07:21:34Z",
+      "updatedAt": "2026-03-31T07:58:07Z",
       "pushedAt": "2025-07-02T11:40:36Z",
       "commits": 3,
       "languages": {
@@ -2022,9 +2015,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-03-22T02:29:53Z",
-      "pushedAt": "2026-03-28T02:02:54Z",
-      "commits": 52,
+      "updatedAt": "2026-03-29T02:38:50Z",
+      "pushedAt": "2026-03-31T02:12:10Z",
+      "commits": 53,
       "languages": {}
     },
     {
@@ -2165,9 +2158,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-03-25T02:01:08Z",
-      "pushedAt": "2026-03-25T02:01:03Z",
-      "commits": 39,
+      "updatedAt": "2026-03-29T02:10:39Z",
+      "pushedAt": "2026-03-29T02:10:36Z",
+      "commits": 40,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2247,12 +2240,12 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-03-03T19:15:29Z",
-      "updatedAt": "2026-03-28T22:23:58Z",
-      "pushedAt": "2026-03-28T22:23:55Z",
-      "commits": 33,
+      "updatedAt": "2026-03-30T02:15:20Z",
+      "pushedAt": "2026-03-30T02:15:17Z",
+      "commits": 35,
       "languages": {
-        "Java": 913480,
-        "GLSL": 519094,
+        "Java": 957333,
+        "GLSL": 528029,
         "PowerShell": 20329,
         "Python": 14394
       }
@@ -2881,5 +2874,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-03-29T02:10:05.988Z"
+  "_syncedAt": "2026-04-01T02:24:59.112Z"
 }
