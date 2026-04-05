@@ -6,16 +6,16 @@
     "followers": 7,
     "following": 4,
     "publicRepos": 37,
-    "privateRepos": 46,
+    "privateRepos": 47,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 106,
+    "totalRepos": 107,
     "userCommits": 1996,
     "totalCommits": 5348,
-    "githubApiCommits": 32638,
+    "githubApiCommits": 32795,
     "totalLines": 3815597,
-    "totalBytes": 1738220117,
+    "totalBytes": 1741182669,
     "clocTotalLines": 3815597,
     "clocLanguageCount": 123
   },
@@ -148,26 +148,26 @@
     {
       "name": "LLVM",
       "bytes": 499757984,
-      "percentage": 28.8,
+      "percentage": 28.7,
       "lines": 12493950
     },
     {
       "name": "C++",
-      "bytes": 457717096,
+      "bytes": 458029918,
       "percentage": 26.3,
-      "lines": 11442927
+      "lines": 11450748
     },
     {
       "name": "Java",
-      "bytes": 324572906,
-      "percentage": 18.7,
-      "lines": 8114323
+      "bytes": 327071123,
+      "percentage": 18.8,
+      "lines": 8176778
     },
     {
       "name": "C",
-      "bytes": 242449909,
+      "bytes": 242566034,
       "percentage": 13.9,
-      "lines": 6061248
+      "lines": 6064151
     },
     {
       "name": "Assembly",
@@ -177,9 +177,9 @@
     },
     {
       "name": "Python",
-      "bytes": 22975808,
+      "bytes": 22976273,
       "percentage": 1.3,
-      "lines": 574395
+      "lines": 574407
     },
     {
       "name": "MLIR",
@@ -189,9 +189,9 @@
     },
     {
       "name": "HTML",
-      "bytes": 10948000,
+      "bytes": 10941900,
       "percentage": 0.6,
-      "lines": 273700
+      "lines": 273548
     },
     {
       "name": "Fortran",
@@ -207,15 +207,15 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4321481,
-      "percentage": 0.2,
-      "lines": 108037
+      "bytes": 4356459,
+      "percentage": 0.3,
+      "lines": 108911
     },
     {
       "name": "CMake",
-      "bytes": 3738653,
+      "bytes": 3746835,
       "percentage": 0.2,
-      "lines": 93466
+      "lines": 93671
     },
     {
       "name": "CSS",
@@ -345,9 +345,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 113101,
+      "bytes": 110175,
       "percentage": 0,
-      "lines": 2828
+      "lines": 2754
     },
     {
       "name": "GAP",
@@ -387,9 +387,9 @@
     },
     {
       "name": "Rust",
-      "bytes": 60299,
+      "bytes": 60485,
       "percentage": 0,
-      "lines": 1507
+      "lines": 1512
     },
     {
       "name": "Roff",
@@ -453,9 +453,9 @@
     },
     {
       "name": "PowerShell",
-      "bytes": 21201,
+      "bytes": 21804,
       "percentage": 0,
-      "lines": 530
+      "lines": 545
     },
     {
       "name": "XSLT",
@@ -750,11 +750,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-03-31T10:54:54Z",
-      "pushedAt": "2026-03-31T10:54:17Z",
-      "commits": 2938,
+      "updatedAt": "2026-04-05T01:49:42Z",
+      "pushedAt": "2026-04-05T01:49:37Z",
+      "commits": 2965,
       "languages": {
-        "GLSL": 1476712,
+        "GLSL": 1481937,
         "Python": 5350,
         "Shell": 366
       }
@@ -902,19 +902,19 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-03-31T05:18:16Z",
-      "pushedAt": "2026-03-31T05:18:13Z",
-      "commits": 2133,
+      "updatedAt": "2026-04-04T08:58:46Z",
+      "pushedAt": "2026-04-05T01:19:55Z",
+      "commits": 2203,
       "languages": {
-        "Java": 7299885,
-        "C": 359899,
-        "C++": 251906,
-        "Rust": 30179,
+        "Java": 7321405,
+        "C++": 491075,
+        "C": 360207,
+        "Rust": 30365,
+        "CMake": 8182,
         "GLSL": 7875,
-        "HTML": 6100,
-        "Batchfile": 4957,
         "Assembly": 4325,
         "Slint": 4296,
+        "Batchfile": 2031,
         "Shell": 1339,
         "Lua": 659
       }
@@ -1068,6 +1068,27 @@
         "TypeScript": 10626,
         "CSS": 8137,
         "HTML": 327
+      }
+    },
+    {
+      "name": "HMixin",
+      "fullName": "Haedus-Industries/HMixin",
+      "description": null,
+      "url": "https://github.com/Haedus-Industries/HMixin",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-03-31T16:43:27Z",
+      "updatedAt": "2026-04-04T12:35:49Z",
+      "pushedAt": "2026-04-04T12:35:45Z",
+      "commits": 22,
+      "languages": {
+        "Java": 2380772,
+        "C": 115817,
+        "C++": 73653
       }
     },
     {
@@ -2016,7 +2037,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-03-29T02:38:50Z",
-      "pushedAt": "2026-03-31T02:12:10Z",
+      "pushedAt": "2026-04-04T02:02:59Z",
       "commits": 53,
       "languages": {}
     },
@@ -2158,9 +2179,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-03-29T02:10:39Z",
-      "pushedAt": "2026-03-29T02:10:36Z",
-      "commits": 40,
+      "updatedAt": "2026-04-01T02:25:33Z",
+      "pushedAt": "2026-04-01T02:25:29Z",
+      "commits": 41,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2240,13 +2261,13 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-03-03T19:15:29Z",
-      "updatedAt": "2026-03-30T02:15:20Z",
-      "pushedAt": "2026-03-30T02:15:17Z",
-      "commits": 35,
+      "updatedAt": "2026-04-04T16:53:26Z",
+      "pushedAt": "2026-04-04T16:53:23Z",
+      "commits": 44,
       "languages": {
-        "Java": 957333,
-        "GLSL": 528029,
-        "PowerShell": 20329,
+        "Java": 1041786,
+        "GLSL": 557782,
+        "PowerShell": 20518,
         "Python": 14394
       }
     },
@@ -2417,12 +2438,13 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-03-24T06:00:41Z",
-      "updatedAt": "2026-03-27T05:41:10Z",
-      "pushedAt": "2026-03-27T05:49:52Z",
-      "commits": 17,
+      "updatedAt": "2026-04-04T11:01:06Z",
+      "pushedAt": "2026-04-04T11:04:04Z",
+      "commits": 45,
       "languages": {
-        "Java": 76511,
-        "Python": 8960
+        "Java": 87983,
+        "Python": 9425,
+        "PowerShell": 414
       }
     },
     {
@@ -2874,5 +2896,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-04-01T02:24:59.112Z"
+  "_syncedAt": "2026-04-05T02:12:04.100Z"
 }
