@@ -55,14 +55,14 @@ jobs:
       - name: Generate summary
         if: always()
         run: |
-          echo "# GitHub Stats Sync Report" >> $GITHUB_SUMMARY
-          echo "" >> $GITHUB_SUMMARY
+          echo "# GitHub Stats Sync Report" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
           if [ -f info/github-stats.json ]; then
-            echo "| Metric | Value |" >> $GITHUB_SUMMARY
-            echo "|--------|-------|" >> $GITHUB_SUMMARY
-            echo "| Repositories | $(jq '.stats.totalRepos' info/github-stats.json) |" >> $GITHUB_SUMMARY
-            echo "| Commits | $(jq '.stats.totalCommits' info/github-stats.json) |" >> $GITHUB_SUMMARY
-            echo "| Lines of Code | $(jq '.stats.totalLines' info/github-stats.json) |" >> $GITHUB_SUMMARY
+            echo "| Metric | Value |" >> "$GITHUB_STEP_SUMMARY"
+            echo "|--------|-------|" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Repositories | $(jq '.stats.totalRepos' info/github-stats.json) |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Commits | $(jq '.stats.totalCommits' info/github-stats.json) |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Lines of Code | $(jq '.stats.totalLines' info/github-stats.json) |" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "Sync failed - no stats generated" >> $GITHUB_SUMMARY
+            echo "Sync failed - no stats generated" >> "$GITHUB_STEP_SUMMARY"
           fi
