@@ -13,9 +13,9 @@
     "totalRepos": 108,
     "userCommits": 2015,
     "totalCommits": 5305,
-    "githubApiCommits": 34113,
+    "githubApiCommits": 34120,
     "totalLines": 3830324,
-    "totalBytes": 1742473190,
+    "totalBytes": 1742473557,
     "clocTotalLines": 3830324,
     "clocLanguageCount": 123
   },
@@ -207,9 +207,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4410100,
+      "bytes": 4410467,
       "percentage": 0.3,
-      "lines": 110253
+      "lines": 110262
     },
     {
       "name": "CMake",
@@ -750,11 +750,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-04-07T12:44:43Z",
-      "pushedAt": "2026-04-07T12:44:39Z",
-      "commits": 2975,
+      "updatedAt": "2026-04-09T01:27:57Z",
+      "pushedAt": "2026-04-09T01:27:53Z",
+      "commits": 2981,
       "languages": {
-        "GLSL": 1484700,
+        "GLSL": 1485067,
         "Python": 5350,
         "Shell": 366
       }
@@ -816,7 +816,7 @@
     {
       "name": "EdenClient",
       "fullName": "Haedus-Industries/EdenClient",
-      "description": "Eden 3.0协议的客户端Fabric模组实现. 具有神秘且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)",
+      "description": "Eden 3.0��议的客户端Fabric模组实现. 具有神秘且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)",
       "url": "https://github.com/Haedus-Industries/EdenClient",
       "isPrivate": true,
       "isFork": false,
@@ -854,7 +854,7 @@
     {
       "name": "EdenServer",
       "fullName": "Haedus-Industries/EdenServer",
-      "description": "Eden 3.0的简���服务器实现. 支持Minecraft正版验证, 同账户多用户等. (仅发布和错误修复)",
+      "description": "Eden 3.0的简单服务器实现. 支持Minecraft正版验证, 同账户多用户等. (仅发布和错误修复)",
       "url": "https://github.com/Haedus-Industries/EdenServer",
       "isPrivate": true,
       "isFork": false,
@@ -2037,7 +2037,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-04-05T02:41:33Z",
-      "pushedAt": "2026-04-07T02:12:52Z",
+      "pushedAt": "2026-04-08T02:13:24Z",
       "commits": 54,
       "languages": {}
     },
@@ -2179,9 +2179,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-04-07T16:29:38Z",
-      "pushedAt": "2026-04-07T16:29:33Z",
-      "commits": 43,
+      "updatedAt": "2026-04-07T16:31:05Z",
+      "pushedAt": "2026-04-07T16:31:00Z",
+      "commits": 44,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2401,7 +2401,7 @@
       "topics": [],
       "createdAt": "2026-04-05T04:08:41Z",
       "updatedAt": "2026-04-05T04:29:14Z",
-      "pushedAt": "2026-04-05T23:13:44Z",
+      "pushedAt": "2026-04-07T17:50:48Z",
       "commits": 1296,
       "languages": {
         "Java": 1152369,
@@ -2916,5 +2916,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-04-07T16:30:30.189Z"
+  "_syncedAt": "2026-04-09T02:02:35.747Z"
 }
