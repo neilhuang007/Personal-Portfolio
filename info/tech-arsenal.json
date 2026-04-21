@@ -46,9 +46,9 @@
       "name": "Java",
       "category": "languages",
       "level": "Expert",
-      "linesRaw": 2793757,
+      "linesRaw": 2795271,
       "lines": "2.8M",
-      "linesPercentage": 71.4,
+      "linesPercentage": 71.2,
       "experience": "7 years",
       "projects": 45,
       "featured": true,
@@ -478,7 +478,7 @@
       ]
     }
   ],
-  "_clocSyncedAt": "2026-04-17T02:24:14.226Z",
-  "_clocTotalLines": 3910314,
+  "_clocSyncedAt": "2026-04-21T02:25:07.994Z",
+  "_clocTotalLines": 3923418,
   "_clocLanguages": 128
 }
