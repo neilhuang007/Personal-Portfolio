@@ -5,17 +5,17 @@
     "bio": "Full stack developer\r\n",
     "followers": 7,
     "following": 4,
-    "publicRepos": 38,
-    "privateRepos": 47,
+    "publicRepos": 40,
+    "privateRepos": 46,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 108,
+    "totalRepos": 109,
     "userCommits": 3342,
     "totalCommits": 6713,
-    "githubApiCommits": 34313,
+    "githubApiCommits": 34321,
     "totalLines": 3923418,
-    "totalBytes": 1751336478,
+    "totalBytes": 1751212305,
     "clocTotalLines": 3923418,
     "clocLanguageCount": 128
   },
@@ -158,15 +158,15 @@
     },
     {
       "name": "C++",
-      "bytes": 458029918,
+      "bytes": 458029837,
       "percentage": 26.2,
-      "lines": 11450748
+      "lines": 11450746
     },
     {
       "name": "Java",
-      "bytes": 336979996,
+      "bytes": 336955501,
       "percentage": 19.2,
-      "lines": 8424500
+      "lines": 8423888
     },
     {
       "name": "C",
@@ -205,16 +205,16 @@
       "lines": 248289
     },
     {
-      "name": "GLSL",
-      "bytes": 4513026,
-      "percentage": 0.3,
-      "lines": 112826
-    },
-    {
       "name": "Objective-C",
       "bytes": 4491920,
       "percentage": 0.3,
       "lines": 112298
+    },
+    {
+      "name": "GLSL",
+      "bytes": 4417654,
+      "percentage": 0.3,
+      "lines": 110441
     },
     {
       "name": "CMake",
@@ -445,12 +445,6 @@
       "lines": 698
     },
     {
-      "name": "PowerShell",
-      "bytes": 26029,
-      "percentage": 0,
-      "lines": 651
-    },
-    {
       "name": "Dockerfile",
       "bytes": 23293,
       "percentage": 0,
@@ -461,6 +455,12 @@
       "bytes": 22745,
       "percentage": 0,
       "lines": 569
+    },
+    {
+      "name": "PowerShell",
+      "bytes": 21804,
+      "percentage": 0,
+      "lines": 545
     },
     {
       "name": "XSLT",
@@ -755,11 +755,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-04-20T10:19:54Z",
-      "pushedAt": "2026-04-20T10:19:49Z",
-      "commits": 3046,
+      "updatedAt": "2026-04-24T07:29:52Z",
+      "pushedAt": "2026-04-24T07:29:48Z",
+      "commits": 3054,
       "languages": {
-        "GLSL": 1493456,
+        "GLSL": 1495758,
         "Python": 5350,
         "Shell": 366
       }
@@ -907,12 +907,12 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-04-20T06:16:19Z",
-      "pushedAt": "2026-04-20T06:16:15Z",
-      "commits": 2293,
+      "updatedAt": "2026-04-22T06:13:52Z",
+      "pushedAt": "2026-04-23T16:42:12Z",
+      "commits": 2298,
       "languages": {
-        "Java": 15806294,
-        "C++": 491075,
+        "Java": 15796050,
+        "C++": 490994,
         "C": 370602,
         "Rust": 30940,
         "CMake": 8182,
@@ -1789,7 +1789,7 @@
       "isPrivate": false,
       "isFork": false,
       "stars": 0,
-      "forks": 0,
+      "forks": 1,
       "language": "Python",
       "topics": [],
       "createdAt": "2025-11-09T02:05:13Z",
@@ -2045,7 +2045,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-04-19T02:52:44Z",
-      "pushedAt": "2026-04-20T02:34:35Z",
+      "pushedAt": "2026-04-24T02:31:54Z",
       "commits": 56,
       "languages": {}
     },
@@ -2187,15 +2187,32 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-04-17T02:25:31Z",
-      "pushedAt": "2026-04-17T02:25:27Z",
-      "commits": 47,
+      "updatedAt": "2026-04-21T02:26:11Z",
+      "pushedAt": "2026-04-21T02:26:08Z",
+      "commits": 48,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
         "HTML": 17412,
         "Batchfile": 885
       }
+    },
+    {
+      "name": "PhotonicEngine",
+      "fullName": "neilhuang007/PhotonicEngine",
+      "description": null,
+      "url": "https://github.com/neilhuang007/PhotonicEngine",
+      "isPrivate": false,
+      "isFork": true,
+      "stars": 0,
+      "forks": 0,
+      "language": null,
+      "topics": [],
+      "createdAt": "2026-04-21T14:13:34Z",
+      "updatedAt": "2026-04-21T14:13:34Z",
+      "pushedAt": "2026-04-21T01:05:25Z",
+      "commits": 2,
+      "languages": {}
     },
     {
       "name": "razer",
@@ -2262,20 +2279,20 @@
       "fullName": "neilhuang007/Refract",
       "description": "A fork of photonics with personal tweaks",
       "url": "https://github.com/neilhuang007/Refract",
-      "isPrivate": true,
+      "isPrivate": false,
       "isFork": false,
       "stars": 0,
       "forks": 0,
       "language": "Java",
       "topics": [],
       "createdAt": "2026-03-03T19:15:29Z",
-      "updatedAt": "2026-04-17T17:06:36Z",
-      "pushedAt": "2026-04-17T17:06:33Z",
-      "commits": 59,
+      "updatedAt": "2026-04-23T03:13:18Z",
+      "pushedAt": "2026-04-24T20:04:17Z",
+      "commits": 51,
       "languages": {
-        "Java": 1108759,
-        "GLSL": 665984,
-        "PowerShell": 24743,
+        "Java": 1094508,
+        "GLSL": 568310,
+        "PowerShell": 20518,
         "Python": 14394
       }
     },
@@ -2323,12 +2340,12 @@
       "url": "https://github.com/neilhuang007/SkidSuite",
       "isPrivate": false,
       "isFork": true,
-      "stars": 8,
+      "stars": 7,
       "forks": 3,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-09-18T13:25:47Z",
-      "updatedAt": "2026-04-14T06:18:59Z",
+      "updatedAt": "2026-04-24T18:40:12Z",
       "pushedAt": "2025-02-01T12:03:49Z",
       "commits": 447,
       "languages": {
@@ -2924,5 +2941,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-04-21T02:25:37.843Z"
+  "_syncedAt": "2026-04-25T02:09:23.081Z"
 }
