@@ -11,12 +11,12 @@
   },
   "stats": {
     "totalRepos": 110,
-    "userCommits": 3538,
-    "totalCommits": 6920,
-    "githubApiCommits": 34599,
-    "totalLines": 4071806,
-    "totalBytes": 1752206397,
-    "clocTotalLines": 4071806,
+    "userCommits": 3558,
+    "totalCommits": 6971,
+    "githubApiCommits": 34658,
+    "totalLines": 4100356,
+    "totalBytes": 1752587723,
+    "clocTotalLines": 4100356,
     "clocLanguageCount": 130
   },
   "clocLanguages": {
@@ -34,7 +34,7 @@
     "tsrg": 36100,
     "husky/pre-commit": 6,
     "form": 402,
-    "TypeScript": 107280,
+    "TypeScript": 111348,
     "2/src/map": 18,
     "9/src/cn/yapeteam/yolbi/{config": 2,
     "idea/Aeternus": 11,
@@ -43,15 +43,15 @@
     "backup": 1116,
     "pro": 191,
     "ttf": 0,
-    "glsl": 118902,
+    "glsl": 122778,
     "db": 0,
     "eslintrc": 29,
     "dd": 6,
     "DS_Store": 0,
     "9/src/cn/yapeteam/yolbi/{": 32,
-    "JavaScript": 275920,
+    "JavaScript": 275956,
     "def": 534,
-    "Java": 2827881,
+    "Java": 2848137,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "1/src/cn/yapeteam/yolbi/{config": 3,
@@ -143,8 +143,8 @@
     "patch": 48,
     "fxh": 926,
     "snap": 1242,
-    "example": 296,
-    "fsh": 45536,
+    "example": 450,
+    "fsh": 45696,
     "9/src/main/java/{com/github/haedus_industries/calculation/impl": 2,
     "ogg": 0,
     "name": 6,
@@ -166,14 +166,14 @@
     },
     {
       "name": "Java",
-      "bytes": 337231338,
-      "percentage": 19.2,
-      "lines": 8430783
+      "bytes": 337608953,
+      "percentage": 19.3,
+      "lines": 8440224
     },
     {
       "name": "C",
       "bytes": 242687051,
-      "percentage": 13.9,
+      "percentage": 13.8,
       "lines": 6067176
     },
     {
@@ -214,9 +214,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4439069,
+      "bytes": 4439344,
       "percentage": 0.3,
-      "lines": 110977
+      "lines": 110984
     },
     {
       "name": "CMake",
@@ -382,9 +382,9 @@
     },
     {
       "name": "Rust",
-      "bytes": 64553,
+      "bytes": 67989,
       "percentage": 0,
-      "lines": 1614
+      "lines": 1700
     },
     {
       "name": "Emacs Lisp",
@@ -757,11 +757,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-05-21T02:38:36Z",
-      "pushedAt": "2026-05-21T02:38:32Z",
-      "commits": 3145,
+      "updatedAt": "2026-05-25T02:44:02Z",
+      "pushedAt": "2026-05-25T02:43:59Z",
+      "commits": 3160,
       "languages": {
-        "GLSL": 1517173,
+        "GLSL": 1517448,
         "Python": 23810,
         "Shell": 366
       }
@@ -928,15 +928,15 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-05-20T15:03:12Z",
-      "pushedAt": "2026-05-20T14:53:41Z",
-      "commits": 2380,
+      "updatedAt": "2026-05-24T15:07:24Z",
+      "pushedAt": "2026-05-24T15:07:21Z",
+      "commits": 2422,
       "languages": {
-        "Java": 15824542,
+        "Java": 16202157,
         "C++": 490950,
         "C": 478247,
+        "Rust": 37869,
         "CMake": 35376,
-        "Rust": 34433,
         "Shell": 16176,
         "Assembly": 4325,
         "Slint": 4273,
@@ -2066,9 +2066,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-05-17T03:38:53Z",
-      "pushedAt": "2026-05-20T03:27:12Z",
-      "commits": 60,
+      "updatedAt": "2026-05-24T03:46:01Z",
+      "pushedAt": "2026-05-24T03:45:58Z",
+      "commits": 61,
       "languages": {}
     },
     {
@@ -2209,9 +2209,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-05-17T02:51:24Z",
-      "pushedAt": "2026-05-17T02:51:20Z",
-      "commits": 55,
+      "updatedAt": "2026-05-21T03:27:03Z",
+      "pushedAt": "2026-05-21T03:27:00Z",
+      "commits": 56,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2963,5 +2963,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-05-21T03:26:29.309Z"
+  "_syncedAt": "2026-05-25T03:34:42.850Z"
 }
