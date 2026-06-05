@@ -1,6 +1,28 @@
 {
   "projects": [
     {
+      "id": "gibbsiq",
+      "title": "Gibbsiq",
+      "category": "python",
+      "subcategories": [],
+      "time": "2026-06",
+      "timeDisplay": "June 2026",
+      "description": "Diagnostics-first QUBO/Ising/BQM combinatorial optimization solver built on the THRML block-Gibbs runtime",
+      "tech": [
+        "Python",
+        "TeX"
+      ],
+      "github": "https://github.com/neilhuang007/Gibbsiq",
+      "demo": "",
+      "featured": false,
+      "stars": 0,
+      "forks": 0,
+      "license": "MIT",
+      "isPrivate": false,
+      "lastUpdated": "2026-06-03T22:58:31Z",
+      "content": "## Gibbsiq\n\nDiagnostics-first QUBO/Ising/BQM combinatorial optimization solver built on the THRML block-Gibbs runtime"
+    },
+    {
       "id": "deploy",
       "title": "Deploy",
       "category": "unknown",
@@ -41,7 +63,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-05-31T16:51:00Z",
+      "lastUpdated": "2026-06-04T16:38:05Z",
       "content": "## qml4j\n\nNo description available."
     },
     {
@@ -58,7 +80,7 @@
       "github": "https://github.com/neilhuang007/PhotonicEngine",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "",
       "isPrivate": false,
@@ -80,7 +102,7 @@
       "github": "https://github.com/neilhuang007/voxy",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "NOASSERTION",
       "isPrivate": false,
@@ -149,7 +171,7 @@
       "github": "https://github.com/neilhuang007/Euphoria-Patches",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "",
       "isPrivate": true,
@@ -173,7 +195,7 @@
       "github": "https://github.com/neilhuang007/Refract",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "NOASSERTION",
       "isPrivate": false,
@@ -267,7 +289,7 @@
       "github": "https://github.com/neilhuang007/notuh",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "",
       "isPrivate": false,
@@ -376,7 +398,7 @@
       "github": "https://github.com/neilhuang007/BadOptimizations",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "MIT",
       "isPrivate": false,
@@ -401,7 +423,7 @@
       "github": "https://github.com/neilhuang007/better-ecology",
       "demo": "",
       "featured": false,
-      "stars": 1,
+      "stars": 2,
       "forks": 1,
       "license": "MIT",
       "isPrivate": false,
@@ -471,7 +493,7 @@
       "github": "https://github.com/neilhuang007/Lumen-web",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "",
       "isPrivate": false,
@@ -629,7 +651,7 @@
       "github": "https://github.com/neilhuang007/cinematic-minecraft",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "",
       "isPrivate": false,
@@ -744,7 +766,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-05-31T04:02:11Z",
+      "lastUpdated": "2026-06-04T03:51:51Z",
       "content": "## neilhuang007\n\nmy readme profile"
     },
     {
@@ -931,7 +953,7 @@
       "content": "## Digital Identity: The Portfolio as Personal Manifesto\n\nIn Silicon Valley, they say your GitHub profile is your resume. But what happens when code repositories alone can't capture the full spectrum of a developer's journey? This portfolio project emerges from that gap—a digital autobiography written in JavaScript, styled with ambition, and deployed with purpose.\n\n### The Philosophy of First Impressions\n\nSeven seconds. That's how long research suggests we have to make a first impression. In the digital realm, that window shrinks even further. This portfolio weaponizes those precious moments, deploying a carefully choreographed performance where React components dance into view, animations whisper rather than shout, and every pixel serves a purpose.\n\nThe opening sequence sets the tone: a subtle parallax effect that responds to mouse movement, creating depth without distraction. Typography that shifts weight as you scroll, emphasizing key achievements. Color schemes that adapt to user preferences—respecting both retinas and battery life with thoughtful dark mode implementation.\n\n### Architecture as Autobiography\n\nBeneath the polished surface lies an architecture that tells its own story. React wasn't chosen merely for its popularity but for its component philosophy—each project, each skill, each achievement rendered as a self-contained universe that can be recomposed, reimagined, redeployed.\n\nThe state management pattern reveals a developer who thinks in systems. Props cascade through component hierarchies like carefully planned water features. Context providers eliminate prop drilling with the elegance of a master chess player sacrificing pawns for position. Custom hooks abstract complexity, turning intricate animations into single-line invocations.\n\n### Performance as a Feature\n\nIn an attention economy where every millisecond counts, this portfolio treats performance not as an afterthought but as a core feature. Lazy loading ensures that visitors see content immediately while heavier assets load in the background. Images optimize themselves based on device capabilities. Code splitting creates chunks so refined that the initial bundle weighs less than many websites' hero images.\n\nThe result? Lighthouse scores that approach perfection—not for vanity but because a portfolio that preaches modern development practices must practice them.\n\n### The Narrative Arc\n\nGreat portfolios tell stories, and this one unfolds like a carefully crafted thriller. The hero's journey begins with early projects—rough around the edges but brimming with enthusiasm. Scroll deeper, and watch skills evolve, projects grow more ambitious, code more elegant. It's character development rendered in Git commits.\n\nInteractive elements invite exploration without demanding it. Hover over a project card, and it subtly lifts, shadows deepening to create physical presence in digital space. Click through, and detailed case studies reveal not just what was built but why—the problems solved, lessons learned, impact created.\n\n### Beyond the Screen\n\nThis portfolio transcends its medium by acknowledging a fundamental truth: great developers don't just write code; they solve problems, build communities, and push boundaries. The design reflects this, showcasing not just technical projects but contributions to open source, mentorship provided, talks delivered.\n\nIt's a portfolio that says, 'I don't just consume technology; I create it, teach it, and advance it.'\n\n### The Living Resume\n\nPerhaps most cleverly, the portfolio includes a hidden feature: it updates itself. Through GitHub Actions and clever API integration, new projects automatically appear, statistics refresh, and achievements accumulate. It's a resume that writes itself—a fitting metaphor for a career in constant motion.\n\nThis isn't just a portfolio; it's a statement of intent, a declaration that in the digital age, how you present your work matters almost as much as the work itself.",
       "stars": 1,
       "forks": 0,
-      "lastUpdated": "2026-05-29T02:57:08Z",
+      "lastUpdated": "2026-06-01T03:47:23Z",
       "isPrivate": false
     },
     {
@@ -1144,7 +1166,7 @@
       "demo": "",
       "featured": false,
       "content": "## OpenGCalc Firefox - Advanced Calculator Extension\n\nA feature-rich calculator extension for Firefox, forked and enhanced from the original GCalc project.\n\n### Features\n\n- **Scientific Calculator**: Advanced mathematical functions\n- **Unit Conversion**: Comprehensive unit converter\n- **History**: Calculation history tracking\n- **Themes**: Customizable appearance\n\n### Technical Details\n\n- **API**: Firefox WebExtensions API\n- **Storage**: Local storage for preferences\n- **Performance**: Optimized for efficiency\n- **Permissions**: Minimal permissions required\n\n### Enhancements from Original\n\n- Firefox-specific optimizations\n- Improved UI responsiveness\n- Additional mathematical functions\n- Better keyboard support\n\n### Use Cases\n\n- Quick calculations while browsing\n- Student mathematical tools\n- Professional calculations\n- Unit conversions on-the-fly",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2025-03-06T12:19:32Z",
       "isPrivate": false
@@ -1356,7 +1378,7 @@
       "featured": true,
       "license": "BSD 3-Clause",
       "content": "## DLL Injector: Dancing with Digital Shadows\n\nIn the twilight zone between software engineering and security research lies a tool that embodies both power and responsibility. The DLL Injector project doesn't just push boundaries—it reveals why those boundaries exist, teaching through implementation what textbooks can only describe in theory.\n\n### The Art of Digital Infiltration\n\nDynamic Link Library injection sounds nefarious, and in the wrong hands, it can be. Yet this technique represents one of the most elegant solutions to a fundamental problem: How do you modify software behavior without access to source code? It's digital surgery, inserting new functionality into running processes with the precision of a neurosurgeon.\n\nThe project's lineage traces back to Perfect Injector, but like a master chef improving a classic recipe, this implementation adds modern techniques while respecting proven foundations. Where the original used brute force, this version employs finesse.\n\n### The Technical Ballet\n\nUnderstanding DLL injection requires appreciating the intricate dance between Windows processes. Every running program exists in its own memory space—a digital fortress protected by the operating system. The injector must breach these walls without triggering alarms or causing crashes.\n\nThe code employs multiple injection techniques, each suited to different scenarios. CreateRemoteThread—the classical approach—works like a trojan horse, creating a new thread within the target process that loads our DLL. SetWindowsHookEx takes a different route, piggybacking on Windows' message system. Manual mapping—the most sophisticated technique—reconstructs the DLL directly in memory, leaving minimal forensic traces.\n\n### The Assembly Underground\n\nWhere high-level languages fear to tread, Assembly thrives. Critical sections of the injector drop down to raw machine code, manipulating CPU registers and memory addresses with atomic precision. This isn't premature optimization—it's necessary surgery at the quantum level of computing.\n\nThe transition between C and Assembly resembles a musician switching between instruments mid-performance. C provides structure and safety; Assembly delivers raw power and precise control. Together, they create a tool that's both powerful and stable.\n\n### Walking the Ethical Tightrope\n\nPerhaps no project in the portfolio requires more careful ethical consideration. The same techniques that enable legitimate software debugging can facilitate malware creation. The code includes deliberate safeguards—checks that prevent system process injection, warnings about administrative privileges, mechanisms to prevent accidental system damage.\n\nBut technical safeguards only go so far. The project's true ethical framework lies in its documentation and intended use cases. Every function includes warnings. Every example demonstrates legitimate applications. The README reads like a medical disclaimer—necessary reminders that powerful tools demand responsible users.\n\n### Real-World Applications in the Light\n\nDespite its shadowy reputation, DLL injection serves crucial legitimate purposes. Game developers use it to debug graphics pipelines without rebuilding entire engines. Accessibility software employs these techniques to add screen readers to legacy applications. Performance monitoring tools inject themselves to gather metrics impossible to collect externally.\n\nSecurity researchers—the project's primary audience—use it to understand malware behavior in controlled environments. By implementing injection techniques, defenders learn to recognize and prevent them. It's the cybersecurity equivalent of medical students studying diseases to cure them.\n\n### The Architecture of Responsibility\n\nThe codebase itself tells a story of defensive programming. Error handling wraps every dangerous operation. Memory management follows strict patterns to prevent leaks. The architecture separates privileges, ensuring that even if something goes wrong, damage remains contained.\n\nComments throughout the code serve dual purposes—explaining technical details while reinforcing ethical usage. It's documentation as moral framework, ensuring that future developers understand not just how but why.\n\n### Legacy of Learning\n\nThis project's greatest contribution isn't the tool itself but the education it provides. By implementing injection techniques, developers gain deep understanding of Windows internals, memory management, and process architecture. It's hands-on learning that no amount of theoretical study can replicate.\n\nThe clean, well-documented code serves as a reference implementation—showing how to handle dangerous operations safely, how to structure security-sensitive code, how to balance power with responsibility.\n\n### The Shadow and the Light\n\nDLL Injector exists in the shadows not because it's malicious but because it reveals how thin the line between security and vulnerability can be. It's a reminder that in software, as in life, the most powerful tools are often the most dangerous—and therefore require the most wisdom to wield.\n\nThe project stands as both technical achievement and ethical statement: Yes, we can build tools that pierce digital veils, but with that ability comes the obligation to use them wisely, teach them carefully, and always, always remember that with great code comes great responsibility.",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2025-01-21T15:42:13Z",
       "isPrivate": false
@@ -1385,7 +1407,7 @@
       "featured": true,
       "license": "BSD 3-Clause",
       "content": "## Kernel Injector: Descending into Ring Zero\n\nThere exists a place in computing where angels fear to tread—Ring 0, the kernel space, where a single misplaced byte can bring down an entire system. The Kernel Injector project ventures into this digital underworld, not with reckless abandon but with the calculated precision of a bomb disposal expert.\n\n### The Anatomy of Privilege\n\nTo understand kernel injection is to understand the architecture of trust in modern computing. Operating systems organize privilege in rings, like Dante's circles, each with decreasing power as you ascend. User applications live in Ring 3, supervised and restricted. The kernel occupies Ring 0—omnipotent, omnipresent, dangerous.\n\nThis project exploits a fascinating vulnerability: legitimate drivers that accidentally leave doors open. Specifically, certain Dell drivers contain flaws that, when properly understood, provide a pathway from the pedestrian world of user space into the godlike realm of the kernel.\n\n### The Dell Driver Paradox\n\nThe irony is delicious. Dell, attempting to provide legitimate functionality, inadvertently created a vulnerability. Their driver, designed to allow system management tools to function, contains IOCTLs (Input/Output Control codes) that don't properly validate input. It's like installing a steel door but forgetting to lock it.\n\nThe Kernel Injector doesn't break down doors—it finds the ones left ajar. This distinction matters both technically and ethically. The project demonstrates vulnerability research at its most refined: understanding systems so deeply that you see what even their creators missed.\n\n### Engineering at the Edge of Chaos\n\nKernel programming resembles walking a tightrope over a volcano. There's no safety net. No garbage collection. No friendly error messages. Crash here, and you don't get a stack trace—you get a Blue Screen of Death.\n\nThe code reflects this reality. Every operation is wrapped in paranoid checks. IRQL (Interrupt Request Level) must be carefully managed—like a deep-sea diver monitoring pressure, ascending too quickly means death. Memory must be allocated from specific pools. Synchronization requires understanding of CPU architecture at the atomic level.\n\n### The MDL Magic\n\nOne of the project's most elegant techniques involves MDLs—Memory Descriptor Lists. These structures allow kernel code to describe physical memory in ways that transcend normal virtual memory boundaries. It's like having a map that shows not just streets but the underground tunnels beneath them.\n\nThrough MDL manipulation, the injector can access process memory without triggering standard security monitors. PatchGuard—Microsoft's kernel protection mechanism—watches for certain patterns of modification. The project navigates around these watchdogs like a digital ninja, leaving no footprints in the snow.\n\n### The Ethical Imperative\n\nNo project in this portfolio carries greater ethical weight. Kernel injection represents the nuclear option of software manipulation. In the wrong hands, these techniques enable rootkits that hide from antivirus, keyloggers that capture every keystroke, and malware that persists through reboots.\n\nThe documentation reads like a combination of technical manual and ethics textbook. Every dangerous function includes warnings. The README begins not with installation instructions but with legal disclaimers and ethical guidelines. This isn't just CYA—it's recognition that knowledge this powerful requires wisdom to match.\n\n### Legitimate Applications in a Dangerous World\n\nYet kernel injection serves crucial legitimate purposes. Security researchers use these techniques to understand how rootkits operate, developing defenses against tomorrow's threats. System administrators employ kernel-level tools for deep monitoring that user-space applications can't provide. Forensic investigators use these methods to extract evidence from compromised systems.\n\nThe project specifically includes features for defensive use: mechanisms to detect other kernel modifications, tools to verify system integrity, methods to safely observe without modifying. It's like teaching bomb disposal by building bombs—dangerous but necessary for those who protect us.\n\n### The Architecture of Paranoia\n\nThe codebase itself embodies defensive programming taken to extremes. Every buffer is bounds-checked. Every pointer validated. The project includes rollback mechanisms that can undo modifications if something goes wrong. It's engineering with an escape hatch always within reach.\n\nComments in the code serve as both technical documentation and cautionary tales. They explain not just what each function does but what can go wrong, why certain approaches were avoided, and what safeguards prevent catastrophic failure.\n\n### Standing on the Shoulders of Giants and Ghosts\n\nThe techniques employed build upon decades of security research—some published in academic papers, others shared in the twilight world of security forums. The project synthesizes these disparate sources into a coherent implementation, providing attribution where possible while respecting the often-anonymous nature of vulnerability research.\n\n### The Double-Edged Sword\n\nKernel Injector epitomizes the double-edged nature of security research. Every defensive technique can be weaponized. Every vulnerability exposed can be exploited. The project doesn't shy away from this reality but embraces it, arguing through implementation that understanding attacks remains our best defense.\n\n### Legacy in the Shadows\n\nThis project will never win popularity contests. It's too dangerous for casual use, too specialized for general application. Yet its value lies precisely in this specialization. For the select few who need to understand kernel-level manipulation—security researchers, system developers, forensic analysts—it provides invaluable education.\n\nThe Kernel Injector stands as a monument to the principle that in security, ignorance isn't bliss—it's vulnerability. By dragging kernel injection techniques into the light, documenting them thoroughly, and implementing them responsibly, the project transforms dangerous knowledge into defensive capability.\n\nIn the end, it's not about the code—it's about what the code teaches us about the systems we trust with our digital lives.",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2025-01-20T07:20:20Z",
       "isPrivate": false
@@ -1459,7 +1481,7 @@
       "github": "https://github.com/neilhuang007/Daedalus",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "",
       "isPrivate": true,
@@ -1490,7 +1512,7 @@
       "featured": false,
       "license": "Apache 2.0",
       "content": "## Ghidra - Software Reverse Engineering Framework\n\nA fork of the NSA's Ghidra, a sophisticated software reverse engineering framework used for analyzing compiled code.\n\n### Core Capabilities\n\n- **Multi-Architecture**: Supports numerous processor types\n- **Decompiler**: High-level code reconstruction\n- **Debugger**: Interactive debugging features\n- **Scripting**: Automation via Python/Java\n\n### Fork Enhancements\n\n- Custom processor modules\n- Additional file format support\n- Performance optimizations\n- UI improvements\n\n### Technical Features\n\n- **Disassembly**: Advanced code analysis\n- **Graph View**: Control flow visualization\n- **Data Type Management**: Structure analysis\n- **Plugin System**: Extensible architecture\n\n### Real-World Applications\n\n- **Malware Analysis**: Understanding threats\n- **Vulnerability Research**: Finding security flaws\n- **Software Auditing**: Code verification\n- **Education**: Teaching assembly and RE",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2024-12-23T17:05:38Z",
       "isPrivate": false
@@ -1519,7 +1541,7 @@
       "featured": false,
       "license": "MIT",
       "content": "## GitHub Readme Stats - Enhanced Fork\n\nA customized version of the popular GitHub readme stats project with additional features and improvements.\n\n### Custom Features\n\n- **New Themes**: Additional color schemes\n- **Extended Stats**: More detailed metrics\n- **Performance**: Optimized caching\n- **Customization**: Enhanced options\n\n### Technical Enhancements\n\n- **API Optimization**: Reduced GitHub API calls\n- **SVG Generation**: Improved rendering\n- **Caching Strategy**: Better performance\n- **Error Handling**: Robust fallbacks\n\n### Deployment\n\n- Vercel deployment ready\n- Environment variable configuration\n- Custom domain support\n- Analytics integration\n\n### Use Cases\n\n- GitHub profile enhancement\n- Portfolio integration\n- Project documentation\n- Developer branding",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2025-11-24T01:37:10Z",
       "isPrivate": true
@@ -1574,7 +1596,7 @@
       "featured": false,
       "license": "MIT",
       "content": "## Recaf - Modern Java Bytecode Editor\n\nAn advanced Java bytecode editor that provides a comprehensive suite of tools for analyzing and modifying Java applications.\n\n### Features\n\n- **Decompilation**: Multiple decompiler support\n- **Search**: Advanced code searching\n- **Editing**: Direct bytecode modification\n- **Debugging**: Runtime analysis tools\n\n### Technical Capabilities\n\n- **Class Editing**: Modify Java classes\n- **Method Analysis**: Control flow graphs\n- **Resource Editing**: Modify JAR resources\n- **Remapping**: Obfuscation tools\n\n### Fork Improvements\n\n- Enhanced UI responsiveness\n- Additional decompiler integrations\n- Improved search algorithms\n- Custom plugins\n\n### Use Cases\n\n- **Debugging**: Understanding closed-source code\n- **Modding**: Game and application modification\n- **Security**: Vulnerability analysis\n- **Education**: Learning JVM internals",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2024-11-04T22:40:26Z",
       "isPrivate": false
@@ -1621,7 +1643,7 @@
       "github": "https://github.com/neilhuang007/Hermes-Lite",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
@@ -1981,7 +2003,7 @@
       "github": "https://github.com/neilhuang007/clickgui_project",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "",
       "isPrivate": true,
@@ -2062,7 +2084,7 @@
       "featured": false,
       "license": "MIT",
       "content": "## AutoXGP - Automated XGBoost Pipeline\n\nAn automated machine learning pipeline specifically designed for XGBoost model development and optimization.\n\n### Key Features\n\n- **AutoML**: Automated feature engineering\n- **Hyperparameter Tuning**: Bayesian optimization\n- **Cross-Validation**: Robust model evaluation\n- **Feature Selection**: Automatic feature importance\n\n### Technical Implementation\n\n- **Optimization**: Optuna integration\n- **Preprocessing**: Automated data cleaning\n- **Validation**: Multiple CV strategies\n- **Reporting**: Comprehensive metrics\n\n### Pipeline Stages\n\n1. Data preprocessing and cleaning\n2. Feature engineering\n3. Model selection\n4. Hyperparameter optimization\n5. Model evaluation\n6. Deployment preparation\n\n### Real-World Applications\n\n- **Predictive Analytics**: Business forecasting\n- **Risk Assessment**: Credit scoring\n- **Healthcare**: Disease prediction\n- **Finance**: Trading strategies",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2023-12-01T12:07:48Z",
       "isPrivate": false
@@ -2091,7 +2113,7 @@
       "featured": false,
       "license": "MIT",
       "content": "## BaiduWP PHP - Baidu Netdisk Tool\n\nA web-based tool for extracting download links from Baidu Netdisk (百度网盘) shared files, making downloads more convenient.\n\n### Functionality\n\n- **Link Extraction**: Get direct download links\n- **Batch Support**: Multiple file handling\n- **Speed Optimization**: Faster download speeds\n- **User Interface**: Clean web interface\n\n### Technical Implementation\n\n- **Backend**: PHP for API interaction\n- **Frontend**: Bootstrap responsive design\n- **API Integration**: Baidu Netdisk API\n- **Caching**: Performance optimization\n\n### Features\n\n- No login required for public shares\n- Mobile-friendly interface\n- Download acceleration\n- Multi-language support\n\n### Real-World Usage\n\n- **File Sharing**: Easier access to shared files\n- **Backup**: Download personal backups\n- **Collaboration**: Team file sharing\n- **Archive**: Preserving shared content",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2023-12-06T15:54:14Z",
       "isPrivate": false
@@ -2118,7 +2140,7 @@
       "github": "https://github.com/neilhuang007/Novoline-Buidable",
       "demo": "",
       "featured": false,
-      "stars": 1,
+      "stars": 2,
       "forks": 0,
       "license": "MIT",
       "content": "## Novoline Buildable: Resurrecting Digital Archaeology\n\nIn the vast ecosystem of Minecraft modifications, codebases die daily—victims of dependency rot, abandoned by creators, or simply lost to time. Novoline Buildable represents something rarer: digital resurrection. This isn't just fixing broken code; it's archaeological restoration in the age of Java.\n\n### The Inheritance of Broken Dreams\n\nNovoline arrived like an ancient manuscript—promising in concept but practically illegible. Import statements pointed to libraries that no longer existed. Gradle scripts referenced repositories that had vanished into the digital ether. Compilation errors cascaded like dominoes, each fix revealing two new problems lurking beneath.\n\nFor most developers, this would be the end of the story. Delete, move on, find something newer. But sometimes, broken code contains ideas too valuable to abandon.\n\n### The Forensic Approach\n\nFixing Novoline required detective work worthy of a crime procedural. Each error message became a clue, each stack trace a breadcrumb trail through the labyrinth of dependencies. Missing libraries had to be tracked down through internet archives. Deprecated APIs needed modern replacements that preserved original functionality.\n\nThe process resembled reconstructing a shattered vase—identifying each fragment, understanding how they once fit together, and carefully applying the digital equivalent of archaeological glue. Version conflicts between Minecraft Forge, MCP mappings, and core Java libraries created a three-dimensional puzzle where changing one piece could destabilize the entire structure.\n\n### Architectural Paleontology\n\nAs layers of fixes accumulated, the original architecture began to emerge. Novoline wasn't just another client; it represented a particular philosophy of Minecraft modification. The rendering pipeline showed influences from early shader experiments. The event system bore hallmarks of optimization techniques that predated modern solutions.\n\nUnderstanding this architecture became crucial. Simply making the code compile wasn't enough—it needed to run with the same spirit as the original, preserving gameplay modifications that made Novoline unique while updating the underlying technology stack.\n\n### The Build System Renaissance\n\nPerhaps the most significant transformation occurred in the build system. The original Gradle configuration was a monument to technical debt—hardcoded paths, missing dependencies, version numbers that might have made sense in 2018 but caused chaos in modern environments.\n\nThe new build system emerged lean and portable. Dependencies now resolved automatically. Platform-specific configurations adapted to different development environments. What once required a specific machine configuration now builds anywhere Java runs.\n\n### Beyond Compilation: Creating Community\n\nMaking Novoline buildable wasn't just a technical exercise—it was about preserving community history. Each feature represented hours of someone's creativity, each optimization a solution to problems players faced. The fixed codebase became a foundation for new developers to learn, experiment, and contribute.\n\nDocumentation, notably absent in the original, now guides newcomers through setup and customization. Comments explain not just what the code does but why—preserving institutional knowledge that would otherwise vanish.\n\n### The Philosophy of Digital Preservation\n\nThis project embodies a crucial principle often overlooked in our rush toward the new: sometimes, fixing the old teaches us more than building from scratch. Every deprecated API forced understanding of why changes occurred. Every refactored method revealed evolution in Java best practices.\n\nNovoline Buildable stands as testament to the value of digital preservation in software development. It's a bridge between eras—allowing modern developers to experience and learn from past innovations while building toward the future.\n\n### Legacy in Motion\n\nToday, Novoline Buildable serves multiple communities. Speedrunners use it to practice techniques. Modders build upon its foundation. Students dissect its architecture to understand game client development. What began as broken code has become a living textbook.\n\nThe project continues to evolve, but always with respect for its origins. Each update maintains backward compatibility where possible, ensuring that fixing the future doesn't break the past. It's sustainable archaeology—preserving history while keeping it relevant for tomorrow's developers.",
@@ -2173,7 +2195,7 @@
       "featured": false,
       "license": "MIT",
       "content": "## ShadowStrike - Security Framework\n\nA security-focused framework project designed for advanced security operations and testing.\n\n### Project Overview\n\n- **Purpose**: Security testing framework\n- **Focus**: Comprehensive security tools\n- **Architecture**: Modular design\n- **License**: MIT License\n\n### Potential Features\n\n- Security assessment tools\n- Vulnerability scanning\n- Penetration testing utilities\n- Reporting capabilities\n\n### Technical Stack\n\n- Core framework implementation\n- Plugin architecture\n- API integration\n- Command-line interface\n\n### Applications\n\n- **Security Testing**: Vulnerability assessment\n- **Research**: Security methodology\n- **Education**: Learning security concepts\n- **Development**: Security tool creation",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2023-11-05T07:30:58Z",
       "isPrivate": false
@@ -2202,7 +2224,7 @@
       "featured": false,
       "license": "MIT",
       "content": "## Swift Development Resources\n\nA curated collection of Swift development resources, tutorials, and documentation for iOS developers.\n\n### Content Categories\n\n- **Tutorials**: Step-by-step guides\n- **Best Practices**: Coding standards\n- **Code Examples**: Practical implementations\n- **Resources**: Tools and libraries\n\n### Topics Covered\n\n- Swift language fundamentals\n- iOS app architecture\n- SwiftUI and UIKit\n- Performance optimization\n- Testing strategies\n\n### Features\n\n- Searchable documentation\n- Code syntax highlighting\n- Interactive examples\n- Download resources\n\n### Target Audience\n\n- **Beginners**: Learning Swift basics\n- **Intermediate**: Advanced concepts\n- **Professionals**: Best practices\n- **Educators**: Teaching materials",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2023-11-27T12:48:47Z",
       "isPrivate": false
@@ -2229,7 +2251,7 @@
       "github": "https://github.com/neilhuang007/razer-rewrite",
       "demo": "",
       "featured": false,
-      "stars": 2,
+      "stars": 3,
       "license": "MIT",
       "content": "## Razer Rewrite: The Phoenix Project\n\nSome codebases die gracefully. Others demand resurrection. The Razer project belonged to the latter category—a gaming enhancement suite that had accumulated years of technical debt, patches upon patches, until the original architecture groaned beneath the weight of its own history. The rewrite wasn't just refactoring; it was digital reincarnation.\n\n### The Archaeological Dig\n\nOpening the original Razer codebase felt like entering an ancient tomb. Layers of development history revealed themselves: here, a performance optimization from 2019; there, a hasty patch for a critical bug; everywhere, the sediment of changing requirements and evolving Java versions.\n\nThe comment \"good luck, my friend\" in the repository description wasn't hyperbole—it was a warning from one developer to another, a message in a bottle thrown into the sea of GitHub.\n\n### The Phoenix Philosophy\n\nRather than merely fixing what was broken, the rewrite embraced a radical philosophy: burn it down and rebuild it right. This wasn't destruction—it was controlled demolition followed by architectural renaissance. Every feature from the original was catalogued, its purpose questioned, its implementation reimagined.\n\nThe new architecture emerged like a city planner's dream. Where the original had grown organically—a feature here, a module there—the rewrite imposed order. Plugin architecture replaced monolithic code. Dependency injection eliminated the spaghetti of interconnected classes. Event-driven design turned chaos into choreography.\n\n### JNI: Bridging Worlds\n\nThe project's secret weapon lay in JNI—Java Native Interface—the bridge between Java's safety and C++'s raw power. Gaming enhancements demand microsecond precision, something Java's garbage collector can disrupt at the worst possible moment. JNI allowed critical paths to drop into native code, like a Formula 1 car switching to rocket fuel in the straightaways.\n\nBut JNI is a harsh mistress. One memory leak, one incorrect pointer, and the entire JVM crashes. The rewrite treated these native interactions with the respect they deserved—extensive error checking, careful memory management, and defensive programming that assumed everything could go wrong.\n\n### The Performance Paradox\n\nGaming enhancements live and die by performance. Adding functionality that improves gameplay while degrading frame rates is like offering a faster car with square wheels. The rewrite attacked this paradox through elegant architecture.\n\nHot paths were identified through profiling and optimized relentlessly. The rendering pipeline was restructured to minimize overhead. Memory allocation patterns were analyzed and refined until garbage collection pauses became imperceptible. The result: features that enhanced gaming without players even noticing they were there.\n\n### Modular Magnificence\n\nThe plugin architecture represented the rewrite's crown jewel. Where the original required recompilation for every change, the new system allowed features to be added, removed, or modified without touching core code. It was extensibility as philosophy—acknowledging that gaming needs evolve faster than monolithic applications can adapt.\n\nEach module lived in its own universe: input lag reduction didn't need to know about frame rate stabilization; custom overlays remained blissfully ignorant of macro systems. This separation wasn't just clean code—it was future-proofing, ensuring that tomorrow's features wouldn't break today's functionality.\n\n### The Human Element\n\nBeyond technical achievements, the rewrite considered its users. Gamers aren't software engineers; they want enhancements that just work. The configuration system abandoned XML hell for intuitive JSON. Error messages transformed from cryptic stack traces to helpful suggestions. The GUI borrowed design principles from game interfaces themselves—familiar, responsive, beautiful.\n\n### Community Renaissance\n\nTwo stars might seem modest for a GitHub project, but in the niche world of gaming enhancements, they represent engaged users who understand the value of architectural excellence. The clean codebase attracted contributors who had avoided the original's complexity. Pull requests arrived with new features, bug fixes, optimizations—signs of a healthy project ecosystem.\n\n### The Performance Revelation\n\nBenchmarks told a story that validated every architectural decision. The rewrite performed 80% better than the original while using 60% less memory. But numbers only hint at the real achievement: a codebase that developers actually wanted to work with, that users trusted with their gaming experience, that could evolve without fear of collapse.\n\n### Legacy Through Rebirth\n\nThe Razer Rewrite stands as testament to a fundamental truth in software development: sometimes the brave choice isn't to fix but to rebuild. It's a project that looked at legacy code not as a burden but as a specification written in Java—showing what users needed while demonstrating how not to build it.\n\nToday, the rewrite continues to evolve, but with a crucial difference: each new feature strengthens rather than weakens the foundation. It's sustainable development in action—proof that with courage, skill, and architectural vision, even the most tangled codebases can be reborn as something beautiful.",
       "forks": 0,
@@ -2314,7 +2336,7 @@
       "featured": false,
       "license": "CC0",
       "content": "## ChatGPT Website: Reimagining the Conversational Canvas\n\nWhen OpenAI unleashed ChatGPT upon the world, they created a revolution wrapped in a utilitarian interface. Functional? Yes. Inspiring? Hardly. This project dared to ask: What if conversing with artificial intelligence felt as elegant as the technology itself?\n\n### The Design Manifesto\n\nGreat interfaces disappear. They become invisible conduits between human intention and digital response. The ChatGPT Website project began with this principle, recognizing that the original interface, while functional, created friction where there should be flow.\n\nThe redesign started not with wireframes but with philosophy. How do humans naturally converse? They pause, they think, they revisit previous topics. They organize thoughts into threads, mark important moments, share insights. The interface should honor these human patterns, not fight them.\n\n### TypeScript: The Architecture of Trust\n\nChoosing TypeScript over vanilla JavaScript wasn't about following trends—it was about building foundations. In an application where users entrust their thoughts to code, type safety becomes a form of respect. Every function signature is a promise. Every interface is a contract.\n\nThe type system reveals the application's soul. Message types that distinguish between user queries and AI responses. Thread interfaces that maintain conversation context. State types that ensure UI consistency. It's programming as poetry, where constraints create clarity.\n\n### React Choreography\n\nReact components dance across the screen like a well-rehearsed ballet. The message composer expanding as users type. Conversation threads sliding smoothly into view. Dark mode transitioning like dusk falling—gradual, natural, inevitable.\n\nBut this isn't animation for its own sake. Each movement serves a purpose. Expanding textareas accommodate longer thoughts without jarring reflows. Smooth transitions maintain context while navigating between conversations. It's motion design with meaning.\n\n### The Electron Envelope\n\nWrapping web technology in Electron transforms a website into an experience. Native notifications announce AI responses even when users focus elsewhere. System tray integration keeps conversations a click away. Auto-updates ensure users always have the latest features without lifting a finger.\n\nThe irony isn't lost—using web technology to escape the web. But Electron allows the best of both worlds: web's rapid development and native's integration. It's pragmatism dressed as innovation.\n\n### Tailwind's Aesthetic Algorithm\n\nTailwind CSS might seem like an implementation detail, but here it becomes philosophy made manifest. Instead of fighting over custom CSS classes, developers compose interfaces from utility primitives. It's like building with LEGO blocks that always fit together.\n\nThe result? Consistent spacing, harmonious colors, responsive layouts that feel inevitable rather than forced. Dark mode isn't an afterthought but a first-class citizen, with every color carefully chosen for both aesthetics and accessibility.\n\n### Conversation as Content\n\nThe killer feature hides in plain sight: conversation management. Unlike the original's linear chat, this interface treats conversations as living documents. Search through past discussions. Tag important exchanges. Export wisdom for future reference.\n\nThreads branch naturally, allowing exploration without losing context. It's the difference between a phone call and a collaborative document—both have their place, but only one creates lasting value.\n\n### The Redux Revolution\n\nState management through Redux might seem overkill for a chat application. But conversations are more than messages—they're context, history, potential. Redux provides the time machine, allowing users to undo, redo, and branch their conversational exploration.\n\nThe state tree tells stories. User preferences persisting across sessions. Conversation histories surviving application restarts. Draft messages waiting patiently for completion. It's persistence as a feature, not an afterthought.\n\n### Accessibility as Innovation\n\nScreen reader support isn't just compliance—it's innovation. Every message announces itself appropriately. Keyboard navigation flows naturally. High contrast modes ensure readability without sacrificing aesthetics.\n\nBut accessibility goes beyond technical requirements. It's about cognitive accessibility—making AI conversations less intimidating for newcomers, more efficient for power users. Progressive disclosure reveals advanced features without overwhelming beginners.\n\n### The Performance Paradox\n\nAdding features typically degrades performance. This project defies that logic. Code splitting ensures users download only what they need. React's virtual DOM minimizes repaints. Service workers cache responses for offline viewing.\n\nThe result feels impossibly fast. Messages appear instantly. Searches return immediately. The interface responds before users finish thinking. It's the kind of performance that makes users feel powerful.\n\n### Cross-Platform Symphony\n\nWindows, macOS, Linux—each platform has its quirks, its conventions, its expectations. The application adapts like a chameleon. Windows users find familiar minimize behaviors. macOS users discover native menu integration. Linux users appreciate the lack of bloat.\n\nBut uniformity emerges from diversity. Core interactions remain consistent while platform-specific flourishes make each version feel native. It's internationalization for operating systems.\n\n### The Open Source Ethos\n\nReleasing under Creative Commons Zero sends a message louder than any marketing: this is for everyone. Fork it, modify it, commercialize it—the project exists to elevate the entire ecosystem.\n\nContributions flow in. UI improvements from designers. Performance optimizations from engineers. Language translations from global users. It's proof that opening code opens possibilities.\n\n### Beyond the Interface\n\nThis project transcends its immediate purpose. It's a statement about how we should interact with AI—not as supplicants before an oracle but as collaborators in conversation. It demonstrates that powerful technology deserves thoughtful presentation.\n\nIn the end, the ChatGPT Website isn't just about making AI chat prettier. It's about making it more human, more accessible, more integrated into our daily digital lives. It's proof that in the age of artificial intelligence, human interface design matters more than ever.",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2023-08-23T15:59:55Z",
       "isPrivate": false
@@ -2433,7 +2455,7 @@
       "github": "https://github.com/neilhuang007/omegahack-rewrite",
       "demo": "",
       "featured": false,
-      "stars": 2,
+      "stars": 3,
       "license": "GPL v3.0",
       "content": "## OmegaHack Rewrite - Advanced Gaming Framework\n\nA comprehensive rewrite of the OmegaHack framework, implementing modern software engineering practices and architecture.\n\n### Architecture Overview\n\n- **Core Framework**: Modular plugin system\n- **Dependency Injection**: Spring Boot integration\n- **Native Access**: JNA for system calls\n- **Event System**: Reactive programming model\n\n### Key Features\n\n- Plugin marketplace support\n- Advanced scripting engine\n- Memory pattern scanning\n- Network packet analysis\n- Custom overlay system\n\n### Technical Stack\n\n- **Language**: Java 11+\n- **Framework**: Spring Boot\n- **Build**: Maven\n- **Testing**: JUnit 5\n\n### Real-World Applications\n\n- **Game Analysis**: Understanding game mechanics\n- **Tool Development**: Creating gaming utilities\n- **Research**: Game engine internals\n- **Education**: Software architecture patterns\n\n### Improvements from Original\n\n- 80% performance improvement\n- Modular architecture\n- Comprehensive testing\n- Modern UI framework",
       "forks": 0,
@@ -2464,7 +2486,7 @@
       "featured": false,
       "license": "MIT",
       "content": "## Sigma Buildable - Minecraft Client Framework\n\nA maintained and buildable version of the Sigma/Jello Minecraft client, updated for modern development environments.\n\n### Project Overview\n\n- **Base**: Sigma/Jello client version 0.1\n- **Focus**: Build system modernization\n- **Compatibility**: Minecraft 1.8.x\n- **Architecture**: Modular client design\n\n### Technical Improvements\n\n- **Build System**: Updated Gradle configuration\n- **Dependencies**: Resolved version conflicts\n- **Code Quality**: Refactored legacy code\n- **Documentation**: Added developer guides\n\n### Features\n\n- Custom rendering engine\n- Module system architecture\n- Event-driven framework\n- Configuration management\n- GUI framework\n\n### Development Focus\n\n- **Learning Resource**: Educational client development\n- **Framework Base**: Foundation for custom clients\n- **Performance**: Optimized rendering pipeline\n- **Stability**: Improved error handling\n\n### Use Cases\n\n- Client development education\n- Custom feature implementation\n- Performance optimization research\n- GUI framework development",
-      "stars": 1,
+      "stars": 2,
       "forks": 0,
       "lastUpdated": "2023-06-19T14:10:21Z",
       "isPrivate": false
@@ -2490,7 +2512,7 @@
       "demo": "",
       "featured": false,
       "content": "## Hermes: Injection Client for Minecraft 1.8.9\n\nHermes is a 1.8.9 injection client designed to modify Minecraft gameplay. The concise README summarizes its purpose simply as a “1.8.9 injection client”【797145901382441†L0-L1】.\n\nWhile minimal documentation exists, examining the code reveals modules for interfacing with the Minecraft client and injecting custom behaviors. It serves as a learning tool for understanding client modification and cheat development.",
-      "stars": 1,
+      "stars": 2,
       "forks": 0,
       "lastUpdated": "2024-06-13T13:49:55Z",
       "isPrivate": false
@@ -2514,7 +2536,7 @@
       "demo": "",
       "featured": false,
       "content": "## Razer Client: Early Minecraft 1.8.9 Enhancements\n\nPredating the comprehensive rewrite, this repository contains the original Razer client for Minecraft 1.8.9. The README succinctly notes it is a “1.8.9 client”【496761840631108†L0-L1】.\n\nThe project provides a baseline for understanding the evolution of game client modification, offering insight into early design decisions and feature implementations.",
-      "stars": 3,
+      "stars": 4,
       "forks": 0,
       "lastUpdated": "2023-12-09T08:17:03Z",
       "isPrivate": false
@@ -2534,7 +2556,7 @@
       "github": "https://github.com/neilhuang007/omegahack",
       "demo": "",
       "featured": true,
-      "stars": 4,
+      "stars": 5,
       "forks": 0,
       "license": "MIT",
       "isPrivate": false,
@@ -2556,7 +2578,7 @@
       "github": "https://github.com/neilhuang007/betahack-developement",
       "demo": "",
       "featured": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "license": "",
       "isPrivate": true,
@@ -2657,7 +2679,7 @@
       "demo": "",
       "featured": false,
       "content": "## Espada - Game Enhancement Tool\n\nA fork of the Espada project from AbyssGG, focused on gaming enhancements and modifications.\n\n### Project Overview\n\n- **Origin**: Fork from AbyssGG/Espada\n- **Purpose**: Game enhancement framework\n- **Last Update**: September 2022\n- **Status**: Archived/Legacy\n\n### Potential Features\n\n- Game modification tools\n- Performance enhancements\n- Custom overlays\n- Configuration management\n\n### Technical Aspects\n\n- Gaming framework integration\n- Memory management\n- Rendering hooks\n- Input handling\n\n### Legacy Value\n\n- **Historical**: Early game modding\n- **Educational**: Learning from past projects\n- **Reference**: Code examples\n- **Foundation**: Base for newer projects",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2022-09-27T11:20:45Z",
       "isPrivate": false
@@ -2682,7 +2704,7 @@
       "forks": 2,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-06-01T02:53:40Z",
+      "lastUpdated": "2026-06-03T10:11:11Z",
       "content": "## Euphoria-Patches\n\nA Complementary Shaders add-on"
     },
     {
@@ -2707,7 +2729,7 @@
       "demo": "",
       "featured": false,
       "content": "## TrollHack - Kotlin Game Client\n\nA Minecraft game client fork written in Kotlin, demonstrating modern JVM language usage in game modification.\n\n### Technical Highlights\n\n- **Language**: Pure Kotlin implementation\n- **Architecture**: Coroutine-based design\n- **Performance**: JVM optimizations\n- **Build System**: Gradle Kotlin DSL\n\n### Features\n\n- Modern Kotlin syntax\n- Null safety\n- Extension functions\n- Coroutines for async operations\n\n### Development Focus\n\n- **Code Quality**: Clean Kotlin code\n- **Performance**: Efficient implementations\n- **Maintainability**: Modern patterns\n- **Learning**: Kotlin in game development\n\n### Educational Value\n\n- Kotlin language features\n- Game client architecture\n- JVM performance optimization\n- Modern development practices",
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "lastUpdated": "2022-03-09T02:03:38Z",
       "isPrivate": false
@@ -2717,7 +2739,7 @@
     "python": {
       "name": "Python",
       "description": "Machine learning, data analysis, and automation projects",
-      "count": 10
+      "count": 11
     },
     "java": {
       "name": "Java",
@@ -2755,12 +2777,12 @@
       "count": 21
     }
   },
-  "_syncedAt": "2026-06-01T03:46:52.671Z",
+  "_syncedAt": "2026-06-05T03:31:52.218Z",
   "_syncStats": {
-    "totalRepos": 111,
-    "publicRepos": 63,
+    "totalRepos": 112,
+    "publicRepos": 64,
     "privateRepos": 48,
-    "totalCommits": 34834,
-    "totalLines": 43835056
+    "totalCommits": 34872,
+    "totalLines": 43843396
   }
 }
