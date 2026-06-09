@@ -6,24 +6,24 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 41,
-    "privateRepos": 48,
+    "privateRepos": 47,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
     "totalRepos": 112,
-    "userCommits": 3430,
-    "totalCommits": 6734,
-    "githubApiCommits": 34872,
-    "totalLines": 4049018,
-    "totalBytes": 1753735630,
-    "clocTotalLines": 4049018,
-    "clocLanguageCount": 116
+    "userCommits": 3441,
+    "totalCommits": 6936,
+    "githubApiCommits": 35118,
+    "totalLines": 4567476,
+    "totalBytes": 1754574870,
+    "clocTotalLines": 4567476,
+    "clocLanguageCount": 118
   },
   "clocLanguages": {
     "1": 187246,
     "black": 8101,
     "rels": 8,
-    "Python": 49827,
+    "Python": 58783,
     "comp": 2861,
     "vsh": 2125,
     "kts": 216,
@@ -47,7 +47,8 @@
     "DS_Store": 0,
     "JavaScript": 275955,
     "def": 534,
-    "Java": 2797728,
+    "Java": 2798708,
+    "pdf": 507926,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "sfk": 0,
@@ -62,7 +63,7 @@
     "accesswidener": 93,
     "jst": 1840,
     "csh": 0,
-    "gitignore": 1972,
+    "gitignore": 2062,
     "vert": 1316,
     "otf": 0,
     "JSX": 664,
@@ -92,6 +93,7 @@
     "cmd": 17,
     "snbt": 236,
     "bin": 0,
+    "bib": 506,
     "cmake/api/v1/query/codemodel-v2": 0,
     "bin/protodef-validator": 16,
     "cts": 542,
@@ -152,9 +154,9 @@
     },
     {
       "name": "Java",
-      "bytes": 338416093,
+      "bytes": 338917612,
       "percentage": 19.3,
-      "lines": 8460402
+      "lines": 8472940
     },
     {
       "name": "C",
@@ -200,9 +202,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4443743,
+      "bytes": 4447562,
       "percentage": 0.3,
-      "lines": 111094
+      "lines": 111189
     },
     {
       "name": "CMake",
@@ -260,15 +262,21 @@
     },
     {
       "name": "Shell",
-      "bytes": 746995,
+      "bytes": 748683,
       "percentage": 0,
-      "lines": 18675
+      "lines": 18717
     },
     {
       "name": "HIP",
       "bytes": 526682,
       "percentage": 0,
       "lines": 13167
+    },
+    {
+      "name": "QML",
+      "bytes": 478255,
+      "percentage": 0,
+      "lines": 11956
     },
     {
       "name": "HLSL",
@@ -311,12 +319,6 @@
       "bytes": 158750,
       "percentage": 0,
       "lines": 3969
-    },
-    {
-      "name": "QML",
-      "bytes": 147215,
-      "percentage": 0,
-      "lines": 3680
     },
     {
       "name": "Yacc",
@@ -493,16 +495,16 @@
       "lines": 245
     },
     {
+      "name": "ANTLR",
+      "bytes": 6525,
+      "percentage": 0,
+      "lines": 163
+    },
+    {
       "name": "Tree-sitter Query",
       "bytes": 6195,
       "percentage": 0,
       "lines": 155
-    },
-    {
-      "name": "ANTLR",
-      "bytes": 5351,
-      "percentage": 0,
-      "lines": 134
     },
     {
       "name": "MATLAB",
@@ -755,11 +757,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-06-03T10:11:15Z",
-      "pushedAt": "2026-06-03T10:11:11Z",
-      "commits": 3180,
+      "updatedAt": "2026-06-08T22:39:33Z",
+      "pushedAt": "2026-06-08T22:39:29Z",
+      "commits": 3192,
       "languages": {
-        "GLSL": 1521847,
+        "GLSL": 1525666,
         "Python": 23810,
         "Shell": 366
       }
@@ -1224,11 +1226,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-05-31T03:48:17Z",
-      "pushedAt": "2026-05-31T03:48:14Z",
-      "commits": 516,
+      "updatedAt": "2026-06-06T02:02:08Z",
+      "pushedAt": "2026-06-06T02:02:04Z",
+      "commits": 517,
       "languages": {
-        "Java": 2972703,
+        "Java": 2993058,
         "TypeScript": 413135,
         "C++": 260402,
         "CSS": 69785,
@@ -1928,12 +1930,12 @@
       "url": "https://github.com/neilhuang007/Gibbsiq",
       "isPrivate": false,
       "isFork": false,
-      "stars": 0,
-      "forks": 0,
+      "stars": 2,
+      "forks": 1,
       "language": "Python",
       "topics": [],
       "createdAt": "2026-06-03T14:33:35Z",
-      "updatedAt": "2026-06-03T22:58:35Z",
+      "updatedAt": "2026-06-06T05:02:25Z",
       "pushedAt": "2026-06-03T22:58:31Z",
       "commits": 3,
       "languages": {
@@ -2084,9 +2086,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-05-31T04:02:15Z",
-      "pushedAt": "2026-06-04T03:51:51Z",
-      "commits": 62,
+      "updatedAt": "2026-06-07T04:08:08Z",
+      "pushedAt": "2026-06-08T03:52:40Z",
+      "commits": 63,
       "languages": {}
     },
     {
@@ -2227,9 +2229,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-06-01T03:47:27Z",
-      "pushedAt": "2026-06-01T03:47:23Z",
-      "commits": 59,
+      "updatedAt": "2026-06-05T03:32:26Z",
+      "pushedAt": "2026-06-05T03:32:22Z",
+      "commits": 60,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2497,7 +2499,7 @@
     {
       "name": "scienceFair",
       "fullName": "ProgrammerVic/scienceFair",
-      "description": "直���写在readme.md里",
+      "description": "直接写在readme.md里",
       "url": "https://github.com/ProgrammerVic/scienceFair",
       "isPrivate": true,
       "isFork": false,
@@ -2514,22 +2516,28 @@
     {
       "name": "qml4j",
       "fullName": "TIMER-err/qml4j",
-      "description": null,
+      "description": "Render QML With Skia Backend",
       "url": "https://github.com/TIMER-err/qml4j",
-      "isPrivate": true,
+      "isPrivate": false,
       "isFork": false,
-      "stars": 0,
+      "stars": 2,
       "forks": 0,
       "language": "Java",
-      "topics": [],
+      "topics": [
+        "md3",
+        "qml",
+        "qt",
+        "skia"
+      ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-06-04T16:38:38Z",
-      "pushedAt": "2026-06-04T16:38:05Z",
-      "commits": 174,
+      "updatedAt": "2026-06-08T17:02:12Z",
+      "pushedAt": "2026-06-08T17:02:07Z",
+      "commits": 405,
       "languages": {
-        "Java": 786890,
-        "QML": 147215,
-        "ANTLR": 5351
+        "Java": 1268054,
+        "QML": 478255,
+        "ANTLR": 6525,
+        "Shell": 1688
       }
     },
     {
@@ -3002,5 +3010,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-06-05T03:31:52.221Z"
+  "_syncedAt": "2026-06-09T02:51:51.072Z"
 }
