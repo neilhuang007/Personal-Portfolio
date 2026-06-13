@@ -10,12 +10,12 @@
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 112,
+    "totalRepos": 111,
     "userCommits": 3441,
     "totalCommits": 6936,
-    "githubApiCommits": 35118,
+    "githubApiCommits": 35123,
     "totalLines": 4567476,
-    "totalBytes": 1754574870,
+    "totalBytes": 1754470980,
     "clocTotalLines": 4567476,
     "clocLanguageCount": 118
   },
@@ -154,9 +154,9 @@
     },
     {
       "name": "Java",
-      "bytes": 338917612,
+      "bytes": 338918155,
       "percentage": 19.3,
-      "lines": 8472940
+      "lines": 8472954
     },
     {
       "name": "C",
@@ -202,9 +202,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4447562,
+      "bytes": 4447934,
       "percentage": 0.3,
-      "lines": 111189
+      "lines": 111198
     },
     {
       "name": "CMake",
@@ -273,12 +273,6 @@
       "lines": 13167
     },
     {
-      "name": "QML",
-      "bytes": 478255,
-      "percentage": 0,
-      "lines": 11956
-    },
-    {
       "name": "HLSL",
       "bytes": 468826,
       "percentage": 0,
@@ -289,6 +283,12 @@
       "bytes": 425832,
       "percentage": 0,
       "lines": 10646
+    },
+    {
+      "name": "QML",
+      "bytes": 373450,
+      "percentage": 0,
+      "lines": 9336
     },
     {
       "name": "OCaml",
@@ -757,31 +757,14 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-06-08T22:39:33Z",
-      "pushedAt": "2026-06-08T22:39:29Z",
-      "commits": 3192,
+      "updatedAt": "2026-06-13T02:41:25Z",
+      "pushedAt": "2026-06-13T02:41:22Z",
+      "commits": 3197,
       "languages": {
-        "GLSL": 1525666,
+        "GLSL": 1526038,
         "Python": 23810,
         "Shell": 366
       }
-    },
-    {
-      "name": "experience-primer-copilot-neilhuang007",
-      "fullName": "Exp-Primer-Copilot-Cohort-1/experience-primer-copilot-neilhuang007",
-      "description": "experience-primer-copilot-neilhuang007 created by GitHub Classroom",
-      "url": "https://github.com/Exp-Primer-Copilot-Cohort-1/experience-primer-copilot-neilhuang007",
-      "isPrivate": false,
-      "isFork": false,
-      "stars": 0,
-      "forks": 0,
-      "language": null,
-      "topics": [],
-      "createdAt": "2024-02-06T02:10:29Z",
-      "updatedAt": "2024-07-02T09:40:33Z",
-      "pushedAt": "2025-12-01T11:32:25Z",
-      "commits": 4,
-      "languages": {}
     },
     {
       "name": "api",
@@ -2087,7 +2070,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-06-07T04:08:08Z",
-      "pushedAt": "2026-06-08T03:52:40Z",
+      "pushedAt": "2026-06-12T03:47:27Z",
       "commits": 63,
       "languages": {}
     },
@@ -2229,9 +2212,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-06-05T03:32:26Z",
-      "pushedAt": "2026-06-05T03:32:22Z",
-      "commits": 60,
+      "updatedAt": "2026-06-09T02:52:25Z",
+      "pushedAt": "2026-06-09T02:52:21Z",
+      "commits": 61,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2520,8 +2503,8 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 2,
-      "forks": 0,
+      "stars": 5,
+      "forks": 1,
       "language": "Java",
       "topics": [
         "md3",
@@ -2530,12 +2513,12 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-06-08T17:02:12Z",
-      "pushedAt": "2026-06-08T17:02:07Z",
-      "commits": 405,
+      "updatedAt": "2026-06-10T22:39:36Z",
+      "pushedAt": "2026-06-12T15:46:52Z",
+      "commits": 408,
       "languages": {
-        "Java": 1268054,
-        "QML": 478255,
+        "Java": 1268597,
+        "QML": 373450,
         "ANTLR": 6525,
         "Shell": 1688
       }
@@ -3010,5 +2993,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-06-09T02:51:51.072Z"
+  "_syncedAt": "2026-06-13T03:28:52.769Z"
 }
