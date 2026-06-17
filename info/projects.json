@@ -63,7 +63,7 @@
       "forks": 1,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-06-12T15:46:52Z",
+      "lastUpdated": "2026-06-16T16:18:02Z",
       "content": "## qml4j\n\nNo description available."
     },
     {
@@ -423,7 +423,7 @@
       "github": "https://github.com/neilhuang007/better-ecology",
       "demo": "",
       "featured": false,
-      "stars": 2,
+      "stars": 3,
       "forks": 1,
       "license": "MIT",
       "isPrivate": false,
@@ -766,7 +766,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-06-12T03:47:27Z",
+      "lastUpdated": "2026-06-16T03:57:11Z",
       "content": "## neilhuang007\n\nmy readme profile"
     },
     {
@@ -953,7 +953,7 @@
       "content": "## Digital Identity: The Portfolio as Personal Manifesto\n\nIn Silicon Valley, they say your GitHub profile is your resume. But what happens when code repositories alone can't capture the full spectrum of a developer's journey? This portfolio project emerges from that gap—a digital autobiography written in JavaScript, styled with ambition, and deployed with purpose.\n\n### The Philosophy of First Impressions\n\nSeven seconds. That's how long research suggests we have to make a first impression. In the digital realm, that window shrinks even further. This portfolio weaponizes those precious moments, deploying a carefully choreographed performance where React components dance into view, animations whisper rather than shout, and every pixel serves a purpose.\n\nThe opening sequence sets the tone: a subtle parallax effect that responds to mouse movement, creating depth without distraction. Typography that shifts weight as you scroll, emphasizing key achievements. Color schemes that adapt to user preferences—respecting both retinas and battery life with thoughtful dark mode implementation.\n\n### Architecture as Autobiography\n\nBeneath the polished surface lies an architecture that tells its own story. React wasn't chosen merely for its popularity but for its component philosophy—each project, each skill, each achievement rendered as a self-contained universe that can be recomposed, reimagined, redeployed.\n\nThe state management pattern reveals a developer who thinks in systems. Props cascade through component hierarchies like carefully planned water features. Context providers eliminate prop drilling with the elegance of a master chess player sacrificing pawns for position. Custom hooks abstract complexity, turning intricate animations into single-line invocations.\n\n### Performance as a Feature\n\nIn an attention economy where every millisecond counts, this portfolio treats performance not as an afterthought but as a core feature. Lazy loading ensures that visitors see content immediately while heavier assets load in the background. Images optimize themselves based on device capabilities. Code splitting creates chunks so refined that the initial bundle weighs less than many websites' hero images.\n\nThe result? Lighthouse scores that approach perfection—not for vanity but because a portfolio that preaches modern development practices must practice them.\n\n### The Narrative Arc\n\nGreat portfolios tell stories, and this one unfolds like a carefully crafted thriller. The hero's journey begins with early projects—rough around the edges but brimming with enthusiasm. Scroll deeper, and watch skills evolve, projects grow more ambitious, code more elegant. It's character development rendered in Git commits.\n\nInteractive elements invite exploration without demanding it. Hover over a project card, and it subtly lifts, shadows deepening to create physical presence in digital space. Click through, and detailed case studies reveal not just what was built but why—the problems solved, lessons learned, impact created.\n\n### Beyond the Screen\n\nThis portfolio transcends its medium by acknowledging a fundamental truth: great developers don't just write code; they solve problems, build communities, and push boundaries. The design reflects this, showcasing not just technical projects but contributions to open source, mentorship provided, talks delivered.\n\nIt's a portfolio that says, 'I don't just consume technology; I create it, teach it, and advance it.'\n\n### The Living Resume\n\nPerhaps most cleverly, the portfolio includes a hidden feature: it updates itself. Through GitHub Actions and clever API integration, new projects automatically appear, statistics refresh, and achievements accumulate. It's a resume that writes itself—a fitting metaphor for a career in constant motion.\n\nThis isn't just a portfolio; it's a statement of intent, a declaration that in the digital age, how you present your work matters almost as much as the work itself.",
       "stars": 1,
       "forks": 0,
-      "lastUpdated": "2026-06-09T02:52:21Z",
+      "lastUpdated": "2026-06-13T03:29:23Z",
       "isPrivate": false
     },
     {
@@ -1298,7 +1298,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
-      "lastUpdated": "2026-05-24T15:07:21Z",
+      "lastUpdated": "2026-06-14T14:30:35Z",
       "content": "## Haedus\n\nThe Advanced Runtime Injection Framework, Your Ultimate Solution."
     },
     {
@@ -1407,7 +1407,7 @@
       "featured": true,
       "license": "BSD 3-Clause",
       "content": "## Kernel Injector: Descending into Ring Zero\n\nThere exists a place in computing where angels fear to tread—Ring 0, the kernel space, where a single misplaced byte can bring down an entire system. The Kernel Injector project ventures into this digital underworld, not with reckless abandon but with the calculated precision of a bomb disposal expert.\n\n### The Anatomy of Privilege\n\nTo understand kernel injection is to understand the architecture of trust in modern computing. Operating systems organize privilege in rings, like Dante's circles, each with decreasing power as you ascend. User applications live in Ring 3, supervised and restricted. The kernel occupies Ring 0—omnipotent, omnipresent, dangerous.\n\nThis project exploits a fascinating vulnerability: legitimate drivers that accidentally leave doors open. Specifically, certain Dell drivers contain flaws that, when properly understood, provide a pathway from the pedestrian world of user space into the godlike realm of the kernel.\n\n### The Dell Driver Paradox\n\nThe irony is delicious. Dell, attempting to provide legitimate functionality, inadvertently created a vulnerability. Their driver, designed to allow system management tools to function, contains IOCTLs (Input/Output Control codes) that don't properly validate input. It's like installing a steel door but forgetting to lock it.\n\nThe Kernel Injector doesn't break down doors—it finds the ones left ajar. This distinction matters both technically and ethically. The project demonstrates vulnerability research at its most refined: understanding systems so deeply that you see what even their creators missed.\n\n### Engineering at the Edge of Chaos\n\nKernel programming resembles walking a tightrope over a volcano. There's no safety net. No garbage collection. No friendly error messages. Crash here, and you don't get a stack trace—you get a Blue Screen of Death.\n\nThe code reflects this reality. Every operation is wrapped in paranoid checks. IRQL (Interrupt Request Level) must be carefully managed—like a deep-sea diver monitoring pressure, ascending too quickly means death. Memory must be allocated from specific pools. Synchronization requires understanding of CPU architecture at the atomic level.\n\n### The MDL Magic\n\nOne of the project's most elegant techniques involves MDLs—Memory Descriptor Lists. These structures allow kernel code to describe physical memory in ways that transcend normal virtual memory boundaries. It's like having a map that shows not just streets but the underground tunnels beneath them.\n\nThrough MDL manipulation, the injector can access process memory without triggering standard security monitors. PatchGuard—Microsoft's kernel protection mechanism—watches for certain patterns of modification. The project navigates around these watchdogs like a digital ninja, leaving no footprints in the snow.\n\n### The Ethical Imperative\n\nNo project in this portfolio carries greater ethical weight. Kernel injection represents the nuclear option of software manipulation. In the wrong hands, these techniques enable rootkits that hide from antivirus, keyloggers that capture every keystroke, and malware that persists through reboots.\n\nThe documentation reads like a combination of technical manual and ethics textbook. Every dangerous function includes warnings. The README begins not with installation instructions but with legal disclaimers and ethical guidelines. This isn't just CYA—it's recognition that knowledge this powerful requires wisdom to match.\n\n### Legitimate Applications in a Dangerous World\n\nYet kernel injection serves crucial legitimate purposes. Security researchers use these techniques to understand how rootkits operate, developing defenses against tomorrow's threats. System administrators employ kernel-level tools for deep monitoring that user-space applications can't provide. Forensic investigators use these methods to extract evidence from compromised systems.\n\nThe project specifically includes features for defensive use: mechanisms to detect other kernel modifications, tools to verify system integrity, methods to safely observe without modifying. It's like teaching bomb disposal by building bombs—dangerous but necessary for those who protect us.\n\n### The Architecture of Paranoia\n\nThe codebase itself embodies defensive programming taken to extremes. Every buffer is bounds-checked. Every pointer validated. The project includes rollback mechanisms that can undo modifications if something goes wrong. It's engineering with an escape hatch always within reach.\n\nComments in the code serve as both technical documentation and cautionary tales. They explain not just what each function does but what can go wrong, why certain approaches were avoided, and what safeguards prevent catastrophic failure.\n\n### Standing on the Shoulders of Giants and Ghosts\n\nThe techniques employed build upon decades of security research—some published in academic papers, others shared in the twilight world of security forums. The project synthesizes these disparate sources into a coherent implementation, providing attribution where possible while respecting the often-anonymous nature of vulnerability research.\n\n### The Double-Edged Sword\n\nKernel Injector epitomizes the double-edged nature of security research. Every defensive technique can be weaponized. Every vulnerability exposed can be exploited. The project doesn't shy away from this reality but embraces it, arguing through implementation that understanding attacks remains our best defense.\n\n### Legacy in the Shadows\n\nThis project will never win popularity contests. It's too dangerous for casual use, too specialized for general application. Yet its value lies precisely in this specialization. For the select few who need to understand kernel-level manipulation—security researchers, system developers, forensic analysts—it provides invaluable education.\n\nThe Kernel Injector stands as a monument to the principle that in security, ignorance isn't bliss—it's vulnerability. By dragging kernel injection techniques into the light, documenting them thoroughly, and implementing them responsibly, the project transforms dangerous knowledge into defensive capability.\n\nIn the end, it's not about the code—it's about what the code teaches us about the systems we trust with our digital lives.",
-      "stars": 1,
+      "stars": 2,
       "forks": 0,
       "lastUpdated": "2025-01-20T07:20:20Z",
       "isPrivate": false
@@ -1435,7 +1435,7 @@
       "featured": false,
       "content": "## SkidSuite - Java Deobfuscation Tools\n\nA comprehensive suite of tools for analyzing and deobfuscating Java applications, inspired by GenericException's work and forked from threadtear.\n\n### Core Features\n\n- **Deobfuscation**: Multiple obfuscator support\n- **Analysis**: Code flow analysis\n- **Automation**: Batch processing\n- **Extensibility**: Plugin system\n\n### Supported Obfuscators\n\n- ZKM\n- Stringer\n- Allatori\n- DashO\n- Custom obfuscators\n\n### Technical Implementation\n\n- **Bytecode Analysis**: ASM framework\n- **Pattern Recognition**: Obfuscation detection\n- **Transformation**: Code simplification\n- **GUI**: JavaFX interface\n\n### Use Cases\n\n- **Malware Analysis**: Understanding obfuscated threats\n- **Software Auditing**: Code review\n- **Research**: Obfuscation techniques\n- **Education**: Learning bytecode manipulation",
       "stars": 8,
-      "forks": 3,
+      "forks": 4,
       "lastUpdated": "2025-02-01T12:03:49Z",
       "isPrivate": false
     },
@@ -2683,7 +2683,7 @@
       "forks": 2,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-06-13T02:41:22Z",
+      "lastUpdated": "2026-06-16T02:58:52Z",
       "content": "## Euphoria-Patches\n\nA Complementary Shaders add-on"
     },
     {
@@ -2756,12 +2756,12 @@
       "count": 20
     }
   },
-  "_syncedAt": "2026-06-13T03:28:52.767Z",
+  "_syncedAt": "2026-06-17T03:52:43.703Z",
   "_syncStats": {
     "totalRepos": 111,
     "publicRepos": 64,
     "privateRepos": 47,
-    "totalCommits": 35123,
-    "totalLines": 43861779
+    "totalCommits": 35198,
+    "totalLines": 43863162
   }
 }
