@@ -11,12 +11,12 @@
   },
   "stats": {
     "totalRepos": 111,
-    "userCommits": 3441,
-    "totalCommits": 7106,
-    "githubApiCommits": 35210,
-    "totalLines": 4567476,
-    "totalBytes": 1754558104,
-    "clocTotalLines": 4567476,
+    "userCommits": 3447,
+    "totalCommits": 7142,
+    "githubApiCommits": 35272,
+    "totalLines": 4568658,
+    "totalBytes": 1754285663,
+    "clocTotalLines": 4568658,
     "clocLanguageCount": 118
   },
   "clocLanguages": {
@@ -32,7 +32,7 @@
     "tsrg": 36100,
     "husky/pre-commit": 6,
     "form": 191,
-    "TypeScript": 111506,
+    "TypeScript": 112458,
     "2/src/map": 18,
     "idea/Aeternus": 11,
     "cmake": 510,
@@ -47,7 +47,7 @@
     "DS_Store": 0,
     "JavaScript": 275955,
     "def": 534,
-    "Java": 2798708,
+    "Java": 2798938,
     "pdf": 507926,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
@@ -154,9 +154,9 @@
     },
     {
       "name": "Java",
-      "bytes": 338998698,
+      "bytes": 338710442,
       "percentage": 19.3,
-      "lines": 8474967
+      "lines": 8467761
     },
     {
       "name": "C",
@@ -202,9 +202,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4452863,
+      "bytes": 4452949,
       "percentage": 0.3,
-      "lines": 111322
+      "lines": 111324
     },
     {
       "name": "CMake",
@@ -244,9 +244,9 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 1062561,
+      "bytes": 1077335,
       "percentage": 0.1,
-      "lines": 26564
+      "lines": 26933
     },
     {
       "name": "Starlark",
@@ -262,9 +262,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 748683,
+      "bytes": 749240,
       "percentage": 0,
-      "lines": 18717
+      "lines": 18731
     },
     {
       "name": "HIP",
@@ -346,9 +346,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 110104,
+      "bytes": 110502,
       "percentage": 0,
-      "lines": 2753
+      "lines": 2763
     },
     {
       "name": "GAP",
@@ -693,11 +693,11 @@
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2025-10-01T13:34:50Z",
-      "updatedAt": "2026-02-08T20:32:08Z",
-      "pushedAt": "2026-02-08T20:32:04Z",
-      "commits": 87,
+      "updatedAt": "2026-06-28T00:44:40Z",
+      "pushedAt": "2026-06-28T00:44:36Z",
+      "commits": 88,
       "languages": {
-        "TypeScript": 173099,
+        "TypeScript": 173851,
         "Shell": 12619,
         "JavaScript": 6165,
         "PowerShell": 872
@@ -757,11 +757,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-06-23T06:24:17Z",
-      "pushedAt": "2026-06-23T06:24:13Z",
-      "commits": 3218,
+      "updatedAt": "2026-06-29T02:45:27Z",
+      "pushedAt": "2026-06-29T02:45:23Z",
+      "commits": 3221,
       "languages": {
-        "GLSL": 1530967,
+        "GLSL": 1531053,
         "Python": 23810,
         "Shell": 366
       }
@@ -911,19 +911,19 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-06-14T09:49:19Z",
-      "pushedAt": "2026-06-19T02:13:16Z",
-      "commits": 2423,
+      "updatedAt": "2026-06-28T12:04:50Z",
+      "pushedAt": "2026-06-28T12:04:46Z",
+      "commits": 2476,
       "languages": {
-        "Java": 16207595,
+        "Java": 15918615,
         "C++": 490950,
         "C": 478247,
         "Rust": 37869,
         "CMake": 35376,
-        "Shell": 16176,
+        "Shell": 16733,
         "Assembly": 4325,
         "Slint": 4273,
-        "Batchfile": 1945,
+        "Batchfile": 2343,
         "Lua": 659
       }
     },
@@ -1209,12 +1209,12 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-06-06T02:02:08Z",
-      "pushedAt": "2026-06-06T02:02:04Z",
-      "commits": 517,
+      "updatedAt": "2026-06-28T01:03:29Z",
+      "pushedAt": "2026-06-28T01:03:24Z",
+      "commits": 518,
       "languages": {
         "Java": 2993058,
-        "TypeScript": 413135,
+        "TypeScript": 427157,
         "C++": 260402,
         "CSS": 69785,
         "JavaScript": 47677,
@@ -2069,9 +2069,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-06-21T04:23:18Z",
-      "pushedAt": "2026-06-24T03:27:25Z",
-      "commits": 65,
+      "updatedAt": "2026-06-28T04:00:15Z",
+      "pushedAt": "2026-06-28T04:00:11Z",
+      "commits": 66,
       "languages": {}
     },
     {
@@ -2212,9 +2212,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-06-21T03:56:42Z",
-      "pushedAt": "2026-06-21T03:56:38Z",
-      "commits": 64,
+      "updatedAt": "2026-06-25T02:57:13Z",
+      "pushedAt": "2026-06-25T02:57:10Z",
+      "commits": 65,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2503,7 +2503,7 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 5,
+      "stars": 6,
       "forks": 1,
       "language": "Java",
       "topics": [
@@ -2513,11 +2513,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-06-19T15:18:01Z",
-      "pushedAt": "2026-06-19T15:18:11Z",
-      "commits": 468,
+      "updatedAt": "2026-06-26T11:44:28Z",
+      "pushedAt": "2026-06-26T11:44:26Z",
+      "commits": 470,
       "languages": {
-        "Java": 1343702,
+        "Java": 1344426,
         "QML": 375102,
         "ANTLR": 6525,
         "Shell": 1688
@@ -2993,5 +2993,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-06-25T02:56:39.830Z"
+  "_syncedAt": "2026-06-29T03:38:25.788Z"
 }
