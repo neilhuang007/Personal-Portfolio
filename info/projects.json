@@ -1,6 +1,27 @@
 {
   "projects": [
     {
+      "id": "umbra",
+      "title": "Umbra",
+      "category": "java",
+      "subcategories": [],
+      "time": "2026-07",
+      "timeDisplay": "July 2026",
+      "description": "umbra project",
+      "tech": [
+        "Java"
+      ],
+      "github": "https://github.com/Haedus-Industries/umbra",
+      "demo": "",
+      "featured": false,
+      "stars": 0,
+      "forks": 0,
+      "license": "",
+      "isPrivate": true,
+      "lastUpdated": "2026-07-05T02:09:01Z",
+      "content": "## umbra\n\nNo description available."
+    },
+    {
       "id": "gibbsiq",
       "title": "Gibbsiq",
       "category": "python",
@@ -19,7 +40,7 @@
       "forks": 1,
       "license": "MIT",
       "isPrivate": false,
-      "lastUpdated": "2026-06-03T22:58:31Z",
+      "lastUpdated": "2026-07-04T23:03:02Z",
       "content": "## Gibbsiq\n\nDiagnostics-first QUBO/Ising/BQM combinatorial optimization solver built on the THRML block-Gibbs runtime"
     },
     {
@@ -766,7 +787,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-06-30T03:31:15Z",
+      "lastUpdated": "2026-07-04T02:44:31Z",
       "content": "## neilhuang007\n\nmy readme profile"
     },
     {
@@ -953,7 +974,7 @@
       "content": "## Digital Identity: The Portfolio as Personal Manifesto\n\nIn Silicon Valley, they say your GitHub profile is your resume. But what happens when code repositories alone can't capture the full spectrum of a developer's journey? This portfolio project emerges from that gap—a digital autobiography written in JavaScript, styled with ambition, and deployed with purpose.\n\n### The Philosophy of First Impressions\n\nSeven seconds. That's how long research suggests we have to make a first impression. In the digital realm, that window shrinks even further. This portfolio weaponizes those precious moments, deploying a carefully choreographed performance where React components dance into view, animations whisper rather than shout, and every pixel serves a purpose.\n\nThe opening sequence sets the tone: a subtle parallax effect that responds to mouse movement, creating depth without distraction. Typography that shifts weight as you scroll, emphasizing key achievements. Color schemes that adapt to user preferences—respecting both retinas and battery life with thoughtful dark mode implementation.\n\n### Architecture as Autobiography\n\nBeneath the polished surface lies an architecture that tells its own story. React wasn't chosen merely for its popularity but for its component philosophy—each project, each skill, each achievement rendered as a self-contained universe that can be recomposed, reimagined, redeployed.\n\nThe state management pattern reveals a developer who thinks in systems. Props cascade through component hierarchies like carefully planned water features. Context providers eliminate prop drilling with the elegance of a master chess player sacrificing pawns for position. Custom hooks abstract complexity, turning intricate animations into single-line invocations.\n\n### Performance as a Feature\n\nIn an attention economy where every millisecond counts, this portfolio treats performance not as an afterthought but as a core feature. Lazy loading ensures that visitors see content immediately while heavier assets load in the background. Images optimize themselves based on device capabilities. Code splitting creates chunks so refined that the initial bundle weighs less than many websites' hero images.\n\nThe result? Lighthouse scores that approach perfection—not for vanity but because a portfolio that preaches modern development practices must practice them.\n\n### The Narrative Arc\n\nGreat portfolios tell stories, and this one unfolds like a carefully crafted thriller. The hero's journey begins with early projects—rough around the edges but brimming with enthusiasm. Scroll deeper, and watch skills evolve, projects grow more ambitious, code more elegant. It's character development rendered in Git commits.\n\nInteractive elements invite exploration without demanding it. Hover over a project card, and it subtly lifts, shadows deepening to create physical presence in digital space. Click through, and detailed case studies reveal not just what was built but why—the problems solved, lessons learned, impact created.\n\n### Beyond the Screen\n\nThis portfolio transcends its medium by acknowledging a fundamental truth: great developers don't just write code; they solve problems, build communities, and push boundaries. The design reflects this, showcasing not just technical projects but contributions to open source, mentorship provided, talks delivered.\n\nIt's a portfolio that says, 'I don't just consume technology; I create it, teach it, and advance it.'\n\n### The Living Resume\n\nPerhaps most cleverly, the portfolio includes a hidden feature: it updates itself. Through GitHub Actions and clever API integration, new projects automatically appear, statistics refresh, and achievements accumulate. It's a resume that writes itself—a fitting metaphor for a career in constant motion.\n\nThis isn't just a portfolio; it's a statement of intent, a declaration that in the digital age, how you present your work matters almost as much as the work itself.",
       "stars": 1,
       "forks": 0,
-      "lastUpdated": "2026-06-29T03:38:56Z",
+      "lastUpdated": "2026-07-01T03:34:25Z",
       "isPrivate": false
     },
     {
@@ -1298,7 +1319,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
-      "lastUpdated": "2026-07-01T03:04:12Z",
+      "lastUpdated": "2026-07-04T15:22:49Z",
       "content": "## Haedus\n\nThe Advanced Runtime Injection Framework, Your Ultimate Solution."
     },
     {
@@ -2609,7 +2630,7 @@
       "featured": false,
       "content": "## YolBi Inject: A Snapshot of Hot Injection History\n\nThis repository once housed YolBi’s hot‑injection client but has since been deprecated. The README redirects users to the YolBi Lite Recode project and details the dependencies required to build the old injection jars【329134633784628†L0-L27】.\n\nIt lists libraries that must be on the classpath (e.g., `libs`, `InjectUI/jna.jar`) and describes artifacts such as `agent.jar`, `injection.jar`, and `loader.jar` that were produced by the build script `build_as_injection.bat`【329134633784628†L0-L27】.\n\nThough obsolete, the repository remains a useful reference for understanding earlier injection techniques.",
       "stars": 18,
-      "forks": 7,
+      "forks": 8,
       "lastUpdated": "2024-06-19T22:34:27Z",
       "isPrivate": false
     },
@@ -2683,7 +2704,7 @@
       "forks": 2,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-06-29T18:17:09Z",
+      "lastUpdated": "2026-07-04T17:41:09Z",
       "content": "## Euphoria-Patches\n\nA Complementary Shaders add-on"
     },
     {
@@ -2723,7 +2744,7 @@
     "java": {
       "name": "Java",
       "description": "Game modifications, reverse engineering, and enterprise applications",
-      "count": 48
+      "count": 49
     },
     "javascript": {
       "name": "JavaScript",
@@ -2756,12 +2777,12 @@
       "count": 20
     }
   },
-  "_syncedAt": "2026-07-01T03:33:54.827Z",
+  "_syncedAt": "2026-07-05T02:49:15.076Z",
   "_syncStats": {
-    "totalRepos": 111,
+    "totalRepos": 112,
     "publicRepos": 64,
-    "privateRepos": 47,
-    "totalCommits": 35278,
-    "totalLines": 43858313
+    "privateRepos": 48,
+    "totalCommits": 35343,
+    "totalLines": 43870548
   }
 }
