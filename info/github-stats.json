@@ -11,19 +11,19 @@
   },
   "stats": {
     "totalRepos": 112,
-    "userCommits": 3489,
-    "totalCommits": 7229,
-    "githubApiCommits": 35371,
-    "totalLines": 4649851,
-    "totalBytes": 1754892552,
-    "clocTotalLines": 4649851,
+    "userCommits": 3504,
+    "totalCommits": 7261,
+    "githubApiCommits": 35397,
+    "totalLines": 4656539,
+    "totalBytes": 1755005553,
+    "clocTotalLines": 4656539,
     "clocLanguageCount": 121
   },
   "clocLanguages": {
     "1": 187246,
     "black": 8101,
     "rels": 8,
-    "Python": 139883,
+    "Python": 146465,
     "comp": 2861,
     "vsh": 2125,
     "kts": 216,
@@ -46,9 +46,9 @@
     "eslintrc": 29,
     "dd": 6,
     "DS_Store": 0,
-    "JavaScript": 275955,
+    "JavaScript": 276057,
     "def": 534,
-    "Java": 2798721,
+    "Java": 2798723,
     "pdf": 507926,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
@@ -102,7 +102,7 @@
     "Vuejs Component": 324,
     "gitkeep": 8,
     "cfg\"": 0,
-    "gradle": 2892,
+    "gradle": 2894,
     "SF": 0,
     "cmake/api/v1/query/toolchains-v1": 0,
     "jpg": 0,
@@ -157,9 +157,9 @@
     },
     {
       "name": "Java",
-      "bytes": 339051780,
+      "bytes": 339064942,
       "percentage": 19.3,
-      "lines": 8476295
+      "lines": 8476624
     },
     {
       "name": "C",
@@ -175,9 +175,9 @@
     },
     {
       "name": "Python",
-      "bytes": 23437074,
+      "bytes": 23529135,
       "percentage": 1.3,
-      "lines": 585927
+      "lines": 588228
     },
     {
       "name": "MLIR",
@@ -205,9 +205,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4453934,
+      "bytes": 4460509,
       "percentage": 0.3,
-      "lines": 111348
+      "lines": 111513
     },
     {
       "name": "CMake",
@@ -229,9 +229,9 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 2682767,
+      "bytes": 2683970,
       "percentage": 0.2,
-      "lines": 67069
+      "lines": 67099
     },
     {
       "name": "Kotlin",
@@ -718,12 +718,12 @@
       "language": "HTML",
       "topics": [],
       "createdAt": "2025-10-05T16:29:17Z",
-      "updatedAt": "2026-02-18T00:20:10Z",
-      "pushedAt": "2026-02-18T00:20:07Z",
-      "commits": 149,
+      "updatedAt": "2026-07-11T18:58:32Z",
+      "pushedAt": "2026-07-11T18:58:22Z",
+      "commits": 151,
       "languages": {
         "HTML": 3667054,
-        "JavaScript": 348231,
+        "JavaScript": 349434,
         "CSS": 122882
       }
     },
@@ -760,11 +760,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-07-08T09:17:00Z",
-      "pushedAt": "2026-07-08T09:16:54Z",
-      "commits": 3229,
+      "updatedAt": "2026-07-12T20:57:27Z",
+      "pushedAt": "2026-07-12T20:57:23Z",
+      "commits": 3237,
       "languages": {
-        "GLSL": 1532038,
+        "GLSL": 1538613,
         "Python": 23810,
         "Shell": 366
       }
@@ -838,7 +838,7 @@
       "topics": [],
       "createdAt": "2025-08-01T02:37:12Z",
       "updatedAt": "2025-10-03T06:06:16Z",
-      "pushedAt": "2026-01-31T18:01:03Z",
+      "pushedAt": "2026-07-10T03:16:19Z",
       "commits": 33,
       "languages": {
         "Java": 204291
@@ -875,11 +875,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-01T02:36:55Z",
-      "updatedAt": "2025-09-09T03:05:16Z",
-      "pushedAt": "2025-09-09T03:05:13Z",
-      "commits": 11,
+      "updatedAt": "2026-07-10T03:11:06Z",
+      "pushedAt": "2026-07-10T03:20:48Z",
+      "commits": 12,
       "languages": {
-        "Java": 74392
+        "Java": 74407
       }
     },
     {
@@ -914,11 +914,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-07-04T15:22:53Z",
-      "pushedAt": "2026-07-04T15:22:49Z",
-      "commits": 2521,
+      "updatedAt": "2026-07-12T11:01:59Z",
+      "pushedAt": "2026-07-12T11:03:13Z",
+      "commits": 2522,
       "languages": {
-        "Java": 15986632,
+        "Java": 15996784,
         "C++": 490950,
         "C": 478882,
         "Rust": 38629,
@@ -1940,11 +1940,11 @@
       "language": "Python",
       "topics": [],
       "createdAt": "2026-06-03T14:33:35Z",
-      "updatedAt": "2026-07-04T23:03:05Z",
-      "pushedAt": "2026-07-04T23:03:02Z",
-      "commits": 20,
+      "updatedAt": "2026-07-11T16:57:23Z",
+      "pushedAt": "2026-07-11T16:57:18Z",
+      "commits": 25,
       "languages": {
-        "Python": 438432,
+        "Python": 530493,
         "TeX": 9058
       }
     },
@@ -2091,9 +2091,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-07-05T03:34:45Z",
-      "pushedAt": "2026-07-08T02:32:00Z",
-      "commits": 67,
+      "updatedAt": "2026-07-12T02:55:32Z",
+      "pushedAt": "2026-07-12T02:55:28Z",
+      "commits": 68,
       "languages": {}
     },
     {
@@ -2234,9 +2234,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-07-05T02:49:49Z",
-      "pushedAt": "2026-07-05T02:49:45Z",
-      "commits": 68,
+      "updatedAt": "2026-07-09T02:42:53Z",
+      "pushedAt": "2026-07-09T02:42:49Z",
+      "commits": 69,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2504,7 +2504,7 @@
     {
       "name": "scienceFair",
       "fullName": "ProgrammerVic/scienceFair",
-      "description": "直接写在readme.md里",
+      "description": "直接写���readme.md里",
       "url": "https://github.com/ProgrammerVic/scienceFair",
       "isPrivate": true,
       "isFork": false,
@@ -2535,11 +2535,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-06-26T11:44:28Z",
-      "pushedAt": "2026-06-26T11:44:26Z",
-      "commits": 470,
+      "updatedAt": "2026-07-12T18:32:13Z",
+      "pushedAt": "2026-07-12T18:38:10Z",
+      "commits": 477,
       "languages": {
-        "Java": 1344426,
+        "Java": 1347421,
         "QML": 375102,
         "ANTLR": 6525,
         "Shell": 1688
@@ -3015,5 +3015,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-07-09T02:42:18.941Z"
+  "_syncedAt": "2026-07-13T02:31:14.843Z"
 }
