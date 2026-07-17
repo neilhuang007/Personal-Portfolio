@@ -5,17 +5,17 @@
     "bio": "Full stack developer\r\n",
     "followers": 6,
     "following": 4,
-    "publicRepos": 41,
-    "privateRepos": 48,
+    "publicRepos": 42,
+    "privateRepos": 49,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 112,
+    "totalRepos": 114,
     "userCommits": 3504,
     "totalCommits": 7261,
-    "githubApiCommits": 35397,
+    "githubApiCommits": 35502,
     "totalLines": 4656539,
-    "totalBytes": 1755005553,
+    "totalBytes": 1775300618,
     "clocTotalLines": 4656539,
     "clocLanguageCount": 121
   },
@@ -146,38 +146,38 @@
     {
       "name": "LLVM",
       "bytes": 499757984,
-      "percentage": 28.5,
+      "percentage": 28.2,
       "lines": 12493950
     },
     {
       "name": "C++",
-      "bytes": 458030285,
-      "percentage": 26.1,
-      "lines": 11450757
+      "bytes": 458027474,
+      "percentage": 25.8,
+      "lines": 11450687
     },
     {
       "name": "Java",
-      "bytes": 339064942,
-      "percentage": 19.3,
-      "lines": 8476624
+      "bytes": 346129558,
+      "percentage": 19.5,
+      "lines": 8653239
     },
     {
       "name": "C",
       "bytes": 242687686,
-      "percentage": 13.8,
+      "percentage": 13.7,
       "lines": 6067192
     },
     {
       "name": "Assembly",
       "bytes": 120451239,
-      "percentage": 6.9,
+      "percentage": 6.8,
       "lines": 3011281
     },
     {
       "name": "Python",
-      "bytes": 23529135,
-      "percentage": 1.3,
-      "lines": 588228
+      "bytes": 24169970,
+      "percentage": 1.4,
+      "lines": 604249
     },
     {
       "name": "MLIR",
@@ -186,10 +186,16 @@
       "lines": 424450
     },
     {
+      "name": "JavaScript",
+      "bytes": 14301307,
+      "percentage": 0.8,
+      "lines": 357533
+    },
+    {
       "name": "HTML",
-      "bytes": 10987325,
+      "bytes": 10996200,
       "percentage": 0.6,
-      "lines": 274683
+      "lines": 274905
     },
     {
       "name": "Fortran",
@@ -205,9 +211,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4460509,
+      "bytes": 4464608,
       "percentage": 0.3,
-      "lines": 111513
+      "lines": 111615
     },
     {
       "name": "CMake",
@@ -217,9 +223,9 @@
     },
     {
       "name": "CSS",
-      "bytes": 3694402,
+      "bytes": 3713391,
       "percentage": 0.2,
-      "lines": 92360
+      "lines": 92835
     },
     {
       "name": "FIRRTL",
@@ -228,16 +234,16 @@
       "lines": 69825
     },
     {
-      "name": "JavaScript",
-      "bytes": 2683970,
-      "percentage": 0.2,
-      "lines": 67099
+      "name": "Kotlin",
+      "bytes": 2256256,
+      "percentage": 0.1,
+      "lines": 56406
     },
     {
-      "name": "Kotlin",
-      "bytes": 2255596,
+      "name": "TypeScript",
+      "bytes": 1374174,
       "percentage": 0.1,
-      "lines": 56390
+      "lines": 34354
     },
     {
       "name": "Objective-C++",
@@ -246,16 +252,16 @@
       "lines": 28514
     },
     {
-      "name": "TypeScript",
-      "bytes": 1077335,
-      "percentage": 0.1,
-      "lines": 26933
-    },
-    {
       "name": "Starlark",
       "bytes": 1054187,
       "percentage": 0.1,
       "lines": 26355
+    },
+    {
+      "name": "Shell",
+      "bytes": 879222,
+      "percentage": 0,
+      "lines": 21981
     },
     {
       "name": "Cuda",
@@ -264,10 +270,10 @@
       "lines": 21257
     },
     {
-      "name": "Shell",
-      "bytes": 749631,
+      "name": "QML",
+      "bytes": 694170,
       "percentage": 0,
-      "lines": 18741
+      "lines": 17354
     },
     {
       "name": "HIP",
@@ -288,28 +294,22 @@
       "lines": 10646
     },
     {
-      "name": "QML",
-      "bytes": 375102,
-      "percentage": 0,
-      "lines": 9378
-    },
-    {
       "name": "OCaml",
       "bytes": 333962,
       "percentage": 0,
       "lines": 8349
     },
     {
+      "name": "Perl",
+      "bytes": 329655,
+      "percentage": 0,
+      "lines": 8241
+    },
+    {
       "name": "SWIG",
       "bytes": 272715,
       "percentage": 0,
       "lines": 6818
-    },
-    {
-      "name": "Perl",
-      "bytes": 183561,
-      "percentage": 0,
-      "lines": 4589
     },
     {
       "name": "Scilab",
@@ -324,6 +324,12 @@
       "lines": 3969
     },
     {
+      "name": "Makefile",
+      "bytes": 130600,
+      "percentage": 0,
+      "lines": 3265
+    },
+    {
       "name": "Yacc",
       "bytes": 127584,
       "percentage": 0,
@@ -334,12 +340,6 @@
       "bytes": 127345,
       "percentage": 0,
       "lines": 3184
-    },
-    {
-      "name": "Makefile",
-      "bytes": 126345,
-      "percentage": 0,
-      "lines": 3159
     },
     {
       "name": "Xtend",
@@ -372,22 +372,22 @@
       "lines": 1823
     },
     {
+      "name": "TeX",
+      "bytes": 72101,
+      "percentage": 0,
+      "lines": 1803
+    },
+    {
       "name": "Vue",
       "bytes": 71398,
       "percentage": 0,
       "lines": 1785
     },
     {
-      "name": "TeX",
-      "bytes": 70184,
-      "percentage": 0,
-      "lines": 1755
-    },
-    {
       "name": "Rust",
-      "bytes": 68749,
+      "bytes": 69401,
       "percentage": 0,
-      "lines": 1719
+      "lines": 1735
     },
     {
       "name": "Emacs Lisp",
@@ -432,6 +432,12 @@
       "lines": 787
     },
     {
+      "name": "PLpgSQL",
+      "bytes": 29440,
+      "percentage": 0,
+      "lines": 736
+    },
+    {
       "name": "Vim Script",
       "bytes": 28286,
       "percentage": 0,
@@ -442,6 +448,12 @@
       "bytes": 27909,
       "percentage": 0,
       "lines": 698
+    },
+    {
+      "name": "PowerShell",
+      "bytes": 27790,
+      "percentage": 0,
+      "lines": 695
     },
     {
       "name": "Dockerfile",
@@ -456,12 +468,6 @@
       "lines": 569
     },
     {
-      "name": "PowerShell",
-      "bytes": 21804,
-      "percentage": 0,
-      "lines": 545
-    },
-    {
       "name": "XSLT",
       "bytes": 16211,
       "percentage": 0,
@@ -472,6 +478,12 @@
       "bytes": 14673,
       "percentage": 0,
       "lines": 367
+    },
+    {
+      "name": "Slint",
+      "bytes": 12896,
+      "percentage": 0,
+      "lines": 322
     },
     {
       "name": "Lua",
@@ -520,12 +532,6 @@
       "bytes": 4413,
       "percentage": 0,
       "lines": 110
-    },
-    {
-      "name": "Slint",
-      "bytes": 4273,
-      "percentage": 0,
-      "lines": 107
     },
     {
       "name": "Mustache",
@@ -760,11 +766,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-07-12T20:57:27Z",
-      "pushedAt": "2026-07-12T20:57:23Z",
-      "commits": 3237,
+      "updatedAt": "2026-07-17T01:58:42Z",
+      "pushedAt": "2026-07-17T01:58:38Z",
+      "commits": 3251,
       "languages": {
-        "GLSL": 1538613,
+        "GLSL": 1542712,
         "Python": 23810,
         "Shell": 366
       }
@@ -837,11 +843,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-01T02:37:12Z",
-      "updatedAt": "2025-10-03T06:06:16Z",
-      "pushedAt": "2026-07-10T03:16:19Z",
-      "commits": 33,
+      "updatedAt": "2026-07-16T07:25:39Z",
+      "pushedAt": "2026-07-16T07:25:26Z",
+      "commits": 46,
       "languages": {
-        "Java": 204291
+        "Java": 204426
       }
     },
     {
@@ -856,11 +862,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-01T02:37:05Z",
-      "updatedAt": "2025-08-16T00:56:55Z",
-      "pushedAt": "2025-09-09T05:33:41Z",
-      "commits": 9,
+      "updatedAt": "2026-07-16T07:25:37Z",
+      "pushedAt": "2026-07-16T07:25:26Z",
+      "commits": 12,
       "languages": {
-        "Java": 70218
+        "Java": 100083
       }
     },
     {
@@ -875,11 +881,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-01T02:36:55Z",
-      "updatedAt": "2026-07-10T03:11:06Z",
-      "pushedAt": "2026-07-10T03:20:48Z",
-      "commits": 12,
+      "updatedAt": "2026-07-16T07:25:39Z",
+      "pushedAt": "2026-07-16T07:25:26Z",
+      "commits": 16,
       "languages": {
-        "Java": 74407
+        "Java": 79686
       }
     },
     {
@@ -914,18 +920,19 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-07-12T11:01:59Z",
-      "pushedAt": "2026-07-12T11:03:13Z",
-      "commits": 2522,
+      "updatedAt": "2026-07-16T13:33:00Z",
+      "pushedAt": "2026-07-16T13:30:39Z",
+      "commits": 2538,
       "languages": {
-        "Java": 15996784,
+        "Java": 15804175,
         "C++": 490950,
         "C": 478882,
-        "Rust": 38629,
+        "QML": 319068,
+        "Rust": 39281,
         "CMake": 35376,
-        "Shell": 17124,
+        "Shell": 17898,
+        "Slint": 12896,
         "Assembly": 4325,
-        "Slint": 4273,
         "Batchfile": 2808,
         "Lua": 659
       }
@@ -1212,21 +1219,23 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-06-28T01:03:29Z",
-      "pushedAt": "2026-06-28T01:03:24Z",
-      "commits": 518,
+      "updatedAt": "2026-07-16T20:07:21Z",
+      "pushedAt": "2026-07-16T20:07:12Z",
+      "commits": 557,
       "languages": {
-        "Java": 2993058,
-        "TypeScript": 427157,
-        "C++": 260402,
-        "CSS": 69785,
-        "JavaScript": 47677,
-        "HTML": 45425,
+        "Java": 3231860,
+        "TypeScript": 723996,
+        "C++": 257591,
+        "JavaScript": 172389,
+        "CSS": 88774,
+        "Shell": 73413,
         "C": 43603,
+        "HTML": 30419,
+        "PLpgSQL": 29440,
         "Python": 23344,
         "CMake": 7510,
-        "Batchfile": 4863,
-        "Shell": 4548
+        "PowerShell": 5986,
+        "Batchfile": 4863
       }
     },
     {
@@ -1301,12 +1310,12 @@
       "url": "https://github.com/Haedus-Industries/ollvm-19",
       "isPrivate": false,
       "isFork": false,
-      "stars": 19,
+      "stars": 20,
       "forks": 7,
       "language": "LLVM",
       "topics": [],
       "createdAt": "2025-04-04T00:29:49Z",
-      "updatedAt": "2026-05-12T09:13:22Z",
+      "updatedAt": "2026-07-16T09:05:40Z",
       "pushedAt": "2025-07-02T11:40:36Z",
       "commits": 3,
       "languages": {
@@ -1366,6 +1375,31 @@
         "PHP": 64,
         "RPC": 28,
         "Mercury": 14
+      }
+    },
+    {
+      "name": "rhino-java-8",
+      "fullName": "Haedus-Industries/rhino-java-8",
+      "description": "mozilla rhino 1.9+ but compatable with jdk8",
+      "url": "https://github.com/Haedus-Industries/rhino-java-8",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-07-16T02:28:11Z",
+      "updatedAt": "2026-07-16T02:43:05Z",
+      "pushedAt": "2026-07-16T02:43:01Z",
+      "commits": 2,
+      "languages": {
+        "JavaScript": 11492625,
+        "Java": 6978992,
+        "Perl": 146094,
+        "Shell": 59952,
+        "HTML": 23881,
+        "Makefile": 4255,
+        "Kotlin": 660
       }
     },
     {
@@ -1940,12 +1974,12 @@
       "language": "Python",
       "topics": [],
       "createdAt": "2026-06-03T14:33:35Z",
-      "updatedAt": "2026-07-11T16:57:23Z",
-      "pushedAt": "2026-07-11T16:57:18Z",
-      "commits": 25,
+      "updatedAt": "2026-07-16T03:08:00Z",
+      "pushedAt": "2026-07-16T03:07:55Z",
+      "commits": 32,
       "languages": {
-        "Python": 530493,
-        "TeX": 9058
+        "Python": 1171328,
+        "TeX": 10975
       }
     },
     {
@@ -2080,6 +2114,23 @@
       }
     },
     {
+      "name": "nativify",
+      "fullName": "neilhuang007/nativify",
+      "description": "Public issue tracker for Nativify Java obfuscation services and integrations.",
+      "url": "https://github.com/neilhuang007/nativify",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 1,
+      "forks": 0,
+      "language": null,
+      "topics": [],
+      "createdAt": "2026-07-17T01:05:14Z",
+      "updatedAt": "2026-07-17T01:08:44Z",
+      "pushedAt": "2026-07-17T01:05:46Z",
+      "commits": 2,
+      "languages": {}
+    },
+    {
       "name": "neilhuang007",
       "fullName": "neilhuang007/neilhuang007",
       "description": "my readme profile",
@@ -2092,7 +2143,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-07-12T02:55:32Z",
-      "pushedAt": "2026-07-12T02:55:28Z",
+      "pushedAt": "2026-07-16T02:26:34Z",
       "commits": 68,
       "languages": {}
     },
@@ -2234,9 +2285,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-07-09T02:42:53Z",
-      "pushedAt": "2026-07-09T02:42:49Z",
-      "commits": 69,
+      "updatedAt": "2026-07-13T02:31:50Z",
+      "pushedAt": "2026-07-13T02:31:45Z",
+      "commits": 70,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2504,7 +2555,7 @@
     {
       "name": "scienceFair",
       "fullName": "ProgrammerVic/scienceFair",
-      "description": "直接写���readme.md里",
+      "description": "直接写在readme.md里",
       "url": "https://github.com/ProgrammerVic/scienceFair",
       "isPrivate": true,
       "isFork": false,
@@ -2526,7 +2577,7 @@
       "isPrivate": false,
       "isFork": false,
       "stars": 6,
-      "forks": 1,
+      "forks": 2,
       "language": "Java",
       "topics": [
         "md3",
@@ -2535,11 +2586,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-07-12T18:32:13Z",
-      "pushedAt": "2026-07-12T18:38:10Z",
-      "commits": 477,
+      "updatedAt": "2026-07-16T15:42:01Z",
+      "pushedAt": "2026-07-16T15:43:17Z",
+      "commits": 481,
       "languages": {
-        "Java": 1347421,
+        "Java": 1351573,
         "QML": 375102,
         "ANTLR": 6525,
         "Shell": 1688
@@ -2608,7 +2659,7 @@
       "isPrivate": false,
       "isFork": false,
       "stars": 34,
-      "forks": 3,
+      "forks": 2,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
@@ -3015,5 +3066,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-07-13T02:31:14.843Z"
+  "_syncedAt": "2026-07-17T02:25:28.951Z"
 }
