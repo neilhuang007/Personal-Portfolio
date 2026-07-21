@@ -6,24 +6,24 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 42,
-    "privateRepos": 49,
+    "privateRepos": 50,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 114,
-    "userCommits": 3504,
-    "totalCommits": 7261,
-    "githubApiCommits": 35502,
-    "totalLines": 4656539,
-    "totalBytes": 1775300618,
-    "clocTotalLines": 4656539,
-    "clocLanguageCount": 121
+    "totalRepos": 115,
+    "userCommits": 3598,
+    "totalCommits": 7356,
+    "githubApiCommits": 35633,
+    "totalLines": 4248840,
+    "totalBytes": 1777148588,
+    "clocTotalLines": 4248840,
+    "clocLanguageCount": 123
   },
   "clocLanguages": {
     "1": 187246,
     "black": 8101,
     "rels": 8,
-    "Python": 146465,
+    "Python": 178643,
     "comp": 2861,
     "vsh": 2125,
     "kts": 216,
@@ -33,11 +33,11 @@
     "husky/pre-commit": 6,
     "form": 191,
     "lp": 288,
-    "TypeScript": 112458,
+    "TypeScript": 141924,
     "2/src/map": 18,
     "idea/Aeternus": 11,
     "cmake": 510,
-    "conf": 168,
+    "conf": 236,
     "backup": 1116,
     "pro": 191,
     "ttf": 0,
@@ -46,16 +46,16 @@
     "eslintrc": 29,
     "dd": 6,
     "DS_Store": 0,
-    "JavaScript": 276057,
+    "JavaScript": 280447,
     "def": 534,
-    "Java": 2798723,
-    "pdf": 507926,
+    "Java": 2830048,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "sfk": 0,
-    "C/C++ Header": 127617,
+    "C/C++ Header": 127619,
     "alias": 112,
     "buf": 0,
+    "rules": 20,
     "C": 5325,
     "cmake/api/v1/query/cmakeFiles-v1": 0,
     "~": 0,
@@ -64,7 +64,7 @@
     "accesswidener": 93,
     "jst": 1840,
     "csh": 0,
-    "gitignore": 2062,
+    "gitignore": 2116,
     "vert": 1316,
     "otf": 0,
     "JSX": 664,
@@ -85,17 +85,18 @@
     "bak": 1366,
     "nvmrc": 2,
     "map": 174,
-    "C++": 3456,
+    "C++": 3502,
+    "timer": 24,
     "get/LICENSE": 47,
     "ninja_log": 20,
     "cmake/api/v1/query/cache-v2": 0,
-    "service": 160,
+    "service": 444,
     "ddi": 28,
     "check_cache": 2,
     "cmd": 17,
     "snbt": 236,
     "bin": 0,
-    "bib": 506,
+    "bib": 598,
     "cmake/api/v1/query/codemodel-v2": 0,
     "bin/protodef-validator": 16,
     "cts": 542,
@@ -121,20 +122,21 @@
     "qubo": 22,
     "vercelignore": 6,
     "mca": 0,
-    "ps1": 3328,
+    "ps1": 3644,
     "npmignore": 2,
     "gitmodules": 6,
     "prettierignore": 10,
     "jar": 0,
-    "Bourne Shell": 3520,
-    "gitattributes": 81,
+    "Bourne Shell": 5004,
+    "gitattributes": 91,
     "icls": 1692,
     "9/src/main/java/dev/haedus/core/{module": 4,
     "Kotlin": 1018,
     "patch": 48,
     "fxh": 926,
     "snap": 1242,
-    "example": 450,
+    "example": 520,
+    "SQL": 398,
     "fsh": 45696,
     "9/src/main/java/{com/github/haedus_industries/calculation/impl": 2,
     "ogg": 0,
@@ -146,26 +148,26 @@
     {
       "name": "LLVM",
       "bytes": 499757984,
-      "percentage": 28.2,
+      "percentage": 28.1,
       "lines": 12493950
     },
     {
       "name": "C++",
-      "bytes": 458027474,
+      "bytes": 458024691,
       "percentage": 25.8,
-      "lines": 11450687
+      "lines": 11450617
     },
     {
       "name": "Java",
-      "bytes": 346129558,
+      "bytes": 347338351,
       "percentage": 19.5,
-      "lines": 8653239
+      "lines": 8683459
     },
     {
       "name": "C",
-      "bytes": 242687686,
+      "bytes": 242689237,
       "percentage": 13.7,
-      "lines": 6067192
+      "lines": 6067231
     },
     {
       "name": "Assembly",
@@ -187,15 +189,15 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14301307,
+      "bytes": 14324355,
       "percentage": 0.8,
-      "lines": 357533
+      "lines": 358109
     },
     {
       "name": "HTML",
-      "bytes": 10996200,
+      "bytes": 10990963,
       "percentage": 0.6,
-      "lines": 274905
+      "lines": 274774
     },
     {
       "name": "Fortran",
@@ -211,9 +213,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4464608,
+      "bytes": 4469611,
       "percentage": 0.3,
-      "lines": 111615
+      "lines": 111740
     },
     {
       "name": "CMake",
@@ -223,9 +225,9 @@
     },
     {
       "name": "CSS",
-      "bytes": 3713391,
+      "bytes": 3717165,
       "percentage": 0.2,
-      "lines": 92835
+      "lines": 92929
     },
     {
       "name": "FIRRTL",
@@ -241,9 +243,9 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 1374174,
+      "bytes": 1913628,
       "percentage": 0.1,
-      "lines": 34354
+      "lines": 47841
     },
     {
       "name": "Objective-C++",
@@ -259,9 +261,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 879222,
+      "bytes": 883793,
       "percentage": 0,
-      "lines": 21981
+      "lines": 22095
     },
     {
       "name": "Cuda",
@@ -271,9 +273,9 @@
     },
     {
       "name": "QML",
-      "bytes": 694170,
+      "bytes": 732534,
       "percentage": 0,
-      "lines": 17354
+      "lines": 18313
     },
     {
       "name": "HIP",
@@ -360,6 +362,12 @@
       "lines": 2615
     },
     {
+      "name": "Rust",
+      "bytes": 92605,
+      "percentage": 0,
+      "lines": 2315
+    },
+    {
       "name": "PHP",
       "bytes": 89062,
       "percentage": 0,
@@ -382,12 +390,6 @@
       "bytes": 71398,
       "percentage": 0,
       "lines": 1785
-    },
-    {
-      "name": "Rust",
-      "bytes": 69401,
-      "percentage": 0,
-      "lines": 1735
     },
     {
       "name": "Emacs Lisp",
@@ -420,6 +422,18 @@
       "lines": 1164
     },
     {
+      "name": "PowerShell",
+      "bytes": 42888,
+      "percentage": 0,
+      "lines": 1072
+    },
+    {
+      "name": "PLpgSQL",
+      "bytes": 35466,
+      "percentage": 0,
+      "lines": 887
+    },
+    {
       "name": "NASL",
       "bytes": 35193,
       "percentage": 0,
@@ -432,12 +446,6 @@
       "lines": 787
     },
     {
-      "name": "PLpgSQL",
-      "bytes": 29440,
-      "percentage": 0,
-      "lines": 736
-    },
-    {
       "name": "Vim Script",
       "bytes": 28286,
       "percentage": 0,
@@ -448,12 +456,6 @@
       "bytes": 27909,
       "percentage": 0,
       "lines": 698
-    },
-    {
-      "name": "PowerShell",
-      "bytes": 27790,
-      "percentage": 0,
-      "lines": 695
     },
     {
       "name": "Dockerfile",
@@ -478,12 +480,6 @@
       "bytes": 14673,
       "percentage": 0,
       "lines": 367
-    },
-    {
-      "name": "Slint",
-      "bytes": 12896,
-      "percentage": 0,
-      "lines": 322
     },
     {
       "name": "Lua",
@@ -766,11 +762,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-07-17T01:58:42Z",
-      "pushedAt": "2026-07-17T01:58:38Z",
-      "commits": 3251,
+      "updatedAt": "2026-07-20T17:58:37Z",
+      "pushedAt": "2026-07-20T17:58:09Z",
+      "commits": 3267,
       "languages": {
-        "GLSL": 1542712,
+        "GLSL": 1547715,
         "Python": 23810,
         "Shell": 366
       }
@@ -832,9 +828,28 @@
       }
     },
     {
+      "name": "Eden",
+      "fullName": "Haedus-Industries/Eden",
+      "description": "神秘irc服务. (EdenProtocol, EdenClient, EdenServer合并)",
+      "url": "https://github.com/Haedus-Industries/Eden",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-07-20T07:46:22Z",
+      "updatedAt": "2026-07-20T09:36:43Z",
+      "pushedAt": "2026-07-20T09:36:23Z",
+      "commits": 3,
+      "languages": {
+        "Java": 434872
+      }
+    },
+    {
       "name": "EdenClient",
       "fullName": "Haedus-Industries/EdenClient",
-      "description": "Eden 3.0协议的客户端Fabric模组实现. 具有神秘且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)",
+      "description": "已移动到 https://github.com/Haedus-Industries/Eden 内",
       "url": "https://github.com/Haedus-Industries/EdenClient",
       "isPrivate": true,
       "isFork": false,
@@ -843,17 +858,17 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-01T02:37:12Z",
-      "updatedAt": "2026-07-16T07:25:39Z",
-      "pushedAt": "2026-07-16T07:25:26Z",
-      "commits": 46,
+      "updatedAt": "2026-07-20T07:51:36Z",
+      "pushedAt": "2026-07-20T07:50:03Z",
+      "commits": 51,
       "languages": {
-        "Java": 204426
+        "Java": 228348
       }
     },
     {
       "name": "EdenProtocol",
       "fullName": "Haedus-Industries/EdenProtocol",
-      "description": "代码干净, 可维护和扩展的似Minecraft协议的IRC协议. 主要为Eden IRC 3.0版本的服务器和客户端服务. (仅发布和错误修复)",
+      "description": "已移动到 https://github.com/Haedus-Industries/Eden 内",
       "url": "https://github.com/Haedus-Industries/EdenProtocol",
       "isPrivate": true,
       "isFork": false,
@@ -862,17 +877,17 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-01T02:37:05Z",
-      "updatedAt": "2026-07-16T07:25:37Z",
-      "pushedAt": "2026-07-16T07:25:26Z",
-      "commits": 12,
+      "updatedAt": "2026-07-20T07:51:59Z",
+      "pushedAt": "2026-07-20T07:50:29Z",
+      "commits": 15,
       "languages": {
-        "Java": 100083
+        "Java": 110144
       }
     },
     {
       "name": "EdenServer",
       "fullName": "Haedus-Industries/EdenServer",
-      "description": "Eden 3.0的简单服务器实现. 支持Minecraft正版验证, 同账户多用户等. (仅发布和错误修复)",
+      "description": "已移动到 https://github.com/Haedus-Industries/Eden 内",
       "url": "https://github.com/Haedus-Industries/EdenServer",
       "isPrivate": true,
       "isFork": false,
@@ -881,11 +896,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-01T02:36:55Z",
-      "updatedAt": "2026-07-16T07:25:39Z",
-      "pushedAt": "2026-07-16T07:25:26Z",
-      "commits": 16,
+      "updatedAt": "2026-07-20T07:51:48Z",
+      "pushedAt": "2026-07-20T07:50:19Z",
+      "commits": 19,
       "languages": {
-        "Java": 79686
+        "Java": 95573
       }
     },
     {
@@ -920,18 +935,17 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-07-16T13:33:00Z",
-      "pushedAt": "2026-07-16T13:30:39Z",
-      "commits": 2538,
+      "updatedAt": "2026-07-21T01:31:56Z",
+      "pushedAt": "2026-07-21T01:32:20Z",
+      "commits": 2584,
       "languages": {
-        "Java": 15804175,
-        "C++": 490950,
-        "C": 478882,
-        "QML": 319068,
-        "Rust": 39281,
+        "Java": 15828208,
+        "C++": 488167,
+        "C": 480433,
+        "QML": 357432,
+        "Rust": 62485,
         "CMake": 35376,
         "Shell": 17898,
-        "Slint": 12896,
         "Assembly": 4325,
         "Batchfile": 2808,
         "Lua": 659
@@ -972,7 +986,7 @@
       "topics": [],
       "createdAt": "2025-10-18T11:39:41Z",
       "updatedAt": "2025-10-18T11:39:45Z",
-      "pushedAt": "2026-05-02T11:56:45Z",
+      "pushedAt": "2026-07-19T08:05:59Z",
       "commits": 1,
       "languages": {}
     },
@@ -1219,22 +1233,22 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-07-16T20:07:21Z",
-      "pushedAt": "2026-07-16T20:07:12Z",
-      "commits": 557,
+      "updatedAt": "2026-07-20T15:18:21Z",
+      "pushedAt": "2026-07-20T15:16:09Z",
+      "commits": 587,
       "languages": {
-        "Java": 3231860,
-        "TypeScript": 723996,
+        "Java": 3824426,
+        "TypeScript": 1263450,
         "C++": 257591,
-        "JavaScript": 172389,
-        "CSS": 88774,
-        "Shell": 73413,
+        "JavaScript": 195437,
+        "CSS": 92548,
+        "Shell": 77984,
         "C": 43603,
-        "HTML": 30419,
-        "PLpgSQL": 29440,
+        "PLpgSQL": 35466,
+        "HTML": 25182,
         "Python": 23344,
+        "PowerShell": 21084,
         "CMake": 7510,
-        "PowerShell": 5986,
         "Batchfile": 4863
       }
     },
@@ -1390,7 +1404,7 @@
       "topics": [],
       "createdAt": "2026-07-16T02:28:11Z",
       "updatedAt": "2026-07-16T02:43:05Z",
-      "pushedAt": "2026-07-16T02:43:01Z",
+      "pushedAt": "2026-07-18T12:07:06Z",
       "commits": 2,
       "languages": {
         "JavaScript": 11492625,
@@ -1455,11 +1469,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-07-05T01:23:36Z",
-      "updatedAt": "2026-07-05T13:43:41Z",
-      "pushedAt": "2026-07-05T13:43:37Z",
-      "commits": 25,
+      "updatedAt": "2026-07-20T07:56:58Z",
+      "pushedAt": "2026-07-20T07:56:51Z",
+      "commits": 26,
       "languages": {
-        "Java": 273321
+        "Java": 303319
       }
     },
     {
@@ -2142,9 +2156,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-07-12T02:55:32Z",
-      "pushedAt": "2026-07-16T02:26:34Z",
-      "commits": 68,
+      "updatedAt": "2026-07-19T02:51:05Z",
+      "pushedAt": "2026-07-20T02:47:16Z",
+      "commits": 69,
       "languages": {}
     },
     {
@@ -2285,9 +2299,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-07-13T02:31:50Z",
-      "pushedAt": "2026-07-13T02:31:45Z",
-      "commits": 70,
+      "updatedAt": "2026-07-17T02:26:03Z",
+      "pushedAt": "2026-07-17T02:25:59Z",
+      "commits": 71,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2576,8 +2590,8 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 6,
-      "forks": 2,
+      "stars": 13,
+      "forks": 3,
       "language": "Java",
       "topics": [
         "md3",
@@ -2586,11 +2600,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-07-16T15:42:01Z",
-      "pushedAt": "2026-07-16T15:43:17Z",
-      "commits": 481,
+      "updatedAt": "2026-07-20T15:21:00Z",
+      "pushedAt": "2026-07-20T15:18:33Z",
+      "commits": 503,
       "languages": {
-        "Java": 1351573,
+        "Java": 1429027,
         "QML": 375102,
         "ANTLR": 6525,
         "Shell": 1688
@@ -2658,12 +2672,12 @@
       "url": "https://github.com/yapeteam/minecraft-1.8.9-lwjgl3",
       "isPrivate": false,
       "isFork": false,
-      "stars": 34,
+      "stars": 35,
       "forks": 2,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
-      "updatedAt": "2026-07-05T13:50:46Z",
+      "updatedAt": "2026-07-20T01:32:58Z",
       "pushedAt": "2026-02-20T10:14:59Z",
       "commits": 45,
       "languages": {
@@ -2678,7 +2692,7 @@
       "url": "https://github.com/yapeteam/OpenYolBi",
       "isPrivate": false,
       "isFork": false,
-      "stars": 9,
+      "stars": 10,
       "forks": 0,
       "language": "Java",
       "topics": [
@@ -2687,7 +2701,7 @@
         "minecraft"
       ],
       "createdAt": "2024-08-09T12:12:03Z",
-      "updatedAt": "2026-04-20T13:15:43Z",
+      "updatedAt": "2026-07-20T01:33:13Z",
       "pushedAt": "2025-08-03T01:24:46Z",
       "commits": 223,
       "languages": {
@@ -2746,7 +2760,7 @@
     {
       "name": "yapeteam.github.io",
       "fullName": "yapeteam/yapeteam.github.io",
-      "description": "YolBi  官网",
+      "description": "YolBi  ���网",
       "url": "https://github.com/yapeteam/yapeteam.github.io",
       "isPrivate": false,
       "isFork": false,
@@ -2880,12 +2894,12 @@
       "url": "https://github.com/yapeteam/YolBiClient1.0",
       "isPrivate": false,
       "isFork": false,
-      "stars": 6,
+      "stars": 7,
       "forks": 1,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-07-20T01:33:02Z",
-      "updatedAt": "2026-06-17T08:23:09Z",
+      "updatedAt": "2026-07-20T01:33:24Z",
       "pushedAt": "2024-02-19T14:15:55Z",
       "commits": 5,
       "languages": {
@@ -2922,12 +2936,12 @@
       "url": "https://github.com/yapeteam/YolBiNG",
       "isPrivate": false,
       "isFork": false,
-      "stars": 23,
+      "stars": 24,
       "forks": 1,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-21T00:35:59Z",
-      "updatedAt": "2025-08-28T10:56:41Z",
+      "updatedAt": "2026-07-18T12:51:09Z",
       "pushedAt": "2025-02-04T01:18:12Z",
       "commits": 168,
       "languages": {
@@ -3066,5 +3080,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-07-17T02:25:28.951Z"
+  "_syncedAt": "2026-07-21T02:25:53.283Z"
 }

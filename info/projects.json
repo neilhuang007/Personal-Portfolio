@@ -1,6 +1,27 @@
 {
   "projects": [
     {
+      "id": "eden",
+      "title": "Eden",
+      "category": "java",
+      "subcategories": [],
+      "time": "2026-07",
+      "timeDisplay": "July 2026",
+      "description": "神秘irc服务. (EdenProtocol, EdenClient, EdenServer合并)",
+      "tech": [
+        "Java"
+      ],
+      "github": "https://github.com/Haedus-Industries/Eden",
+      "demo": "",
+      "featured": false,
+      "stars": 0,
+      "forks": 0,
+      "license": "NOASSERTION",
+      "isPrivate": true,
+      "lastUpdated": "2026-07-20T09:36:23Z",
+      "content": "## Eden\n\n神秘irc服务. (EdenProtocol, EdenClient, EdenServer合并)"
+    },
+    {
       "id": "rhino-java-8",
       "title": "Rhino Java 8",
       "category": "javascript",
@@ -23,7 +44,7 @@
       "forks": 0,
       "license": "NOASSERTION",
       "isPrivate": true,
-      "lastUpdated": "2026-07-16T02:43:01Z",
+      "lastUpdated": "2026-07-18T12:07:06Z",
       "content": "## rhino-java-8\n\nmozilla rhino 1.9+ but compatable with jdk8"
     },
     {
@@ -44,7 +65,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-07-05T13:43:37Z",
+      "lastUpdated": "2026-07-20T07:56:51Z",
       "content": "## umbra\n\nNo description available."
     },
     {
@@ -127,11 +148,11 @@
       "github": "https://github.com/TIMER-err/qml4j",
       "demo": "",
       "featured": false,
-      "stars": 6,
-      "forks": 2,
+      "stars": 13,
+      "forks": 3,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-07-16T15:43:17Z",
+      "lastUpdated": "2026-07-20T15:18:33Z",
       "content": "## qml4j\n\nNo description available."
     },
     {
@@ -521,7 +542,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
-      "lastUpdated": "2026-07-16T20:07:12Z",
+      "lastUpdated": "2026-07-20T15:16:09Z",
       "content": "## nativify\n\nNo description available."
     },
     {
@@ -656,7 +677,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-05-02T11:56:45Z",
+      "lastUpdated": "2026-07-19T08:05:59Z",
       "content": "## Haedus-Release\n\nNo description available."
     },
     {
@@ -834,7 +855,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": false,
-      "lastUpdated": "2026-07-16T02:26:34Z",
+      "lastUpdated": "2026-07-20T02:47:16Z",
       "content": "## neilhuang007\n\nmy readme profile"
     },
     {
@@ -855,7 +876,7 @@
       "forks": 0,
       "license": "NOASSERTION",
       "isPrivate": true,
-      "lastUpdated": "2026-07-16T07:25:26Z",
+      "lastUpdated": "2026-07-20T07:50:03Z",
       "content": "## EdenClient\n\nEden 3.0协议的客户端Fabric模组实现. 具有神秘且复杂的跨版本修复, 如果要问, 那就都是ojang干的. (1.21.1-1.21.8) (仅发布和错误修复)"
     },
     {
@@ -876,7 +897,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-07-16T07:25:26Z",
+      "lastUpdated": "2026-07-20T07:50:29Z",
       "content": "## EdenProtocol\n\n代码干净, 可维护和扩展的似Minecraft协议的IRC协议. 主要为Eden IRC 3.0版本的服务器和客户端服务. (仅发布和错误修复)"
     },
     {
@@ -897,7 +918,7 @@
       "forks": 0,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-07-16T07:25:26Z",
+      "lastUpdated": "2026-07-20T07:50:19Z",
       "content": "## EdenServer\n\nEden 3.0的简单服务器实现. 支持Minecraft正版验证, 同账户多用户等. (仅发布和错误修复)"
     },
     {
@@ -1021,7 +1042,7 @@
       "content": "## Digital Identity: The Portfolio as Personal Manifesto\n\nIn Silicon Valley, they say your GitHub profile is your resume. But what happens when code repositories alone can't capture the full spectrum of a developer's journey? This portfolio project emerges from that gap—a digital autobiography written in JavaScript, styled with ambition, and deployed with purpose.\n\n### The Philosophy of First Impressions\n\nSeven seconds. That's how long research suggests we have to make a first impression. In the digital realm, that window shrinks even further. This portfolio weaponizes those precious moments, deploying a carefully choreographed performance where React components dance into view, animations whisper rather than shout, and every pixel serves a purpose.\n\nThe opening sequence sets the tone: a subtle parallax effect that responds to mouse movement, creating depth without distraction. Typography that shifts weight as you scroll, emphasizing key achievements. Color schemes that adapt to user preferences—respecting both retinas and battery life with thoughtful dark mode implementation.\n\n### Architecture as Autobiography\n\nBeneath the polished surface lies an architecture that tells its own story. React wasn't chosen merely for its popularity but for its component philosophy—each project, each skill, each achievement rendered as a self-contained universe that can be recomposed, reimagined, redeployed.\n\nThe state management pattern reveals a developer who thinks in systems. Props cascade through component hierarchies like carefully planned water features. Context providers eliminate prop drilling with the elegance of a master chess player sacrificing pawns for position. Custom hooks abstract complexity, turning intricate animations into single-line invocations.\n\n### Performance as a Feature\n\nIn an attention economy where every millisecond counts, this portfolio treats performance not as an afterthought but as a core feature. Lazy loading ensures that visitors see content immediately while heavier assets load in the background. Images optimize themselves based on device capabilities. Code splitting creates chunks so refined that the initial bundle weighs less than many websites' hero images.\n\nThe result? Lighthouse scores that approach perfection—not for vanity but because a portfolio that preaches modern development practices must practice them.\n\n### The Narrative Arc\n\nGreat portfolios tell stories, and this one unfolds like a carefully crafted thriller. The hero's journey begins with early projects—rough around the edges but brimming with enthusiasm. Scroll deeper, and watch skills evolve, projects grow more ambitious, code more elegant. It's character development rendered in Git commits.\n\nInteractive elements invite exploration without demanding it. Hover over a project card, and it subtly lifts, shadows deepening to create physical presence in digital space. Click through, and detailed case studies reveal not just what was built but why—the problems solved, lessons learned, impact created.\n\n### Beyond the Screen\n\nThis portfolio transcends its medium by acknowledging a fundamental truth: great developers don't just write code; they solve problems, build communities, and push boundaries. The design reflects this, showcasing not just technical projects but contributions to open source, mentorship provided, talks delivered.\n\nIt's a portfolio that says, 'I don't just consume technology; I create it, teach it, and advance it.'\n\n### The Living Resume\n\nPerhaps most cleverly, the portfolio includes a hidden feature: it updates itself. Through GitHub Actions and clever API integration, new projects automatically appear, statistics refresh, and achievements accumulate. It's a resume that writes itself—a fitting metaphor for a career in constant motion.\n\nThis isn't just a portfolio; it's a statement of intent, a declaration that in the digital age, how you present your work matters almost as much as the work itself.",
       "stars": 1,
       "forks": 0,
-      "lastUpdated": "2026-07-13T02:31:45Z",
+      "lastUpdated": "2026-07-17T02:25:59Z",
       "isPrivate": false
     },
     {
@@ -1366,7 +1387,7 @@
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": true,
-      "lastUpdated": "2026-07-16T13:30:39Z",
+      "lastUpdated": "2026-07-21T01:32:20Z",
       "content": "## Haedus\n\nThe Advanced Runtime Injection Framework, Your Ultimate Solution."
     },
     {
@@ -1741,7 +1762,7 @@
       "github": "https://github.com/yapeteam/OpenYolBi",
       "demo": "",
       "featured": true,
-      "stars": 9,
+      "stars": 10,
       "forks": 0,
       "license": "GPL-3.0",
       "isPrivate": false,
@@ -2079,7 +2100,7 @@
       "demo": "",
       "featured": false,
       "content": "## YolBiNG: Redefining the Minecraft Mod Client\n\nBuilt on the Vestige base, YolBiNG represents the next generation of the YolBi modding client. It intentionally removes heavy shader rendering from the original framework to reduce lag and improve responsiveness【808679387016277†L13-L23】.\n\nDevelopers are instructed to download Minecraft 1.8.9 dependencies, use JDK 1.8, and set LWJGL native library paths before running a test launch. The project is open source: users may use, modify, and share the code but must credit the authors and may not sell it【808679387016277†L13-L33】. Bug reports and contributions are encouraged via GitHub issues.\n\nYolBiNG sets a new standard for mod clients by balancing performance and extensibility.",
-      "stars": 23,
+      "stars": 24,
       "forks": 1,
       "lastUpdated": "2025-02-04T01:18:12Z",
       "isPrivate": false
@@ -2403,7 +2424,7 @@
       "github": "https://github.com/yapeteam/minecraft-1.8.9-lwjgl3",
       "demo": "",
       "featured": true,
-      "stars": 34,
+      "stars": 35,
       "forks": 2,
       "license": "Apache-2.0",
       "isPrivate": false,
@@ -2451,7 +2472,7 @@
       "github": "https://github.com/yapeteam/YolBiClient1.0",
       "demo": "",
       "featured": true,
-      "stars": 6,
+      "stars": 7,
       "forks": 1,
       "license": "GPL-3.0",
       "isPrivate": false,
@@ -2751,7 +2772,7 @@
       "forks": 2,
       "license": "",
       "isPrivate": true,
-      "lastUpdated": "2026-07-17T01:58:38Z",
+      "lastUpdated": "2026-07-20T17:58:09Z",
       "content": "## Euphoria-Patches\n\nA Complementary Shaders add-on"
     },
     {
@@ -2791,7 +2812,7 @@
     "java": {
       "name": "Java",
       "description": "Game modifications, reverse engineering, and enterprise applications",
-      "count": 49
+      "count": 50
     },
     "javascript": {
       "name": "JavaScript",
@@ -2824,12 +2845,12 @@
       "count": 21
     }
   },
-  "_syncedAt": "2026-07-17T02:25:28.949Z",
+  "_syncedAt": "2026-07-21T02:25:53.280Z",
   "_syncStats": {
-    "totalRepos": 114,
+    "totalRepos": 115,
     "publicRepos": 65,
-    "privateRepos": 49,
-    "totalCommits": 35502,
-    "totalLines": 44382519
+    "privateRepos": 50,
+    "totalCommits": 35633,
+    "totalLines": 44428718
   }
 }
