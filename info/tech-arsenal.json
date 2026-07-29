@@ -27,9 +27,9 @@
       "name": "Python",
       "category": "languages",
       "level": "Advanced",
-      "linesRaw": 178643,
-      "lines": "179K",
-      "linesPercentage": 4.2,
+      "linesRaw": 187909,
+      "lines": "188K",
+      "linesPercentage": 4.4,
       "experience": "6 years",
       "projects": 35,
       "featured": true,
@@ -46,9 +46,9 @@
       "name": "Java",
       "category": "languages",
       "level": "Expert",
-      "linesRaw": 2830048,
+      "linesRaw": 2830475,
       "lines": "2.8M",
-      "linesPercentage": 66.6,
+      "linesPercentage": 66.5,
       "experience": "7 years",
       "projects": 45,
       "featured": true,
@@ -331,7 +331,7 @@
         "devops",
         "scripting"
       ],
-      "linesRaw": 5004,
+      "linesRaw": 5464,
       "linesPercentage": 0.1
     },
     {
@@ -481,7 +481,7 @@
       ]
     }
   ],
-  "_clocSyncedAt": "2026-07-25T02:24:38.895Z",
-  "_clocTotalLines": 4248840,
+  "_clocSyncedAt": "2026-07-29T02:23:13.514Z",
+  "_clocTotalLines": 4259133,
   "_clocLanguages": 123
 }
