@@ -11,12 +11,12 @@
   },
   "stats": {
     "totalRepos": 117,
-    "userCommits": 3614,
-    "totalCommits": 7511,
-    "githubApiCommits": 35990,
-    "totalLines": 4259133,
-    "totalBytes": 1781309063,
-    "clocTotalLines": 4259133,
+    "userCommits": 3643,
+    "totalCommits": 7710,
+    "githubApiCommits": 36060,
+    "totalLines": 4260675,
+    "totalBytes": 1782602524,
+    "clocTotalLines": 4260675,
     "clocLanguageCount": 123
   },
   "clocLanguages": {
@@ -48,7 +48,7 @@
     "DS_Store": 0,
     "JavaScript": 280447,
     "def": 534,
-    "Java": 2830475,
+    "Java": 2832005,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "sfk": 0,
@@ -127,7 +127,7 @@
     "gitmodules": 6,
     "prettierignore": 10,
     "jar": 0,
-    "Bourne Shell": 5464,
+    "Bourne Shell": 5476,
     "gitattributes": 91,
     "icls": 1692,
     "9/src/main/java/dev/haedus/core/{module": 4,
@@ -148,26 +148,26 @@
     {
       "name": "LLVM",
       "bytes": 499789377,
-      "percentage": 28.1,
+      "percentage": 28,
       "lines": 12494734
     },
     {
       "name": "C++",
-      "bytes": 458111490,
+      "bytes": 458120507,
       "percentage": 25.7,
-      "lines": 11452787
+      "lines": 11453013
     },
     {
       "name": "Java",
-      "bytes": 350829164,
+      "bytes": 351933151,
       "percentage": 19.7,
-      "lines": 8770729
+      "lines": 8798329
     },
     {
       "name": "C",
-      "bytes": 242688854,
+      "bytes": 242752817,
       "percentage": 13.6,
-      "lines": 6067221
+      "lines": 6068820
     },
     {
       "name": "Assembly",
@@ -177,9 +177,9 @@
     },
     {
       "name": "Python",
-      "bytes": 24450386,
+      "bytes": 24529952,
       "percentage": 1.4,
-      "lines": 611260
+      "lines": 613249
     },
     {
       "name": "MLIR",
@@ -213,15 +213,15 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4481976,
+      "bytes": 4483790,
       "percentage": 0.3,
-      "lines": 112049
+      "lines": 112095
     },
     {
       "name": "CMake",
-      "bytes": 3780221,
+      "bytes": 3780564,
       "percentage": 0.2,
-      "lines": 94506
+      "lines": 94514
     },
     {
       "name": "CSS",
@@ -261,9 +261,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 896237,
+      "bytes": 898890,
       "percentage": 0.1,
-      "lines": 22406
+      "lines": 22472
     },
     {
       "name": "Cuda",
@@ -326,6 +326,12 @@
       "lines": 3969
     },
     {
+      "name": "PowerShell",
+      "bytes": 145216,
+      "percentage": 0,
+      "lines": 3630
+    },
+    {
       "name": "Makefile",
       "bytes": 130600,
       "percentage": 0,
@@ -357,15 +363,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 114353,
+      "bytes": 114323,
       "percentage": 0,
-      "lines": 2859
-    },
-    {
-      "name": "PowerShell",
-      "bytes": 113068,
-      "percentage": 0,
-      "lines": 2827
+      "lines": 2858
     },
     {
       "name": "GAP",
@@ -757,16 +757,16 @@
       "url": "https://github.com/EuphoriaPatches/Euphoria-Patches",
       "isPrivate": true,
       "isFork": true,
-      "stars": 3,
+      "stars": 4,
       "forks": 2,
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-07-31T20:54:56Z",
-      "pushedAt": "2026-07-31T20:54:52Z",
-      "commits": 3306,
+      "updatedAt": "2026-08-04T13:34:58Z",
+      "pushedAt": "2026-08-04T13:33:17Z",
+      "commits": 3321,
       "languages": {
-        "GLSL": 1560080,
+        "GLSL": 1561894,
         "Python": 24766,
         "Shell": 366
       }
@@ -956,11 +956,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-07-31T07:57:15Z",
-      "pushedAt": "2026-07-31T07:55:49Z",
-      "commits": 2703,
+      "updatedAt": "2026-08-04T07:43:44Z",
+      "pushedAt": "2026-08-04T07:43:25Z",
+      "commits": 2705,
       "languages": {
-        "Java": 17294437,
+        "Java": 17330119,
         "C++": 488167,
         "C": 437226,
         "QML": 409138,
@@ -1255,24 +1255,24 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-08-01T00:45:48Z",
-      "pushedAt": "2026-08-01T02:24:28Z",
-      "commits": 686,
+      "updatedAt": "2026-08-02T09:22:19Z",
+      "pushedAt": "2026-08-02T11:19:35Z",
+      "commits": 737,
       "languages": {
-        "Java": 4933419,
+        "Java": 6001724,
         "TypeScript": 1285631,
-        "C++": 344390,
+        "C++": 353407,
         "JavaScript": 195437,
-        "Python": 112286,
+        "Python": 191852,
+        "C": 142601,
+        "PowerShell": 115907,
         "CSS": 92548,
-        "PowerShell": 83759,
-        "Shell": 81764,
-        "C": 78638,
+        "Shell": 84417,
         "PLpgSQL": 35466,
         "LLVM": 31393,
         "HTML": 25182,
-        "CMake": 16649,
-        "Batchfile": 8249
+        "CMake": 16992,
+        "Batchfile": 8219
       }
     },
     {
@@ -2201,9 +2201,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-07-26T02:55:24Z",
-      "pushedAt": "2026-07-31T02:38:24Z",
-      "commits": 70,
+      "updatedAt": "2026-08-02T02:55:28Z",
+      "pushedAt": "2026-08-04T02:22:20Z",
+      "commits": 71,
       "languages": {}
     },
     {
@@ -2344,9 +2344,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-07-29T02:24:27Z",
-      "pushedAt": "2026-07-29T02:24:23Z",
-      "commits": 74,
+      "updatedAt": "2026-08-01T02:32:43Z",
+      "pushedAt": "2026-08-01T02:32:39Z",
+      "commits": 75,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2367,7 +2367,7 @@
       "topics": [],
       "createdAt": "2026-04-21T14:13:34Z",
       "updatedAt": "2026-06-01T04:00:49Z",
-      "pushedAt": "2026-05-17T22:16:38Z",
+      "pushedAt": "2026-08-03T08:38:13Z",
       "commits": 2,
       "languages": {}
     },
@@ -2849,12 +2849,12 @@
       "url": "https://github.com/yapeteam/YMixin",
       "isPrivate": false,
       "isFork": false,
-      "stars": 21,
+      "stars": 22,
       "forks": 3,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-06-20T01:53:10Z",
-      "updatedAt": "2026-07-27T12:00:40Z",
+      "updatedAt": "2026-08-04T12:45:37Z",
       "pushedAt": "2025-11-01T04:00:24Z",
       "commits": 40,
       "languages": {
@@ -3124,5 +3124,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-08-01T02:32:08.980Z"
+  "_syncedAt": "2026-08-05T02:11:39.819Z"
 }
