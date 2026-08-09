@@ -6,16 +6,16 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 43,
-    "privateRepos": 51,
+    "privateRepos": 52,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 117,
+    "totalRepos": 119,
     "userCommits": 3643,
     "totalCommits": 7710,
-    "githubApiCommits": 36060,
+    "githubApiCommits": 36178,
     "totalLines": 4260675,
-    "totalBytes": 1782602524,
+    "totalBytes": 1782893291,
     "clocTotalLines": 4260675,
     "clocLanguageCount": 123
   },
@@ -153,21 +153,21 @@
     },
     {
       "name": "C++",
-      "bytes": 458120507,
+      "bytes": 458215034,
       "percentage": 25.7,
-      "lines": 11453013
+      "lines": 11455376
     },
     {
       "name": "Java",
-      "bytes": 351933151,
+      "bytes": 351691310,
       "percentage": 19.7,
-      "lines": 8798329
+      "lines": 8792283
     },
     {
       "name": "C",
-      "bytes": 242752817,
+      "bytes": 243051759,
       "percentage": 13.6,
-      "lines": 6068820
+      "lines": 6076294
     },
     {
       "name": "Assembly",
@@ -177,9 +177,9 @@
     },
     {
       "name": "Python",
-      "bytes": 24529952,
+      "bytes": 24528848,
       "percentage": 1.4,
-      "lines": 613249
+      "lines": 613221
     },
     {
       "name": "MLIR",
@@ -189,15 +189,15 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14324355,
+      "bytes": 14324625,
       "percentage": 0.8,
-      "lines": 358109
+      "lines": 358116
     },
     {
       "name": "HTML",
-      "bytes": 10991554,
+      "bytes": 10992171,
       "percentage": 0.6,
-      "lines": 274789
+      "lines": 274804
     },
     {
       "name": "Fortran",
@@ -213,21 +213,21 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4483790,
+      "bytes": 4491041,
       "percentage": 0.3,
-      "lines": 112095
+      "lines": 112276
     },
     {
       "name": "CMake",
-      "bytes": 3780564,
+      "bytes": 3780928,
       "percentage": 0.2,
-      "lines": 94514
+      "lines": 94523
     },
     {
       "name": "CSS",
-      "bytes": 3722856,
+      "bytes": 3727189,
       "percentage": 0.2,
-      "lines": 93071
+      "lines": 93180
     },
     {
       "name": "FIRRTL",
@@ -243,9 +243,9 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 1964640,
+      "bytes": 2082768,
       "percentage": 0.1,
-      "lines": 49116
+      "lines": 52069
     },
     {
       "name": "Objective-C++",
@@ -261,9 +261,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 898890,
+      "bytes": 908170,
       "percentage": 0.1,
-      "lines": 22472
+      "lines": 22704
     },
     {
       "name": "Cuda",
@@ -762,11 +762,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-08-04T13:34:58Z",
-      "pushedAt": "2026-08-04T13:33:17Z",
-      "commits": 3321,
+      "updatedAt": "2026-08-08T10:13:59Z",
+      "pushedAt": "2026-08-08T10:13:54Z",
+      "commits": 3338,
       "languages": {
-        "GLSL": 1561894,
+        "GLSL": 1569145,
         "Python": 24766,
         "Shell": 366
       }
@@ -956,16 +956,16 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-08-04T07:43:44Z",
-      "pushedAt": "2026-08-04T07:43:25Z",
-      "commits": 2705,
+      "updatedAt": "2026-08-08T08:28:57Z",
+      "pushedAt": "2026-08-08T08:31:53Z",
+      "commits": 2729,
       "languages": {
-        "Java": 17330119,
-        "C++": 488167,
-        "C": 437226,
+        "Java": 17159636,
+        "C++": 582694,
+        "C": 432077,
         "QML": 409138,
         "Rust": 65188,
-        "CMake": 32429,
+        "CMake": 32793,
         "Shell": 17898,
         "PowerShell": 4707,
         "Assembly": 4325,
@@ -1008,7 +1008,7 @@
       "topics": [],
       "createdAt": "2025-10-18T11:39:41Z",
       "updatedAt": "2025-10-18T11:39:45Z",
-      "pushedAt": "2026-07-24T06:22:24Z",
+      "pushedAt": "2026-08-05T13:00:16Z",
       "commits": 1,
       "languages": {}
     },
@@ -1146,6 +1146,27 @@
       }
     },
     {
+      "name": "jni-recode",
+      "fullName": "Haedus-Industries/jni-recode",
+      "description": null,
+      "url": "https://github.com/Haedus-Industries/jni-recode",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "C",
+      "topics": [],
+      "createdAt": "2026-08-08T14:16:26Z",
+      "updatedAt": "2026-08-08T18:47:02Z",
+      "pushedAt": "2026-08-08T19:07:35Z",
+      "commits": 41,
+      "languages": {
+        "C": 304215,
+        "Java": 11006,
+        "Shell": 9280
+      }
+    },
+    {
       "name": "jvm-direct-call",
       "fullName": "Haedus-Industries/jvm-direct-call",
       "description": "Extremely Unstable",
@@ -1255,24 +1276,43 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-08-02T09:22:19Z",
-      "pushedAt": "2026-08-02T11:19:35Z",
-      "commits": 737,
+      "updatedAt": "2026-08-08T09:08:21Z",
+      "pushedAt": "2026-08-08T09:08:12Z",
+      "commits": 761,
       "languages": {
-        "Java": 6001724,
-        "TypeScript": 1285631,
+        "Java": 5775237,
+        "TypeScript": 1403759,
         "C++": 353407,
-        "JavaScript": 195437,
-        "Python": 191852,
-        "C": 142601,
+        "JavaScript": 195707,
+        "Python": 190748,
+        "C": 142477,
         "PowerShell": 115907,
-        "CSS": 92548,
+        "CSS": 96881,
         "Shell": 84417,
         "PLpgSQL": 35466,
         "LLVM": 31393,
-        "HTML": 25182,
+        "HTML": 25799,
         "CMake": 16992,
         "Batchfile": 8219
+      }
+    },
+    {
+      "name": "nativify-build-plugin",
+      "fullName": "Haedus-Industries/nativify-build-plugin",
+      "description": "Build plugins for protecting Maven and Gradle artifacts with the hosted Nativify service.",
+      "url": "https://github.com/Haedus-Industries/nativify-build-plugin",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-08-07T13:11:39Z",
+      "updatedAt": "2026-08-07T15:54:28Z",
+      "pushedAt": "2026-08-07T15:50:32Z",
+      "commits": 10,
+      "languages": {
+        "Java": 101156
       }
     },
     {
@@ -1492,11 +1532,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-07-05T01:23:36Z",
-      "updatedAt": "2026-07-31T12:23:27Z",
-      "pushedAt": "2026-07-31T12:20:41Z",
-      "commits": 37,
+      "updatedAt": "2026-08-05T10:17:03Z",
+      "pushedAt": "2026-08-05T10:16:54Z",
+      "commits": 38,
       "languages": {
-        "Java": 540811
+        "Java": 583778
       }
     },
     {
@@ -2202,7 +2242,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-08-02T02:55:28Z",
-      "pushedAt": "2026-08-04T02:22:20Z",
+      "pushedAt": "2026-08-08T01:23:29Z",
       "commits": 71,
       "languages": {}
     },
@@ -2344,9 +2384,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-08-01T02:32:43Z",
-      "pushedAt": "2026-08-01T02:32:39Z",
-      "commits": 75,
+      "updatedAt": "2026-08-05T02:12:18Z",
+      "pushedAt": "2026-08-05T02:12:10Z",
+      "commits": 76,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2635,7 +2675,7 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 15,
+      "stars": 16,
       "forks": 3,
       "language": "Java",
       "topics": [
@@ -2644,7 +2684,7 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-07-31T01:04:07Z",
+      "updatedAt": "2026-08-07T20:07:34Z",
       "pushedAt": "2026-07-31T01:04:03Z",
       "commits": 536,
       "languages": {
@@ -2849,12 +2889,12 @@
       "url": "https://github.com/yapeteam/YMixin",
       "isPrivate": false,
       "isFork": false,
-      "stars": 22,
+      "stars": 24,
       "forks": 3,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-06-20T01:53:10Z",
-      "updatedAt": "2026-08-04T12:45:37Z",
+      "updatedAt": "2026-08-07T20:17:13Z",
       "pushedAt": "2025-11-01T04:00:24Z",
       "commits": 40,
       "languages": {
@@ -3124,5 +3164,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-08-05T02:11:39.819Z"
+  "_syncedAt": "2026-08-09T01:25:08.927Z"
 }
