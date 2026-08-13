@@ -46,9 +46,9 @@
       "name": "Java",
       "category": "languages",
       "level": "Expert",
-      "linesRaw": 2832005,
+      "linesRaw": 2825913,
       "lines": "2.8M",
-      "linesPercentage": 66.5,
+      "linesPercentage": 66.4,
       "experience": "7 years",
       "projects": 45,
       "featured": true,
@@ -86,7 +86,7 @@
       "name": "C++",
       "category": "languages",
       "level": "Intermediate",
-      "linesRaw": 136446,
+      "linesRaw": 136437,
       "lines": "136K",
       "linesPercentage": 3.2,
       "experience": "3 years",
@@ -481,7 +481,7 @@
       ]
     }
   ],
-  "_clocSyncedAt": "2026-08-09T01:24:38.643Z",
-  "_clocTotalLines": 4260675,
-  "_clocLanguages": 123
+  "_clocSyncedAt": "2026-08-13T01:43:46.665Z",
+  "_clocTotalLines": 4254459,
+  "_clocLanguages": 121
 }
