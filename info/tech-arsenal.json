@@ -66,8 +66,8 @@
       "name": "JavaScript",
       "category": "languages",
       "level": "Advanced",
-      "linesRaw": 280447,
-      "lines": "280K",
+      "linesRaw": 281997,
+      "lines": "282K",
       "linesPercentage": 6.6,
       "experience": "5 years",
       "projects": 30,
@@ -481,7 +481,7 @@
       ]
     }
   ],
-  "_clocSyncedAt": "2026-08-13T01:43:46.665Z",
-  "_clocTotalLines": 4254459,
+  "_clocSyncedAt": "2026-08-17T01:03:51.101Z",
+  "_clocTotalLines": 4256009,
   "_clocLanguages": 121
 }

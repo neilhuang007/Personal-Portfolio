@@ -6,17 +6,17 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 43,
-    "privateRepos": 52,
+    "privateRepos": 53,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 119,
-    "userCommits": 3562,
-    "totalCommits": 7558,
-    "githubApiCommits": 36238,
-    "totalLines": 4254459,
-    "totalBytes": 1785952794,
-    "clocTotalLines": 4254459,
+    "totalRepos": 120,
+    "userCommits": 3577,
+    "totalCommits": 7624,
+    "githubApiCommits": 36270,
+    "totalLines": 4256009,
+    "totalBytes": 1786095741,
+    "clocTotalLines": 4256009,
     "clocLanguageCount": 121
   },
   "clocLanguages": {
@@ -46,7 +46,7 @@
     "eslintrc": 29,
     "dd": 6,
     "DS_Store": 0,
-    "JavaScript": 280447,
+    "JavaScript": 281997,
     "def": 534,
     "Java": 2825913,
     "fx": 11998,
@@ -157,15 +157,15 @@
     },
     {
       "name": "Java",
-      "bytes": 351874492,
+      "bytes": 351938258,
       "percentage": 19.7,
-      "lines": 8796862
+      "lines": 8798456
     },
     {
       "name": "C",
-      "bytes": 245881121,
+      "bytes": 245881204,
       "percentage": 13.8,
-      "lines": 6147028
+      "lines": 6147030
     },
     {
       "name": "Assembly",
@@ -187,15 +187,15 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14324625,
+      "bytes": 14362165,
       "percentage": 0.8,
-      "lines": 358116
+      "lines": 359054
     },
     {
       "name": "HTML",
-      "bytes": 10992171,
+      "bytes": 10997698,
       "percentage": 0.6,
-      "lines": 274804
+      "lines": 274942
     },
     {
       "name": "Fortran",
@@ -204,16 +204,16 @@
       "lines": 248289
     },
     {
+      "name": "GLSL",
+      "bytes": 4495785,
+      "percentage": 0.3,
+      "lines": 112395
+    },
+    {
       "name": "Objective-C",
       "bytes": 4491920,
       "percentage": 0.3,
       "lines": 112298
-    },
-    {
-      "name": "GLSL",
-      "bytes": 4491475,
-      "percentage": 0.3,
-      "lines": 112287
     },
     {
       "name": "CMake",
@@ -223,9 +223,9 @@
     },
     {
       "name": "CSS",
-      "bytes": 3727189,
+      "bytes": 3747601,
       "percentage": 0.2,
-      "lines": 93180
+      "lines": 93690
     },
     {
       "name": "FIRRTL",
@@ -241,9 +241,9 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 2098318,
+      "bytes": 2101456,
       "percentage": 0.1,
-      "lines": 52458
+      "lines": 52536
     },
     {
       "name": "Objective-C++",
@@ -259,9 +259,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 924145,
+      "bytes": 932316,
       "percentage": 0.1,
-      "lines": 23104
+      "lines": 23308
     },
     {
       "name": "Cuda",
@@ -760,11 +760,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-08-12T15:43:36Z",
-      "pushedAt": "2026-08-12T15:41:19Z",
-      "commits": 3347,
+      "updatedAt": "2026-08-16T18:58:56Z",
+      "pushedAt": "2026-08-16T18:57:56Z",
+      "commits": 3356,
       "languages": {
-        "GLSL": 1569579,
+        "GLSL": 1573889,
         "Python": 24766,
         "Shell": 366
       }
@@ -954,17 +954,17 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-08-08T08:28:57Z",
-      "pushedAt": "2026-08-08T08:31:53Z",
-      "commits": 2729,
+      "updatedAt": "2026-08-16T10:38:57Z",
+      "pushedAt": "2026-08-16T10:38:48Z",
+      "commits": 2732,
       "languages": {
-        "Java": 17159636,
+        "Java": 17154905,
         "C++": 582694,
         "C": 432077,
         "QML": 409138,
         "Rust": 65188,
         "CMake": 32793,
-        "Shell": 17898,
+        "Shell": 20849,
         "PowerShell": 4707,
         "Assembly": 4325,
         "Batchfile": 2808,
@@ -1274,19 +1274,19 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-08-12T02:30:21Z",
-      "pushedAt": "2026-08-12T02:30:14Z",
-      "commits": 783,
+      "updatedAt": "2026-08-16T05:37:09Z",
+      "pushedAt": "2026-08-16T05:36:44Z",
+      "commits": 800,
       "languages": {
-        "Java": 5930014,
-        "TypeScript": 1419309,
-        "C": 605393,
+        "Java": 5998511,
+        "TypeScript": 1422447,
+        "C": 605476,
         "C++": 363385,
         "JavaScript": 195707,
         "Python": 192754,
         "PowerShell": 118611,
         "CSS": 96881,
-        "Shell": 84417,
+        "Shell": 89637,
         "PLpgSQL": 35466,
         "LLVM": 31705,
         "HTML": 25799,
@@ -2239,9 +2239,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-08-09T01:50:30Z",
-      "pushedAt": "2026-08-12T01:46:02Z",
-      "commits": 72,
+      "updatedAt": "2026-08-16T01:24:00Z",
+      "pushedAt": "2026-08-16T01:23:56Z",
+      "commits": 73,
       "languages": {}
     },
     {
@@ -2382,9 +2382,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-08-09T01:25:43Z",
-      "pushedAt": "2026-08-09T01:25:39Z",
-      "commits": 77,
+      "updatedAt": "2026-08-13T01:45:11Z",
+      "pushedAt": "2026-08-13T01:45:07Z",
+      "commits": 78,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2405,7 +2405,7 @@
       "topics": [],
       "createdAt": "2026-04-21T14:13:34Z",
       "updatedAt": "2026-06-01T04:00:49Z",
-      "pushedAt": "2026-08-11T19:53:24Z",
+      "pushedAt": "2026-08-13T15:46:03Z",
       "commits": 2,
       "languages": {}
     },
@@ -2535,12 +2535,12 @@
       "url": "https://github.com/neilhuang007/SkidSuite",
       "isPrivate": false,
       "isFork": true,
-      "stars": 8,
+      "stars": 9,
       "forks": 4,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-09-18T13:25:47Z",
-      "updatedAt": "2026-04-28T13:46:31Z",
+      "updatedAt": "2026-08-13T15:41:13Z",
       "pushedAt": "2025-02-01T12:03:49Z",
       "commits": 447,
       "languages": {
@@ -2629,6 +2629,27 @@
       }
     },
     {
+      "name": "VXrefactor",
+      "fullName": "neilhuang007/VXrefactor",
+      "description": "refactored claender for veracross",
+      "url": "https://github.com/neilhuang007/VXrefactor",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "topics": [],
+      "createdAt": "2026-08-13T18:35:20Z",
+      "updatedAt": "2026-08-13T18:36:35Z",
+      "pushedAt": "2026-08-13T18:36:31Z",
+      "commits": 1,
+      "languages": {
+        "JavaScript": 37540,
+        "CSS": 20412,
+        "HTML": 5527
+      }
+    },
+    {
       "name": "WWDC-UI",
       "fullName": "neilhuang007/WWDC-UI",
       "description": "UI design for WWDC 5 swift challenge",
@@ -2673,7 +2694,7 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 18,
+      "stars": 19,
       "forks": 3,
       "language": "Java",
       "topics": [
@@ -2682,7 +2703,7 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-08-11T09:51:04Z",
+      "updatedAt": "2026-08-15T08:34:46Z",
       "pushedAt": "2026-07-31T01:04:03Z",
       "commits": 536,
       "languages": {
@@ -3162,5 +3183,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-08-13T01:44:36.165Z"
+  "_syncedAt": "2026-08-17T01:04:34.507Z"
 }
