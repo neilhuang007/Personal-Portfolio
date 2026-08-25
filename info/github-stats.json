@@ -5,25 +5,25 @@
     "bio": "Full stack developer\r\n",
     "followers": 6,
     "following": 4,
-    "publicRepos": 43,
+    "publicRepos": 44,
     "privateRepos": 53,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 120,
-    "userCommits": 3577,
-    "totalCommits": 7624,
-    "githubApiCommits": 36293,
-    "totalLines": 4256009,
-    "totalBytes": 1786232719,
-    "clocTotalLines": 4256009,
+    "totalRepos": 121,
+    "userCommits": 3583,
+    "totalCommits": 7649,
+    "githubApiCommits": 36324,
+    "totalLines": 4258813,
+    "totalBytes": 1786275331,
+    "clocTotalLines": 4258813,
     "clocLanguageCount": 121
   },
   "clocLanguages": {
     "1": 187246,
     "black": 8101,
     "rels": 8,
-    "Python": 187909,
+    "Python": 188969,
     "comp": 2861,
     "vsh": 2125,
     "kts": 216,
@@ -46,9 +46,9 @@
     "eslintrc": 29,
     "dd": 6,
     "DS_Store": 0,
-    "JavaScript": 281997,
+    "JavaScript": 282061,
     "def": 534,
-    "Java": 2825913,
+    "Java": 2826159,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "sfk": 0,
@@ -64,7 +64,7 @@
     "accesswidener": 93,
     "jst": 1840,
     "csh": 0,
-    "gitignore": 2120,
+    "gitignore": 2520,
     "vert": 1316,
     "otf": 0,
     "JSX": 664,
@@ -79,7 +79,7 @@
     "9/src/main/java/dev/haedus/core/{": 28,
     "github/{": 0,
     "github/CODEOWNERS": 12,
-    "bat": 1865,
+    "bat": 2049,
     "mdx": 30526,
     "manifest": 50,
     "bak": 1366,
@@ -102,7 +102,7 @@
     "cts": 542,
     "Vuejs Component": 324,
     "gitkeep": 8,
-    "gradle": 2894,
+    "gradle": 3744,
     "SF": 0,
     "cmake/api/v1/query/toolchains-v1": 0,
     "jpg": 0,
@@ -157,9 +157,9 @@
     },
     {
       "name": "Java",
-      "bytes": 352065932,
+      "bytes": 352087027,
       "percentage": 19.7,
-      "lines": 8801648
+      "lines": 8802176
     },
     {
       "name": "C",
@@ -175,9 +175,9 @@
     },
     {
       "name": "Python",
-      "bytes": 24530854,
+      "bytes": 24546213,
       "percentage": 1.4,
-      "lines": 613271
+      "lines": 613655
     },
     {
       "name": "MLIR",
@@ -187,15 +187,15 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14362165,
+      "bytes": 14362206,
       "percentage": 0.8,
-      "lines": 359054
+      "lines": 359055
     },
     {
       "name": "HTML",
-      "bytes": 10997698,
+      "bytes": 10997394,
       "percentage": 0.6,
-      "lines": 274942
+      "lines": 274935
     },
     {
       "name": "Fortran",
@@ -205,9 +205,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4501993,
+      "bytes": 4506772,
       "percentage": 0.3,
-      "lines": 112550
+      "lines": 112669
     },
     {
       "name": "Objective-C",
@@ -223,9 +223,9 @@
     },
     {
       "name": "CSS",
-      "bytes": 3747601,
+      "bytes": 3749243,
       "percentage": 0.2,
-      "lines": 93690
+      "lines": 93731
     },
     {
       "name": "FIRRTL",
@@ -760,11 +760,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-08-20T22:34:51Z",
-      "pushedAt": "2026-08-20T22:32:56Z",
-      "commits": 3368,
+      "updatedAt": "2026-08-24T21:25:15Z",
+      "pushedAt": "2026-08-24T21:24:51Z",
+      "commits": 3386,
       "languages": {
-        "GLSL": 1580097,
+        "GLSL": 1584876,
         "Python": 24766,
         "Shell": 366
       }
@@ -1765,6 +1765,26 @@
       }
     },
     {
+      "name": "BakaBC2026",
+      "fullName": "neilhuang007/BakaBC2026",
+      "description": "Team Baka 2026 Battle code submission",
+      "url": "https://github.com/neilhuang007/BakaBC2026",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-08-22T16:03:53Z",
+      "updatedAt": "2026-08-22T16:04:03Z",
+      "pushedAt": "2026-08-22T16:03:58Z",
+      "commits": 1,
+      "languages": {
+        "Python": 15359,
+        "Java": 5529
+      }
+    },
+    {
       "name": "betahack-developement",
       "fullName": "neilhuang007/betahack-developement",
       "description": null,
@@ -2239,9 +2259,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-08-16T01:24:00Z",
-      "pushedAt": "2026-08-20T01:05:48Z",
-      "commits": 73,
+      "updatedAt": "2026-08-23T01:25:08Z",
+      "pushedAt": "2026-08-24T01:08:41Z",
+      "commits": 74,
       "languages": {}
     },
     {
@@ -2382,9 +2402,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-08-17T01:05:11Z",
-      "pushedAt": "2026-08-17T01:05:05Z",
-      "commits": 79,
+      "updatedAt": "2026-08-21T01:07:16Z",
+      "pushedAt": "2026-08-21T01:06:55Z",
+      "commits": 80,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2640,13 +2660,13 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2026-08-13T18:35:20Z",
-      "updatedAt": "2026-08-13T18:36:35Z",
-      "pushedAt": "2026-08-13T18:36:31Z",
-      "commits": 1,
+      "updatedAt": "2026-08-21T20:20:40Z",
+      "pushedAt": "2026-08-21T20:19:36Z",
+      "commits": 3,
       "languages": {
-        "JavaScript": 37540,
-        "CSS": 20412,
-        "HTML": 5527
+        "JavaScript": 37581,
+        "CSS": 22054,
+        "HTML": 5223
       }
     },
     {
@@ -2694,7 +2714,7 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 19,
+      "stars": 20,
       "forks": 3,
       "language": "Java",
       "topics": [
@@ -2703,11 +2723,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-08-17T03:27:13Z",
-      "pushedAt": "2026-08-17T03:26:47Z",
-      "commits": 538,
+      "updatedAt": "2026-08-24T05:49:47Z",
+      "pushedAt": "2026-08-24T05:49:30Z",
+      "commits": 546,
       "languages": {
-        "Java": 1519031,
+        "Java": 1534597,
         "QML": 374335,
         "ANTLR": 6525,
         "Shell": 2552
@@ -3183,5 +3203,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-08-21T01:06:25.112Z"
+  "_syncedAt": "2026-08-25T01:05:09.870Z"
 }
