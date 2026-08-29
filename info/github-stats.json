@@ -5,17 +5,17 @@
     "bio": "Full stack developer\r\n",
     "followers": 6,
     "following": 4,
-    "publicRepos": 44,
-    "privateRepos": 53,
+    "publicRepos": 45,
+    "privateRepos": 54,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 121,
+    "totalRepos": 123,
     "userCommits": 3583,
     "totalCommits": 7649,
-    "githubApiCommits": 36324,
+    "githubApiCommits": 36357,
     "totalLines": 4258813,
-    "totalBytes": 1786275331,
+    "totalBytes": 1787489077,
     "clocTotalLines": 4258813,
     "clocLanguageCount": 121
   },
@@ -152,14 +152,14 @@
     {
       "name": "C++",
       "bytes": 458225012,
-      "percentage": 25.7,
+      "percentage": 25.6,
       "lines": 11455625
     },
     {
       "name": "Java",
-      "bytes": 352087027,
-      "percentage": 19.7,
-      "lines": 8802176
+      "bytes": 353229877,
+      "percentage": 19.8,
+      "lines": 8830747
     },
     {
       "name": "C",
@@ -175,25 +175,25 @@
     },
     {
       "name": "Python",
-      "bytes": 24546213,
+      "bytes": 24564088,
       "percentage": 1.4,
-      "lines": 613655
+      "lines": 614102
     },
     {
       "name": "MLIR",
       "bytes": 16977998,
-      "percentage": 1,
+      "percentage": 0.9,
       "lines": 424450
     },
     {
       "name": "JavaScript",
-      "bytes": 14362206,
+      "bytes": 14390069,
       "percentage": 0.8,
-      "lines": 359055
+      "lines": 359752
     },
     {
       "name": "HTML",
-      "bytes": 10997394,
+      "bytes": 10997418,
       "percentage": 0.6,
       "lines": 274935
     },
@@ -205,9 +205,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4506772,
+      "bytes": 4509652,
       "percentage": 0.3,
-      "lines": 112669
+      "lines": 112741
     },
     {
       "name": "Objective-C",
@@ -223,9 +223,9 @@
     },
     {
       "name": "CSS",
-      "bytes": 3749243,
+      "bytes": 3748706,
       "percentage": 0.2,
-      "lines": 93731
+      "lines": 93718
     },
     {
       "name": "FIRRTL",
@@ -241,7 +241,7 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 2101456,
+      "bytes": 2101457,
       "percentage": 0.1,
       "lines": 52536
     },
@@ -259,9 +259,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 932316,
+      "bytes": 940660,
       "percentage": 0.1,
-      "lines": 23308
+      "lines": 23517
     },
     {
       "name": "Cuda",
@@ -312,6 +312,12 @@
       "lines": 6818
     },
     {
+      "name": "PowerShell",
+      "bytes": 160607,
+      "percentage": 0,
+      "lines": 4015
+    },
+    {
       "name": "Scilab",
       "bytes": 160404,
       "percentage": 0,
@@ -322,12 +328,6 @@
       "bytes": 158750,
       "percentage": 0,
       "lines": 3969
-    },
-    {
-      "name": "PowerShell",
-      "bytes": 147920,
-      "percentage": 0,
-      "lines": 3698
     },
     {
       "name": "Makefile",
@@ -427,9 +427,9 @@
     },
     {
       "name": "PLpgSQL",
-      "bytes": 35466,
+      "bytes": 37225,
       "percentage": 0,
-      "lines": 887
+      "lines": 931
     },
     {
       "name": "NASL",
@@ -760,11 +760,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-08-24T21:25:15Z",
-      "pushedAt": "2026-08-24T21:24:51Z",
-      "commits": 3386,
+      "updatedAt": "2026-08-28T17:20:50Z",
+      "pushedAt": "2026-08-28T17:19:08Z",
+      "commits": 3394,
       "languages": {
-        "GLSL": 1584876,
+        "GLSL": 1587756,
         "Python": 24766,
         "Shell": 366
       }
@@ -1274,22 +1274,22 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-08-16T05:37:09Z",
-      "pushedAt": "2026-08-16T05:36:44Z",
-      "commits": 800,
+      "updatedAt": "2026-08-28T15:03:33Z",
+      "pushedAt": "2026-08-28T15:00:06Z",
+      "commits": 801,
       "languages": {
         "Java": 5998511,
-        "TypeScript": 1422447,
+        "TypeScript": 1422448,
         "C": 605476,
         "C++": 363385,
         "JavaScript": 195707,
         "Python": 192754,
         "PowerShell": 118611,
-        "CSS": 96881,
+        "CSS": 96344,
         "Shell": 89637,
-        "PLpgSQL": 35466,
+        "PLpgSQL": 37225,
         "LLVM": 31705,
-        "HTML": 25799,
+        "HTML": 25823,
         "CMake": 16992,
         "Batchfile": 8219
       }
@@ -1744,7 +1744,7 @@
     {
       "name": "baiduwp-php",
       "fullName": "neilhuang007/baiduwp-php",
-      "description": "A tool to get the download link of the Baidu netdisk / 一个获取百度网盘分享链接下载地址的工具",
+      "description": "A tool to get the download link of the Baidu netdisk / 一个获取百度网盘分享链接下载地址��工具",
       "url": "https://github.com/neilhuang007/baiduwp-php",
       "isPrivate": false,
       "isFork": true,
@@ -1762,6 +1762,26 @@
         "JavaScript": 22981,
         "CSS": 1692,
         "Dockerfile": 562
+      }
+    },
+    {
+      "name": "BakaBC2024",
+      "fullName": "neilhuang007/BakaBC2024",
+      "description": "Team Baka 2024 Battle code submission",
+      "url": "https://github.com/neilhuang007/BakaBC2024",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 2,
+      "forks": 0,
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-08-27T23:14:45Z",
+      "updatedAt": "2026-08-28T09:56:34Z",
+      "pushedAt": "2026-08-28T04:19:43Z",
+      "commits": 8,
+      "languages": {
+        "Java": 850496,
+        "Python": 17875
       }
     },
     {
@@ -2168,6 +2188,28 @@
       }
     },
     {
+      "name": "Hill-server",
+      "fullName": "neilhuang007/Hill-server",
+      "description": "Hill School 175th Anniversary Minecraft competition server",
+      "url": "https://github.com/neilhuang007/Hill-server",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-08-26T03:08:53Z",
+      "updatedAt": "2026-08-26T14:21:45Z",
+      "pushedAt": "2026-08-26T14:16:27Z",
+      "commits": 8,
+      "languages": {
+        "Java": 240540,
+        "JavaScript": 27863,
+        "PowerShell": 12687,
+        "Shell": 8344
+      }
+    },
+    {
       "name": "Kernal-Injector",
       "fullName": "neilhuang007/Kernal-Injector",
       "description": "State Of the art kernal Injector exploiting Dell driver exploit",
@@ -2260,7 +2302,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-08-23T01:25:08Z",
-      "pushedAt": "2026-08-24T01:08:41Z",
+      "pushedAt": "2026-08-28T09:35:07Z",
       "commits": 74,
       "languages": {}
     },
@@ -2295,12 +2337,12 @@
       "url": "https://github.com/neilhuang007/Novoline-Buidable",
       "isPrivate": false,
       "isFork": false,
-      "stars": 3,
+      "stars": 4,
       "forks": 0,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-12-01T12:11:51Z",
-      "updatedAt": "2026-07-21T15:40:33Z",
+      "updatedAt": "2026-08-26T14:17:43Z",
       "pushedAt": "2023-12-01T12:25:16Z",
       "commits": 2,
       "languages": {
@@ -2402,9 +2444,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-08-21T01:07:16Z",
-      "pushedAt": "2026-08-21T01:06:55Z",
-      "commits": 80,
+      "updatedAt": "2026-08-25T01:06:03Z",
+      "pushedAt": "2026-08-25T01:05:40Z",
+      "commits": 81,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2714,7 +2756,7 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 20,
+      "stars": 21,
       "forks": 3,
       "language": "Java",
       "topics": [
@@ -2723,11 +2765,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-08-24T05:49:47Z",
-      "pushedAt": "2026-08-24T05:49:30Z",
-      "commits": 546,
+      "updatedAt": "2026-08-28T15:57:24Z",
+      "pushedAt": "2026-08-29T01:03:24Z",
+      "commits": 553,
       "languages": {
-        "Java": 1534597,
+        "Java": 1586411,
         "QML": 374335,
         "ANTLR": 6525,
         "Shell": 2552
@@ -3203,5 +3245,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-08-25T01:05:09.870Z"
+  "_syncedAt": "2026-08-29T05:33:28.094Z"
 }
