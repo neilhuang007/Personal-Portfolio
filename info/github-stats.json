@@ -5,18 +5,18 @@
     "bio": "Full stack developer\r\n",
     "followers": 6,
     "following": 4,
-    "publicRepos": 45,
-    "privateRepos": 54,
+    "publicRepos": 46,
+    "privateRepos": 55,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 123,
-    "userCommits": 3583,
-    "totalCommits": 7649,
-    "githubApiCommits": 36357,
-    "totalLines": 4258813,
-    "totalBytes": 1787489077,
-    "clocTotalLines": 4258813,
+    "totalRepos": 124,
+    "userCommits": 3593,
+    "totalCommits": 7095,
+    "githubApiCommits": 36412,
+    "totalLines": 4278357,
+    "totalBytes": 1788100469,
+    "clocTotalLines": 4278357,
     "clocLanguageCount": 121
   },
   "clocLanguages": {
@@ -26,14 +26,14 @@
     "Python": 188969,
     "comp": 2861,
     "vsh": 2125,
-    "kts": 216,
+    "kts": 298,
     "MF": 89,
     "disabled": 1318,
     "tsrg": 36100,
     "husky/pre-commit": 6,
     "form": 191,
     "lp": 288,
-    "TypeScript": 141924,
+    "TypeScript": 141940,
     "2/src/map": 18,
     "idea/Aeternus": 11,
     "cmake": 510,
@@ -46,9 +46,9 @@
     "eslintrc": 29,
     "dd": 6,
     "DS_Store": 0,
-    "JavaScript": 282061,
+    "JavaScript": 284137,
     "def": 534,
-    "Java": 2826159,
+    "Java": 2841073,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "sfk": 0,
@@ -64,7 +64,7 @@
     "accesswidener": 93,
     "jst": 1840,
     "csh": 0,
-    "gitignore": 2520,
+    "gitignore": 2966,
     "vert": 1316,
     "otf": 0,
     "JSX": 664,
@@ -79,7 +79,7 @@
     "9/src/main/java/dev/haedus/core/{": 28,
     "github/{": 0,
     "github/CODEOWNERS": 12,
-    "bat": 2049,
+    "bat": 2419,
     "mdx": 30526,
     "manifest": 50,
     "bak": 1366,
@@ -90,8 +90,8 @@
     "get/LICENSE": 47,
     "ninja_log": 20,
     "cmake/api/v1/query/cache-v2": 0,
-    "service": 524,
     "ddi": 28,
+    "service": 564,
     "check_cache": 2,
     "cmd": 17,
     "snbt": 236,
@@ -102,7 +102,7 @@
     "cts": 542,
     "Vuejs Component": 324,
     "gitkeep": 8,
-    "gradle": 3744,
+    "gradle": 4390,
     "SF": 0,
     "cmake/api/v1/query/toolchains-v1": 0,
     "jpg": 0,
@@ -120,12 +120,12 @@
     "qubo": 22,
     "vercelignore": 6,
     "mca": 0,
-    "ps1": 3644,
+    "ps1": 4190,
     "npmignore": 2,
     "gitmodules": 6,
     "prettierignore": 10,
     "jar": 0,
-    "Bourne Shell": 5476,
+    "Bourne Shell": 5884,
     "gitattributes": 91,
     "icls": 1692,
     "9/src/main/java/dev/haedus/core/{module": 4,
@@ -157,9 +157,9 @@
     },
     {
       "name": "Java",
-      "bytes": 353229877,
+      "bytes": 353431980,
       "percentage": 19.8,
-      "lines": 8830747
+      "lines": 8835800
     },
     {
       "name": "C",
@@ -175,9 +175,9 @@
     },
     {
       "name": "Python",
-      "bytes": 24564088,
+      "bytes": 24830850,
       "percentage": 1.4,
-      "lines": 614102
+      "lines": 620771
     },
     {
       "name": "MLIR",
@@ -187,9 +187,9 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14390069,
+      "bytes": 14422095,
       "percentage": 0.8,
-      "lines": 359752
+      "lines": 360552
     },
     {
       "name": "HTML",
@@ -205,9 +205,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4509652,
+      "bytes": 4527479,
       "percentage": 0.3,
-      "lines": 112741
+      "lines": 113187
     },
     {
       "name": "Objective-C",
@@ -259,9 +259,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 940660,
+      "bytes": 1003182,
       "percentage": 0.1,
-      "lines": 23517
+      "lines": 25080
     },
     {
       "name": "Cuda",
@@ -313,9 +313,9 @@
     },
     {
       "name": "PowerShell",
-      "bytes": 160607,
+      "bytes": 190759,
       "percentage": 0,
-      "lines": 4015
+      "lines": 4769
     },
     {
       "name": "Scilab",
@@ -760,11 +760,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-08-28T17:20:50Z",
-      "pushedAt": "2026-08-28T17:19:08Z",
-      "commits": 3394,
+      "updatedAt": "2026-08-31T13:58:06Z",
+      "pushedAt": "2026-08-31T13:55:23Z",
+      "commits": 3410,
       "languages": {
-        "GLSL": 1587756,
+        "GLSL": 1605583,
         "Python": 24766,
         "Shell": 366
       }
@@ -1215,9 +1215,9 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-10-31T16:26:01Z",
-      "updatedAt": "2026-04-19T03:52:49Z",
-      "pushedAt": "2025-11-02T05:23:58Z",
-      "commits": 79,
+      "updatedAt": "2026-08-29T22:25:39Z",
+      "pushedAt": "2026-08-29T22:24:23Z",
+      "commits": 80,
       "languages": {
         "Java": 507502,
         "C": 90755
@@ -1274,11 +1274,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-08-28T15:03:33Z",
-      "pushedAt": "2026-08-28T15:00:06Z",
-      "commits": 801,
+      "updatedAt": "2026-08-30T19:42:44Z",
+      "pushedAt": "2026-08-31T08:02:22Z",
+      "commits": 804,
       "languages": {
-        "Java": 5998511,
+        "Java": 6004524,
         "TypeScript": 1422448,
         "C": 605476,
         "C++": 363385,
@@ -1318,14 +1318,14 @@
       "fullName": "Haedus-Industries/nativify-web",
       "description": "Nativify - Java obfuscator web platform",
       "url": "https://github.com/Haedus-Industries/nativify-web",
-      "isPrivate": false,
+      "isPrivate": true,
       "isFork": false,
       "stars": 0,
       "forks": 0,
       "language": "CSS",
       "topics": [],
       "createdAt": "2026-03-28T22:10:15Z",
-      "updatedAt": "2026-03-28T22:10:31Z",
+      "updatedAt": "2026-08-29T18:45:02Z",
       "pushedAt": "2026-03-28T22:10:27Z",
       "commits": 1,
       "languages": {
@@ -1530,9 +1530,9 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-07-05T01:23:36Z",
-      "updatedAt": "2026-08-05T10:17:03Z",
-      "pushedAt": "2026-08-18T02:44:55Z",
-      "commits": 38,
+      "updatedAt": "2026-08-29T19:10:53Z",
+      "pushedAt": "2026-08-29T18:55:24Z",
+      "commits": 39,
       "languages": {
         "Java": 583778
       }
@@ -1744,7 +1744,7 @@
     {
       "name": "baiduwp-php",
       "fullName": "neilhuang007/baiduwp-php",
-      "description": "A tool to get the download link of the Baidu netdisk / 一个获取百度网盘分享链接下载地址��工具",
+      "description": "A tool to get the download link of the Baidu netdisk / 一个获取百度网盘分享链接下载地址的工具",
       "url": "https://github.com/neilhuang007/baiduwp-php",
       "isPrivate": false,
       "isFork": true,
@@ -2199,14 +2199,15 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-08-26T03:08:53Z",
-      "updatedAt": "2026-08-26T14:21:45Z",
-      "pushedAt": "2026-08-26T14:16:27Z",
-      "commits": 8,
+      "updatedAt": "2026-08-31T22:14:05Z",
+      "pushedAt": "2026-08-31T22:13:24Z",
+      "commits": 25,
       "languages": {
-        "Java": 240540,
-        "JavaScript": 27863,
-        "PowerShell": 12687,
-        "Shell": 8344
+        "Java": 422145,
+        "Python": 266762,
+        "Shell": 70866,
+        "JavaScript": 59889,
+        "PowerShell": 42839
       }
     },
     {
@@ -2301,9 +2302,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-08-23T01:25:08Z",
-      "pushedAt": "2026-08-28T09:35:07Z",
-      "commits": 74,
+      "updatedAt": "2026-08-30T04:09:46Z",
+      "pushedAt": "2026-08-31T03:41:44Z",
+      "commits": 75,
       "languages": {}
     },
     {
@@ -2444,9 +2445,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-08-25T01:06:03Z",
-      "pushedAt": "2026-08-25T01:05:40Z",
-      "commits": 81,
+      "updatedAt": "2026-08-29T05:34:24Z",
+      "pushedAt": "2026-08-29T05:33:59Z",
+      "commits": 82,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2712,6 +2713,23 @@
       }
     },
     {
+      "name": "Writeups",
+      "fullName": "neilhuang007/Writeups",
+      "description": "Writeups on reverse engineering research regarding team Baka",
+      "url": "https://github.com/neilhuang007/Writeups",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": null,
+      "topics": [],
+      "createdAt": "2026-08-29T16:13:52Z",
+      "updatedAt": "2026-08-29T18:33:05Z",
+      "pushedAt": "2026-08-29T18:33:00Z",
+      "commits": 11,
+      "languages": {}
+    },
+    {
       "name": "WWDC-UI",
       "fullName": "neilhuang007/WWDC-UI",
       "description": "UI design for WWDC 5 swift challenge",
@@ -2756,7 +2774,7 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 21,
+      "stars": 22,
       "forks": 3,
       "language": "Java",
       "topics": [
@@ -2765,11 +2783,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-08-28T15:57:24Z",
-      "pushedAt": "2026-08-29T01:03:24Z",
-      "commits": 553,
+      "updatedAt": "2026-08-30T07:26:24Z",
+      "pushedAt": "2026-08-30T07:26:41Z",
+      "commits": 556,
       "languages": {
-        "Java": 1586411,
+        "Java": 1600896,
         "QML": 374335,
         "ANTLR": 6525,
         "Shell": 2552
@@ -2837,12 +2855,12 @@
       "url": "https://github.com/yapeteam/minecraft-1.8.9-lwjgl3",
       "isPrivate": false,
       "isFork": false,
-      "stars": 35,
+      "stars": 36,
       "forks": 2,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
-      "updatedAt": "2026-07-27T12:00:22Z",
+      "updatedAt": "2026-08-30T02:15:33Z",
       "pushedAt": "2026-02-20T10:14:59Z",
       "commits": 45,
       "languages": {
@@ -2975,9 +2993,9 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2024-06-20T01:53:10Z",
-      "updatedAt": "2026-08-18T15:55:23Z",
-      "pushedAt": "2025-11-01T04:00:24Z",
-      "commits": 40,
+      "updatedAt": "2026-08-29T18:43:05Z",
+      "pushedAt": "2026-08-29T18:43:01Z",
+      "commits": 41,
       "languages": {
         "Java": 68956
       }
@@ -3245,5 +3263,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-08-29T05:33:28.094Z"
+  "_syncedAt": "2026-09-01T03:28:59.969Z"
 }
