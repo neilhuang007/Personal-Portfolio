@@ -11,22 +11,23 @@
   },
   "stats": {
     "totalRepos": 124,
-    "userCommits": 3593,
-    "totalCommits": 7095,
-    "githubApiCommits": 36430,
-    "totalLines": 4278357,
-    "totalBytes": 1788103511,
-    "clocTotalLines": 4278357,
-    "clocLanguageCount": 121
+    "userCommits": 3628,
+    "totalCommits": 7141,
+    "githubApiCommits": 36483,
+    "totalLines": 4304547,
+    "totalBytes": 1788150762,
+    "clocTotalLines": 4304547,
+    "clocLanguageCount": 122
   },
   "clocLanguages": {
     "1": 187246,
     "black": 8101,
     "rels": 8,
-    "Python": 188969,
+    "Python": 202745,
     "comp": 2861,
     "vsh": 2125,
     "kts": 298,
+    "tsv": 30,
     "MF": 89,
     "disabled": 1318,
     "tsrg": 36100,
@@ -46,9 +47,9 @@
     "eslintrc": 29,
     "dd": 6,
     "DS_Store": 0,
-    "JavaScript": 284137,
+    "JavaScript": 285505,
     "def": 534,
-    "Java": 2841073,
+    "Java": 2847303,
     "fx": 11998,
     "9/src/main/java/dev/haedus/core/{notification": 2,
     "sfk": 0,
@@ -64,7 +65,7 @@
     "accesswidener": 93,
     "jst": 1840,
     "csh": 0,
-    "gitignore": 2966,
+    "gitignore": 2986,
     "vert": 1316,
     "otf": 0,
     "JSX": 664,
@@ -86,12 +87,12 @@
     "nvmrc": 2,
     "map": 174,
     "C++": 3502,
-    "timer": 46,
+    "timer": 68,
     "get/LICENSE": 47,
     "ninja_log": 20,
     "cmake/api/v1/query/cache-v2": 0,
     "ddi": 28,
-    "service": 564,
+    "service": 594,
     "check_cache": 2,
     "cmd": 17,
     "snbt": 236,
@@ -120,12 +121,12 @@
     "qubo": 22,
     "vercelignore": 6,
     "mca": 0,
-    "ps1": 4190,
+    "ps1": 5614,
     "npmignore": 2,
     "gitmodules": 6,
     "prettierignore": 10,
     "jar": 0,
-    "Bourne Shell": 5884,
+    "Bourne Shell": 9174,
     "gitattributes": 91,
     "icls": 1692,
     "9/src/main/java/dev/haedus/core/{module": 4,
@@ -157,9 +158,9 @@
     },
     {
       "name": "Java",
-      "bytes": 353431980,
+      "bytes": 353472588,
       "percentage": 19.8,
-      "lines": 8835800
+      "lines": 8836815
     },
     {
       "name": "C",
@@ -205,9 +206,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4530521,
+      "bytes": 4537002,
       "percentage": 0.3,
-      "lines": 113263
+      "lines": 113425
     },
     {
       "name": "Objective-C",
@@ -271,9 +272,9 @@
     },
     {
       "name": "QML",
-      "bytes": 783473,
+      "bytes": 783635,
       "percentage": 0,
-      "lines": 19587
+      "lines": 19591
     },
     {
       "name": "HIP",
@@ -760,11 +761,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-09-04T20:31:19Z",
-      "pushedAt": "2026-09-04T20:31:15Z",
-      "commits": 3427,
+      "updatedAt": "2026-09-08T14:28:07Z",
+      "pushedAt": "2026-09-08T14:21:43Z",
+      "commits": 3444,
       "languages": {
-        "GLSL": 1608625,
+        "GLSL": 1615106,
         "Python": 24766,
         "Shell": 366
       }
@@ -954,14 +955,14 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-08-19T04:24:28Z",
-      "pushedAt": "2026-08-19T04:24:25Z",
-      "commits": 2737,
+      "updatedAt": "2026-09-08T15:27:56Z",
+      "pushedAt": "2026-09-08T15:15:23Z",
+      "commits": 2764,
       "languages": {
-        "Java": 17232547,
+        "Java": 17263144,
         "C++": 582694,
         "C": 435960,
-        "QML": 409138,
+        "QML": 409300,
         "Rust": 65168,
         "CMake": 32793,
         "Shell": 20849,
@@ -1275,7 +1276,7 @@
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
       "updatedAt": "2026-08-30T19:42:44Z",
-      "pushedAt": "2026-08-31T08:02:22Z",
+      "pushedAt": "2026-09-08T20:28:54Z",
       "commits": 804,
       "languages": {
         "Java": 6004524,
@@ -2302,9 +2303,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-08-30T04:09:46Z",
-      "pushedAt": "2026-09-04T02:57:17Z",
-      "commits": 75,
+      "updatedAt": "2026-09-06T03:24:55Z",
+      "pushedAt": "2026-09-08T03:05:55Z",
+      "commits": 76,
       "languages": {}
     },
     {
@@ -2445,9 +2446,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-09-01T03:30:12Z",
-      "pushedAt": "2026-09-01T03:29:31Z",
-      "commits": 83,
+      "updatedAt": "2026-09-05T02:53:03Z",
+      "pushedAt": "2026-09-05T02:53:00Z",
+      "commits": 84,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -2468,7 +2469,7 @@
       "topics": [],
       "createdAt": "2026-04-21T14:13:34Z",
       "updatedAt": "2026-06-01T04:00:49Z",
-      "pushedAt": "2026-08-13T15:46:03Z",
+      "pushedAt": "2026-09-08T16:15:41Z",
       "commits": 2,
       "languages": {}
     },
@@ -2774,7 +2775,7 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 23,
+      "stars": 24,
       "forks": 3,
       "language": "Java",
       "topics": [
@@ -2783,11 +2784,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-09-05T02:22:50Z",
-      "pushedAt": "2026-08-30T07:26:41Z",
-      "commits": 556,
+      "updatedAt": "2026-09-08T01:20:58Z",
+      "pushedAt": "2026-09-06T02:23:39Z",
+      "commits": 563,
       "languages": {
-        "Java": 1600896,
+        "Java": 1610907,
         "QML": 374335,
         "ANTLR": 6525,
         "Shell": 2552
@@ -3263,5 +3264,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-09-05T02:52:29.128Z"
+  "_syncedAt": "2026-09-09T02:59:20.706Z"
 }
