@@ -5,18 +5,18 @@
     "bio": "Full stack developer\r\n",
     "followers": 6,
     "following": 4,
-    "publicRepos": 46,
-    "privateRepos": 56,
+    "publicRepos": 47,
+    "privateRepos": 57,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 125,
-    "userCommits": 3813,
-    "totalCommits": 7268,
-    "githubApiCommits": 36547,
-    "totalLines": 4520689,
-    "totalBytes": 1788765214,
-    "clocTotalLines": 4520689,
+    "totalRepos": 127,
+    "userCommits": 3892,
+    "totalCommits": 7336,
+    "githubApiCommits": 36585,
+    "totalLines": 4551241,
+    "totalBytes": 1793006506,
+    "clocTotalLines": 4551241,
     "clocLanguageCount": 1577
   },
   "clocLanguages": {
@@ -29,7 +29,7 @@
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/AutofillStrikeDatabase/LOCK": 0,
     "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/shared_proto_db/LOG": 4,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/optimization_guide_hint_cache_store/LOCK": 0,
-    "tex": 49756,
+    "tex": 57768,
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/Segmentation": 0,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Network/Device": 0,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/Session": 6,
@@ -116,7 +116,7 @@
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/AutofillStrikeDatabase/LOCK": 0,
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/shared_proto_db/metadata/CURRENT": 2,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/Preferences": 2,
-    "Python": 231377,
+    "Python": 238801,
     "comp": 2861,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/parcel_tracking_db/LOCK": 0,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Shared": 0,
@@ -189,7 +189,7 @@
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/Secure": 2,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/Safe": 0,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/Network": 0,
-    "ll": 0,
+    "ll": 1612,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/WebStorage/QuotaManager-journal": 0,
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/PreferredApps": 2,
     "form": 191,
@@ -224,7 +224,7 @@
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/shared_proto_db/metadata/LOG": 4,
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Last": 2,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/optimization_guide_hint_cache_store/LOG": 0,
-    "TypeScript": 146788,
+    "TypeScript": 153158,
     "2/src/map": 18,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/PreferredApps": 2,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/Local": 6,
@@ -373,7 +373,7 @@
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/chrome_cart_db/LOG": 0,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/parcel_tracking_db/LOG": 0,
     "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/BookmarkMergedSurfaceOrdering": 4,
-    "JavaScript": 292058,
+    "JavaScript": 290680,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/Favicons-journal": 0,
     "def": 534,
@@ -392,7 +392,7 @@
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/shared_proto_db/metadata/LOG": 4,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Affiliation": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/shared_proto_db/metadata/CURRENT": 2,
-    "Java": 2889219,
+    "Java": 2896967,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": 0,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/PersistentOriginTrials/LOG": 0,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Local": 6,
@@ -657,7 +657,7 @@
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/PersistentOriginTrials/LOG": 0,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Network/Reporting": 0,
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Network/Reporting": 0,
-    "gitignore": 4023,
+    "gitignore": 4105,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": 0,
     "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/shared_proto_db/metadata/LOCK": 0,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/shared_proto_db/LOCK": 0,
@@ -892,7 +892,7 @@
     "map": 174,
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/parcel_tracking_db/LOG": 0,
     "tmp-render/chrome-profile-1b75955ad0804183a99f2edba619aae7/Default/Network/TransportSecurity": 2,
-    "C++": 3502,
+    "C++": 3874,
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Shared": 0,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Affiliation": 0,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Network/Trust": 0,
@@ -1370,7 +1370,7 @@
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/Preferences": 2,
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/BrowsingTopicsSiteData-journal": 0,
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/Local": 6,
-    "ps1": 10080,
+    "ps1": 10250,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/commerce_subscription_db/LOG": 0,
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/Service": 6,
     "tmp-render/chrome-profile-1b75955ad0804183a99f2edba619aae7/Default/parcel_tracking_db/LOCK": 0,
@@ -1482,7 +1482,7 @@
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/AutofillAiModelCache/LOCK": 0,
     "jar": 0,
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/commerce_subscription_db/LOCK": 0,
-    "Bourne Shell": 12624,
+    "Bourne Shell": 12762,
     "db-journal": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/BudgetDatabase/LOCK": 0,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Favicons-journal": 0,
@@ -1596,14 +1596,14 @@
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/shared_proto_db/metadata/CURRENT": 2,
     "tmp-render/chrome-profile/Default/BrowsingTopicsState": 24,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/History-journal": 0,
-    "chktexrc": 174
+    "chktexrc": 176
   },
   "languages": [
     {
       "name": "LLVM",
-      "bytes": 499789689,
+      "bytes": 499793781,
       "percentage": 27.9,
-      "lines": 12494742
+      "lines": 12494845
     },
     {
       "name": "C++",
@@ -1613,9 +1613,9 @@
     },
     {
       "name": "Java",
-      "bytes": 353654236,
-      "percentage": 19.8,
-      "lines": 8841356
+      "bytes": 353940342,
+      "percentage": 19.7,
+      "lines": 8848509
     },
     {
       "name": "C",
@@ -1631,9 +1631,9 @@
     },
     {
       "name": "Python",
-      "bytes": 25064922,
-      "percentage": 1.4,
-      "lines": 626623
+      "bytes": 27311677,
+      "percentage": 1.5,
+      "lines": 682792
     },
     {
       "name": "MLIR",
@@ -1643,15 +1643,15 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14477819,
+      "bytes": 14568985,
       "percentage": 0.8,
-      "lines": 361945
+      "lines": 364225
     },
     {
       "name": "HTML",
-      "bytes": 10999131,
+      "bytes": 11042790,
       "percentage": 0.6,
-      "lines": 274978
+      "lines": 276070
     },
     {
       "name": "Fortran",
@@ -1661,9 +1661,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4551151,
+      "bytes": 4554844,
       "percentage": 0.3,
-      "lines": 113779
+      "lines": 113871
     },
     {
       "name": "Objective-C",
@@ -1672,16 +1672,22 @@
       "lines": 112298
     },
     {
+      "name": "CSS",
+      "bytes": 3823944,
+      "percentage": 0.2,
+      "lines": 95599
+    },
+    {
       "name": "CMake",
       "bytes": 3780928,
       "percentage": 0.2,
       "lines": 94523
     },
     {
-      "name": "CSS",
-      "bytes": 3756624,
+      "name": "TypeScript",
+      "bytes": 3625038,
       "percentage": 0.2,
-      "lines": 93916
+      "lines": 90626
     },
     {
       "name": "FIRRTL",
@@ -1694,12 +1700,6 @@
       "bytes": 2256256,
       "percentage": 0.1,
       "lines": 56406
-    },
-    {
-      "name": "TypeScript",
-      "bytes": 2164667,
-      "percentage": 0.1,
-      "lines": 54117
     },
     {
       "name": "Objective-C++",
@@ -1715,9 +1715,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 1004632,
+      "bytes": 1013927,
       "percentage": 0.1,
-      "lines": 25116
+      "lines": 25348
     },
     {
       "name": "Cuda",
@@ -1769,9 +1769,9 @@
     },
     {
       "name": "PowerShell",
-      "bytes": 190759,
+      "bytes": 218714,
       "percentage": 0,
-      "lines": 4769
+      "lines": 5468
     },
     {
       "name": "Scilab",
@@ -1817,9 +1817,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 114323,
+      "bytes": 115203,
       "percentage": 0,
-      "lines": 2858
+      "lines": 2880
     },
     {
       "name": "GAP",
@@ -2216,11 +2216,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-09-20T09:42:49Z",
-      "pushedAt": "2026-09-20T09:42:45Z",
-      "commits": 3478,
+      "updatedAt": "2026-09-28T12:56:01Z",
+      "pushedAt": "2026-09-28T12:55:56Z",
+      "commits": 3494,
       "languages": {
-        "GLSL": 1629255,
+        "GLSL": 1632948,
         "Python": 24766,
         "Shell": 366
       }
@@ -2725,24 +2725,24 @@
       "url": "https://github.com/Haedus-Industries/nativify",
       "isPrivate": true,
       "isFork": false,
-      "stars": 0,
+      "stars": 1,
       "forks": 0,
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-08-30T19:42:44Z",
-      "pushedAt": "2026-09-25T01:03:28Z",
-      "commits": 804,
+      "updatedAt": "2026-09-26T05:08:33Z",
+      "pushedAt": "2026-09-28T21:54:17Z",
+      "commits": 806,
       "languages": {
-        "Java": 6004524,
+        "Java": 6007498,
         "TypeScript": 1422448,
         "C": 605476,
         "C++": 363385,
         "JavaScript": 195707,
         "Python": 192754,
-        "PowerShell": 118611,
+        "PowerShell": 120619,
         "CSS": 96344,
-        "Shell": 89637,
+        "Shell": 90821,
         "PLpgSQL": 37225,
         "LLVM": 31705,
         "HTML": 25823,
@@ -3671,18 +3671,20 @@
       "isFork": false,
       "stars": 0,
       "forks": 0,
-      "language": "Java",
+      "language": "Python",
       "topics": [],
       "createdAt": "2026-08-26T03:08:53Z",
-      "updatedAt": "2026-08-31T22:14:05Z",
-      "pushedAt": "2026-08-31T22:13:24Z",
-      "commits": 25,
+      "updatedAt": "2026-09-28T21:13:22Z",
+      "pushedAt": "2026-09-28T21:13:18Z",
+      "commits": 35,
       "languages": {
-        "Java": 422145,
-        "Python": 266762,
-        "Shell": 70866,
-        "JavaScript": 59889,
-        "PowerShell": 42839
+        "Python": 2454313,
+        "Java": 594042,
+        "Shell": 76898,
+        "JavaScript": 65388,
+        "PowerShell": 58079,
+        "HTML": 18551,
+        "Batchfile": 880
       }
     },
     {
@@ -3704,6 +3706,33 @@
         "C": 91235,
         "C++": 83159,
         "CMake": 12028
+      }
+    },
+    {
+      "name": "LaunchVideo",
+      "fullName": "neilhuang007/LaunchVideo",
+      "description": "Launch Video For Nativify",
+      "url": "https://github.com/neilhuang007/LaunchVideo",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-26T11:53:35Z",
+      "updatedAt": "2026-09-26T13:29:43Z",
+      "pushedAt": "2026-09-27T01:02:23Z",
+      "commits": 7,
+      "languages": {
+        "TypeScript": 1360909,
+        "Java": 111235,
+        "JavaScript": 82869,
+        "CSS": 67320,
+        "Python": 59204,
+        "HTML": 25108,
+        "PowerShell": 10707,
+        "LLVM": 4092,
+        "Shell": 2079
       }
     },
     {
@@ -3766,6 +3795,26 @@
       "languages": {}
     },
     {
+      "name": "nativify-video",
+      "fullName": "neilhuang007/nativify-video",
+      "description": "Remotion source for the Nativify video",
+      "url": "https://github.com/neilhuang007/nativify-video",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-09-25T13:40:52Z",
+      "updatedAt": "2026-09-25T13:41:06Z",
+      "pushedAt": "2026-09-25T13:41:02Z",
+      "commits": 1,
+      "languages": {
+        "TypeScript": 99462,
+        "JavaScript": 2798
+      }
+    },
+    {
       "name": "neilhuang007",
       "fullName": "neilhuang007/neilhuang007",
       "description": "my readme profile",
@@ -3777,9 +3826,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-09-20T03:52:53Z",
-      "pushedAt": "2026-09-24T03:11:36Z",
-      "commits": 78,
+      "updatedAt": "2026-09-27T04:11:36Z",
+      "pushedAt": "2026-09-28T03:43:33Z",
+      "commits": 79,
       "languages": {}
     },
     {
@@ -3920,9 +3969,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-09-21T03:14:53Z",
-      "pushedAt": "2026-09-21T03:14:49Z",
-      "commits": 88,
+      "updatedAt": "2026-09-25T03:21:55Z",
+      "pushedAt": "2026-09-25T03:21:52Z",
+      "commits": 89,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -4468,7 +4517,7 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2024-06-20T01:53:10Z",
-      "updatedAt": "2026-09-17T02:58:42Z",
+      "updatedAt": "2026-09-26T05:20:58Z",
       "pushedAt": "2026-08-29T18:43:01Z",
       "commits": 41,
       "languages": {
@@ -4738,5 +4787,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-09-25T03:21:21.013Z"
+  "_syncedAt": "2026-09-29T04:08:16.164Z"
 }
