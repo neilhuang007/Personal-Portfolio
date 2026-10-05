@@ -6,18 +6,18 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 48,
-    "privateRepos": 56,
+    "privateRepos": 57,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 127,
-    "userCommits": 3892,
-    "totalCommits": 7336,
-    "githubApiCommits": 36594,
-    "totalLines": 4551241,
-    "totalBytes": 1793007577,
-    "clocTotalLines": 4551241,
-    "clocLanguageCount": 1577
+    "totalRepos": 129,
+    "userCommits": 2691,
+    "totalCommits": 6134,
+    "githubApiCommits": 36875,
+    "totalLines": 4670882,
+    "totalBytes": 1802462896,
+    "clocTotalLines": 4670882,
+    "clocLanguageCount": 1573
   },
   "clocLanguages": {
     "1": 187246,
@@ -29,7 +29,7 @@
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/AutofillStrikeDatabase/LOCK": 0,
     "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/shared_proto_db/LOG": 4,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/optimization_guide_hint_cache_store/LOCK": 0,
-    "tex": 57768,
+    "tex": 59444,
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/Segmentation": 0,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Network/Device": 0,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/Session": 6,
@@ -116,8 +116,7 @@
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/AutofillStrikeDatabase/LOCK": 0,
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/shared_proto_db/metadata/CURRENT": 2,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/Preferences": 2,
-    "Python": 238801,
-    "comp": 2861,
+    "Python": 400773,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/parcel_tracking_db/LOCK": 0,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Shared": 0,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/Local": 6,
@@ -129,7 +128,7 @@
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Affiliation": 0,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/discounts_db/LOG": 0,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/Secure": 2,
-    "vsh": 2125,
+    "vsh": 1994,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Secure": 2,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/PreferredApps": 2,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Top": 0,
@@ -144,7 +143,7 @@
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/discounts_db/LOCK": 0,
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/Extension": 18,
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Service": 6,
-    "kts": 298,
+    "kts": 324,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Crashpad/metadata": 0,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/Local": 6,
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/shared_proto_db/LOG": 4,
@@ -156,7 +155,7 @@
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/discounts_db/LOCK": 0,
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/shared_proto_db/metadata/CURRENT": 2,
     "tsv": 44272,
-    "MF": 89,
+    "MF": 95,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/shared_proto_db/metadata/LOG": 4,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/Network/Trust": 0,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Segmentation": 0,
@@ -165,6 +164,7 @@
     "disabled": 1318,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/parcel_tracking_db/LOG": 0,
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Variations": 2,
+    "env": 14,
     "tmp-render/chrome-profile/Default/ClientCertificates/LOCK": 0,
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/BudgetDatabase/LOCK": 0,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Last": 2,
@@ -224,7 +224,7 @@
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/shared_proto_db/metadata/LOG": 4,
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Last": 2,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/optimization_guide_hint_cache_store/LOG": 0,
-    "TypeScript": 153158,
+    "TypeScript": 156169,
     "2/src/map": 18,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/PreferredApps": 2,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/Local": 6,
@@ -261,7 +261,7 @@
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Network/TransportSecurity": 2,
     "cmake": 510,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/shared_proto_db/metadata/LOCK": 0,
-    "conf": 290,
+    "conf": 728,
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Account": 0,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Variations": 2,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Last": 2,
@@ -280,7 +280,7 @@
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/commerce_subscription_db/LOCK": 0,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/AutofillStrikeDatabase/LOCK": 0,
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/README": 2,
-    "in": 366,
+    "in": 404,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Last": 2,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/ClientCertificates/LOCK": 0,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/Network/Network": 2,
@@ -315,7 +315,7 @@
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/chrome_cart_db/LOCK": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/Sync": 6,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/Extension": 18,
-    "glsl": 122685,
+    "glsl": 120731,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/Preferences": 2,
     "db": 0,
     "eslintrc": 29,
@@ -373,7 +373,7 @@
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/chrome_cart_db/LOG": 0,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/parcel_tracking_db/LOG": 0,
     "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/BookmarkMergedSurfaceOrdering": 4,
-    "JavaScript": 290680,
+    "JavaScript": 291779,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/Favicons-journal": 0,
     "def": 534,
@@ -392,7 +392,7 @@
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/shared_proto_db/metadata/LOG": 4,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Affiliation": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/shared_proto_db/metadata/CURRENT": 2,
-    "Java": 2896967,
+    "Java": 2854750,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": 0,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/PersistentOriginTrials/LOG": 0,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Local": 6,
@@ -440,6 +440,7 @@
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/Affiliation": 0,
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/Service": 6,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/Network": 0,
+    "editorconfig": 40,
     "tmp-render/chrome-profile-1b75955ad0804183a99f2edba619aae7/Default/Top": 0,
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/Login": 0,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/Sync": 6,
@@ -538,7 +539,7 @@
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/AutofillStrikeDatabase/LOCK": 0,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/shared_proto_db/LOG": 4,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/LOG": 0,
-    "C": 5354,
+    "C": 5370,
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/discounts_db/LOG": 0,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/LOG": 0,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/parcel_tracking_db/LOCK": 0,
@@ -585,7 +586,6 @@
     "diff": 6150,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Variations": 2,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/Preferences": 2,
-    "accesswidener": 93,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/shared_proto_db/CURRENT": 2,
     "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/Favicons-journal": 0,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/ClientCertificates/LOG": 0,
@@ -657,11 +657,11 @@
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/PersistentOriginTrials/LOG": 0,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Network/Reporting": 0,
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Network/Reporting": 0,
-    "gitignore": 4105,
+    "gitignore": 4219,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": 0,
     "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/shared_proto_db/metadata/LOCK": 0,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/shared_proto_db/LOCK": 0,
-    "csv": 26806,
+    "csv": 27314,
     "tmp-render/chrome-profile/Default/Secure": 2,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Web": 0,
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/PersistentOriginTrials/LOCK": 0,
@@ -675,7 +675,6 @@
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/shared_proto_db/metadata/CURRENT": 2,
     "tmp-render/chrome-profile/Default/shared_proto_db/LOG": 6,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Network/Reporting": 0,
-    "vert": 1316,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/Network/Reporting": 0,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/Account": 0,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/AutofillAiModelCache/LOG": 0,
@@ -842,7 +841,7 @@
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/BrowsingTopicsState": 24,
     "github/CODEOWNERS": 12,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/ClientCertificates/LOG": 0,
-    "bat": 2419,
+    "bat": 2314,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/Segmentation": 0,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/Account": 0,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/parcel_tracking_db/LOG": 0,
@@ -957,7 +956,7 @@
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/Segmentation": 0,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/Network/Reporting": 0,
     "ddi": 28,
-    "service": 594,
+    "service": 598,
     "tmp-render/chrome-profile/Default/LOG": 0,
     "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/ServerCertificate-journal": 0,
     "check_cache": 2,
@@ -972,7 +971,7 @@
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Variations": 2,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/shared_proto_db/metadata/LOCK": 0,
     "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/History-journal": 0,
-    "cmd": 17,
+    "cmd": 57,
     "tmp-render/chrome-profile/Default/Network/Trust": 0,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Service": 6,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/Network/Device": 0,
@@ -1094,7 +1093,7 @@
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/Site": 6,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/Local": 6,
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/Safe": 0,
-    "gradle": 4390,
+    "gradle": 3653,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/AutofillAiModelCache/LOCK": 0,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/commerce_subscription_db/LOCK": 0,
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/Preferences": 2,
@@ -1182,7 +1181,6 @@
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/README": 2,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/chrome_cart_db/LOG": 0,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/Safe": 0,
-    "mesh": 455,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/discounts_db/LOCK": 0,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Network/Trust": 0,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/discounts_db/LOG": 0,
@@ -1206,8 +1204,7 @@
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/discount_infos_db/LOG": 0,
     "old": 8,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/History-journal": 0,
-    "iml": 954,
-    "task": 167,
+    "iml": 946,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/shared_proto_db/LOCK": 0,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/shared_proto_db/CURRENT": 2,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/Top": 0,
@@ -1219,7 +1216,7 @@
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/Secure": 2,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/discount_infos_db/LOCK": 0,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/Safe": 0,
-    "frag": 1200,
+    "frag": 525,
     "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/Segmentation": 0,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/optimization_guide_hint_cache_store/LOG": 0,
     "tmp-render/chrome-profile-1b75955ad0804183a99f2edba619aae7/Default/shared_proto_db/CURRENT": 2,
@@ -1370,7 +1367,7 @@
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/Preferences": 2,
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/BrowsingTopicsSiteData-journal": 0,
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/Local": 6,
-    "ps1": 10250,
+    "ps1": 11166,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/commerce_subscription_db/LOG": 0,
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/Service": 6,
     "tmp-render/chrome-profile-1b75955ad0804183a99f2edba619aae7/Default/parcel_tracking_db/LOCK": 0,
@@ -1482,7 +1479,7 @@
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/AutofillAiModelCache/LOCK": 0,
     "jar": 0,
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/commerce_subscription_db/LOCK": 0,
-    "Bourne Shell": 12762,
+    "Bourne Shell": 13024,
     "db-journal": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/BudgetDatabase/LOCK": 0,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Favicons-journal": 0,
@@ -1490,7 +1487,7 @@
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/chrome_cart_db/LOG": 0,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Variations": 2,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/discounts_db/LOG": 0,
-    "gitattributes": 89,
+    "gitattributes": 147,
     "tmp-render/chrome-profile/Breadcrumbs": 42,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/Session": 6,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/Network/Device": 0,
@@ -1542,7 +1539,7 @@
     "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/LOCK": 0,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Network": 0,
     "snap": 1242,
-    "example": 568,
+    "example": 762,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Network/Network": 2,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/PersistentOriginTrials/LOCK": 0,
     "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/Network/Network": 2,
@@ -1552,7 +1549,7 @@
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/ClientCertificates/LOG": 0,
     "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/chrome_cart_db/LOG": 0,
     "tmp-render/chrome-profile-1b75955ad0804183a99f2edba619aae7/Default/Safe": 0,
-    "SQL": 398,
+    "SQL": 409,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Local": 6,
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/Top": 0,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/Service": 6,
@@ -1570,7 +1567,7 @@
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/ServerCertificate-journal": 0,
     "webmanifest": 0,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/shared_proto_db/LOG": 4,
-    "fsh": 45696,
+    "fsh": 45624,
     "9/src/main/java/{com/github/haedus_industries/calculation/impl": 2,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Preferences": 2,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/shared_proto_db/metadata/CURRENT": 2,
@@ -1580,7 +1577,6 @@
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/History-journal": 0,
     "name": 6,
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/shared_proto_db/metadata/CURRENT": 2,
-    "http": 11,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/BudgetDatabase/LOG": 0,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/BrowsingTopicsState": 24,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/AutofillStrikeDatabase/LOG": 0,
@@ -1601,27 +1597,27 @@
   "languages": [
     {
       "name": "LLVM",
-      "bytes": 499793781,
-      "percentage": 27.9,
-      "lines": 12494845
+      "bytes": 499794829,
+      "percentage": 27.7,
+      "lines": 12494871
     },
     {
       "name": "C++",
-      "bytes": 458225012,
-      "percentage": 25.6,
-      "lines": 11455625
+      "bytes": 458272168,
+      "percentage": 25.4,
+      "lines": 11456804
     },
     {
       "name": "Java",
-      "bytes": 353940342,
-      "percentage": 19.7,
-      "lines": 8848509
+      "bytes": 359187156,
+      "percentage": 19.9,
+      "lines": 8979679
     },
     {
       "name": "C",
-      "bytes": 245885087,
-      "percentage": 13.7,
-      "lines": 6147127
+      "bytes": 245927240,
+      "percentage": 13.6,
+      "lines": 6148181
     },
     {
       "name": "Assembly",
@@ -1631,9 +1627,9 @@
     },
     {
       "name": "Python",
-      "bytes": 27311677,
-      "percentage": 1.5,
-      "lines": 682792
+      "bytes": 28782279,
+      "percentage": 1.6,
+      "lines": 719557
     },
     {
       "name": "MLIR",
@@ -1643,15 +1639,15 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14568985,
+      "bytes": 14716975,
       "percentage": 0.8,
-      "lines": 364225
+      "lines": 367924
     },
     {
       "name": "HTML",
-      "bytes": 11042790,
+      "bytes": 11045762,
       "percentage": 0.6,
-      "lines": 276070
+      "lines": 276144
     },
     {
       "name": "Fortran",
@@ -1660,34 +1656,34 @@
       "lines": 248289
     },
     {
-      "name": "GLSL",
-      "bytes": 4555915,
+      "name": "TypeScript",
+      "bytes": 5895560,
       "percentage": 0.3,
-      "lines": 113898
+      "lines": 147389
+    },
+    {
+      "name": "GLSL",
+      "bytes": 4578088,
+      "percentage": 0.3,
+      "lines": 114452
     },
     {
       "name": "Objective-C",
       "bytes": 4491920,
-      "percentage": 0.3,
+      "percentage": 0.2,
       "lines": 112298
     },
     {
       "name": "CSS",
-      "bytes": 3823944,
+      "bytes": 3842065,
       "percentage": 0.2,
-      "lines": 95599
+      "lines": 96052
     },
     {
       "name": "CMake",
-      "bytes": 3780928,
+      "bytes": 3793138,
       "percentage": 0.2,
-      "lines": 94523
-    },
-    {
-      "name": "TypeScript",
-      "bytes": 3625038,
-      "percentage": 0.2,
-      "lines": 90626
+      "lines": 94828
     },
     {
       "name": "FIRRTL",
@@ -1708,16 +1704,16 @@
       "lines": 28514
     },
     {
+      "name": "Shell",
+      "bytes": 1116970,
+      "percentage": 0.1,
+      "lines": 27924
+    },
+    {
       "name": "Starlark",
       "bytes": 1054187,
       "percentage": 0.1,
       "lines": 26355
-    },
-    {
-      "name": "Shell",
-      "bytes": 1013927,
-      "percentage": 0.1,
-      "lines": 25348
     },
     {
       "name": "Cuda",
@@ -1762,16 +1758,16 @@
       "lines": 8241
     },
     {
+      "name": "PowerShell",
+      "bytes": 292232,
+      "percentage": 0,
+      "lines": 7306
+    },
+    {
       "name": "SWIG",
       "bytes": 272715,
       "percentage": 0,
       "lines": 6818
-    },
-    {
-      "name": "PowerShell",
-      "bytes": 218714,
-      "percentage": 0,
-      "lines": 5468
     },
     {
       "name": "Scilab",
@@ -1817,9 +1813,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 115203,
+      "bytes": 115567,
       "percentage": 0,
-      "lines": 2880
+      "lines": 2889
     },
     {
       "name": "GAP",
@@ -1846,16 +1842,16 @@
       "lines": 1823
     },
     {
-      "name": "TeX",
-      "bytes": 72101,
-      "percentage": 0,
-      "lines": 1803
-    },
-    {
       "name": "Emacs Lisp",
       "bytes": 61782,
       "percentage": 0,
       "lines": 1545
+    },
+    {
+      "name": "TeX",
+      "bytes": 61126,
+      "percentage": 0,
+      "lines": 1528
     },
     {
       "name": "Roff",
@@ -1894,6 +1890,12 @@
       "lines": 880
     },
     {
+      "name": "C#",
+      "bytes": 34986,
+      "percentage": 0,
+      "lines": 875
+    },
+    {
       "name": "Hack",
       "bytes": 31483,
       "percentage": 0,
@@ -1906,16 +1908,10 @@
       "lines": 707
     },
     {
-      "name": "C#",
-      "bytes": 27909,
-      "percentage": 0,
-      "lines": 698
-    },
-    {
       "name": "Dockerfile",
-      "bytes": 23293,
+      "bytes": 23824,
       "percentage": 0,
-      "lines": 582
+      "lines": 596
     },
     {
       "name": "Lex",
@@ -2216,12 +2212,12 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-09-30T12:42:24Z",
-      "pushedAt": "2026-09-30T12:42:20Z",
-      "commits": 3502,
+      "updatedAt": "2026-10-04T22:02:20Z",
+      "pushedAt": "2026-10-04T22:02:17Z",
+      "commits": 3513,
       "languages": {
-        "GLSL": 1634019,
-        "Python": 24766,
+        "GLSL": 1636918,
+        "Python": 25296,
         "Shell": 366
       }
     },
@@ -2660,6 +2656,29 @@
       }
     },
     {
+      "name": "launch-video",
+      "fullName": "Haedus-Industries/launch-video",
+      "description": null,
+      "url": "https://github.com/Haedus-Industries/launch-video",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-03T13:59:41Z",
+      "updatedAt": "2026-10-03T14:45:33Z",
+      "pushedAt": "2026-10-03T14:47:57Z",
+      "commits": 3,
+      "languages": {
+        "TypeScript": 1425164,
+        "CSS": 25476,
+        "JavaScript": 2612,
+        "HTML": 2143,
+        "Java": 536
+      }
+    },
+    {
       "name": "llock",
       "fullName": "Haedus-Industries/llock",
       "description": "translate jvm bytecode into native code by llvm",
@@ -2730,24 +2749,27 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-09-26T05:08:33Z",
-      "pushedAt": "2026-09-30T22:10:47Z",
-      "commits": 806,
+      "updatedAt": "2026-10-05T03:30:22Z",
+      "pushedAt": "2026-10-05T03:48:17Z",
+      "commits": 1058,
       "languages": {
-        "Java": 6007498,
-        "TypeScript": 1422448,
-        "C": 605476,
-        "C++": 363385,
-        "JavaScript": 195707,
-        "Python": 192754,
-        "PowerShell": 120619,
-        "CSS": 96344,
-        "Shell": 90821,
+        "Java": 11253776,
+        "TypeScript": 1984985,
+        "Python": 895708,
+        "C": 647629,
+        "C++": 410541,
+        "JavaScript": 284476,
+        "PowerShell": 194137,
+        "Shell": 174919,
+        "CSS": 88989,
         "PLpgSQL": 37225,
-        "LLVM": 31705,
-        "HTML": 25823,
-        "CMake": 16992,
-        "Batchfile": 8219
+        "LLVM": 32753,
+        "CMake": 29202,
+        "HTML": 26652,
+        "GLSL": 19274,
+        "Batchfile": 8583,
+        "C#": 7077,
+        "Dockerfile": 531
       }
     },
     {
@@ -2849,6 +2871,28 @@
         "C++": 148351,
         "Java": 137110,
         "Batchfile": 375
+      }
+    },
+    {
+      "name": "oh-my-god-deepseek",
+      "fullName": "Haedus-Industries/oh-my-god-deepseek",
+      "description": "Can DeepSeek be my GOD?",
+      "url": "https://github.com/Haedus-Industries/oh-my-god-deepseek",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-04T01:49:03Z",
+      "updatedAt": "2026-10-04T04:31:53Z",
+      "pushedAt": "2026-10-04T08:23:06Z",
+      "commits": 4,
+      "languages": {
+        "TypeScript": 282821,
+        "Python": 153532,
+        "JavaScript": 56609,
+        "Shell": 18945
       }
     },
     {
@@ -3356,11 +3400,11 @@
       "language": "Python",
       "topics": [],
       "createdAt": "2025-10-24T02:15:28Z",
-      "updatedAt": "2026-09-16T19:59:17Z",
-      "pushedAt": "2026-09-16T19:59:13Z",
-      "commits": 7,
+      "updatedAt": "2026-10-03T19:55:12Z",
+      "pushedAt": "2026-10-03T19:55:09Z",
+      "commits": 10,
       "languages": {
-        "Python": 21326,
+        "Python": 30825,
         "Shell": 7800,
         "Java": 1820
       }
@@ -3586,12 +3630,11 @@
       "language": "Python",
       "topics": [],
       "createdAt": "2026-06-03T14:33:35Z",
-      "updatedAt": "2026-09-19T20:58:05Z",
-      "pushedAt": "2026-09-19T20:58:01Z",
-      "commits": 39,
+      "updatedAt": "2026-10-04T16:43:55Z",
+      "pushedAt": "2026-10-04T16:43:51Z",
+      "commits": 45,
       "languages": {
-        "Python": 1548940,
-        "TeX": 10975
+        "Python": 2153027
       }
     },
     {
@@ -3721,7 +3764,7 @@
       "topics": [],
       "createdAt": "2026-09-26T11:53:35Z",
       "updatedAt": "2026-09-26T13:29:43Z",
-      "pushedAt": "2026-09-30T13:27:41Z",
+      "pushedAt": "2026-10-05T00:42:54Z",
       "commits": 7,
       "languages": {
         "TypeScript": 1360909,
@@ -3826,9 +3869,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-09-27T04:11:36Z",
-      "pushedAt": "2026-09-30T04:01:10Z",
-      "commits": 79,
+      "updatedAt": "2026-10-04T04:46:50Z",
+      "pushedAt": "2026-10-04T04:46:46Z",
+      "commits": 80,
       "languages": {}
     },
     {
@@ -3969,9 +4012,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-09-29T04:08:51Z",
-      "pushedAt": "2026-09-29T04:08:47Z",
-      "commits": 90,
+      "updatedAt": "2026-10-01T04:03:43Z",
+      "pushedAt": "2026-10-01T04:03:40Z",
+      "commits": 91,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -4787,5 +4830,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-10-01T04:03:08.806Z"
+  "_syncedAt": "2026-10-05T03:57:51.412Z"
 }

@@ -27,9 +27,9 @@
       "name": "Python",
       "category": "languages",
       "level": "Advanced",
-      "linesRaw": 238801,
-      "lines": "239K",
-      "linesPercentage": 5.2,
+      "linesRaw": 400773,
+      "lines": "401K",
+      "linesPercentage": 8.6,
       "experience": "6 years",
       "projects": 35,
       "featured": true,
@@ -46,9 +46,9 @@
       "name": "Java",
       "category": "languages",
       "level": "Expert",
-      "linesRaw": 2896967,
+      "linesRaw": 2854750,
       "lines": "2.9M",
-      "linesPercentage": 63.7,
+      "linesPercentage": 61.1,
       "experience": "7 years",
       "projects": 45,
       "featured": true,
@@ -66,9 +66,9 @@
       "name": "JavaScript",
       "category": "languages",
       "level": "Advanced",
-      "linesRaw": 290680,
-      "lines": "291K",
-      "linesPercentage": 6.4,
+      "linesRaw": 291779,
+      "lines": "292K",
+      "linesPercentage": 6.2,
       "experience": "5 years",
       "projects": 30,
       "featured": false,
@@ -86,9 +86,9 @@
       "name": "C++",
       "category": "languages",
       "level": "Intermediate",
-      "linesRaw": 136847,
+      "linesRaw": 136863,
       "lines": "137K",
-      "linesPercentage": 3,
+      "linesPercentage": 2.9,
       "experience": "3 years",
       "projects": 15,
       "featured": false,
@@ -124,9 +124,9 @@
       "name": "TypeScript",
       "category": "languages",
       "level": "Advanced",
-      "linesRaw": 153158,
-      "lines": "153K",
-      "linesPercentage": 3.4,
+      "linesRaw": 156169,
+      "lines": "156K",
+      "linesPercentage": 3.3,
       "experience": "3 years",
       "projects": 20,
       "featured": false,
@@ -167,8 +167,8 @@
         "backend",
         "data-analysis"
       ],
-      "linesRaw": 398,
-      "lines": "398",
+      "linesRaw": 409,
+      "lines": "409",
       "linesPercentage": 0
     },
     {
@@ -331,7 +331,7 @@
         "devops",
         "scripting"
       ],
-      "linesRaw": 12762,
+      "linesRaw": 13024,
       "linesPercentage": 0.3
     },
     {
@@ -481,7 +481,7 @@
       ]
     }
   ],
-  "_clocSyncedAt": "2026-10-01T04:02:32.124Z",
-  "_clocTotalLines": 4551241,
-  "_clocLanguages": 1577
+  "_clocSyncedAt": "2026-10-05T03:57:11.591Z",
+  "_clocTotalLines": 4670882,
+  "_clocLanguages": 1573
 }
