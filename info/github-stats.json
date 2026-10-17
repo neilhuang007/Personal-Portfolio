@@ -6,16 +6,16 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 48,
-    "privateRepos": 57,
+    "privateRepos": 59,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 129,
+    "totalRepos": 131,
     "userCommits": 2844,
     "totalCommits": 6268,
-    "githubApiCommits": 36999,
+    "githubApiCommits": 37038,
     "totalLines": 4631853,
-    "totalBytes": 1800066842,
+    "totalBytes": 1843244494,
     "clocTotalLines": 4631853,
     "clocLanguageCount": 1571
   },
@@ -1596,38 +1596,38 @@
     {
       "name": "LLVM",
       "bytes": 499800960,
-      "percentage": 27.8,
+      "percentage": 27.1,
       "lines": 12495024
     },
     {
       "name": "C++",
       "bytes": 458348907,
-      "percentage": 25.5,
+      "percentage": 24.9,
       "lines": 11458723
     },
     {
       "name": "Java",
-      "bytes": 358453198,
-      "percentage": 19.9,
-      "lines": 8961330
+      "bytes": 398917070,
+      "percentage": 21.6,
+      "lines": 9972927
     },
     {
       "name": "C",
-      "bytes": 246216119,
-      "percentage": 13.7,
-      "lines": 6155403
+      "bytes": 246345619,
+      "percentage": 13.4,
+      "lines": 6158640
     },
     {
       "name": "Assembly",
       "bytes": 120451239,
-      "percentage": 6.7,
+      "percentage": 6.5,
       "lines": 3011281
     },
     {
       "name": "Python",
-      "bytes": 26530919,
-      "percentage": 1.5,
-      "lines": 663273
+      "bytes": 28756038,
+      "percentage": 1.6,
+      "lines": 718901
     },
     {
       "name": "MLIR",
@@ -1637,33 +1637,33 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14716663,
+      "bytes": 14739728,
       "percentage": 0.8,
-      "lines": 367917
+      "lines": 368493
     },
     {
       "name": "HTML",
-      "bytes": 11027211,
+      "bytes": 11027956,
       "percentage": 0.6,
-      "lines": 275680
+      "lines": 275699
     },
     {
       "name": "Fortran",
       "bytes": 9931556,
-      "percentage": 0.6,
+      "percentage": 0.5,
       "lines": 248289
     },
     {
       "name": "TypeScript",
-      "bytes": 6027767,
+      "bytes": 6074780,
       "percentage": 0.3,
-      "lines": 150694
+      "lines": 151870
     },
     {
       "name": "GLSL",
-      "bytes": 4668269,
+      "bytes": 4680158,
       "percentage": 0.3,
-      "lines": 116707
+      "lines": 117004
     },
     {
       "name": "Objective-C",
@@ -1673,15 +1673,15 @@
     },
     {
       "name": "CSS",
-      "bytes": 3842835,
+      "bytes": 3883541,
       "percentage": 0.2,
-      "lines": 96071
+      "lines": 97089
     },
     {
       "name": "CMake",
-      "bytes": 3811159,
+      "bytes": 3817186,
       "percentage": 0.2,
-      "lines": 95279
+      "lines": 95430
     },
     {
       "name": "FIRRTL",
@@ -1703,9 +1703,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 1122202,
+      "bytes": 1127731,
       "percentage": 0.1,
-      "lines": 28055
+      "lines": 28193
     },
     {
       "name": "Starlark",
@@ -1714,16 +1714,16 @@
       "lines": 26355
     },
     {
+      "name": "QML",
+      "bytes": 883141,
+      "percentage": 0,
+      "lines": 22079
+    },
+    {
       "name": "Cuda",
       "bytes": 850277,
       "percentage": 0,
       "lines": 21257
-    },
-    {
-      "name": "QML",
-      "bytes": 838203,
-      "percentage": 0,
-      "lines": 20955
     },
     {
       "name": "HIP",
@@ -1736,6 +1736,12 @@
       "bytes": 468826,
       "percentage": 0,
       "lines": 11721
+    },
+    {
+      "name": "PowerShell",
+      "bytes": 462898,
+      "percentage": 0,
+      "lines": 11572
     },
     {
       "name": "MDX",
@@ -1754,12 +1760,6 @@
       "bytes": 329655,
       "percentage": 0,
       "lines": 8241
-    },
-    {
-      "name": "PowerShell",
-      "bytes": 281363,
-      "percentage": 0,
-      "lines": 7034
     },
     {
       "name": "SWIG",
@@ -1811,9 +1811,9 @@
     },
     {
       "name": "Batchfile",
-      "bytes": 113974,
+      "bytes": 111688,
       "percentage": 0,
-      "lines": 2849
+      "lines": 2792
     },
     {
       "name": "GAP",
@@ -2216,11 +2216,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-10-12T23:32:45Z",
-      "pushedAt": "2026-10-12T23:32:41Z",
-      "commits": 3555,
+      "updatedAt": "2026-10-16T19:40:12Z",
+      "pushedAt": "2026-10-16T19:40:08Z",
+      "commits": 3561,
       "languages": {
-        "GLSL": 1727866,
+        "GLSL": 1728070,
         "Python": 25296,
         "Shell": 1065
       }
@@ -2410,18 +2410,20 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-01-24T02:46:26Z",
-      "updatedAt": "2026-09-24T14:00:32Z",
-      "pushedAt": "2026-09-20T16:33:06Z",
-      "commits": 2770,
+      "updatedAt": "2026-10-13T23:15:50Z",
+      "pushedAt": "2026-10-13T23:15:23Z",
+      "commits": 2779,
       "languages": {
-        "Java": 17421314,
+        "Java": 57805916,
         "C++": 582694,
-        "QML": 463868,
-        "C": 435960,
+        "C": 565460,
+        "QML": 508806,
+        "Python": 441723,
+        "PowerShell": 185315,
         "Rust": 65168,
-        "CMake": 32793,
+        "CMake": 38820,
+        "GLSL": 22563,
         "Shell": 20849,
-        "PowerShell": 4707,
         "Assembly": 4325,
         "Batchfile": 2808,
         "Lua": 659
@@ -2753,26 +2755,26 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
-      "updatedAt": "2026-10-09T15:39:21Z",
-      "pushedAt": "2026-10-12T23:43:36Z",
-      "commits": 1135,
+      "updatedAt": "2026-10-15T17:58:38Z",
+      "pushedAt": "2026-10-15T18:01:52Z",
+      "commits": 1145,
       "languages": {
-        "Java": 10559464,
-        "TypeScript": 2117192,
-        "Python": 965961,
+        "Java": 10575834,
+        "TypeScript": 2107515,
+        "Python": 1004089,
         "C": 936508,
         "C++": 487280,
-        "JavaScript": 284164,
-        "PowerShell": 199452,
-        "Shell": 180061,
-        "CSS": 89759,
+        "JavaScript": 306126,
+        "PowerShell": 200324,
+        "Shell": 176672,
+        "CSS": 89527,
         "CMake": 47223,
         "PLpgSQL": 39028,
         "LLVM": 38884,
         "HTML": 26652,
-        "GLSL": 18507,
-        "Batchfile": 7870,
+        "GLSL": 7629,
         "C#": 7077,
+        "Batchfile": 5584,
         "Dockerfile": 531
       }
     },
@@ -2906,12 +2908,12 @@
       "url": "https://github.com/Haedus-Industries/ollvm-19",
       "isPrivate": false,
       "isFork": false,
-      "stars": 19,
+      "stars": 20,
       "forks": 8,
       "language": "LLVM",
       "topics": [],
       "createdAt": "2025-04-04T00:29:49Z",
-      "updatedAt": "2026-10-08T08:53:52Z",
+      "updatedAt": "2026-10-13T19:07:40Z",
       "pushedAt": "2025-07-02T11:40:36Z",
       "commits": 3,
       "languages": {
@@ -3711,6 +3713,27 @@
       }
     },
     {
+      "name": "Hill-campus-work",
+      "fullName": "neilhuang007/Hill-campus-work",
+      "description": null,
+      "url": "https://github.com/neilhuang007/Hill-campus-work",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-14T23:41:12Z",
+      "updatedAt": "2026-10-15T17:17:23Z",
+      "pushedAt": "2026-10-15T17:17:15Z",
+      "commits": 11,
+      "languages": {
+        "Python": 1714191,
+        "Java": 41377,
+        "Shell": 4088
+      }
+    },
+    {
       "name": "Hill-server",
       "fullName": "neilhuang007/Hill-server",
       "description": "Hill School 175th Anniversary Minecraft competition server",
@@ -3722,15 +3745,15 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-08-26T03:08:53Z",
-      "updatedAt": "2026-10-12T15:54:40Z",
-      "pushedAt": "2026-10-12T15:54:35Z",
-      "commits": 37,
+      "updatedAt": "2026-10-13T13:02:24Z",
+      "pushedAt": "2026-10-13T13:02:20Z",
+      "commits": 38,
       "languages": {
-        "Java": 554396,
-        "Shell": 66721,
-        "Python": 65920,
-        "JavaScript": 65388,
-        "PowerShell": 41895
+        "Java": 575919,
+        "Python": 85080,
+        "Shell": 71551,
+        "JavaScript": 66491,
+        "PowerShell": 41950
       }
     },
     {
@@ -3824,6 +3847,28 @@
       }
     },
     {
+      "name": "Nanotech",
+      "fullName": "neilhuang007/Nanotech",
+      "description": "NanoTech Pharma marketing site built with React, TypeScript, and Vite",
+      "url": "https://github.com/neilhuang007/Nanotech",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "TypeScript",
+      "topics": [],
+      "createdAt": "2026-10-13T18:11:38Z",
+      "updatedAt": "2026-10-13T18:11:56Z",
+      "pushedAt": "2026-10-13T18:11:51Z",
+      "commits": 1,
+      "languages": {
+        "TypeScript": 56690,
+        "CSS": 40938,
+        "Python": 11917,
+        "HTML": 745
+      }
+    },
+    {
       "name": "nativify",
       "fullName": "neilhuang007/nativify",
       "description": "Public issue tracker for Nativify Java obfuscation services and integrations.",
@@ -3873,7 +3918,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-10-11T04:33:06Z",
-      "pushedAt": "2026-10-12T04:22:48Z",
+      "pushedAt": "2026-10-16T03:10:08Z",
       "commits": 81,
       "languages": {}
     },
@@ -4015,9 +4060,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-10-09T04:29:52Z",
-      "pushedAt": "2026-10-09T04:29:47Z",
-      "commits": 93,
+      "updatedAt": "2026-10-13T05:24:13Z",
+      "pushedAt": "2026-10-13T05:24:09Z",
+      "commits": 94,
       "languages": {
         "JavaScript": 145489,
         "CSS": 122926,
@@ -4426,7 +4471,7 @@
       "isPrivate": false,
       "isFork": false,
       "stars": 36,
-      "forks": 2,
+      "forks": 3,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
@@ -4833,5 +4878,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-10-13T05:23:38.398Z"
+  "_syncedAt": "2026-10-17T02:55:37.874Z"
 }
