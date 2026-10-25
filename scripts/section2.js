@@ -7,6 +7,19 @@ let activeProjectWindows = [];
 let windowZIndex = 1100;
 const projectWindowScrollPositions = new WeakMap();
 
+function constrainProjectWindow(projectWindow) {
+    const bounds = projectWindow.getBoundingClientRect();
+    const left = Math.max(0, Math.min(bounds.left, document.documentElement.clientWidth - bounds.width));
+    const top = Math.max(0, Math.min(bounds.top, document.documentElement.clientHeight - bounds.height));
+    if (left !== bounds.left || top !== bounds.top) {
+        Object.assign(projectWindow.style, { left: `${left}px`, top: `${top}px`, transform: 'none' });
+    }
+}
+
+window.addEventListener('resize', () => {
+    activeProjectWindows.filter(projectWindow => !projectWindow.classList.contains('minimized')).forEach(constrainProjectWindow);
+});
+
 function bringProjectWindowToFront(projectWindow) {
     projectWindow.style.zIndex = windowZIndex++;
 }
@@ -220,12 +233,7 @@ function restoreProjectWindow(window) {
     Object.assign(window.querySelector('.project-content'), projectWindowScrollPositions.get(window));
     projectWindowScrollPositions.delete(window);
     bringProjectWindowToFront(window);
-    const bounds = window.getBoundingClientRect();
-    const left = Math.max(0, Math.min(bounds.left, document.documentElement.clientWidth - bounds.width));
-    const top = Math.max(0, Math.min(bounds.top, document.documentElement.clientHeight - bounds.height));
-    if (left !== bounds.left || top !== bounds.top) {
-        Object.assign(window.style, { left: `${left}px`, top: `${top}px`, transform: 'none' });
-    }
+    constrainProjectWindow(window);
 
     const header = window.querySelector('.project-window-header');
     header.onclick = null;

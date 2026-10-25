@@ -47,6 +47,7 @@ body:has(#section3.visible) .vim-tabline button:focus-visible { outline: none; }
     min-height: 100%;
     margin-inline: auto;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto minmax(min-content, 1fr) auto;
     gap: clamp(12px, 2.5dvh, 26px);
 }
@@ -54,7 +55,7 @@ body:has(#section3.visible) .vim-tabline button:focus-visible { outline: none; }
 .skills-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
 #skills-title { color: var(--vim-heading); font-size: 21px; font-weight: 700; line-height: 1.5; }
 #skills-title > span { color: var(--vim-meta); margin-left: 0.5ch; }
-.skills-filters { display: flex; gap: clamp(15px, 3vw, 44px); align-items: center; }
+.skills-filters { display: flex; flex-wrap: wrap; gap: clamp(15px, 3vw, 44px); align-items: center; }
 #section3 .skills-filter { display: inline-flex; gap: 1ch; color: var(--vim-meta); padding: 1px 1ch; font-size: 11px; }
 .skills-filter-key { color: var(--vim-dim); }
 
@@ -177,4 +178,13 @@ body:has(#section3.visible) .vim-tabline button:focus-visible { outline: none; }
         column-gap: 24px;
     }
     .skills-group[data-group] { grid-area: auto; }
+}
+
+@media (max-width: 480px) {
+    .skills-terminal { gap: 28px; }
+    .skills-filters { justify-content: flex-start; gap: 10px 16px; }
+    .skills-catalog { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
+    .skills-group[data-group], .skills-catalog:not([data-filter="all"]) .skills-group { grid-area: auto; max-width: none; }
+    .skills-inspector { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    .skills-status { flex-wrap: wrap; white-space: normal; row-gap: 6px; }
 }

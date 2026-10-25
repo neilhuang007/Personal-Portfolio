@@ -433,5 +433,6 @@ class JunieShaderAnimation {
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    if (document.body.classList.contains('device-blocked')) return;
     new JunieShaderAnimation();
 });

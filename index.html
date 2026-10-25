@@ -6,46 +6,62 @@
     <title>Neil Huang - AI Researcher & Full-Stack Developer</title>
     <link rel="preload" href="fonts/monocraft/Monocraft.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/monocraft/Monocraft-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles/fonts.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/fonts.css?v=20261025.2">
 
 
-    <script src="scripts/dataloader.js?v=20261025.1"></script>
-    <script src="scripts/ascii-transition.js?v=20261025.1" defer></script>
-    <script src="scripts/script.js?v=20261025.1" defer></script>
-    <script src="scripts/bg.js?v=20261025.1" ></script>
+    <script src="scripts/dataloader.js?v=20261025.2"></script>
+    <script src="scripts/ascii-transition.js?v=20261025.2" defer></script>
+    <script src="scripts/script.js?v=20261025.2" defer></script>
+    <script src="scripts/bg.js?v=20261025.2" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="styles/style.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/style.css?v=20261025.2">
 
-    <link rel="stylesheet" href="styles/section2.css?v=20261025.1">
-    <link rel="stylesheet" href="styles/ascii-ui.css?v=20261025.1">
-    <link rel="stylesheet" href="styles/vim-ui.css?v=20261025.1">
-    <link rel="stylesheet" href="styles/ascii-scrollbars.css?v=20261025.1">
-    <link rel="stylesheet" href="styles/ascii-transition.css?v=20261025.1">
-    <link rel="stylesheet" href="styles/projects.css?v=20261025.1">
-    <link rel="stylesheet" href="styles/section3.css?v=20261025.1">
-    <link rel="stylesheet" href="styles/timeline-window.css?v=20261025.1">
-    <script src="scripts/ascii-ui.js?v=20261025.1" defer></script>
-    <script src="scripts/vim-ui.js?v=20261025.1" defer></script>
-    <script src="scripts/ascii-scrollbars.js?v=20261025.1" defer></script>
-    <script src="scripts/section2.js?v=20261025.1" defer></script>
-    <script src="scripts/section3.js?v=20261025.1" defer></script>
-    <script src="scripts/timeline-window.js?v=20261025.1" defer></script>
+    <link rel="stylesheet" href="styles/section2.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/ascii-ui.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/vim-ui.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/ascii-scrollbars.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/ascii-transition.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/projects.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/section3.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/timeline-window.css?v=20261025.2">
+    <script src="scripts/ascii-ui.js?v=20261025.2" defer></script>
+    <script src="scripts/vim-ui.js?v=20261025.2" defer></script>
+    <script src="scripts/ascii-scrollbars.js?v=20261025.2" defer></script>
+    <script src="scripts/section2.js?v=20261025.2" defer></script>
+    <script src="scripts/section3.js?v=20261025.2" defer></script>
+    <script src="scripts/timeline-window.js?v=20261025.2" defer></script>
 </head>
 <body>
 
-<!-- Phone Access Blocker -->
-<div class="phone-blocker" id="phoneBlocker">
-    <div class="phone-blocker-content">
-        <div class="phone-blocker-text">
-            PHONE ACCESS<br>
-            NOT SUPPORTED
-        </div>
-        <div class="phone-blocker-subtext">
-            Please switch to computer<br>
-            Sorry for the inconvenience
+<!-- Restricted device terminal -->
+<section class="phone-blocker" id="phoneBlocker" role="dialog" aria-modal="true" aria-labelledby="device-error-title" aria-describedby="device-error-help" tabindex="-1" inert>
+    <div class="restriction-terminal">
+        <header class="restriction-header"><span>[!] runtime.log</span><span>[RO]</span></header>
+        <div class="restriction-error">
+            <p class="restriction-command"><span>$</span> ./portfolio</p>
+            <pre class="restriction-code" role="img" aria-label="Error 403, drawn with programming error logs">TypeErro        e is not            at portfolio.js:403;        or: mobile is not a desk
+Tracebac        recent c            ile &quot;portfolio.py&quot;,         ; Traceback (most recent
+fatal er        ktop vie        t found;             termina                        p viewpo
+DesktopR        rror: ex        esktop,             ile; Des                        ted desk
+Exceptio        ead &quot;mai        pportedD            on; Exce                        Unsuppor
+panic: u        ed viewp        outine 1            panic: u                        outine 1
+TypeErro        e is not        op; at p            403; Typ                        desktop;
+Tracebac        recent c        ): File             y&quot;, line                        cent cal
+fatal error: desktop viewpor    t found;             termina        al error: desktop vi
+DesktopRequiredError: expect    esktop,             ile; Des        iredError: expected
+                ead &quot;mai        pportedD            on; Exce                        Unsuppor
+                ed viewp        outine 1            panic: u                        outine 1
+                e is not        op; at p            403; Typ                        desktop;
+                recent c        ): File             y&quot;, line                        cent cal
+                ktop vie        t found;             termina                        p viewpo
+                rror: ex        esktop,             ile; Des                        ted desk
+                ead &quot;mai            tedDeviceException;         n in thread &quot;main&quot;: Unsu
+                ed viewp            ne 1 [running]; pani        ported viewport; gorouti</pre>
+            <h1 class="restriction-title" id="device-error-title">DesktopRequiredError</h1>
+            <p class="restriction-help" id="device-error-help">Open this site in a desktop browser.</p>
         </div>
     </div>
-</div>
+</section>
 
 <canvas class="junie-hero-section__animation"></canvas>
 <div id="app">

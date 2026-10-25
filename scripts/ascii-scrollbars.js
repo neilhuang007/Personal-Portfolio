@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    const selector = '.editor, .intro, #section2, #section3, .project-content, .tag-window-content, .modal-content, .skill-expansion, .project-article pre, .timeline-full, .timeline';
+    const selector = '.editor, .intro, #section1, #section2, #section3, .project-content, .tag-window-content, .modal-content, .skill-expansion, .project-article pre, .timeline-full, .timeline';
     const decoration = '.ascii-scrollbar, .ascii-frame, .ascii-rule, .ascii-surface, .pixel-button-mask';
     const entries = new Map();
     let nextId = 0;
@@ -37,7 +37,7 @@
                 rect.right = Math.min(rect.right, bounds.left + parent.clientLeft + parent.clientWidth);
             }
         }
-        if (element.id === 'section2') {
+        if (element.id === 'section1' || element.id === 'section2') {
             rect.top += 58;
             rect.bottom -= 52;
             rect.right -= 4;
@@ -52,6 +52,7 @@
     function labelFor(element) {
         if (element.matches('.editor')) return 'Resume';
         if (element.matches('.intro')) return 'Introduction';
+        if (element.id === 'section1') return 'Home';
         if (element.id === 'section2') return 'About';
         if (element.id === 'section3') return 'Skills';
         if (element.id === 'circuit-scroll-area') return 'Timeline';

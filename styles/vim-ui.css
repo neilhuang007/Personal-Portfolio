@@ -145,7 +145,7 @@ body, body *, body *::before, body *::after { font-family: var(--vim-font) !impo
 .project-desc { font-size: 9px; line-height: 1.5; color: #777; }
 .project-card:hover .project-name { color: #fff; }
 
-.project-window { width: 760px; height: 560px; max-width: calc(100vw - 32px); max-height: calc(100dvh - 90px); min-width: 320px; }
+.project-window { width: 760px; height: 560px; max-width: calc(100vw - 32px); max-height: calc(100dvh - 90px); min-width: 320px; min-height: min(300px, calc(100dvh - 90px)); }
 /* Project terminals use character frames and compact title bars. */
 .project-window[data-ascii-frame] { padding: 22px 26px; }
 .project-window[data-ascii-frame] > .ascii-frame { color: #aaa; }
@@ -361,3 +361,19 @@ body, body *, body *::before, body *::after { font-family: var(--vim-font) !impo
 .category-title, .section-header { width: fit-content; max-width: 100%; }
 .editor-container, .intro { min-height: 0; }
 .intro { justify-content: safe center; }
+
+/* Page controls stay on opposite sides, including compact desktop windows. */
+#section2 .section2-scroll { position: fixed; right: 20px; bottom: 18px; }
+#section2 .back-indicator { left: 20px; right: auto; bottom: 18px; }
+@media (max-width: 480px) {
+    #section2 .section2-scroll { right: 12px; }
+    #section2 .back-indicator { left: 12px; }
+    #section2 :is(.section2-scroll, .back-indicator) { font-size: 9px; gap: 4px; }
+}
+
+@media (max-width: 768px) and (max-height: 600px) {
+    #section1 { display: block; overflow-y: auto; }
+    #section1 .editor-container { height: 260px; max-height: none; margin-bottom: 24px; }
+    #section1 .intro { min-height: 300px; overflow: visible; }
+    #section1 .scroll-indicator { position: fixed; bottom: 18px; right: 12px; }
+}

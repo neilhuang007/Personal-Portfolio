@@ -2,23 +2,18 @@
 function isMobileDevice() {
     const userAgent = navigator.userAgent.toLowerCase();
     const isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
-    const isSmallScreen = window.innerWidth <= 768;
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    
-    return isMobile || (isSmallScreen && isTouchDevice);
-}
-
-function showPhoneBlocker() {
-    const phoneBlocker = document.getElementById('phoneBlocker');
-    if (phoneBlocker) {
-        phoneBlocker.classList.add('active');
-    }
+    const isDesktopModeIPad = navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+    return isMobile || isDesktopModeIPad || navigator.userAgentData?.mobile === true;
 }
 
 function checkForMobileAndBlock() {
-    if (isMobileDevice()) {
-        showPhoneBlocker();
-    }
+    const blocked = isMobileDevice();
+    const phoneBlocker = document.getElementById('phoneBlocker');
+    phoneBlocker.classList.toggle('active', blocked);
+    phoneBlocker.inert = !blocked;
+    document.getElementById('app').inert = blocked;
+    document.body.classList.toggle('device-blocked', blocked);
+    if (blocked) phoneBlocker.focus({ preventScroll: true });
 }
 
 // Check immediately when script loads
@@ -159,45 +154,55 @@ function goToSection(sectionNum) {
     else complete();
 }
 
-// Background wheel gestures switch buffers. Windows retain their native scroll.
-const windowScrollSelector = '.skills-group, .skills-detail-window, .skills-heading, .skills-filters, .editor-container, .vim-window, .card, .skill-card, .project-decks-container, .intro > *, .ascii-scrollbar, .vim-tabline, .modal-overlay, .circuit-modal, .timeline-window';
+// Only actual scroll containers keep wheel gestures inside the current buffer.
 let wheelDistance = 0;
 let lastWheelTime = 0;
 let wheelConsumed = false;
+let wheelScrollOwner = null;
 
-function isWindowScroll(target) {
-    if (target.closest(windowScrollSelector)) return true;
-    // Also protect independently scrolling content added by dynamic windows.
-    for (let element = target; element && !element.matches('#app > section, #app, body'); element = element.parentElement) {
-        if (element.scrollHeight > element.clientHeight + 1 && /auto|scroll/.test(getComputedStyle(element).overflowY)) return true;
+function findWheelScrollTarget(target, delta) {
+    for (let element = target; element && element !== document.body; element = element.parentElement) {
+        const maxScroll = element.scrollHeight - element.clientHeight;
+        if (maxScroll <= 1 || !/^(auto|scroll)$/.test(getComputedStyle(element).overflowY)) continue;
+        // Independent windows retain scrolling at their edges. Full pages can yield.
+        if (!element.matches('#app > section') || (delta < 0 ? element.scrollTop > 1 : element.scrollTop < maxScroll - 1)) return element;
     }
-    return false;
+    return null;
 }
 
 window.addEventListener('wheel', event => {
     if (event.defaultPrevented || event.ctrlKey || event.shiftKey || !event.deltaY || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
     const target = event.target instanceof Element ? event.target : event.target.parentElement;
-    // Read overflowing skills before using a background gesture to leave the page.
-    const readingSkills = target && section3.contains(target) &&
-        (section3.scrollTop > 1 || (event.deltaY > 0 && section3.scrollHeight > section3.clientHeight + 1));
-    if (!target || readingSkills || document.querySelector('.circuit-modal.active, .modal-overlay.active, dialog[open]') || isWindowScroll(target)) {
+    if (!target || document.querySelector('.circuit-modal.active, .modal-overlay.active, dialog[open], .phone-blocker.active')) {
         wheelDistance = 0;
         return;
     }
 
-    event.preventDefault();
     const now = performance.now();
     if (now - lastWheelTime > 220) {
         wheelDistance = 0;
         wheelConsumed = false;
+        wheelScrollOwner = null;
     }
     lastWheelTime = now;
     // Consume the rest of this gesture so trackpad momentum cannot skip a page.
     if (transitioning || wheelConsumed) {
+        event.preventDefault();
         wheelDistance = 0;
         wheelConsumed = true;
         return;
     }
+
+    const scrollTarget = findWheelScrollTarget(target, event.deltaY);
+    if (scrollTarget) {
+        wheelDistance = 0;
+        wheelScrollOwner = scrollTarget;
+        return;
+    }
+
+    event.preventDefault();
+    // Finishing a content scroll must not switch pages on the same gesture.
+    if (wheelScrollOwner) return;
 
     const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1;
     const delta = event.deltaY * unit;
@@ -251,7 +256,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     // Load all data first
     await DataLoader.loadData();
 
-    console.log('Buffers ready. Scroll the background to switch buffers, or scroll inside a window to read.');
+    console.log('Buffers ready. Scroll content to read, or scroll elsewhere to switch buffers.');
 
     // Initialize with loaded data
     await initializeResume();
