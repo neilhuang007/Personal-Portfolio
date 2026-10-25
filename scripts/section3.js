@@ -181,6 +181,7 @@
 
     function onKeyDown(event) {
         if (!section.classList.contains('visible') || section.inert || document.querySelector('dialog[open]') || event.ctrlKey || event.metaKey || event.altKey) return;
+        if (!event.target.closest('.skills-catalog, .skills-filters')) return;
         if (event.target.closest('input, textarea, select, [contenteditable="true"], .modal-overlay, .project-window, .circuit-modal')) return;
         const key = event.key.toLowerCase();
         const filter = filters.find(item => item.shortcut === key);

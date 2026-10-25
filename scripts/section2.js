@@ -184,7 +184,24 @@ function openProjectWindow(projectData) {
 
     // Make window draggable
     makeDraggable(projectWindow);
+    projectWindow.addEventListener('focusin', () => {
+        bringProjectWindowToFront(projectWindow.classList.contains('minimized') ? projectWindow.parentElement : projectWindow);
+    });
     projectWindow.addEventListener('keydown', event => {
+        if (event.key === 'Tab' && !projectWindow.classList.contains('minimized')) {
+            const controls = [...projectWindow.querySelectorAll('button, a[href], [tabindex]')]
+                .filter(element => element.tabIndex >= 0 && element.getClientRects().length);
+            const first = controls[0];
+            const last = controls[controls.length - 1];
+            if (first && event.shiftKey && (document.activeElement === first || document.activeElement === projectWindow)) {
+                event.preventDefault();
+                last.focus();
+            } else if (last && !event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+            return;
+        }
         if (event.key !== 'Escape') return;
         event.stopPropagation();
         closeProjectWindow(projectWindow.querySelector('.window-control.close'));
@@ -254,7 +271,10 @@ function closeProjectWindow(button) {
     }
 
     window.remove();
-    const focusTarget = nextMinimized?.querySelector('.window-control.maximize') || window.returnFocus;
+    let focusTarget = nextMinimized?.querySelector('.window-control.maximize') || window.returnFocus;
+    if (!focusTarget?.isConnected || !focusTarget.getClientRects().length || focusTarget.closest('[inert]')) {
+        focusTarget = document.querySelector('.vim-tabline [aria-current="page"]');
+    }
     if (restoreFocus && focusTarget?.isConnected) {
         focusTarget.focus({ preventScroll: true });
     }

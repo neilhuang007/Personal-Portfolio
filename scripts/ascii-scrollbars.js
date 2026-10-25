@@ -7,6 +7,7 @@
     const entries = new Map();
     let nextId = 0;
     let frame = 0;
+    let railRegion;
 
     function refresh() {
         if (!frame) frame = requestAnimationFrame(updateAll);
@@ -25,7 +26,7 @@
         };
         for (let parent = element; parent; parent = parent.parentElement) {
             const style = getComputedStyle(parent);
-            if (style.visibility === 'hidden' || style.display === 'none' || Number(style.opacity) === 0) return null;
+            if (parent.inert || style.visibility === 'hidden' || style.display === 'none' || Number(style.opacity) === 0) return null;
             if (parent === element) continue;
             const bounds = parent.getBoundingClientRect();
             if (/(auto|scroll|hidden|clip)/.test(style.overflowY)) {
@@ -63,10 +64,12 @@
     function register(element, virtual) {
         if (entries.has(element)) return;
         if (!element.id) element.id = `ascii-scroll-area-${++nextId}`;
-        if (!element.hasAttribute('tabindex')) element.tabIndex = 0;
+        const managesFocus = !element.hasAttribute('tabindex');
+        if (managesFocus) element.tabIndex = -1;
+        if (!element.hasAttribute('role') && element.tagName !== 'SECTION') element.setAttribute('role', 'region');
         if (!element.hasAttribute('aria-label')) element.setAttribute('aria-label', labelFor(element));
         element.classList.add('ascii-scrollable');
-        const entry = { element, virtual, rails: [], observed: new Set() };
+        const entry = { element, virtual, managesFocus, rails: [], observed: new Set() };
         entries.set(element, entry);
         resizeObserver.observe(element);
         const axes = virtual ? [virtual.axis] : ['vertical', 'horizontal'];
@@ -87,7 +90,7 @@
         rail.setAttribute('aria-orientation', axis);
         rail.setAttribute('aria-label', `${labelFor(element)} ${axis} scrollbar`);
         rail.setAttribute('aria-valuemin', '0');
-        document.body.append(rail);
+        railRegion.append(rail);
 
         const state = {
             rail, horizontal, cells: [], cellSize: 12, length: 0, thumbSize: 0, thumbStart: 0,
@@ -162,7 +165,7 @@
 
     function updateAll() {
         frame = 0;
-        const modal = [...document.querySelectorAll('.circuit-modal.active, .modal-overlay.active')]
+        const modal = [...document.querySelectorAll('dialog[open], .phone-blocker.active, .circuit-modal.active, .modal-overlay.active')]
             .find(element => element.getClientRects().length && getComputedStyle(element).visibility !== 'hidden');
         for (const [element, entry] of entries) {
             if (!element.isConnected) {
@@ -185,11 +188,15 @@
                 }
             }
             const rect = visibleRect(element);
+            const style = getComputedStyle(element);
+            if (entry.managesFocus) {
+                const scrollable = entry.virtual || entry.rails.some(state => state.max > 1 && /auto|scroll/.test(state.horizontal ? style.overflowX : style.overflowY));
+                element.tabIndex = rect && scrollable && (!modal || modal.contains(element)) ? 0 : -1;
+            }
             if (!rect || (modal && !modal.contains(element))) {
                 entry.rails.forEach(state => { state.rail.hidden = true; });
                 continue;
             }
-            const style = getComputedStyle(element);
             let zIndex = 30;
             for (let parent = element; parent; parent = parent.parentElement) {
                 zIndex = Math.max(zIndex, (parseInt(getComputedStyle(parent).zIndex, 10) || 0) + 1);
@@ -244,6 +251,10 @@
     }
 
     function initialize() {
+        railRegion = document.createElement('div');
+        railRegion.setAttribute('role', 'region');
+        railRegion.setAttribute('aria-label', 'Scroll controls');
+        document.body.append(railRegion);
         scan(document.body);
         new MutationObserver(records => {
             let changed = false;
@@ -253,7 +264,7 @@
                 changed = true;
             }
             if (changed) refresh();
-        }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden'] });
+        }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'inert', 'open'] });
         document.addEventListener('scroll', refresh, { capture: true, passive: true });
         document.addEventListener('load', refresh, true);
         window.addEventListener('resize', refresh);

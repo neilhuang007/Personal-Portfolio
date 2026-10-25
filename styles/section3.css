@@ -83,7 +83,7 @@ body:has(#section3.visible) .vim-tabline button:focus-visible { outline: none; }
 .skills-columns, #section3 .skills-row { display: grid; grid-template-columns: 2ch minmax(0, 1fr) 4ch 6ch; column-gap: 0.8ch; align-items: center; }
 .skills-columns { color: var(--vim-dim); font-size: 0.85em; height: 24px; }
 .skills-experience, .skills-lines { text-align: right; white-space: nowrap; }
-#section3 .skills-row { width: 100%; min-height: var(--skills-row-height); text-align: left; }
+#section3 .skills-row { width: 100%; min-height: max(24px, var(--skills-row-height)); text-align: left; }
 .skills-row-marker { color: var(--vim-accent); }
 .skills-row-name { min-width: 0; white-space: nowrap; }
 .skills-row .skills-experience { color: var(--vim-meta); font-size: 0.9em; }
@@ -105,7 +105,7 @@ body:has(#section3.visible) .vim-tabline button:focus-visible { outline: none; }
 
 .skills-status { display: flex; align-items: center; gap: 2ch; color: var(--vim-label); font-size: 10px; line-height: 25px; white-space: nowrap; }
 .skills-file > span { color: var(--vim-muted); }
-.skills-key-help { margin-left: auto; color: var(--vim-meta); }
+.skills-key-help { margin-left: auto; color: var(--vim-meta); min-width: 0; flex: 1; white-space: normal; line-height: 1.6; }
 #skills-position { color: var(--vim-heading); }
 #section3 .skills-back { color: var(--vim-meta); padding: 1px 1ch; line-height: 1.5; }
 

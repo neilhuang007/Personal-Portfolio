@@ -41,7 +41,7 @@ body, body *, body *::before, body *::after { font-family: var(--vim-font) !impo
     font-size: inherit;
     cursor: pointer;
 }
-.vim-tabline button span { margin-right: 8px; opacity: 0.7; }
+.vim-tabline button span { margin-right: 8px; }
 .vim-tabline button[aria-current], .vim-tabline button:hover { color: #d8d8d8; background: transparent; }
 .vim-tabline button[aria-current] span { color: #a4c59a; opacity: 1; }
 .vim-tabline button:focus-visible { outline: 1px dotted white; outline-offset: 3px; }
@@ -266,6 +266,8 @@ body, body *, body *::before, body *::after { font-family: var(--vim-font) !impo
 
 /* Controls keep fixed rectangular backgrounds. Panel surfaces retain their pixel edges. */
 .pixel-button {
+    min-width: 24px;
+    min-height: 24px;
     isolation: isolate;
     overflow: visible !important;
     background: transparent !important;
@@ -329,6 +331,16 @@ body, body *, body *::before, body *::after { font-family: var(--vim-font) !impo
     opacity: 1;
 }
 .pixel-button:focus-visible { outline: 1px solid #d8d8d8; outline-offset: 3px; }
+
+.scroll-indicator, .back-indicator { color: #bbb; font-family: inherit; }
+[data-motion-toggle] { border: 0; background: transparent; color: #bbb; font: inherit; cursor: pointer; }
+.vim-tabline [data-motion-toggle] { margin-left: auto; flex-shrink: 0; }
+.vim-tabline [data-motion-symbol] { margin: 0; }
+.timeline-window-header [data-motion-toggle] { margin-left: auto; padding: 4px; }
+@media (max-width: 480px) {
+    .vim-tabline { padding-inline: 8px; }
+    .vim-tabline [data-buffer] > span:not(.pixel-button-mask) { display: none; }
+}
 
 /* Project selection follows the title, including titles that wrap onto two rows. */
 .project-name {

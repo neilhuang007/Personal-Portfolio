@@ -19,7 +19,7 @@
 
     function run(outgoing, incoming, complete, direction = 1) {
         if (finishActive) finishActive();
-        if (motion.matches || document.hidden) {
+        if (motion.matches || window.PortfolioMotion?.paused || document.hidden) {
             complete();
             return;
         }

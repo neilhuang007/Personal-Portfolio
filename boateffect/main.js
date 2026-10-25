@@ -1,4 +1,4 @@
-import { createWordOcean } from './word-ocean.js';
+import { createWordOcean } from './word-ocean.js?v=20261025.3';
 
 // URL overrides, e.g. ?boat=SHIP&ocean=SEA&plane=JET&zoom=0.5&intro=1&sway=0.2&speed=0.5
 const q = new URLSearchParams(location.search);
@@ -18,12 +18,27 @@ const scene = createWordOcean(document.getElementById('scene'), {
   speed: num('speed'),
 });
 
-// Space: pause, R: replay the intro.
-window.addEventListener('keydown', (e) => {
-  if (e.code === 'Space') {
-    e.preventDefault();
-    scene.togglePause();
-  } else if (e.key === 'r' || e.key === 'R') {
-    scene.restart();
-  }
-});
+// Embedded scenes share the visible pause control in their dialog header.
+let motion;
+try { motion = window.parent.PortfolioMotion; } catch (_) { /* Other origins use the local control. */ }
+if (motion) {
+  scene.setPaused(motion.paused);
+  const onMotionChange = event => scene.setPaused(event.detail.paused);
+  window.parent.document.addEventListener('portfolio:motion-change', onMotionChange);
+  window.addEventListener('pagehide', () => {
+    window.parent.document.removeEventListener('portfolio:motion-change', onMotionChange);
+    scene.destroy();
+  }, { once: true });
+} else {
+  const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  const button = document.getElementById('scene-pause');
+  let paused = preference.matches;
+  const update = () => {
+    scene.setPaused(paused);
+    button.textContent = paused ? '[>] Resume animation' : '[||] Pause animation';
+  };
+  button.hidden = false;
+  button.addEventListener('click', () => { paused = !paused; update(); });
+  preference.addEventListener('change', event => { paused = event.matches; update(); });
+  update();
+}

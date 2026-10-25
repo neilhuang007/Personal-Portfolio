@@ -6,30 +6,31 @@
     <title>Neil Huang - AI Researcher & Full-Stack Developer</title>
     <link rel="preload" href="fonts/monocraft/Monocraft.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/monocraft/Monocraft-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles/fonts.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/fonts.css?v=20261025.3">
 
 
-    <script src="scripts/dataloader.js?v=20261025.2"></script>
-    <script src="scripts/ascii-transition.js?v=20261025.2" defer></script>
-    <script src="scripts/script.js?v=20261025.2" defer></script>
-    <script src="scripts/bg.js?v=20261025.2" ></script>
+    <script src="scripts/dataloader.js?v=20261025.3"></script>
+    <script src="scripts/motion.js?v=20261025.3" defer></script>
+    <script src="scripts/ascii-transition.js?v=20261025.3" defer></script>
+    <script src="scripts/script.js?v=20261025.3" defer></script>
+    <script src="scripts/bg.js?v=20261025.3" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="styles/style.css?v=20261025.2">
+    <link rel="stylesheet" href="styles/style.css?v=20261025.3">
 
-    <link rel="stylesheet" href="styles/section2.css?v=20261025.2">
-    <link rel="stylesheet" href="styles/ascii-ui.css?v=20261025.2">
-    <link rel="stylesheet" href="styles/vim-ui.css?v=20261025.2">
-    <link rel="stylesheet" href="styles/ascii-scrollbars.css?v=20261025.2">
-    <link rel="stylesheet" href="styles/ascii-transition.css?v=20261025.2">
-    <link rel="stylesheet" href="styles/projects.css?v=20261025.2">
-    <link rel="stylesheet" href="styles/section3.css?v=20261025.2">
-    <link rel="stylesheet" href="styles/timeline-window.css?v=20261025.2">
-    <script src="scripts/ascii-ui.js?v=20261025.2" defer></script>
-    <script src="scripts/vim-ui.js?v=20261025.2" defer></script>
-    <script src="scripts/ascii-scrollbars.js?v=20261025.2" defer></script>
-    <script src="scripts/section2.js?v=20261025.2" defer></script>
-    <script src="scripts/section3.js?v=20261025.2" defer></script>
-    <script src="scripts/timeline-window.js?v=20261025.2" defer></script>
+    <link rel="stylesheet" href="styles/section2.css?v=20261025.3">
+    <link rel="stylesheet" href="styles/ascii-ui.css?v=20261025.3">
+    <link rel="stylesheet" href="styles/vim-ui.css?v=20261025.3">
+    <link rel="stylesheet" href="styles/ascii-scrollbars.css?v=20261025.3">
+    <link rel="stylesheet" href="styles/ascii-transition.css?v=20261025.3">
+    <link rel="stylesheet" href="styles/projects.css?v=20261025.3">
+    <link rel="stylesheet" href="styles/section3.css?v=20261025.3">
+    <link rel="stylesheet" href="styles/timeline-window.css?v=20261025.3">
+    <script src="scripts/ascii-ui.js?v=20261025.3" defer></script>
+    <script src="scripts/vim-ui.js?v=20261025.3" defer></script>
+    <script src="scripts/ascii-scrollbars.js?v=20261025.3" defer></script>
+    <script src="scripts/section2.js?v=20261025.3" defer></script>
+    <script src="scripts/section3.js?v=20261025.3" defer></script>
+    <script src="scripts/timeline-window.js?v=20261025.3" defer></script>
 </head>
 <body>
 
@@ -63,13 +64,14 @@ DesktopRequiredError: expect    esktop,             ile; Des        iredError: e
     </div>
 </section>
 
-<canvas class="junie-hero-section__animation"></canvas>
-<div id="app">
+<canvas class="junie-hero-section__animation" aria-hidden="true"></canvas>
+<main id="app">
     <nav class="vim-tabline" aria-label="Portfolio buffers">
         <button type="button" data-buffer="1" aria-current="page"><span>1</span> resume.json</button>
         <button type="button" data-buffer="2"><span>2</span> about.md</button>
         <button type="button" data-buffer="3"><span>3</span> skills.json</button>
         <span class="vim-workspace">~/neil/portfolio</span>
+        <button type="button" data-motion-toggle aria-label="Pause animations" title="Pause animations"><span data-motion-symbol>[||]</span></button>
     </nav>
     <section id="section1">
         <div class="editor-container">
@@ -93,15 +95,14 @@ DesktopRequiredError: expect    esktop,             ile; Des        iredError: e
             <div class="cta">
                 <a href="#projects"><span>Explore my projects</span></a>
                 <a href="https://aeternus-argus.javavirtualenvironment.com/" target="_blank" rel="noopener noreferrer"><span>Watch My AI Demo</span></a>
-                <a href="/resume.pdf"><span>Download Resume</span></a>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <button type="button" class="scroll-indicator">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
             </svg>
             <span>Open about.md</span>
-        </div>
+        </button>
     </section>
 
     <!-- Section 2 -->
@@ -152,7 +153,7 @@ DesktopRequiredError: expect    esktop,             ile; Des        iredError: e
                 </div>
 
                 <!-- Selected project collection -->
-                <div class="project-decks-container selected-projects" id="projects" aria-labelledby="projects-title">
+                <div class="project-decks-container selected-projects" id="projects" role="region" aria-labelledby="projects-title">
                     <div class="decks-header">
                         <h2 class="card-title" id="projects-title" tabindex="-1">Selected projects</h2>
                         <span class="project-count" id="project-count"></span>
@@ -187,20 +188,20 @@ DesktopRequiredError: expect    esktop,             ile; Des        iredError: e
         </div>
 
         <!-- Updated: Changed to scroll indicator like section 1 -->
-        <div class="scroll-indicator section2-scroll">
+        <button type="button" class="scroll-indicator section2-scroll">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
             </svg>
             <span>Open skills.json</span>
-        </div>
+        </button>
 
         <!-- Back indicator for going back to section 1 -->
-        <div class="back-indicator" onclick="goToSection(1)">
+        <button type="button" class="back-indicator" onclick="goToSection(1)">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
             </svg>
             <span>Back to top</span>
-        </div>
+        </button>
     </section>
 
     <!-- Section 3: Skills buffer with scrolling when the contents exceed the viewport. -->
@@ -210,7 +211,7 @@ DesktopRequiredError: expect    esktop,             ile; Des        iredError: e
                 <h2 id="skills-title">Technical arsenal<span aria-hidden="true">_</span></h2>
             </header>
             <nav class="skills-filters" aria-label="Skill categories"></nav>
-            <div class="skills-catalog" aria-label="Skills inventory"></div>
+            <div class="skills-catalog" role="group" aria-label="Skills inventory" aria-describedby="skills-key-help"></div>
             <div class="skills-detail-window">
                 <section class="skills-inspector" aria-label="Selected skill" aria-live="polite" aria-atomic="true">
                     <p class="skills-loading">Loading inventory...</p>
@@ -218,18 +219,19 @@ DesktopRequiredError: expect    esktop,             ile; Des        iredError: e
                 <footer class="skills-status">
                     <span class="skills-mode vim-mode">NORMAL</span>
                     <span class="skills-file">skills.json <span>[RO]</span></span>
-                    <span class="skills-key-help">j/k select   a/l/f/t/c filter   esc reset</span>
+                    <span class="skills-key-help" id="skills-key-help">In inventory: arrows or j/k select, a/l/f/t/c filter, esc reset</span>
                     <span id="skills-position">All</span>
                     <button type="button" class="skills-back">:q about</button>
                 </footer>
             </div>
         </div>
     </section>
-</div>
+</main>
 
 <dialog class="timeline-window" id="timeline-window" aria-labelledby="timeline-window-title">
     <header class="timeline-window-header">
         <span id="timeline-window-title">timeline.log</span>
+        <button type="button" data-motion-toggle aria-label="Pause animations" title="Pause animations"><span data-motion-symbol>[||]</span></button>
         <button type="button" class="timeline-window-close" aria-label="Close timeline" title="Close (Esc)">[x]</button>
     </header>
 </dialog>

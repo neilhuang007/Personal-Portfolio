@@ -4,7 +4,7 @@
 
     const selector = '.editor-container, .about-main-card, .project-window, .tag-project-window, .modal-window, .circuit-board';
     const initialized = new WeakSet();
-    const maskSelector = '.neon-sign, .vim-tabline button, .cta a, .github-link, .project-link, .project-window-tag, .scroll-indicator, .back-indicator, .window-control, .window-button, .circuit-close, .timeline-window-close, .skills-filter, .skills-row, .skills-project-link, .skills-project-pager button, .skills-back';
+    const maskSelector = '.neon-sign, .vim-tabline button, [data-motion-toggle], .cta a, .github-link, .project-link, .project-window-tag, .scroll-indicator, .back-indicator, .window-control, .window-button, .circuit-close, .timeline-window-close, .skills-filter, .skills-row, .skills-project-link, .skills-project-pager button, .skills-back';
     const surfaceSelector = '.editor-container, .about-main-card, .card, .project-decks-container, .skill-card, .category-title, .section-header, .vim-workspace, .intro > .greeting, .intro > h1, .intro .stat, .skills-heading, .skills-group, .skills-detail-overview, .skills-detail-metadata, .skills-status';
     const masks = new Map();
 

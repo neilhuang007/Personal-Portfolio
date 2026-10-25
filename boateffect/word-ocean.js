@@ -821,6 +821,9 @@ export function createWordOcean(canvas, options = {}) {
     });
 
   return {
+    setPaused(value) {
+      paused = value;
+    },
     togglePause() {
       paused = !paused;
     },

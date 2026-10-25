@@ -342,6 +342,7 @@ class JunieShaderAnimation {
     }
 
     onMouseDown(event) {
+        if (window.PortfolioMotion?.paused) return;
         const currentTime = this.uniforms.iTime.value;
 
         // Clean up old clicks that have finished animating
@@ -388,13 +389,16 @@ class JunieShaderAnimation {
     onResize() {
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.uniforms.iResolution.value.set(window.innerWidth, window.innerHeight);
+        this.renderer.render(this.scene, this.camera);
     }
 
-    animate(timestamp) {
+    animate(timestamp = 0) {
         requestAnimationFrame(this.animate.bind(this));
-
-        // Update time
-        const time = timestamp * 0.001; // Convert to seconds
+        const delta = this.lastTimestamp === undefined ? 0 : Math.min(0.1, (timestamp - this.lastTimestamp) * 0.001);
+        this.lastTimestamp = timestamp;
+        if ((window.PortfolioMotion?.paused || document.hidden) && this.rendered) return;
+        this.rendered = true;
+        const time = this.uniforms.iTime.value + delta;
         this.uniforms.iTime.value = time;
 
         // Smooth mouse movement
