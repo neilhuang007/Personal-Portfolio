@@ -4,156 +4,41 @@
 
 // Project windows management
 let activeProjectWindows = [];
-let minimizedWindows = [];
 let windowZIndex = 1100;
+const projectWindowScrollPositions = new WeakMap();
 
-// Timeline Modal Functions - Pixel Boat Sailing Experience
+function bringProjectWindowToFront(projectWindow) {
+    projectWindow.style.zIndex = windowZIndex++;
+}
+
+function getProjectWindowDock() {
+    let dock = document.querySelector('.project-window-dock');
+    if (!dock) {
+        dock = document.createElement('div');
+        dock.className = 'project-window-dock';
+        dock.setAttribute('role', 'region');
+        dock.setAttribute('aria-label', 'Minimized project windows');
+        document.body.appendChild(dock);
+    }
+    return dock;
+}
+
+function resumeProjectHover() {
+    document.body.classList.remove('project-hover-paused');
+}
+
+function pauseProjectHover() {
+    document.body.classList.add('project-hover-paused');
+    document.addEventListener('pointermove', resumeProjectHover, { once: true });
+}
+
+// Timeline window displays the bundled boat scene.
 function openTimelineModal() {
-    const modal = document.getElementById('timeline-modal');
-    const modalContent = modal.querySelector('.modal-content');
-    const combinedTimeline = DataLoader.getCombinedTimeline();
-
-    // Sort by year descending (newest first)
-    const sortedTimeline = [...combinedTimeline].sort((a, b) => b.year - a.year);
-
-    // Build pixel boat sailing timeline HTML
-    const timelineHTML = `
-        <div class="timeline-header">
-            <h3>My Voyage</h3>
-            <span class="timeline-count">${combinedTimeline.length} milestones</span>
-        </div>
-        <div class="timeline-ocean">
-            <!-- Voyage Progress -->
-            <div class="voyage-progress">
-                <div class="voyage-progress-bar" id="voyage-progress-bar"></div>
-            </div>
-            <div class="voyage-stats" id="voyage-stats">0%</div>
-
-            <!-- Pixel Boat -->
-            <div class="pixel-boat" id="pixel-boat">
-                <div class="boat-flag"></div>
-                <div class="boat-mast"></div>
-                <div class="boat-sail"></div>
-                <div class="boat-cabin"></div>
-                <div class="boat-hull"></div>
-            </div>
-
-            <!-- Timeline Cards Trail -->
-            <div class="timeline-trail" id="timeline-trail">
-                <div class="timeline-wake-cards" id="wake-cards">
-                    ${sortedTimeline.map((item, index) => {
-                        const isProject = item.type === 'project';
-                        const description = item.description ? item.description.substring(0, 60) + (item.description.length > 60 ? '...' : '') : '';
-                        return `
-                            <div class="timeline-wake-card" data-index="${index}" data-original-index="${combinedTimeline.indexOf(item)}"
-                                 onclick="${isProject ? `openProjectFromTimeline(${combinedTimeline.indexOf(item)})` : `openTimelineDetail(${combinedTimeline.indexOf(item)})`}">
-                                <span class="wake-card-year">${item.year}</span>
-                                <div class="wake-card-title">
-                                    ${item.title}
-                                    ${isProject ? '<span class="timeline-project-tag">PROJECT</span>' : ''}
-                                </div>
-                                <div class="wake-card-desc">${description}</div>
-                            </div>
-                        `;
-                    }).join('')}
-                </div>
-            </div>
-        </div>
-    `;
-
-    modalContent.innerHTML = timelineHTML;
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-
-    // Initialize boat sailing animation
-    initBoatSailing();
-    initTimelineKeyNav();
+    window.BoatTimeline?.open();
 }
 
-// Initialize the boat sailing scroll animation
-function initBoatSailing() {
-    const trail = document.getElementById('timeline-trail');
-    const boat = document.getElementById('pixel-boat');
-    const progressBar = document.getElementById('voyage-progress-bar');
-    const voyageStats = document.getElementById('voyage-stats');
-    const cards = document.querySelectorAll('.timeline-wake-card');
-
-    if (!trail || !boat) return;
-
-    // Create intersection observer for card visibility
-    const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Add staggered delay based on position
-                const delay = parseInt(entry.target.dataset.index) * 50;
-                entry.target.style.transitionDelay = `${Math.min(delay, 200)}ms`;
-            }
-        });
-    }, {
-        root: trail,
-        threshold: 0.1,
-        rootMargin: '0px 0px -10% 0px'
-    });
-
-    // Observe all cards
-    cards.forEach(card => cardObserver.observe(card));
-
-    // Handle scroll for boat movement
-    trail.addEventListener('scroll', () => {
-        const scrollTop = trail.scrollTop;
-        const scrollHeight = trail.scrollHeight - trail.clientHeight;
-        const scrollPercent = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-
-        // Move boat based on scroll (10% to 85% of container width)
-        const boatPosition = 10 + (scrollPercent * 0.75);
-        boat.style.left = `${boatPosition}%`;
-
-        // Update progress bar
-        if (progressBar) {
-            progressBar.style.width = `${scrollPercent}%`;
-        }
-
-        // Update voyage stats
-        if (voyageStats) {
-            voyageStats.textContent = `${Math.round(scrollPercent)}% explored`;
-        }
-
-        // Create wake bubbles occasionally
-        if (Math.random() < 0.1) {
-            createWakeBubble(boat);
-        }
-    });
-
-    // Initial card visibility check
-    setTimeout(() => {
-        cards.forEach((card, index) => {
-            const rect = card.getBoundingClientRect();
-            const trailRect = trail.getBoundingClientRect();
-            if (rect.top < trailRect.bottom && rect.bottom > trailRect.top) {
-                setTimeout(() => card.classList.add('visible'), index * 100);
-            }
-        });
-    }, 300);
-}
-
-// Create wake bubble effect behind boat
-function createWakeBubble(boat) {
-    if (!boat || !boat.parentElement) return;
-
-    const bubble = document.createElement('div');
-    bubble.className = 'wake-bubble';
-
-    const boatRect = boat.getBoundingClientRect();
-    const oceanRect = boat.parentElement.getBoundingClientRect();
-
-    bubble.style.left = `${boat.offsetLeft - 10 + Math.random() * 20}px`;
-    bubble.style.bottom = `${35 + Math.random() * 10}%`;
-
-    boat.parentElement.appendChild(bubble);
-
-    // Remove bubble after animation
-    setTimeout(() => bubble.remove(), 2000);
+function closeTimelineModal() {
+    window.BoatTimeline?.close();
 }
 
 // Prevent scroll from propagating to parent
@@ -164,7 +49,6 @@ function preventScrollPropagation(element) {
         const height = element.clientHeight;
         const delta = e.deltaY;
 
-        // At top and scrolling up, or at bottom and scrolling down
         const atTop = scrollTop === 0 && delta < 0;
         const atBottom = scrollTop + height >= scrollHeight && delta > 0;
 
@@ -176,52 +60,6 @@ function preventScrollPropagation(element) {
     element.addEventListener('touchmove', function(e) {
         e.stopPropagation();
     }, { passive: true });
-}
-
-function closeTimelineModal() {
-    const modal = document.getElementById('timeline-modal');
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-}
-
-// Scroll timeline up
-function scrollTimelineUp() {
-    const track = document.getElementById('timeline-track');
-    if (track) {
-        track.scrollBy({ top: -150, behavior: 'smooth' });
-    }
-}
-
-// Scroll timeline down
-function scrollTimelineDown() {
-    const track = document.getElementById('timeline-track');
-    if (track) {
-        track.scrollBy({ top: 150, behavior: 'smooth' });
-    }
-}
-
-// Legacy functions for compatibility
-function scrollTimelineLeft() { scrollTimelineUp(); }
-function scrollTimelineRight() { scrollTimelineDown(); }
-
-// Initialize keyboard navigation for timeline
-function initTimelineKeyNav() {
-    const modal = document.getElementById('timeline-modal');
-
-    const keyHandler = function(e) {
-        if (!modal.classList.contains('active')) {
-            document.removeEventListener('keydown', keyHandler);
-            return;
-        }
-
-        if (e.key === 'ArrowUp') {
-            scrollTimelineUp();
-        } else if (e.key === 'ArrowDown') {
-            scrollTimelineDown();
-        }
-    };
-
-    document.addEventListener('keydown', keyHandler);
 }
 
 // Open project from timeline
@@ -276,10 +114,15 @@ function closeTimelineDetail() {
 }
 
 function openProjectWindow(projectData) {
+    const link = DataLoader.getProjectLink(projectData);
     // Create project window
     const projectWindow = document.createElement('div');
-    projectWindow.className = `project-window active ${projectData.featured ? '' : ''}`;
-    projectWindow.style.zIndex = windowZIndex++;
+    projectWindow.className = 'project-window active';
+    projectWindow.setAttribute('role', 'dialog');
+    projectWindow.setAttribute('aria-label', projectData.name);
+    projectWindow.tabIndex = -1;
+    projectWindow.returnFocus = document.activeElement;
+    bringProjectWindowToFront(projectWindow);
     projectWindow.style.top = '50%';
     projectWindow.style.left = '50%';
     projectWindow.style.transform = 'translate(-50%, -50%)';
@@ -290,9 +133,9 @@ function openProjectWindow(projectData) {
                 ${projectData.name}
             </div>
             <div class="window-controls">
-                <div class="window-control minimize" onclick="toggleMinimize(this)"></div>
-                <div class="window-control maximize" onclick="toggleMinimize(this)"></div>
-                <div class="window-control close" onclick="closeProjectWindow(this)"></div>
+                <button type="button" class="window-control minimize" onclick="toggleMinimize(this)" aria-label="Minimize project">[_]</button>
+                <button type="button" class="window-control maximize" onclick="toggleMinimize(this)" aria-label="Restore project">[+]</button>
+                <button type="button" class="window-control close" onclick="closeProjectWindow(this)" aria-label="Close project">[x]</button>
             </div>
         </div>
         <div class="project-content">
@@ -300,9 +143,9 @@ function openProjectWindow(projectData) {
                 <h1 class="project-title">${projectData.name}</h1>
                 <p class="project-description">${projectData.description}</p>
                 <div class="project-meta">
-                    <span class="project-timestamp">${projectData.timestamp || 'Lorem 2024'}</span>
-                    <span>•</span>
-                    <span>${projectData.category || 'Lorem Category'}</span>
+                    <span class="project-timestamp">${projectData.timestamp || ''}</span>
+                    <span aria-hidden="true">/</span>
+                    <span>${projectData.category || ''}</span>
                 </div>
                 ${projectData.tags ? `
                     <div class="project-window-tags">
@@ -316,11 +159,8 @@ function openProjectWindow(projectData) {
                 ${parseMarkdown(projectData.content)}
             </div>
             <div class="project-footer">
-                <a href="${projectData.github || '#'}" target="_blank" class="github-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    View on GitHub
+                <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="github-link">
+                    ${link.label} <span aria-hidden="true">&gt;</span>
                 </a>
             </div>
         </div>
@@ -331,6 +171,12 @@ function openProjectWindow(projectData) {
 
     // Make window draggable
     makeDraggable(projectWindow);
+    projectWindow.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        event.stopPropagation();
+        closeProjectWindow(projectWindow.querySelector('.window-control.close'));
+    });
+    projectWindow.focus({ preventScroll: true });
 }
 
 // Toggle minimize/maximize
@@ -346,52 +192,52 @@ function toggleMinimize(button) {
 }
 
 function minimizeProjectWindow(window) {
+    if (window.classList.contains('minimized')) return;
+    const content = window.querySelector('.project-content');
+    projectWindowScrollPositions.set(window, { scrollTop: content.scrollTop, scrollLeft: content.scrollLeft });
+    pauseProjectHover();
     window.classList.add('minimized');
-
-    // Position in lower left with stacking
-    const index = minimizedWindows.length;
-    window.style.position = 'fixed';
-    window.style.left = '20px';
-    window.style.bottom = `${20 + index * 70}px`;
-    window.style.top = 'auto';
-    window.style.transform = `rotate(${-5 + index * 3}deg)`;
-
-    minimizedWindows.push(window);
+    const dock = getProjectWindowDock();
+    dock.appendChild(window);
+    bringProjectWindowToFront(dock);
+    window.querySelector('.window-control.maximize').focus({ preventScroll: true });
+    window.scrollIntoView({ block: 'nearest' });
 
     // Click header to restore
     const header = window.querySelector('.project-window-header');
     header.onclick = function(e) {
-        if (window.classList.contains('minimized') && !e.target.classList.contains('window-control')) {
+        if (window.classList.contains('minimized') && !e.target.closest('.window-control')) {
             restoreProjectWindow(window);
         }
     };
 }
 
 function restoreProjectWindow(window) {
+    if (!window.classList.contains('minimized')) return;
+    // Inline position and size stay intact while the dock controls the layout.
+    document.body.appendChild(window);
     window.classList.remove('minimized');
-    window.style.transform = 'translate(-50%, -50%)';
-    window.style.top = '50%';
-    window.style.left = '50%';
-    window.style.bottom = 'auto';
-    window.style.zIndex = windowZIndex++;
-
-    // Remove from minimized array
-    const index = minimizedWindows.indexOf(window);
-    if (index > -1) {
-        minimizedWindows.splice(index, 1);
-        // Reposition remaining minimized windows
-        minimizedWindows.forEach((win, idx) => {
-            win.style.bottom = `${20 + idx * 70}px`;
-            win.style.transform = `rotate(${-5 + idx * 3}deg)`;
-        });
+    Object.assign(window.querySelector('.project-content'), projectWindowScrollPositions.get(window));
+    projectWindowScrollPositions.delete(window);
+    bringProjectWindowToFront(window);
+    const bounds = window.getBoundingClientRect();
+    const left = Math.max(0, Math.min(bounds.left, document.documentElement.clientWidth - bounds.width));
+    const top = Math.max(0, Math.min(bounds.top, document.documentElement.clientHeight - bounds.height));
+    if (left !== bounds.left || top !== bounds.top) {
+        Object.assign(window.style, { left: `${left}px`, top: `${top}px`, transform: 'none' });
     }
 
     const header = window.querySelector('.project-window-header');
     header.onclick = null;
+    window.querySelector('.window-control.minimize').focus({ preventScroll: true });
 }
 
 function closeProjectWindow(button) {
     const window = button.closest('.project-window');
+    const restoreFocus = window.contains(document.activeElement);
+    const nextMinimized = window.classList.contains('minimized')
+        ? window.nextElementSibling || window.previousElementSibling
+        : null;
 
     // Remove from arrays
     const activeIndex = activeProjectWindows.indexOf(window);
@@ -399,17 +245,11 @@ function closeProjectWindow(button) {
         activeProjectWindows.splice(activeIndex, 1);
     }
 
-    const minIndex = minimizedWindows.indexOf(window);
-    if (minIndex > -1) {
-        minimizedWindows.splice(minIndex, 1);
-        // Reposition remaining minimized windows
-        minimizedWindows.forEach((win, idx) => {
-            win.style.bottom = `${20 + idx * 70}px`;
-            win.style.transform = `rotate(${-5 + idx * 3}deg)`;
-        });
-    }
-
     window.remove();
+    const focusTarget = nextMinimized?.querySelector('.window-control.maximize') || window.returnFocus;
+    if (restoreFocus && focusTarget?.isConnected) {
+        focusTarget.focus({ preventScroll: true });
+    }
 }
 
 // Make windows draggable
@@ -421,18 +261,22 @@ function makeDraggable(element) {
 
     function dragMouseDown(e) {
         e = e || window.event;
+        if (element.classList.contains('minimized')) return;
+        if (e.target.closest('.window-control')) return;
         e.preventDefault();
 
-        if (element.classList.contains('minimized')) return;
-        if (e.target.classList.contains('window-control')) return;
-
+        // Preserve the on screen position when leaving centered transform layout.
+        const bounds = element.getBoundingClientRect();
+        element.style.left = `${bounds.left}px`;
+        element.style.top = `${bounds.top}px`;
+        element.style.transform = 'none';
         pos3 = e.clientX;
         pos4 = e.clientY;
         document.onmouseup = closeDragElement;
         document.onmousemove = elementDrag;
 
         // Bring to front
-        element.style.zIndex = windowZIndex++;
+        bringProjectWindowToFront(element);
     }
 
     function elementDrag(e) {
@@ -462,413 +306,55 @@ function makeDraggable(element) {
     }
 }
 
-// ============================================
-// DECK OF CARDS - SETUP AND CONFIGURATION
-// ============================================
-
-// Deck configuration
-const DECK_CONFIG = {
-    // Maximum cards per deck
-    maxCardsPerDeck: 4,     // 4 cards per deck for clean stacks
-
-    // Stacked state - cards form an arc pattern
-    stackOffsetX: 6,        // Horizontal offset per card (creates arc)
-    stackOffsetY: 10,       // Vertical offset per card
-    stackRotation: 3,       // Base rotation degrees
-    arcFactor: 0.15,        // How much the stack curves
-
-    // Spread state - cards fan out
-    spreadRadius: 100,      // Base spread distance (smaller for multiple decks)
-    spreadArc: Math.PI * 0.6, // Arc angle for fan
-
-    // Push interaction
-    pushDistance: 60,       // How far adjacent cards push away
-    pushRotation: 8,        // Rotation when pushed
-
-    // Timing
-    transitionDuration: 350,
-
-    // Category configuration - which categories to show
-    categories: [
-        { id: 'featured', label: 'Featured', filter: (p) => p.featured },
-        { id: 'java', label: 'Java', filter: (p) => p.category === 'java' },
-        { id: 'web', label: 'Web', filter: (p) => ['html', 'javascript', 'typescript'].includes(p.category) },
-        { id: 'systems', label: 'Systems', filter: (p) => ['c', 'python'].includes(p.category) },
-    ],
-};
-
-// Auto-calculate project card positions for deck layout
+// Render the selected collection once, in its editorial order.
 async function setupProjectCards() {
     await DataLoader.loadData();
-    const allProjects = DataLoader.getProjectsSortedByTime();
-
-    const decksRow = document.querySelector('.decks-row');
-
-    if (!decksRow) {
-        console.error('Decks row container not found');
-        return;
-    }
-
-    // Clear existing decks
-    decksRow.innerHTML = '';
-
-    // Create a deck for each category
-    DECK_CONFIG.categories.forEach((category, deckIndex) => {
-        // Filter projects for this category
-        let categoryProjects = allProjects.filter(category.filter);
-
-        // Limit to max cards per deck
-        categoryProjects = categoryProjects.slice(0, DECK_CONFIG.maxCardsPerDeck);
-
-        // Skip if no projects in this category
-        if (categoryProjects.length === 0) return;
-
-        // Create deck wrapper
-        const deckWrapper = document.createElement('div');
-        deckWrapper.className = 'deck-wrapper';
-        deckWrapper.dataset.category = category.id;
-
-        // Create deck label
-        const label = document.createElement('span');
-        label.className = 'deck-label';
-        label.textContent = category.label;
-
-        // Create the deck card container
-        const deckCard = document.createElement('div');
-        deckCard.className = 'project-stack-card';
-        deckCard.dataset.deckId = category.id;
-
-        // Create the stack
-        const stack = document.createElement('div');
-        stack.className = 'project-stack deck-idle';
-        stack.dataset.deckId = category.id;
-
-        const totalCards = categoryProjects.length;
-        const centerIndex = (totalCards - 1) / 2;
-
-        // Create cards for this deck
-        categoryProjects.forEach((project, index) => {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.dataset.index = index;
-            card.dataset.total = totalCards;
-            card.dataset.deckId = category.id;
-
-            // Calculate stacked position (arc pattern)
-            const distFromCenter = index - centerIndex;
-            const arcOffset = Math.pow(distFromCenter, 2) * DECK_CONFIG.arcFactor;
-
-            // Alternating rotation with arc compensation
-            const baseRotation = (index % 2 === 0 ? 1 : -1) * DECK_CONFIG.stackRotation;
-            const rotation = baseRotation + (distFromCenter * 0.5);
-
-            // Stack offsets - horizontal shift increases with index for arc effect
-            const stackX = distFromCenter * DECK_CONFIG.stackOffsetX;
-            const stackY = -index * DECK_CONFIG.stackOffsetY + arcOffset * 5;
-
-            // Set CSS variables for positioning
-            card.style.setProperty('--stack-x', `${stackX}px`);
-            card.style.setProperty('--stack-y', `${stackY}px`);
-            card.style.setProperty('--stack-rotate', `${rotation}deg`);
-            card.style.setProperty('--z-index', totalCards - index);
-
-            // Store original positions for restoration
-            card.dataset.stackX = stackX;
-            card.dataset.stackY = stackY;
-            card.dataset.stackRotate = rotation;
-
-            card.innerHTML = `
-                <span class="project-name">${project.title}</span>
-                <span class="project-desc">${project.tech.slice(0, 2).join(' • ')}</span>
-            `;
-
-            card.addEventListener('click', (e) => {
-                e.stopPropagation();
-                openProjectWindow({
-                    name: project.title,
-                    description: project.description,
-                    timestamp: project.timeDisplay,
-                    category: project.category,
-                    content: project.content,
-                    github: project.github,
-                    demo: project.demo,
-                    featured: project.featured,
-                    tags: project.subcategories,
-                });
-            });
-
-            stack.appendChild(card);
-        });
-
-        deckCard.appendChild(stack);
-        deckWrapper.appendChild(deckCard);
-        deckWrapper.appendChild(label);
-        decksRow.appendChild(deckWrapper);
-    });
-
-    // Initialize deck interactions for all decks
-    initializeAllDeckInteractions();
-}
-
-// ============================================
-// DECK OF CARDS - INTERACTION SYSTEM
-// ============================================
-
-// Initialize interactions for all decks
-function initializeAllDeckInteractions() {
-    const stacks = document.querySelectorAll('.project-stack');
-
-    stacks.forEach(stack => {
-        const wrapper = stack.closest('.project-stack-card');
-        if (wrapper && stack) {
-            initializeSingleDeckInteractions(wrapper, stack);
-        }
-    });
-}
-
-function initializeSingleDeckInteractions(wrapper, stack) {
-    const cards = Array.from(stack.querySelectorAll('.project-card'));
-    const totalCards = cards.length;
-
-    if (totalCards === 0) return;
-
-    // State
-    let isSpread = false;
-    let focusedCard = null;
-
-    // Calculate spread positions for each card (fan arrangement)
-    function calculateSpreadPositions() {
-        const centerIndex = (totalCards - 1) / 2;
-        const angleStep = DECK_CONFIG.spreadArc / (totalCards - 1 || 1);
-        const startAngle = -DECK_CONFIG.spreadArc / 2;
-
-        cards.forEach((card, index) => {
-            // Fan out in an arc pattern
-            const angle = startAngle + (index * angleStep);
-            const spreadX = Math.sin(angle) * DECK_CONFIG.spreadRadius;
-            const spreadY = -Math.abs(Math.cos(angle)) * (DECK_CONFIG.spreadRadius * 0.3);
-
-            // Rotation follows the fan angle
-            const spreadRotation = angle * (180 / Math.PI) * 0.3;
-
-            card.dataset.spreadX = spreadX;
-            card.dataset.spreadY = spreadY;
-            card.dataset.spreadRotate = spreadRotation;
-        });
-    }
-
-    // Spread the deck
-    function spreadDeck() {
-        if (isSpread) return;
-        isSpread = true;
-
-        stack.classList.remove('deck-idle');
-        stack.classList.add('deck-spread');
-
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.style.setProperty('--stack-x', `${card.dataset.spreadX}px`);
-                card.style.setProperty('--stack-y', `${card.dataset.spreadY}px`);
-                card.style.setProperty('--stack-rotate', `${card.dataset.spreadRotate}deg`);
-                card.style.setProperty('--z-index', 100 + index);
-            }, index * 40); // Staggered spread
-        });
-    }
-
-    // Collapse deck back to stack
-    function collapseDeck() {
-        if (!isSpread) return;
-        isSpread = false;
-        focusedCard = null;
-
-        stack.classList.remove('deck-spread');
-        stack.classList.add('deck-idle');
-
-        // Clear all push states
-        cards.forEach(card => {
-            card.classList.remove('card-focused', 'card-pushed', 'card-pushed-far');
-            card.style.setProperty('--push-x', '0px');
-            card.style.setProperty('--push-y', '0px');
-            card.style.setProperty('--push-rotate', '0deg');
-            card.style.setProperty('--push-scale', '1');
-        });
-
-        // Restore to stacked positions with stagger
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.style.setProperty('--stack-x', `${card.dataset.stackX}px`);
-                card.style.setProperty('--stack-y', `${card.dataset.stackY}px`);
-                card.style.setProperty('--stack-rotate', `${card.dataset.stackRotate}deg`);
-                card.style.setProperty('--z-index', totalCards - index);
-            }, index * 25);
-        });
-    }
-
-    // Focus on a specific card - CARD STAYS IN PLACE, others move
-    function focusCard(card) {
-        if (focusedCard === card) return;
-
-        const cardIndex = parseInt(card.dataset.index);
-
-        // Clear previous focus
-        cards.forEach(c => {
-            c.classList.remove('card-focused', 'card-pushed', 'card-pushed-far');
-            c.style.setProperty('--push-x', '0px');
-            c.style.setProperty('--push-y', '0px');
-            c.style.setProperty('--push-rotate', '0deg');
-            c.style.setProperty('--push-scale', '1');
-        });
-
-        // Set new focused card - IT STAYS IN PLACE
-        focusedCard = card;
-        card.classList.add('card-focused');
-
-        // Push other cards away from the focused card
-        cards.forEach((otherCard, index) => {
-            if (otherCard === card) return;
-
-            const distance = index - cardIndex;
-            const absDistance = Math.abs(distance);
-            const direction = distance > 0 ? 1 : -1;
-
-            // Calculate push amount based on distance
-            // Closer cards push more, farther cards push less but still move
-            const pushFactor = Math.max(0.3, 1 - (absDistance * 0.15));
-            const pushX = direction * DECK_CONFIG.pushDistance * pushFactor;
-            const pushY = Math.abs(distance) * 15; // Slight upward push
-            const pushRotate = direction * DECK_CONFIG.pushRotation * pushFactor;
-
-            otherCard.style.setProperty('--push-x', `${pushX}px`);
-            otherCard.style.setProperty('--push-y', `${pushY}px`);
-            otherCard.style.setProperty('--push-rotate', `${pushRotate}deg`);
-
-            // Visual distinction based on distance
-            if (absDistance <= 2) {
-                otherCard.classList.add('card-pushed');
-            } else {
-                otherCard.classList.add('card-pushed-far');
-            }
-        });
-    }
-
-    // Clear focus - restore spread positions
-    function clearFocus() {
-        if (!focusedCard) return;
-        focusedCard = null;
-
-        cards.forEach(card => {
-            card.classList.remove('card-focused', 'card-pushed', 'card-pushed-far');
-            card.style.setProperty('--push-x', '0px');
-            card.style.setProperty('--push-y', '0px');
-            card.style.setProperty('--push-rotate', '0deg');
-            card.style.setProperty('--push-scale', '1');
-        });
-    }
-
-    // Calculate initial spread positions
-    calculateSpreadPositions();
-
-    // Event: Wrapper hover - spread the deck
-    wrapper.addEventListener('pointerenter', () => {
-        spreadDeck();
-    });
-
-    // Event: Wrapper leave - collapse the deck
-    wrapper.addEventListener('pointerleave', () => {
-        collapseDeck();
-    });
-
-    // Event: Individual card hover - focus and push others
-    cards.forEach(card => {
-        card.addEventListener('pointerenter', () => {
-            if (!isSpread) return;
-            focusCard(card);
-        });
-
-        card.addEventListener('pointerleave', (e) => {
-            if (!isSpread) return;
-
-            // Check if we're moving to another card or leaving the stack
-            const relatedTarget = e.relatedTarget;
-            const isMovingToCard = relatedTarget && relatedTarget.classList?.contains('project-card');
-
-            if (!isMovingToCard) {
-                // Small delay to prevent flicker when moving between cards
-                setTimeout(() => {
-                    if (focusedCard === card && isSpread) {
-                        clearFocus();
-                    }
-                }, 50);
-            }
-        });
-    });
-
-    // Handle touch devices
-    let touchStartCard = null;
-
-    wrapper.addEventListener('touchstart', (e) => {
-        const card = e.target.closest('.project-card');
-        if (card) {
-            touchStartCard = card;
-            if (!isSpread) {
-                spreadDeck();
-            }
-            setTimeout(() => focusCard(card), 100);
-        }
-    }, { passive: true });
-
-    wrapper.addEventListener('touchend', () => {
-        touchStartCard = null;
-    }, { passive: true });
-}
-
-// Populate skill matrix with real data - no meaningless percentages
-async function populateSkillMatrix() {
-    const skillMatrix = document.getElementById('skill-matrix');
-    if (!skillMatrix) return;
-
-    // Static language data based on real project metrics
-    const languageData = [
-        { name: 'Java',       years: 7, lines: '3.1M', repos: 45, level: 'expert' },
-        { name: 'Python',     years: 6, lines: '45K',  repos: 35, level: 'advanced' },
-        { name: 'JavaScript', years: 5, lines: '261K', repos: 30, level: 'advanced' },
-        { name: 'C++',        years: 3, lines: '137K', repos: 15, level: 'intermediate' },
-    ];
-
-    const levelLabels = { expert: 'EXP', advanced: 'ADV', intermediate: 'INT' };
-
-    let html = `
-        <div class="skill-matrix-header">
-            <span>LANG</span>
-            <span>YEARS</span>
-            <span>LINES</span>
-            <span>REPOS</span>
-            <span>LEVEL</span>
-        </div>
-    `;
-
-    languageData.forEach(lang => {
-        html += `
-            <div class="skill-matrix-row">
-                <span class="matrix-lang">${lang.name}</span>
-                <span class="matrix-years">${lang.years} yr</span>
-                <span class="matrix-lines">${lang.lines}</span>
-                <span class="matrix-repos">${lang.repos}</span>
-                <span class="matrix-level ${lang.level}">${levelLabels[lang.level]}</span>
+    const projects = DataLoader.getProjects();
+    const grid = document.querySelector('.selected-projects-grid');
+    if (!grid) return;
+
+    document.getElementById('project-count').textContent = String(projects.length).padStart(2, '0');
+    grid.replaceChildren();
+
+    projects.forEach((project, index) => {
+        const link = DataLoader.getProjectLink(project);
+        const card = document.createElement('article');
+        card.className = 'selected-project';
+        card.dataset.projectId = project.id;
+        card.setAttribute('aria-labelledby', 'project-title-' + project.id);
+        card.innerHTML = `
+            <div class="selected-project-meta">
+                <span class="selected-project-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
+                <span>${project.discipline}</span>
+            </div>
+            <h3 id="project-title-${project.id}">${project.title}</h3>
+            <p class="selected-project-description">${project.description}</p>
+            <p class="selected-project-tech">${project.tech.join(' / ')}</p>
+            <div class="selected-project-actions">
+                <a class="project-link" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${link.label}: ${project.title}">${link.label} <span aria-hidden="true">&gt;</span></a>
+                <button type="button" class="project-link project-details" aria-label="Read story: ${project.title}"><span class="project-story-hit-area" aria-hidden="true"></span>Read story</button>
             </div>
         `;
+        card.querySelector('.project-details').addEventListener('click', () => {
+            openProjectWindow({
+                name: project.title,
+                description: project.description,
+                timestamp: project.timeDisplay,
+                category: project.discipline,
+                content: project.content,
+                github: project.github,
+                demo: project.demo,
+                tags: project.tech
+            });
+        });
+        grid.appendChild(card);
     });
-
-    skillMatrix.innerHTML = html;
 }
 
 // Initialize Section 2 Event Listeners
 async function initializeSection2() {
     // Setup project cards
     await setupProjectCards();
-
-    // Populate skill matrix
-    await populateSkillMatrix();
 
     // Close modals on overlay click and prevent scroll propagation
     const modals = document.querySelectorAll('.modal-overlay');
@@ -882,7 +368,7 @@ async function initializeSection2() {
 
         // Prevent scroll propagation on modal overlays
         modal.addEventListener('wheel', (e) => {
-            e.preventDefault();
+            if (e.target === modal) e.preventDefault();
         }, { passive: false });
     });
 
@@ -1027,11 +513,6 @@ window.section2Functions = {
     openProjectFromTimeline,
     toggleMinimize,
     closeProjectWindow,
-    goToSection: function(sectionNum) {
-        if (typeof goToSection === 'function') {
-            goToSection(sectionNum);
-        }
-    }
 };
 
 // Lightweight markdown parser
@@ -1084,5 +565,3 @@ window.closeTimelineDetail = closeTimelineDetail;
 window.openProjectWindow = openProjectWindow;
 window.toggleMinimize = toggleMinimize;
 window.closeProjectWindow = closeProjectWindow;
-window.scrollTimelineLeft = scrollTimelineLeft;
-window.scrollTimelineRight = scrollTimelineRight;

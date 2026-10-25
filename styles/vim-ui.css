@@ -1,0 +1,363 @@
+/* A read only Vim workspace, with white chrome and restrained syntax colors. */
+:root {
+    --vim-font: var(--terminal-font);
+    --vim-text: #d8d8d8;
+    --vim-muted: #858585;
+    --vim-heading: #ddd;
+    --vim-label: #bbb;
+    --vim-meta: #888;
+    --vim-dim: #777;
+    --vim-accent: #a4c59a;
+    --vim-link: #b5c9ae;
+    --tui-highlight-paper: #c4c4c4;
+    --tui-highlight-ink: #101820;
+    --tui-pressed-paper: #adafb1;
+}
+
+body { color: var(--vim-text); cursor: default; }
+body, body *, body *::before, body *::after { font-family: var(--vim-font) !important; font-variant-ligatures: none; text-shadow: none !important; }
+.ascii-frame, .ascii-rule, .ascii-frame *, .ascii-rule * { font-family: var(--ascii-font) !important; }
+::selection { color: #000; background: #ddd; }
+.code-rain-container, .glitch-text::before, .glitch-text::after { display: none; }
+
+.vim-tabline {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 42px;
+    padding: 8px 20px 0;
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    background: transparent;
+    z-index: 100;
+    font-size: 12px;
+}
+.vim-tabline button {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #929292;
+    padding: 0 16px;
+    font-size: inherit;
+    cursor: pointer;
+}
+.vim-tabline button span { margin-right: 8px; opacity: 0.7; }
+.vim-tabline button[aria-current], .vim-tabline button:hover { color: #d8d8d8; background: transparent; }
+.vim-tabline button[aria-current] span { color: #a4c59a; opacity: 1; }
+.vim-tabline button:focus-visible { outline: 1px dotted white; outline-offset: 3px; }
+.vim-workspace { margin-left: auto; align-self: center; color: #777; }
+
+#section1, #section2, #section3 { padding: 58px 20px 58px; }
+#section1 *, #section2 *, #section3 * { animation: none !important; }
+#section2.visible, #section3.visible { opacity: 1; animation: none; transform: none; }
+#section2.hidden { display: none; }
+#section1 { gap: 12px; }
+.editor-container { max-width: 55%; margin-right: 0; }
+.editor-container, .intro { padding: 22px 26px; }
+.intro { overflow: auto; }
+.intro > :is(.greeting, h1, .stats, .cta) { margin-inline: 18px; }
+.intro .greeting { color: #888; font-size: 12px; margin-top: 24px; }
+.intro .greeting::before { content: '# '; }
+.intro h1 { color: #eee; font-size: clamp(22px, 2.2vw, 34px); font-weight: 600; }
+.intro .stats { margin-top: 14px; gap: 24px; }
+.intro .stats .value { font-size: 17px; color: #ddd; }
+.intro .stats .label { font-size: 9px; line-height: 1.7; color: #888; }
+.intro .cta { gap: 18px 28px; margin-bottom: 24px; }
+.intro .cta a { font-size: 10px; color: #ccc; text-transform: none; letter-spacing: 0; }
+
+.window-chrome, .vim-buffer-header, .project-window-header, .tag-window-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 37px;
+    padding: 0 4px 13px;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+.window-title { position: static; transform: none; font-size: 12px; }
+.vim-buffer-number { color: #888; }
+.vim-readonly { color: #777; margin-left: auto; font-size: 10px; }
+.vim-buffer-name, .project-window-title, .tag-window-title { color: #ddd; font-size: 12px; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.vim-statusline {
+    display: flex;
+    align-items: center;
+    min-height: 25px;
+    flex-shrink: 0;
+    gap: 12px;
+    background: transparent;
+    color: #bbb;
+    font-size: 10px;
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 12px;
+}
+.vim-mode { color: #000; background: var(--vim-heading); padding: 0 9px; font-weight: 600; }
+.vim-status-name { overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1; }
+.vim-status-format { color: #aaa; }
+.vim-position { padding-right: 9px; color: #ddd; }
+.project-window.minimized .vim-statusline { display: none; }
+.window-control, .window-button { font-size: 11px !important; }
+
+.editor { padding: 12px 0; }
+.editor pre { font-size: 12px; line-height: 1.75; color: #bbb; white-space: pre; word-wrap: normal; }
+.editor .caret { display: none; }
+.vim-code-line { display: grid; grid-template-columns: 4ch minmax(0, 1fr); column-gap: 2ch; padding-right: 8px; }
+.vim-line-number { color: #656565; text-align: right; user-select: none; }
+.vim-line-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.vim-code-line:first-child { background: transparent; }
+.vim-code-line:first-child .vim-line-number { color: #ddd; }
+.vim-block-cursor { color: #000; background: #ddd; }
+.vim-json-key { color: #d4d4d4; }
+.vim-json-string { color: var(--vim-accent); }
+.vim-json-value { color: #d1b98a; }
+
+#section2 .about-container { padding-top: 0; max-width: 1480px; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px; }
+.about-main-card { padding: 24px 28px; }
+.about-main-card > .vim-buffer-header { margin-bottom: 20px; }
+.about-header { margin-bottom: 18px; }
+.about-label { display: none; }
+.about-name { color: var(--vim-heading); background: none; -webkit-text-fill-color: currentColor; font-size: 21px; }
+.about-name::before { content: '# '; color: #888; }
+.about-description p { color: #c4c4c4; font-size: 12px; line-height: 1.9; margin-bottom: 16px; }
+.about-description .highlight { color: #adc8a4; font-weight: 400; }
+.about-quote { margin: 0 0 24px; padding: 8px 0; }
+.about-quote cite { display: block; margin-top: 6px; color: #999; font-size: 11px; line-height: 1.7; font-style: normal; }
+.about-quote p { font-size: 11px; line-height: 1.7; color: #999; font-style: normal; }
+.card-header svg, .decks-header svg, .category-icon { display: none; }
+.card-title { color: #ccc; font-size: 12px; font-weight: 500; }
+.card-title::before { content: ': '; color: #888; }
+.timeline-preview { font-size: 11px; line-height: 1.7; color: #999; }
+.stat-card .stat-value { color: #ddd; font-size: 20px; }
+.stat-card .stat-label { color: #999; font-size: 10px; line-height: 1.6; }
+
+/* Project stacks become compact file lists while keeping their click actions. */
+.project-decks-container { padding: 24px; }
+.decks-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+.deck-wrapper { min-width: 0; width: 100%; gap: 8px; }
+.deck-label { order: -1; align-self: flex-start; color: #999; font-size: 10px; }
+.deck-label::after { content: '/'; }
+.project-stack-card, .project-stack { width: 100%; height: auto; }
+.project-stack { display: flex; flex-direction: column; gap: 4px; }
+.project-card { position: relative; inset: auto; width: 100%; height: auto; min-height: 72px; transform: none !important; }
+.project-card[data-ascii-frame] { padding: 22px 20px; }
+.project-name { font-size: 11px; line-height: 1.5; color: #ccc; overflow-wrap: anywhere; }
+.project-desc { font-size: 9px; line-height: 1.5; color: #777; }
+.project-card:hover .project-name { color: #fff; }
+
+.project-window { width: 760px; height: 560px; max-width: calc(100vw - 32px); max-height: calc(100dvh - 90px); min-width: 320px; }
+/* Project terminals use character frames and compact title bars. */
+.project-window[data-ascii-frame] { padding: 22px 26px; }
+.project-window[data-ascii-frame] > .ascii-frame { color: #aaa; }
+.project-window .project-window-header {
+    min-height: 40px;
+    padding: 0 0 14px;
+}
+.project-window:not(.minimized) .project-window-header > .ascii-rule { display: block; color: #777; }
+.project-window.minimized .project-window-header {
+    min-height: 26px;
+    padding: 0;
+}
+.project-window .project-window-title { font-size: 11px; }
+.project-content { padding: 22px 12px; }
+.tag-project-window { width: 620px; }
+.project-title { font-size: 24px; color: #ddd; }
+.project-description, .project-article p, .tag-project-item p { font-size: 12px; line-height: 1.85; color: #aaa; }
+.project-article h1, .project-article h2, .project-article h3 { color: #ddd; font-size: 18px; line-height: 1.5; }
+.project-article pre { font-size: 11px; line-height: 1.7; padding: 24px; }
+.project-window-tag, .github-link, .project-link { font-size: 10px; color: var(--vim-link); }
+.tag-project-item h4 { font-size: 13px; }
+.tag-project-item { padding: 24px; }
+.circuit-board .circuit-title { color: #ddd; letter-spacing: 0; text-transform: none; }
+.circuit-board .circuit-close { order: 3; }
+
+.section-header { text-align: left; margin-bottom: 20px; }
+.glitch-text { color: #ddd; font-size: 20px; letter-spacing: 0; text-transform: none; }
+.neon-filter-container { padding: 0; margin-bottom: 26px; align-items: flex-start; }
+.neon-filter-container > :not(.neon-signs-row), .power-receiver { display: none !important; }
+.neon-signs-row { gap: 24px; justify-content: flex-start; }
+.neon-sign-wrapper { background: transparent; }
+.neon-sign[data-ascii-frame] { padding: 4px; font-size: 11px; letter-spacing: 0; color: #888; }
+.neon-sign > .ascii-surface, .neon-sign > .ascii-frame { display: none; }
+.neon-sign-text { padding: 5px 9px; display: block; }
+.neon-sign-text::before { content: '[  '; white-space: pre; }
+.neon-sign-text::after { content: ' ]'; }
+.neon-sign.active .neon-sign-text { background: transparent; color: #c4d8bd; }
+.neon-sign.active .neon-sign-text::before { content: '[* '; }
+.category-title { font-size: 14px; margin-bottom: 14px; color: #bbb; }
+.skill-category { opacity: 1; transform: none; }
+.skill-category.filtered-out { display: none; }
+.category-title::before { content: '" '; color: #777; }
+.skill-cards { grid-auto-rows: 120px; }
+.skill-icon { display: none; }
+.skill-name { font-size: 14px; color: #ddd; }
+.skill-level { color: #a4c59a; font-size: 9px; }
+.bento-experience, .lines-badge { font-size: 10px; }
+.skill-card:hover { transform: none; }
+.scroll-indicator, .back-indicator { font-size: 10px; text-transform: none; letter-spacing: 0; }
+
+@media (max-width: 1100px) {
+    .vim-workspace { display: none; }
+    .vim-tabline { padding-left: 12px; }
+    .vim-tabline button { padding-inline: 10px; font-size: 11px; }
+    #section1, #section2, #section3 { padding: 56px 12px 52px; }
+    .intro > :is(.greeting, h1, .stats, .cta) { margin-inline: 4px; }
+    .vim-status-format { display: none; }
+    .editor pre { font-size: 11px; }
+    #section2 .about-container { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (max-width: 768px) {
+    .vim-tabline button { font-size: 10px; padding-inline: 6px; }
+    #section2 .about-container { grid-template-columns: 1fr; }
+    .editor-container { max-width: 100%; }
+    .project-window { min-width: 280px; }
+}
+
+/* Main windows use hash frames; smaller panels use equals frames. */
+.ascii-bleed, .ascii-surface, .ascii-frame, .ascii-rule { display: none; }
+.ascii-fill { inset: 0; }
+:is(.project-window, .tag-project-window, .modal-window, .circuit-board) > :is(.ascii-surface, .ascii-frame) { display: block; }
+:is(.editor-container, .about-main-card, .card,
+    .project-card, .skill-card, .skills-group, .skills-detail-window) > .ascii-frame { display: block; }
+[data-ascii-divider], .vim-statusline, .skill-expansion, .project-card:hover,
+.project-card:focus-within, .skill-card:hover,
+.project-article code, .window-control, .window-button, .circuit-close,
+.project-window-tag, .project-card-tag, .project-tag, .lines-badge,
+.skill-tags .tag, .node-tag, .hint-key, .hint-pill, .cta a, .github-link,
+.scroll-indicator, .back-indicator, .circuit-paused-overlay {
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+.modal-overlay, .circuit-modal {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+.card-header, .decks-header { padding-bottom: 0; }
+.project-card[data-ascii-frame] { padding: 12px 8px; min-height: 55px; }
+.decks-row { gap: 22px 16px; }
+.project-stack { gap: 0; }
+.project-name::before { content: '> '; color: #777; }
+.project-desc { margin-left: 2ch; }
+.about-quote { padding: 8px 0; }
+.about-quote p::before { content: '> '; color: #777; }
+.project-window-tag::before, .project-window-tag::after,
+.project-card-tag::before, .project-card-tag::after,
+.project-tag::before, .project-tag::after,
+.lines-badge::before, .lines-badge::after,
+.skill-tags .tag::before, .skill-tags .tag::after,
+.node-tag::before, .node-tag::after { content: none; }
+.project-window-tag, .project-card-tag, .project-tag, .lines-badge, .skill-tags .tag {
+    padding-inline: 0;
+    background: transparent !important;
+}
+.skill-card-inner { padding: 16px; }
+.skill-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 140px; }
+.skill-card.featured-large, .skill-card.featured-wide, .skill-card.featured-tall { grid-column: auto; grid-row: auto; }
+.tag-project-item { padding: 14px 0; }
+.vim-window, .card, .skill-card, .project-card, .project-decks-container, .tag-project-item, .about-quote {
+    background-image: none !important;
+}
+@media (max-width: 1100px) {
+    .skill-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Controls keep fixed rectangular backgrounds. Panel surfaces retain their pixel edges. */
+.pixel-button {
+    isolation: isolate;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+.pixel-button-mask {
+    position: absolute;
+    display: block;
+    z-index: -1;
+    background: #000;
+    opacity: 1;
+    pointer-events: none;
+    user-select: none;
+}
+.pixel-button-mask::before, .pixel-button-mask::after { content: none !important; }
+.pixel-button > .pixel-button-mask {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: none;
+}
+.cta a .pixel-button-mask { position: absolute; z-index: -1; }
+.vim-tabline button .pixel-button-mask { margin: 0; opacity: 1; }
+.pixel-button, .pixel-button > :not(.pixel-button-mask) { transition: none !important; }
+.vim-tabline button.pixel-button { align-self: center; padding: 1px 1ch; line-height: 1.5; }
+.intro .cta a.pixel-button { padding: 1px 1ch; line-height: 1.5; }
+.scroll-indicator.pixel-button, .back-indicator.pixel-button,
+.github-link.pixel-button, .project-link.pixel-button { padding: 1px 1ch; line-height: 1.5; }
+.neon-sign.pixel-button { padding: 0; }
+.neon-sign.pixel-button .neon-sign-text { padding: 1px 0.75ch; line-height: 1.5; }
+
+/* Terminal selections change ink and paper immediately, including keyboard focus. */
+.pixel-button:is([aria-current="page"], [aria-pressed="true"]) {
+    --tui-selection-paper: #292b2d;
+    --tui-selection-ink: #ddd;
+}
+.pixel-button:is(:hover, :focus-visible) {
+    --tui-selection-paper: var(--tui-highlight-paper);
+    --tui-selection-ink: var(--tui-highlight-ink);
+}
+.pixel-button:active {
+    --tui-selection-paper: var(--tui-pressed-paper);
+    --tui-selection-ink: var(--tui-highlight-ink);
+}
+.pixel-button:is(:hover, :focus-visible, :active, [aria-current="page"], [aria-pressed="true"]) {
+    color: var(--tui-selection-ink) !important;
+    opacity: 1;
+}
+.pixel-button:is(:hover, :focus-visible, :active, [aria-current="page"], [aria-pressed="true"]) > .pixel-button-mask {
+    background: var(--tui-selection-paper);
+}
+.pixel-button:is(:hover, :focus-visible, :active, [aria-current="page"], [aria-pressed="true"]) > :not(.pixel-button-mask, .ascii-surface, .ascii-frame),
+.pixel-button:is(:hover, :focus-visible, :active, [aria-current="page"], [aria-pressed="true"])::before,
+.pixel-button:is(:hover, :focus-visible, :active, [aria-current="page"], [aria-pressed="true"])::after,
+.pixel-button:is(:hover, :focus-visible, :active, [aria-current="page"], [aria-pressed="true"]) > span::before,
+.pixel-button:is(:hover, :focus-visible, :active, [aria-current="page"], [aria-pressed="true"]) > span::after {
+    color: inherit !important;
+    opacity: 1;
+}
+.pixel-button:focus-visible { outline: 1px solid #d8d8d8; outline-offset: 3px; }
+
+/* Project selection follows the title, including titles that wrap onto two rows. */
+.project-name {
+    width: fit-content;
+    max-width: 100%;
+    padding: 1px 0.5ch;
+    margin-left: -0.5ch;
+    transition: none;
+}
+.project-card:is(:hover, :focus-visible) .project-name {
+    color: var(--tui-highlight-ink);
+    background: var(--tui-highlight-paper);
+}
+.project-card:active .project-name { background: var(--tui-pressed-paper); }
+.project-card:is(:hover, :focus-visible) .project-name::before { color: inherit; }
+.project-card:focus-visible { outline: none; }
+.project-card:focus-visible .project-name { outline: 1px solid #d8d8d8; outline-offset: 2px; }
+
+/* Local opaque surfaces keep text readable without dimming the canvas. */
+.pixel-surface {
+    isolation: isolate;
+    background: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+.editor-container.pixel-surface, .about-main-card.pixel-surface,
+.card.pixel-surface, .project-decks-container.pixel-surface,
+.skill-card.pixel-surface { overflow: visible; }
+.intro > :is(.greeting, h1),
+.category-title, .section-header { width: fit-content; max-width: 100%; }
+.editor-container, .intro { min-height: 0; }
+.intro { justify-content: safe center; }

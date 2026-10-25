@@ -53,6 +53,14 @@ const DataLoader = (function() {
         return projectsData?.projects || [];
     }
 
+    // Use the public website when a project has one, otherwise its repository.
+    function getProjectLink(project) {
+        return {
+            url: project.demo || project.github,
+            label: project.demo ? 'Visit website' : 'View on GitHub'
+        };
+    }
+
     // Get projects by category
     function getProjectsByCategory(category) {
         const projects = getProjects();
@@ -186,6 +194,7 @@ const DataLoader = (function() {
         getCombinedTimeline,
         getProjectsSortedByTime,
         getProjects,
+        getProjectLink,
         getResume,
         getTopLanguages,
         isLoaded,

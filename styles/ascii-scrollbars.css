@@ -1,0 +1,57 @@
+/* Native scroll containers, with character rails rendered above their viewports. */
+.ascii-scrollable {
+    scrollbar-width: none !important;
+    overscroll-behavior: contain;
+    scroll-behavior: auto;
+}
+.ascii-scrollable::-webkit-scrollbar { display: none !important; }
+.ascii-scrollable:focus-visible { outline: 1px dotted #888; outline-offset: -2px; }
+.editor.ascii-scrollable, .project-content.ascii-scrollable,
+.tag-window-content.ascii-scrollable, .modal-content.ascii-scrollable { padding-right: 28px; }
+.skill-card:is(:hover, :focus-within, .ascii-scroll-active) .skill-expansion.ascii-scrollable {
+    flex: 0.382;
+    opacity: 1;
+    padding: 12px 28px 12px 12px;
+    border: 0;
+}
+.skill-card:is(:focus-within, .ascii-scroll-active) .skill-card-inner { flex: 0.618; }
+.skill-card.ascii-scroll-active { z-index: 10; }
+.skill-tags { max-height: none; overflow: visible; }
+.timeline-full.ascii-scrollable { padding-right: 28px; }
+.project-article pre.ascii-scrollable { padding-bottom: 28px; }
+
+.ascii-scrollbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    color: #707070;
+    background: #000;
+    font: 11px/12px var(--vim-font, monospace);
+    text-align: center;
+    white-space: pre;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    touch-action: none;
+    user-select: none;
+    cursor: pointer;
+    isolation: isolate;
+}
+.ascii-scrollbar[hidden] { display: none !important; }
+.ascii-scrollbar-cell {
+    display: block;
+    flex: 0 0 12px;
+    width: 20px;
+    height: 12px;
+    pointer-events: none;
+}
+.ascii-scrollbar-cell.is-active {
+    color: #ddd;
+}
+.ascii-scrollbar[data-dragging] { cursor: grabbing; }
+.ascii-scrollbar[data-dragging] .is-active { color: #fff; }
+.ascii-scrollbar:focus-visible { outline: 1px dotted #bbb; outline-offset: 1px; }
+.ascii-scrollbar:is(:hover, :focus-visible) .is-active { color: #fff; }
+.ascii-scrollbar[data-axis="horizontal"] { flex-direction: row; height: 20px; width: auto; line-height: 20px; }
+.ascii-scrollbar[data-axis="horizontal"] .ascii-scrollbar-cell { width: 12px; height: 20px; }

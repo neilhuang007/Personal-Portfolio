@@ -27,10 +27,8 @@ checkForMobileAndBlock();
 // Also check on window resize in case orientation changes
 window.addEventListener('resize', checkForMobileAndBlock);
 
-/* Typewriter for Resume Code */
+/* Resume Code */
 const codeEl = document.getElementById('resume-code');
-let isTyping = true;
-let isTypingTagline = true;
 
 // Initialize resume from loaded data
 async function initializeResume() {
@@ -38,8 +36,7 @@ async function initializeResume() {
     if (!data) return;
 
     const resume = data.resume;
-    const featuredProject = data.projects.projects.find(p => p.featured);
-    const otherProjects = data.projects.projects.filter(p => !p.featured).map(p => p.title);
+    const projects = DataLoader.getProjects();
 
     const codeStr = JSON.stringify({
         name: resume.personal?.name || "Neil (Gezhi) Huang",
@@ -51,14 +48,11 @@ async function initializeResume() {
             experience: resume.skills?.experience || "6 years",
             specialties: resume.skills?.specialties || []
         },
-        projects: {
-            featured: featuredProject ? {
-                name: featuredProject.title,
-                description: featuredProject.description,
-                accuracy: featuredProject.accuracy || "95%"
-            } : {},
-            others: otherProjects
-        },
+        selected_projects: projects.map(project => ({
+            name: project.title,
+            focus: project.discipline,
+            link: DataLoader.getProjectLink(project).url
+        })),
         achievements: resume.achievements || {},
         unique: ["Antarctica at 15", "Ambidextrous fencer", "Kangaroo taste tester", "3AM debugger"]
     }, null, 4);
@@ -74,297 +68,147 @@ async function initializeResume() {
         if (stat3) stat3.textContent = resume.stats.languagesKnown || 11;
     }
 
-    // Start typewriter with loaded data
-    typeCodeWithString(codeStr);
+    renderResumeBuffer(codeStr);
 }
 
-function typeCodeWithString(str) {
-    let idx = 0;
-
-    function type() {
-        if (idx < str.length && isTyping) {
-            codeEl.textContent += str[idx++];
-            setTimeout(type, 30 + Math.random() * 70);
+function renderResumeBuffer(source) {
+    const fragment = document.createDocumentFragment();
+    source.split('\n').forEach((line, index) => {
+        const row = document.createElement('span');
+        row.className = 'vim-code-line';
+        const number = document.createElement('span');
+        number.className = 'vim-line-number';
+        number.setAttribute('aria-hidden', 'true');
+        number.textContent = index + 1;
+        const content = document.createElement('span');
+        content.className = 'vim-line-text';
+        const tokens = /"(?:\\.|[^"\\])*"|\b(?:true|false|null|-?\d+(?:\.\d+)?)\b/g;
+        let offset = 0;
+        for (const match of line.matchAll(tokens)) {
+            content.append(document.createTextNode(line.slice(offset, match.index)));
+            const token = document.createElement('span');
+            const isKey = /^\s*:/.test(line.slice(match.index + match[0].length));
+            token.className = isKey ? 'vim-json-key' : match[0].startsWith('"') ? 'vim-json-string' : 'vim-json-value';
+            token.textContent = match[0];
+            content.append(token);
+            offset = match.index + match[0].length;
         }
-    }
-    type();
-}
-
-/* Rotating Taglines with Typewriter */
-const tagEl = document.getElementById('taglineText');
-let taglines = window.innerWidth > 768 ? [
-    'ML researcher with Georgia Tech professor',
-    '700K lines across eleven languages',
-    'National debate ranking #6 (NSDA china LeaderBoards)',
-    'Antarctic explorer',
-    'USACO Gold rank in 1 month',
-    'Fencing captain',
-    'Started coding at age 5',
-    "Ambidextrous",
-    "Full-stack developer",
-    "AI/ML enthusiast",
-    "Reverse Engineering",
-    "Open Source Contributor",
-    "Backend Developer",
-    "Frontend Developer",
-    "Data Scientist",
-    "Competitive Programmer",
-    "Learning Blockchain & AI Finance",
-] : [
-    'ML researcher with Georgia Tech',
-    '700K+ lines in 11 languages',
-    'National debate ranking #6',
-    'Antarctic explorer at 15',
-    'USACO Gold champion',
-    'Fencing team captain',
-    'Coding since age 5',
-    "Ambidextrous fencer",
-    "Full-stack developer",
-    "AI/ML enthusiast",
-    "Reverse engineering",
-    "Open source contributor",
-    "Backend developer",
-    "Frontend developer",
-    "Data scientist",
-    "Competitive programmer",
-    "Learning blockchain & AI finance"
-];
-let tIndex = 0;
-
-function typeTagline() {
-    if (!isTypingTagline) return;
-    const text = taglines[tIndex];
-    tagEl.textContent = '';
-    let c = 0;
-    (function typeChar() {
-        if (c < text.length && isTypingTagline) {
-            tagEl.textContent += text[c++];
-            setTimeout(typeChar, window.innerWidth > 768 ? (100 + Math.random() * 100) : (50 + Math.random() * 50));
-        } else if (isTypingTagline) {
-            setTimeout(nextTagline, 2000);
+        content.append(document.createTextNode(line.slice(offset)));
+        if (index === 0) {
+            content.textContent = '';
+            const cursor = document.createElement('span');
+            cursor.className = 'vim-block-cursor';
+            cursor.textContent = line;
+            content.append(cursor);
         }
-    })();
+        row.append(number, content);
+        fragment.append(row);
+    });
+    codeEl.replaceChildren(fragment);
+    codeEl.dataset.lines = source.split('\n').length;
+    document.dispatchEvent(new Event('portfolio:resume-ready'));
 }
 
-function nextTagline() {
-    if (isTypingTagline) {
-        tIndex = (tIndex + 1) % taglines.length;
-        typeTagline();
-    }
-}
-
-/* FAKE SCROLL HANDLING */
+/* Buffer navigation */
 const section1 = document.getElementById('section1');
 const section2 = document.getElementById('section2');
 const section3 = document.getElementById('section3');
 const backIndicator = document.querySelector('.back-indicator');
 const section2ScrollIndicator = document.querySelector('.section2-scroll');
 let currentSection = 1;
-let animating = false;
-let scrollAccumulator = 0;
-const scrollThreshold = 100;
+let transitioning = false;
+let queuedSection = null;
 
 // Function to go to a specific section
 function goToSection(sectionNum) {
-    if (animating || currentSection === sectionNum) return;
-
-    animating = true;
-    console.log(`Transitioning from section ${currentSection} to section ${sectionNum}`);
-
-    if (sectionNum === 2 && currentSection === 1) {
-        // Going from section 1 to 2
-        isTyping = false;
-        isTypingTagline = false;
-
-        // Start flyout animation
-        section1.classList.add('scrolling-down');
-
-        // Show section 2 after animation starts
-        setTimeout(() => {
-            section2.classList.add('visible');
-            backIndicator.classList.add('visible');
-            section2ScrollIndicator.classList.add('visible');
-        }, 300);
-
-        // Hide section 1 after animation completes
-        setTimeout(() => {
-            section1.classList.add('hidden');
-            section1.classList.remove('scrolling-down');
-            currentSection = 2;
-            animating = false;
-            scrollAccumulator = 0;
-        }, 1500);
-
-    } else if (sectionNum === 1 && currentSection === 2) {
-        // Going from section 2 to 1
-        section2.classList.add('hiding');
-        backIndicator.classList.remove('visible');
-        section2ScrollIndicator.classList.remove('visible');
-        section1.classList.remove('hidden');
-
-        setTimeout(() => {
-            section2.classList.remove('visible');
-            section2.classList.remove('hiding');
-            section1.classList.remove('scrolling-up');
-            currentSection = 1;
-            animating = false;
-            scrollAccumulator = 0;
-
-            // Resume animations
-            isTyping = true;
-            isTypingTagline = true;
-            typeTagline();
-        }, 1500);
-
-    } else if (sectionNum === 3 && currentSection === 2) {
-        // Going from section 2 to 3
-        section2.classList.add('scrolling-out');
-        backIndicator.classList.remove('visible');
-        section2ScrollIndicator.classList.remove('visible');
-
-        // Show section 3 after cascade animation starts
-        setTimeout(() => {
-            section3.classList.add('visible');
-        }, 600);
-
-        // Hide section 2 after animation completes
-        setTimeout(() => {
-            section2.classList.add('hidden');
-            section2.classList.remove('visible');
-            section2.classList.remove('scrolling-out');
-            currentSection = 3;
-            animating = false;
-            scrollAccumulator = 0;
-        }, 1500);
-
-    } else if (sectionNum === 2 && currentSection === 3) {
-        // Going from section 3 to 2
-        section3.classList.add('hiding');
-        section2.classList.remove('hidden');
-
-        setTimeout(() => {
-            section2.classList.add('visible');
-            backIndicator.classList.add('visible');
-            section2ScrollIndicator.classList.add('visible');
-            section3.classList.remove('visible');
-            section3.classList.remove('hiding');
-            currentSection = 2;
-            animating = false;
-            scrollAccumulator = 0;
-        }, 800);
+    if (![1, 2, 3].includes(sectionNum)) return;
+    if (transitioning) {
+        queuedSection = sectionNum;
+        return;
     }
+    if (currentSection === sectionNum) return;
+
+    const sections = [section1, section2, section3];
+    const outgoing = sections[currentSection - 1];
+    const incoming = sections[sectionNum - 1];
+    transitioning = true;
+
+    // Keep keyboard focus out of the document that is about to disappear.
+    if (outgoing.contains(document.activeElement)) {
+        document.querySelector(`[data-buffer="${sectionNum}"]`)?.focus({ preventScroll: true });
+    }
+
+    const complete = () => {
+        sections.forEach((section, index) => {
+            const active = index + 1 === sectionNum;
+            section.classList.remove('hiding', 'scrolling-down', 'scrolling-up', 'scrolling-out');
+            section.classList.toggle('hidden', !active);
+            section.classList.toggle('visible', active);
+        });
+        backIndicator.classList.toggle('visible', sectionNum === 2);
+        section2ScrollIndicator.classList.toggle('visible', sectionNum === 2);
+        currentSection = sectionNum;
+        document.dispatchEvent(new CustomEvent('portfolio:section-change', { detail: { section: sectionNum } }));
+        transitioning = false;
+        const nextSection = queuedSection;
+        queuedSection = null;
+        if (nextSection !== null) goToSection(nextSection);
+    };
+
+    if (window.AsciiPageTransition) window.AsciiPageTransition.run(outgoing, incoming, complete, sectionNum - currentSection);
+    else complete();
 }
 
-window.addEventListener('wheel', (e) => {
-    if (animating) return;
+// Background wheel gestures switch buffers. Windows retain their native scroll.
+const windowScrollSelector = '.skills-group, .skills-detail-window, .skills-heading, .skills-filters, .editor-container, .vim-window, .card, .skill-card, .project-decks-container, .intro > *, .ascii-scrollbar, .vim-tabline, .modal-overlay, .circuit-modal, .timeline-window';
+let wheelDistance = 0;
+let lastWheelTime = 0;
+let wheelConsumed = false;
 
-    // Check if scrolling inside a project window
-    const projectWindow = e.target.closest('.project-window');
-    if (projectWindow && projectWindow.classList.contains('active')) {
-        return; // Let project window handle its own scroll
+function isWindowScroll(target) {
+    if (target.closest(windowScrollSelector)) return true;
+    // Also protect independently scrolling content added by dynamic windows.
+    for (let element = target; element && !element.matches('#app > section, #app, body'); element = element.parentElement) {
+        if (element.scrollHeight > element.clientHeight + 1 && /auto|scroll/.test(getComputedStyle(element).overflowY)) return true;
     }
+    return false;
+}
 
-    // Section 2 and 3 can scroll naturally within themselves
-    if (currentSection === 2) {
-        const section2El = document.getElementById('section2');
-        const isAtBottom = section2El.scrollHeight - section2El.scrollTop <= section2El.clientHeight + 10;
-        const isAtTop = section2El.scrollTop <= 10;
-
-        if (e.deltaY > 0 && isAtBottom) {
-            e.preventDefault();
-            scrollAccumulator += e.deltaY;
-            if (scrollAccumulator > scrollThreshold) {
-                goToSection(3);
-            }
-        } else if (e.deltaY < 0 && isAtTop) {
-            e.preventDefault();
-            scrollAccumulator += e.deltaY;
-            if (scrollAccumulator < -scrollThreshold) {
-                goToSection(1);
-            }
-        } else {
-            scrollAccumulator = 0;
-        }
+window.addEventListener('wheel', event => {
+    if (event.defaultPrevented || event.ctrlKey || event.shiftKey || !event.deltaY || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+    const target = event.target instanceof Element ? event.target : event.target.parentElement;
+    // Read overflowing skills before using a background gesture to leave the page.
+    const readingSkills = target && section3.contains(target) &&
+        (section3.scrollTop > 1 || (event.deltaY > 0 && section3.scrollHeight > section3.clientHeight + 1));
+    if (!target || readingSkills || document.querySelector('.circuit-modal.active, .modal-overlay.active, dialog[open]') || isWindowScroll(target)) {
+        wheelDistance = 0;
         return;
     }
 
-    if (currentSection === 3) {
-        const section3El = document.getElementById('section3');
-        const isAtTop = section3El.scrollTop <= 10;
-
-        if (e.deltaY < 0 && isAtTop) {
-            e.preventDefault();
-            scrollAccumulator += e.deltaY;
-            if (scrollAccumulator < -scrollThreshold) {
-                goToSection(2);
-            }
-        } else {
-            scrollAccumulator = 0;
-        }
+    event.preventDefault();
+    const now = performance.now();
+    if (now - lastWheelTime > 220) {
+        wheelDistance = 0;
+        wheelConsumed = false;
+    }
+    lastWheelTime = now;
+    // Consume the rest of this gesture so trackpad momentum cannot skip a page.
+    if (transitioning || wheelConsumed) {
+        wheelDistance = 0;
+        wheelConsumed = true;
         return;
     }
 
-    e.preventDefault(); // Prevent actual scrolling for section 1
+    const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1;
+    const delta = event.deltaY * unit;
+    if (Math.sign(delta) !== Math.sign(wheelDistance)) wheelDistance = 0;
+    wheelDistance += delta;
+    if (Math.abs(wheelDistance) < 70) return;
 
-    // Accumulate scroll
-    scrollAccumulator += e.deltaY;
-
-    console.log(`Wheel delta: ${e.deltaY}, Accumulated: ${scrollAccumulator}`);
-
-    if (currentSection === 1 && scrollAccumulator > scrollThreshold) {
-        goToSection(2);
-    }
-
-    // Reset accumulator if scrolling in wrong direction
-    if ((currentSection === 1 && scrollAccumulator < 0)) {
-        scrollAccumulator = 0;
-    }
-}, {passive: false});
-
-// Touch events for mobile
-let touchStartY = 0;
-let touchEndY = 0;
-
-window.addEventListener('touchstart', (e) => {
-    touchStartY = e.touches[0].clientY;
-});
-
-window.addEventListener('touchmove', (e) => {
-    if (currentSection === 2 || currentSection === 3) return;  // allow native touch scrolling
-    e.preventDefault(); // Prevent scrolling
-    touchEndY = e.touches[0].clientY;
-}, {passive: false});
-
-window.addEventListener('touchend', (e) => {
-    const touchDiff = touchStartY - touchEndY;
-
-    if (Math.abs(touchDiff) > 50) { // Minimum swipe distance
-        if (touchDiff > 0 && currentSection === 1) {
-            goToSection(2);
-        } else if (touchDiff < 0 && currentSection === 2) {
-            goToSection(1);
-        } else if (touchDiff > 0 && currentSection === 2) {
-            goToSection(3);
-        } else if (touchDiff < 0 && currentSection === 3) {
-            goToSection(2);
-        }
-    }
-});
-
-// Keyboard navigation
-window.addEventListener('keydown', (e) => {
-    if (animating) return;
-
-    if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
-        e.preventDefault();
-        if (currentSection === 1) goToSection(2);
-        else if (currentSection === 2) goToSection(3);
-    } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-        e.preventDefault();
-        if (currentSection === 2) goToSection(1);
-        else if (currentSection === 3) goToSection(2);
-    }
-});
+    wheelConsumed = true;
+    goToSection(Math.max(1, Math.min(3, currentSection + Math.sign(wheelDistance))));
+    wheelDistance = 0;
+}, { passive: false });
 
 // Click on scroll indicators
 document.querySelector('.scroll-indicator').addEventListener('click', () => {
@@ -375,14 +219,23 @@ document.querySelector('.section2-scroll').addEventListener('click', () => {
     goToSection(3);
 });
 
-/* Theme Switcher */
-const themes = ['junie', 'aqua', 'dark'];
-let themeIndex = 0;
-const switcher = document.getElementById('theme-switcher');
-
-switcher.addEventListener('click', () => {
-    themeIndex = (themeIndex + 1) % themes.length;
-    document.documentElement.setAttribute('data-theme', themes[themeIndex]);
+document.querySelector('a[href="#projects"]').addEventListener('click', event => {
+    event.preventDefault();
+    const focusProjects = () => {
+        document.getElementById('projects-title').focus({ preventScroll: true });
+        document.getElementById('projects').scrollIntoView({ block: 'start' });
+    };
+    if (currentSection === 2) {
+        focusProjects();
+    } else {
+        const onSectionChange = event => {
+            if (event.detail.section !== 2) return;
+            document.removeEventListener('portfolio:section-change', onSectionChange);
+            focusProjects();
+        };
+        document.addEventListener('portfolio:section-change', onSectionChange);
+        goToSection(2);
+    }
 });
 
 /* Expandable sections */
@@ -398,12 +251,10 @@ window.addEventListener('DOMContentLoaded', async () => {
     // Load all data first
     await DataLoader.loadData();
 
-    console.log('Page loaded. Fake scroll enabled.');
-    console.log('Controls: Mouse wheel, arrow keys, touch swipe, or click "Scroll to continue"');
+    console.log('Buffers ready. Scroll the background to switch buffers, or scroll inside a window to read.');
 
     // Initialize with loaded data
     await initializeResume();
-    typeTagline();
 });
 
 /* Timeline Toggle Function */

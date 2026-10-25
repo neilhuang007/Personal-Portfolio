@@ -1,0 +1,27 @@
+/* A character sweep across the document, below the persistent buffer tabs. */
+.ascii-page-transition {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+    clip-path: inset(42px 0 0);
+    pointer-events: none;
+    user-select: none;
+}
+
+.ascii-page-transition[hidden] { display: none; }
+
+body.ascii-transitioning :is(#section1, #section2, #section3) {
+    pointer-events: none;
+    will-change: clip-path;
+}
+
+body.ascii-transitioning .ascii-scrollbar {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ascii-page-transition { display: none; }
+}

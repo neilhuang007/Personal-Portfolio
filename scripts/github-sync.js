@@ -440,11 +440,16 @@ async function syncGitHubData() {
 
         // Create project entries map
         const existingProjectsMap = new Map(
-            existingProjects.projects.map(p => [p.github, p])
+            existingProjects.projects
+                .filter(project => project.github)
+                .map(project => [project.github.replace(/\/tree\/.*$/, ''), project])
         );
 
         // Update or create project entries
-        const updatedProjects = [];
+        // Curated collections keep their selection, order, website links, and copy.
+        const updatedProjects = existingProjects.curated
+            ? existingProjects.projects.map(project => ({ ...project }))
+            : [];
         for (const repo of repos) {
             if (CONFIG.excludeRepos.includes(repo.name)) continue;
 
@@ -456,8 +461,14 @@ async function syncGitHubData() {
                 existingProject.forks = repo.forks_count;
                 existingProject.lastUpdated = repo.pushed_at;
                 existingProject.isPrivate = repo.private;
-                updatedProjects.push(existingProject);
+                if (existingProjects.curated) {
+                    const selected = updatedProjects.find(project => project.id === existingProject.id);
+                    Object.assign(selected, existingProject);
+                } else {
+                    updatedProjects.push(existingProject);
+                }
             } else {
+                if (existingProjects.curated) continue;
                 // Create new project entry
                 const newProject = generateProjectEntry(repo, repo._languages || {});
                 updatedProjects.push(newProject);
@@ -466,7 +477,9 @@ async function syncGitHubData() {
         }
 
         // Sort by date (newest first)
-        updatedProjects.sort((a, b) => new Date(b.time) - new Date(a.time));
+        if (!existingProjects.curated) {
+            updatedProjects.sort((a, b) => new Date(b.time) - new Date(a.time));
+        }
 
         // Update categories count
         const categoryCount = {};
@@ -476,6 +489,7 @@ async function syncGitHubData() {
 
         // Update projects.json
         const projectsData = {
+            curated: existingProjects.curated === true,
             projects: updatedProjects,
             categories: {
                 ...existingProjects.categories,

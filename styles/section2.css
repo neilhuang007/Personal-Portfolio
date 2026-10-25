@@ -9,6 +9,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100dvh;
     padding: 4rem 2rem;
     background: transparent;
     display: none;
@@ -61,11 +62,16 @@
     padding-top: 2rem;
 }
 
+#section2 .about-container > * {
+    min-width: 0;
+}
+
 /* Left Column Container */
 .left-column {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    min-width: 0;
 }
 
 /* ============================================
@@ -82,12 +88,7 @@
     padding: 3rem;
     height: fit-content;
     overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.about-main-card:hover {
-    border-color: rgba(var(--accent-rgb), 0.4);
-    transform: translateY(-2px);
+    transition: none;
 }
 
 /* Card Glow Effect */
@@ -101,10 +102,6 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
-}
-
-.about-main-card:hover .card-glow {
-    opacity: 1;
 }
 
 /* About Header */
@@ -188,6 +185,7 @@
     grid-auto-rows: minmax(120px, auto);
     gap: 1rem;
     height: fit-content;
+    min-width: 0;
 }
 
 /* Base Card Styles */
@@ -594,18 +592,35 @@
     display: flex;
 }
 
-.project-window.minimized {
-    width: 250px !important;
-    height: auto !important;
-    min-height: auto !important;
-    resize: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+.project-window-dock {
+    position: fixed;
+    top: 58px;
+    right: 20px;
+    width: min(340px, calc(100vw - 40px));
+    max-height: calc(100dvh - 78px);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
 }
 
-.project-window.minimized:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(var(--accent-rgb), 0.3);
+.project-window-dock:empty { display: none; }
+
+.project-window-dock > .project-window.minimized {
+    position: relative;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none;
+    height: auto !important;
+    min-width: 0;
+    min-height: 0;
+    flex: 0 0 auto;
+    resize: none;
+    cursor: pointer;
+    transition: none;
 }
 
 .project-window.minimized .project-content {
@@ -622,6 +637,7 @@
 
 .project-window.minimized .project-window-header {
     border-bottom: none;
+    cursor: pointer;
 }
 
 .project-window-title {
@@ -634,6 +650,7 @@
 .window-controls {
     display: flex;
     gap: 0.5rem;
+    flex-shrink: 0;
 }
 
 .window-control {
@@ -765,181 +782,6 @@
     line-height: 1.4;
     position: relative;
     z-index: 1;
-}
-
-/* ============================================
-   TERMINAL LOG - Fun Facts (replaces old fun-fact-card)
-   ============================================ */
-
-.terminal-log-card {
-    grid-column: span 2;
-}
-
-.terminal-log {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.log-entry {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 0.5rem 0.75rem;
-    border-radius: 4px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    line-height: 1.5;
-    transition: all 0.25s ease;
-    position: relative;
-}
-
-.log-entry::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: linear-gradient(90deg, var(--accent), transparent);
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.log-entry:hover {
-    background: rgba(var(--accent-rgb), 0.04);
-}
-
-.log-entry:hover::after {
-    width: 100%;
-}
-
-.log-entry:hover .log-prefix {
-    text-shadow: 0 0 8px currentColor;
-}
-
-.log-prefix {
-    font-weight: 700;
-    font-size: 0.7rem;
-    white-space: nowrap;
-    padding-top: 1px;
-}
-
-.log-info .log-prefix {
-    color: var(--accent);
-}
-
-.log-debug .log-prefix {
-    color: var(--muted);
-}
-
-.log-warn .log-prefix {
-    color: #f0ad4e;
-}
-
-.log-text {
-    color: var(--fg);
-    opacity: 0.85;
-}
-
-.log-entry:hover .log-text {
-    opacity: 1;
-}
-
-/* ============================================
-   SKILL MATRIX - Hacker Terminal Table (replaces old language-card)
-   ============================================ */
-
-.skill-matrix-card {
-    grid-column: span 2;
-}
-
-.skill-matrix {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    width: 100%;
-}
-
-.skill-matrix-header {
-    display: grid;
-    grid-template-columns: 90px 60px 80px 55px 70px;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px dashed rgba(var(--accent-rgb), 0.3);
-    color: var(--muted);
-    text-transform: uppercase;
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
-}
-
-.skill-matrix-row {
-    display: grid;
-    grid-template-columns: 90px 60px 80px 55px 70px;
-    gap: 0.5rem;
-    padding: 0.6rem 0;
-    border-bottom: 1px solid rgba(var(--accent-rgb), 0.08);
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.skill-matrix-row:hover {
-    background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.06) 0%, transparent 80%);
-}
-
-.skill-matrix-row:hover .matrix-lang {
-    text-shadow: 0 0 12px rgba(var(--accent-rgb), 0.6);
-    letter-spacing: 0.04em;
-}
-
-.skill-matrix-row:last-child {
-    border-bottom: none;
-}
-
-.matrix-lang {
-    color: var(--accent);
-    font-weight: 600;
-}
-
-.matrix-years {
-    color: var(--fg);
-}
-
-.matrix-lines {
-    color: var(--fg);
-    font-variant-numeric: tabular-nums;
-}
-
-.matrix-repos {
-    color: var(--fg);
-    text-align: center;
-}
-
-.matrix-level {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.15rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.6rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.matrix-level.expert {
-    background: rgba(var(--accent-rgb), 0.15);
-    color: var(--accent);
-    border: 1px solid rgba(var(--accent-rgb), 0.3);
-}
-
-.matrix-level.advanced {
-    background: rgba(100, 200, 255, 0.1);
-    color: #64c8ff;
-    border: 1px solid rgba(100, 200, 255, 0.3);
-}
-
-.matrix-level.intermediate {
-    background: rgba(255, 200, 50, 0.1);
-    color: #ffc832;
-    border: 1px solid rgba(255, 200, 50, 0.3);
 }
 
 /* ============================================
@@ -1101,6 +943,148 @@
     transform: rotate(180deg);
 }
 
+@media (max-width: 1600px) {
+    #section2 {
+        padding: 3rem 1.5rem;
+    }
+
+    #section2 .about-container {
+        max-width: 1280px;
+        gap: 1.5rem;
+        padding-top: 1rem;
+    }
+
+    .about-main-card {
+        padding: 2.25rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 1366px), (max-height: 820px) {
+    #section2 {
+        padding: 2.5rem 1rem;
+    }
+
+    #section2 .about-container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 1rem;
+        padding-top: 0.5rem;
+    }
+
+    .about-main-card {
+        padding: 1.75rem;
+    }
+
+    .about-name {
+        font-size: 2rem;
+    }
+
+    .about-description p {
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .stat-value {
+        font-size: 1.85rem;
+    }
+
+    .deck-wrapper {
+        min-width: 170px;
+    }
+
+    .project-stack {
+        width: 170px;
+        height: 150px;
+    }
+
+    .project-card {
+        width: 132px;
+        height: 84px;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-height: 760px) {
+    #section2 {
+        padding: 1.75rem 0.9rem;
+    }
+
+    #section2 .about-container {
+        gap: 0.85rem;
+        padding-top: 0.25rem;
+    }
+
+    .about-main-card {
+        padding: 1.35rem;
+        border-radius: 14px;
+    }
+
+    .about-header {
+        margin-bottom: 1rem;
+    }
+
+    .about-name {
+        font-size: 1.6rem;
+    }
+
+    .about-description p {
+        font-size: 0.82rem;
+        line-height: 1.45;
+        margin-bottom: 0.65rem;
+    }
+
+    .card {
+        padding: 0.8rem;
+        border-radius: 12px;
+    }
+
+    .stat-value {
+        font-size: 1.45rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+        font-size: 0.62rem;
+    }
+
+    .project-stack {
+        width: 145px;
+        height: 120px;
+    }
+
+    .project-card {
+        width: 112px;
+        height: 72px;
+        padding: 0.5rem;
+    }
+
+    .project-name {
+        font-size: 0.72rem;
+    }
+
+    .project-desc {
+        font-size: 0.56rem;
+    }
+
+    .back-indicator {
+        bottom: 0.75rem;
+        right: 9rem;
+        padding: 0.35rem 0.65rem;
+        font-size: 0.6rem;
+    }
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
@@ -1154,9 +1138,7 @@
         grid-template-columns: 1fr;
     }
 
-    .timeline-card,
-    .terminal-log-card,
-    .skill-matrix-card {
+    .timeline-card {
         grid-column: span 1;
     }
 
@@ -1285,485 +1267,7 @@ body.modal-open {
     margin-left: 0.5rem;
 }
 
-/* ============================================
-   TIMELINE - Pixel Boat Sailing Experience
-   ============================================ */
-
-/* Timeline Ocean Container */
-.timeline-ocean {
-    position: relative;
-    width: 100%;
-    height: 65vh;
-    overflow: hidden;
-    background: linear-gradient(180deg,
-        rgba(0, 20, 40, 0.9) 0%,
-        rgba(0, 40, 60, 0.8) 50%,
-        rgba(0, 60, 80, 0.7) 100%);
-    border-radius: 8px;
-}
-
-/* Pixel Water Effect */
-.timeline-ocean::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: repeating-linear-gradient(
-        90deg,
-        transparent 0px,
-        transparent 4px,
-        rgba(var(--accent-rgb), 0.1) 4px,
-        rgba(var(--accent-rgb), 0.1) 8px
-    );
-    animation: waterShimmer 3s ease-in-out infinite;
-    pointer-events: none;
-}
-
-@keyframes waterShimmer {
-    0%, 100% { opacity: 0.3; transform: translateX(0); }
-    50% { opacity: 0.5; transform: translateX(8px); }
-}
-
-/* Pixel Boat Container */
-.pixel-boat {
-    position: absolute;
-    left: 10%;
-    bottom: 35%;
-    width: 120px;
-    height: 80px;
-    transition: left 0.1s linear;
-    z-index: 50;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
-}
-
-/* Pixel Boat Built with CSS */
-.boat-hull {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 24px;
-    background: linear-gradient(180deg, #8B4513 0%, #654321 100%);
-    border-radius: 0 0 40px 40px;
-    box-shadow:
-        inset 0 -4px 0 #4a2810,
-        0 4px 0 rgba(var(--accent-rgb), 0.3);
-}
-
-/* Pixel effect on hull */
-.boat-hull::before {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 8px;
-    right: 8px;
-    height: 4px;
-    background: repeating-linear-gradient(90deg, #9B5523 0px, #9B5523 8px, #8B4513 8px, #8B4513 16px);
-}
-
-.boat-cabin {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 32px;
-    height: 20px;
-    background: #654321;
-    border-radius: 4px 4px 0 0;
-}
-
-.boat-cabin::before {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 8px;
-    height: 8px;
-    background: rgba(var(--accent-rgb), 0.6);
-    border-radius: 2px;
-    box-shadow: 16px 0 0 rgba(var(--accent-rgb), 0.6);
-}
-
-.boat-mast {
-    position: absolute;
-    bottom: 36px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 50px;
-    background: linear-gradient(180deg, #4a2810 0%, #654321 100%);
-}
-
-.boat-sail {
-    position: absolute;
-    bottom: 40px;
-    left: calc(50% + 4px);
-    width: 0;
-    height: 0;
-    border-left: 40px solid rgba(var(--accent-rgb), 0.8);
-    border-top: 20px solid transparent;
-    border-bottom: 24px solid transparent;
-    animation: sailWave 2s ease-in-out infinite;
-}
-
-@keyframes sailWave {
-    0%, 100% { transform: skewY(0deg); }
-    50% { transform: skewY(2deg); }
-}
-
-.boat-flag {
-    position: absolute;
-    bottom: 82px;
-    left: calc(50% + 2px);
-    width: 16px;
-    height: 10px;
-    background: var(--accent);
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-    animation: flagWave 1s ease-in-out infinite;
-}
-
-@keyframes flagWave {
-    0%, 100% { transform: scaleX(1); }
-    50% { transform: scaleX(0.9); }
-}
-
-/* Boat bobbing animation */
-.pixel-boat {
-    animation: boatBob 2s ease-in-out infinite;
-}
-
-@keyframes boatBob {
-    0%, 100% { transform: translateY(0) rotate(-1deg); }
-    50% { transform: translateY(-4px) rotate(1deg); }
-}
-
-/* Timeline Trail - Cards flowing from boat wake */
-.timeline-trail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1rem 2rem;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(var(--accent-rgb), 0.3) transparent;
-}
-
-.timeline-trail::-webkit-scrollbar {
-    width: 4px;
-}
-
-.timeline-trail::-webkit-scrollbar-thumb {
-    background: rgba(var(--accent-rgb), 0.3);
-    border-radius: 2px;
-}
-
-/* Wake Bubbles */
-.wake-bubble {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: rgba(var(--accent-rgb), 0.4);
-    border-radius: 50%;
-    animation: bubbleFloat 2s ease-out forwards;
-    pointer-events: none;
-}
-
-@keyframes bubbleFloat {
-    0% { opacity: 1; transform: scale(1) translateX(0); }
-    100% { opacity: 0; transform: scale(0.5) translateX(-100px); }
-}
-
-/* Timeline Cards in Wake */
-.timeline-wake-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-.timeline-wake-card {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(var(--accent-rgb), 0.3);
-    border-radius: 12px;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateX(50px) rotate(5deg);
-    opacity: 0;
-    position: relative;
-    margin-left: auto;
-    width: 70%;
-    max-width: 400px;
-}
-
-.timeline-wake-card.visible {
-    transform: translateX(0) rotate(0deg);
-    opacity: 1;
-}
-
-.timeline-wake-card:hover {
-    border-color: var(--accent);
-    transform: translateX(-8px) scale(1.02);
-    box-shadow: 0 8px 32px rgba(var(--accent-rgb), 0.2);
-}
-
-/* Year marker on cards */
-.wake-card-year {
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--accent);
-    opacity: 0.8;
-}
-
-.wake-card-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--fg);
-    margin-bottom: 0.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.wake-card-desc {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.4;
-}
-
-/* Scroll progress indicator */
-.voyage-progress {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    height: 4px;
-    background: rgba(var(--accent-rgb), 0.1);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.voyage-progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--accent-secondary, var(--accent)));
-    width: 0%;
-    transition: width 0.1s linear;
-    border-radius: 2px;
-}
-
-/* Journey stats */
-.voyage-stats {
-    position: absolute;
-    top: 1.5rem;
-    right: 1rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-}
-
-/* Legacy doc-sidebar styles kept for fallback */
-.timeline-doc-sidebar {
-    display: flex;
-    flex-direction: column;
-    max-height: 60vh;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(var(--accent-rgb), 0.3) transparent;
-}
-
-.timeline-doc-sidebar::-webkit-scrollbar {
-    width: 4px;
-}
-
-.timeline-doc-sidebar::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.timeline-doc-sidebar::-webkit-scrollbar-thumb {
-    background: rgba(var(--accent-rgb), 0.3);
-    border-radius: 2px;
-}
-
-.timeline-doc-sidebar::-webkit-scrollbar-thumb:hover {
-    background: rgba(var(--accent-rgb), 0.5);
-}
-
-/* Year Group */
-.timeline-year-group {
-    position: relative;
-    margin-bottom: 0.5rem;
-}
-
-/* Sticky Year Label */
-.timeline-year-label {
-    position: sticky;
-    top: 0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.9) 80%, transparent 100%);
-    padding: 0.75rem 0 0.5rem 0;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.timeline-year-text {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-}
-
-.timeline-year-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.3) 0%, transparent 100%);
-}
-
-/* Timeline Entries */
-.timeline-entries {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-left: 0.5rem;
-}
-
-.timeline-entries::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.2) 0%, rgba(var(--accent-rgb), 0.05) 100%);
-    border-radius: 1px;
-}
-
-/* Individual Timeline Entry */
-.timeline-entry {
-    position: relative;
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.25rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.timeline-entry::before {
-    content: '';
-    position: absolute;
-    left: -1.5rem;
-    top: 50%;
-    width: 8px;
-    height: 8px;
-    background: transparent;
-    border: 2px solid rgba(var(--accent-rgb), 0.4);
-    border-radius: 50%;
-    transition: all 0.2s ease;
-    transform: translate(-50%, -50%);
-}
-
-.timeline-entry:hover {
-    background: rgba(var(--accent-rgb), 0.05);
-}
-
-.timeline-entry:hover::before {
-    background: var(--accent);
-    border-color: var(--accent);
-    box-shadow: 0 0 8px rgba(var(--accent-rgb), 0.5);
-}
-
-.timeline-entry-title {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--fg);
-    line-height: 1.4;
-    margin-bottom: 0.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.timeline-entry-desc {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.4;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* Project Tag */
-.timeline-project-tag {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(var(--accent-rgb), 0.15);
-    color: var(--accent);
-    padding: 0.1rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.6rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-/* Timeline Header */
-.timeline-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(var(--accent-rgb), 0.1);
-}
-
-.timeline-header h3 {
-    margin: 0;
-    font-size: 1.25rem;
-}
-
-.timeline-count {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--muted);
-    background: rgba(var(--accent-rgb), 0.1);
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .timeline-doc-sidebar {
-        max-height: 50vh;
-    }
-
-    .timeline-entry {
-        padding: 0.5rem 0.75rem;
-    }
-
-    .timeline-entry-title {
-        font-size: 0.85rem;
-    }
-
-    .timeline-entry-desc {
-        font-size: 0.75rem;
-    }
-}
+/* Old boat/ocean/voyage timeline styles removed - now using circuit board timeline (timeline-circuit.css) */
 
 /* ============================================
    MARKDOWN CONTENT STYLES

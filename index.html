@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neil Huang - AI Researcher & Full-Stack Developer</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600;700&family=Share+Tech+Mono&family=Special+Elite&family=VT323&display=swap" rel="stylesheet">
+    <link rel="preload" href="fonts/monocraft/Monocraft.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/monocraft/Monocraft-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="styles/fonts.css?v=20261025.1">
 
 
-    <script src="scripts/dataloader.js"></script>
-    <script src="scripts/script.js" defer></script>
-    <script src="scripts/bg.js" ></script>
+    <script src="scripts/dataloader.js?v=20261025.1"></script>
+    <script src="scripts/ascii-transition.js?v=20261025.1" defer></script>
+    <script src="scripts/script.js?v=20261025.1" defer></script>
+    <script src="scripts/bg.js?v=20261025.1" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css?v=20261025.1">
 
-    <link rel="stylesheet" href="styles/section2.css">
-    <link rel="stylesheet" href="styles/section3.css">
-    <link rel="stylesheet" href="styles/timeline-voyage.css">
-    <script src="scripts/section2.js" defer></script>
-    <script src="scripts/section3.js" defer></script>
-    <script src="scripts/timeline-voyage.js" defer></script>
+    <link rel="stylesheet" href="styles/section2.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/ascii-ui.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/vim-ui.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/ascii-scrollbars.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/ascii-transition.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/projects.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/section3.css?v=20261025.1">
+    <link rel="stylesheet" href="styles/timeline-window.css?v=20261025.1">
+    <script src="scripts/ascii-ui.js?v=20261025.1" defer></script>
+    <script src="scripts/vim-ui.js?v=20261025.1" defer></script>
+    <script src="scripts/ascii-scrollbars.js?v=20261025.1" defer></script>
+    <script src="scripts/section2.js?v=20261025.1" defer></script>
+    <script src="scripts/section3.js?v=20261025.1" defer></script>
+    <script src="scripts/timeline-window.js?v=20261025.1" defer></script>
 </head>
 <body>
 
@@ -41,21 +49,18 @@
 
 <canvas class="junie-hero-section__animation"></canvas>
 <div id="app">
-    <div id="theme-switcher" title="Switch Theme">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm5.657 2.343a1 1 0 011.414 1.414l-1.414 1.414a1 1 0 01-1.414-1.414L17.657 4.343zM20 11a1 1 0 110 2h-2a1 1 0 110-2h2zM17.657 17.657a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414zM12 18a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM6.343 17.657a1 1 0 011.414 0l1.414 1.414a1 1 0 11-1.414 1.414L6.343 19.071a1 1 0 010-1.414zM4 11a1 1 0 110 2H2a1 1 0 110-2h2zm2.343-7.657a1 1 0 010 1.414L5 6.171A1 1 0 016.414 7.585l1.414-1.414a1 1 0 00-1.414-1.414L6.343 3.343z"/>
-        </svg>
-    </div>
-
+    <nav class="vim-tabline" aria-label="Portfolio buffers">
+        <button type="button" data-buffer="1" aria-current="page"><span>1</span> resume.json</button>
+        <button type="button" data-buffer="2"><span>2</span> about.md</button>
+        <button type="button" data-buffer="3"><span>3</span> skills.json</button>
+        <span class="vim-workspace">~/neil/portfolio</span>
+    </nav>
     <section id="section1">
         <div class="editor-container">
             <div class="window-chrome">
-                <div class="window-buttons">
-                    <div class="window-button close"></div>
-                    <div class="window-button minimize"></div>
-                    <div class="window-button maximize"></div>
-                </div>
-                <div class="window-title">resume.py</div>
+                <span class="vim-buffer-number">1</span>
+                <div class="window-title">resume.json</div>
+                <span class="vim-readonly">[RO]</span>
             </div>
             <div class="editor">
                 <pre><code id="resume-code"></code><span class="caret"></span></pre>
@@ -64,17 +69,14 @@
         <div class="intro">
             <p class="greeting">Hi, I'm</p>
             <h1>Neil Huang</h1>
-            <p class="location">Shenzhen, China → USA</p>
-            <div class="tagline"><span id="taglineText"></span></div>
-            <p class="description">Ninth-grade student at Tsinglan transitioning to The Hill. Building machine learning models while balancing debate and fencing.</p>
             <div class="stats">
                 <div class="stat"><div class="value">700,832</div><div class="label">lines written</div></div>
                 <div class="stat"><div class="value">547</div><div class="label">GitHub commits</div></div>
                 <div class="stat"><div class="value">11</div><div class="label">languages mastered</div></div>
             </div>
             <div class="cta">
-                <a href="http://aeternus-argus.javavirtualenvironment.com/" target="_blank" rel="noopener noreferrer"><span>Watch My AI Demo</span></a>
-                <a href="#research"><span>Read My Research</span></a>
+                <a href="#projects"><span>Explore my projects</span></a>
+                <a href="https://aeternus-argus.javavirtualenvironment.com/" target="_blank" rel="noopener noreferrer"><span>Watch My AI Demo</span></a>
                 <a href="/resume.pdf"><span>Download Resume</span></a>
             </div>
         </div>
@@ -82,7 +84,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
             </svg>
-            <span>Scroll to continue</span>
+            <span>Open about.md</span>
         </div>
     </section>
 
@@ -99,52 +101,26 @@
                             <span class="about-label">// Readme.md</span>
                             <h2 class="about-name">About Me</h2>
                         </div>
+                        <blockquote class="about-quote">
+                            <p>&quot;Life is like a box of chocolates. You never know what you're gonna get.&quot;</p>
+                            <cite>Forrest Gump</cite>
+                        </blockquote>
                         <div class="about-description">
-                            <p>Hi, I'm Neil—a high school student who's been captivated by code since I first started programming. What began as curiosity has evolved into a passion that consumes most of my free time</p>
-
-                            <p>Currently, I'm diving deep into <span class="highlight">C, Rust, and Go</span>—languages that let me build lightning-fast backends and work closer to the metal. There's something incredibly satisfying about optimizing performance and creating efficient, native-level applications.</p>
-
-                            <p>Engineering became my superpower because it transformed my imaginations into tangible reality. As a kid, I was mesmerized watching hackers in movies navigate through glowing terminals and build incredible applications. Now I get to live that dream. My current interests span <span class="highlight">reverse engineering, full-stack web development, prompt engineering, and building AI-powered startups</span>.</p>
-
-                            <p>What I find fascinating about engineering is its emotional rollercoaster. Every project starts with boundless motivation and ambitious vision. Then comes <span class="highlight">the grind—debugging, refactoring, and problem-solving</span> that can be genuinely frustrating. But the moment everything clicks and the project comes to life? That rush of achievement is addictive and immediately fuels my next ambitious build.</p>
-
-                            <p><span class="highlight">Fun fact: 90% of this website was built using an AI agent I developed a few months ago</span></p>
-                        </div>
-                        <div class="about-quote">
-                            <span class="quote-mark">"</span>
-                            <p>Life is like a box of chocolates. You never know what you're gonna get -- Forest Gump</p>
+                            <p>Hi, I'm Neil, a programming enthusiast since childhood. I started programming when I was seven, and ever since then I've been fascinated with the art of solving problems. Programming gave me a way to modify the world around me and solve problems that had occupied my mind for a long time. Being able to reason through a difficult problem and come up with an interesting solution feels more rewarding than almost anything else in the world. Throughout my journey, I've mostly learned as I go, acquiring knowledge whenever I needed it, which, surprisingly, has turned out to be extremely important in the fields of mathematics and science.</p>
+                            <p>Algorithmic thinking changed my life. It allowed me to approach things from first principles and, over time, develop and refine my own methodology for completing everyday tasks. This has become especially important in the age of AI, where the productivity of an agent depends not only on its capabilities, but also on the tasks it is given and the thinking of the engineer behind it. I often ask myself, in a world where AI agents can write all the code for us, what is left for a human to do? My answer to that is design. In a sense, we've been doing this all along, though at a much higher cost. Code has never been the real bottleneck for a great product or system. Thinking is. Programmers who can build features are not hard to find, but the real breakthrough lies in knowing what to build, how to design the architecture, and why the system should exist in the first place. For me, AI has begun to take implementation out of the conversation, leaving us with what has always mattered most: design.</p>
+                            <p>Outside of programming, I am also an artist. I even studied art at the Rhode Island School of Design! The reason I love art is that I believe it awakens a different part of the mind. It allows us to embrace the unrealized instincts and the sense of appreciation we are born with, things we may feel deeply without ever fully understanding. There is abstract art that cannot be quantified or explained, and beauty cannot always be reduced to data. Sometimes a certain artistic choice makes a work more brilliant, yet no amount of reasoning can precisely explain why. If an artist creates her best work during a time of strong emotion, does that make her any less of an artist at other times? Perhaps this is why AI agents still lack human taste (laugh).</p>
+                            <p>What connects art and computer science for me is my passion for anthropology. I love traveling to different parts of the world, and each place adds something to my personality, as though a part of it becomes permanently frozen in my memory. I've made numerous attempts to understand the mechanisms behind certain social phenomena, to see why people behave the way they do, how cultures take shape, and how much of it can be quantified. There is something fascinating about trying to understand the human world through reason, while knowing that some parts of it may never be fully explained. But I'd rather share less here and leave the rest of my biggest passion as a gift for those who meet me in real life.</p>
+                            <p>and the epic journey continues...</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Stats Grid - Now under the main card -->
-                <div class="stats-grid">
-                    <div class="card stat-card">
-                        <div class="stat-value">#4</div>
-                        <div class="stat-label">NSDA Public Forum national ranking</div>
-                    </div>
-
-                    <div class="card stat-card">
-                        <div class="stat-value">11</div>
-                        <div class="stat-label">Coding languages mastered</div>
-                    </div>
-
-                    <div class="card stat-card">
-                        <div class="stat-value">#8</div>
-                        <div class="stat-label">City fencing ranking</div>
-                    </div>
-
-                    <div class="card stat-card">
-                        <div class="stat-value">Gold</div>
-                        <div class="stat-label">USACO Rank</div>
-                    </div>
-                </div>
             </div>
 
             <!-- Right Column - Interactive Cards Grid -->
             <div class="cards-grid">
                 <!-- Timeline Card -->
-                <div class="card timeline-card" id="timeline-card" onclick="openTimelineModal()">
+                <div class="card timeline-card" id="timeline-card" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="timeline-window" onclick="openTimelineModal()">
                     <div class="card-header">
                         <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
                             <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"/>
@@ -159,85 +135,28 @@
                     </div>
                 </div>
 
-                <!-- Project Decks Container - Multiple category decks -->
-                <div class="project-decks-container">
+                <!-- Selected project collection -->
+                <div class="project-decks-container selected-projects" id="projects" aria-labelledby="projects-title">
                     <div class="decks-header">
-                        <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="currentColor" d="M8 3a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2H3v2h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h2v-2H8v-5a2 2 0 0 0-2-2 2 2 0 0 0 2-2V5h2V3m6 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3h2z"/>
-                        </svg>
-                        <span class="card-title">My Projects</span>
+                        <h2 class="card-title" id="projects-title" tabindex="-1">Selected projects</h2>
+                        <span class="project-count" id="project-count"></span>
                     </div>
-                    <div class="decks-row">
-                        <!-- Decks will be populated dynamically by JavaScript -->
+                    <div class="selected-projects-grid">
+                        <!-- Projects are populated from the curated collection. -->
                     </div>
                 </div>
 
-                <div class="card terminal-log-card">
-                    <div class="card-header">
-                        <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="currentColor" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 14H4V8h16v10zm-2-1a1 1 0 01-1 1H7a1 1 0 010-2h10a1 1 0 011 1zM7 11l2 2-2 2 1.5 1.5L12 13l-3.5-3.5L7 11z"/>
-                        </svg>
-                        <span class="card-title">&gt;_ SYS_LOG</span>
-                    </div>
-                    <div class="terminal-log">
-                        <div class="log-entry log-info">
-                            <span class="log-prefix">[INFO]</span>
-                            <span class="log-text">Ambidextrous — writes and draws with both hands</span>
-                        </div>
-                        <div class="log-entry log-debug">
-                            <span class="log-prefix">[LOG]</span>
-                            <span class="log-text">Former aspiring chef — still cooks a mean steak</span>
-                        </div>
-                        <div class="log-entry log-info">
-                            <span class="log-prefix">[INFO]</span>
-                            <span class="log-text">Professional artist — oil painting &amp; digital art</span>
-                        </div>
-                        <div class="log-entry log-warn">
-                            <span class="log-prefix">[WARN]</span>
-                            <span class="log-text">Has visited Antarctica — survived -40°C winds</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card skill-matrix-card" onclick="goToSection(3)">
-                    <div class="card-header">
-                        <svg class="card-icon" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>
-                        </svg>
-                        <span class="card-title">&gt;_ SKILL_MATRIX</span>
-                    </div>
-                    <div class="skill-matrix" id="skill-matrix">
-                        <!-- Populated by JavaScript -->
-                    </div>
-                </div>
             </div>
         </div>
 
-        <!-- Timeline Modal -->
-        <div class="modal-overlay" id="timeline-modal">
-            <div class="modal-window" style="max-width: 900px; width: 95%;">
-                <div class="window-chrome">
-                    <div class="window-buttons">
-                        <div class="window-button close" onclick="closeTimelineModal()"></div>
-                        <div class="window-button minimize"></div>
-                        <div class="window-button maximize"></div>
-                    </div>
-                    <div class="window-title">timeline.view</div>
-                </div>
-                <div class="modal-content">
-                    <!-- Content will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
+        <!-- The timeline window is outside the scrolling sections. -->
 
         <!-- Timeline Detail Modal -->
         <div class="modal-overlay" id="timeline-detail-modal">
             <div class="modal-window detail-window">
                 <div class="window-chrome">
                     <div class="window-buttons">
-                        <div class="window-button close" onclick="closeTimelineDetail()"></div>
-                        <div class="window-button minimize"></div>
-                        <div class="window-button maximize"></div>
+                        <button type="button" class="window-button close" onclick="closeTimelineDetail()" aria-label="Close detail">[x]</button>
                     </div>
                     <div class="window-title">detail.view</div>
                 </div>
@@ -256,7 +175,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
             </svg>
-            <span>Scroll to continue</span>
+            <span>Open skills.json</span>
         </div>
 
         <!-- Back indicator for going back to section 1 -->
@@ -268,49 +187,36 @@
         </div>
     </section>
 
-    <!-- Section 3 - Technical Skills -->
-    <!-- Section 3 - Technical Skills -->
-    <section id="section3">
-        <div class="skills-container">
-            <!-- Header with glitch effect -->
-            <div class="section-header">
-                <div class="glitch-wrapper">
-                    <h2 class="glitch-text" data-text="// TECHNICAL ARSENAL">// TECHNICAL ARSENAL</h2>
-                </div>
+    <!-- Section 3: Skills buffer with scrolling when the contents exceed the viewport. -->
+    <section id="section3" aria-labelledby="skills-title">
+        <div class="skills-terminal">
+            <header class="skills-heading">
+                <h2 id="skills-title">Technical arsenal<span aria-hidden="true">_</span></h2>
+            </header>
+            <nav class="skills-filters" aria-label="Skill categories"></nav>
+            <div class="skills-catalog" aria-label="Skills inventory"></div>
+            <div class="skills-detail-window">
+                <section class="skills-inspector" aria-label="Selected skill" aria-live="polite" aria-atomic="true">
+                    <p class="skills-loading">Loading inventory...</p>
+                </section>
+                <footer class="skills-status">
+                    <span class="skills-mode vim-mode">NORMAL</span>
+                    <span class="skills-file">skills.json <span>[RO]</span></span>
+                    <span class="skills-key-help">j/k select   a/l/f/t/c filter   esc reset</span>
+                    <span id="skills-position">All</span>
+                    <button type="button" class="skills-back">:q about</button>
+                </footer>
             </div>
-
-            <!-- Filter Navigation - Will be populated dynamically -->
-            <nav class="skill-filters">
-                <!-- Filter buttons will be inserted here by JavaScript -->
-            </nav>
-
-            <!-- Main Skills Grid - Will be populated dynamically -->
-            <div class="skills-grid">
-                <!-- Skill categories and cards will be inserted here by JavaScript -->
-            </div>
-
-            <!-- Code Rain Background Effect -->
-            <div class="code-rain-container">
-                <canvas id="codeRain"></canvas>
-            </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="back-indicator section3-back" onclick="goToSection(2)">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
-            </svg>
-            <span>Back to About</span>
-        </div>
-
-        <div class="scroll-indicator section3-scroll">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M12 16.5L6 10.5H18L12 16.5Z"/>
-            </svg>
-            <span>View Projects</span>
         </div>
     </section>
 </div>
+
+<dialog class="timeline-window" id="timeline-window" aria-labelledby="timeline-window-title">
+    <header class="timeline-window-header">
+        <span id="timeline-window-title">timeline.log</span>
+        <button type="button" class="timeline-window-close" aria-label="Close timeline" title="Close (Esc)">[x]</button>
+    </header>
+</dialog>
 
 </body>
 </html>

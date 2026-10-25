@@ -1,0 +1,162 @@
+/* Selected work uses the same quiet typography as the document buffers. */
+.selected-projects {
+    container-type: inline-size;
+    grid-row: 1;
+    scroll-margin-top: 58px;
+}
+
+.selected-projects .decks-header {
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.selected-projects .card-title {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.project-count {
+    margin-left: auto;
+    color: #a4c59a;
+    font-size: 11px;
+}
+
+.project-count::before { content: '[ '; }
+.project-count::after { content: ' ]'; }
+
+.selected-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 26px;
+}
+
+.selected-project {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 12px;
+    border: 0;
+    background: transparent;
+    color: #bcbcbc;
+    cursor: pointer;
+}
+
+:is(body:not(.project-hover-paused) .selected-project:hover, .selected-project:focus-within) {
+    background: var(--tui-highlight-paper);
+    color: var(--tui-highlight-ink);
+}
+
+:is(body:not(.project-hover-paused) .selected-project:hover, .selected-project:focus-within) :is(
+    .selected-project-meta, .selected-project-number, h3,
+    .selected-project-description, .selected-project-tech, .project-link
+) {
+    color: inherit;
+}
+
+.selected-project-meta {
+    display: flex;
+    gap: 10px;
+    color: #929292;
+    font-size: 9px;
+    line-height: 1.7;
+}
+
+.selected-project-number { color: #a4c59a; }
+.selected-project-number::before { content: '> '; visibility: hidden; }
+:is(body:not(.project-hover-paused) .selected-project:hover, .selected-project:focus-within) .selected-project-number::before { visibility: visible; }
+
+.selected-project h3 {
+    margin: 10px 0 10px;
+    color: #e1e1e1;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.selected-project-description {
+    margin: 0 0 14px;
+    color: #bcbcbc;
+    font-size: 11px;
+    line-height: 1.85;
+}
+
+.selected-project-tech {
+    margin: auto 0 16px;
+    color: #929292;
+    font-size: 9px;
+    line-height: 1.8;
+}
+
+.selected-project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    width: 100%;
+}
+
+.selected-project-actions .project-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 2px 0;
+    border: 0;
+    background: transparent;
+    color: #b5c9ae;
+    font-size: 10px;
+    line-height: 1.7;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.selected-project-actions .project-details { position: static; color: #929292; }
+/* Keep exposed cards neutral until the pointer moves, without disabling clicks. */
+.project-hover-paused .selected-project:not(:focus-within) .project-link { color: #b5c9ae !important; }
+.project-hover-paused .selected-project:not(:focus-within) .project-details { color: #929292 !important; }
+.project-story-hit-area { position: absolute; inset: 0; z-index: 1; }
+.selected-project-actions a { z-index: 2; }
+.selected-project-actions .project-link > .pixel-button-mask { display: none; }
+.selected-project-actions .project-link::before { content: '['; visibility: hidden; }
+.selected-project-actions .project-link::after { content: ']'; visibility: hidden; }
+.selected-project-actions .project-link:focus-visible::before,
+.selected-project-actions .project-link:focus-visible::after { visibility: visible; }
+.selected-project-actions .project-link:focus-visible,
+#projects-title:focus-visible { outline: none; }
+#projects-title:focus-visible::before { content: '> '; }
+
+/* Project details use the same text scale and selection treatment as the buffers. */
+.project-window .project-meta {
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 1.5ch;
+    margin-bottom: 12px;
+    color: var(--vim-meta);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.project-window .project-timestamp { color: var(--vim-label); }
+.project-window .project-window-tags { gap: 6px 1.5ch; margin: 12px 0 0 -0.75ch; }
+.project-window .project-window-tag {
+    max-width: 100%;
+    padding: 1px 0.75ch;
+    color: var(--vim-meta);
+    font-size: 11px;
+    line-height: 1.6;
+    text-transform: none;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+}
+
+@container (max-width: 420px) {
+    .selected-projects-grid { grid-template-columns: minmax(0, 1fr); }
+    .selected-project-actions { gap: 20px; }
+}

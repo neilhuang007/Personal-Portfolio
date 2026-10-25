@@ -81,6 +81,8 @@ A modern, terminal-inspired personal portfolio website showcasing resume, projec
 
 ### Adding New Projects
 
+The public portfolio is a curated collection in `info/projects.json`. Keep `curated` set to `true` so GitHub sync preserves the selection, order, descriptions, and links. A project's `demo` URL takes priority over its `github` URL. Both the home page summary and selected project cards use this collection.
+
 Edit `info/projects.json` to add new projects:
 
 ```json
@@ -88,13 +90,16 @@ Edit `info/projects.json` to add new projects:
   "id": "unique-project-id",
   "title": "Project Title",
   "category": "primary-category",
+  "discipline": "Area of work",
   "subcategories": ["tag1", "tag2"],
   "time": "2025-01",
   "timeDisplay": "January 2025",
-  "description": "Project description with **markdown** support",
+  "description": "A short plain text project description",
   "tech": ["Technology1", "Technology2"],
+  "demo": "https://example.com/",
+  "github": "",
   "featured": true,
-  "accuracy": 95
+  "content": "## Overview\n\nProject details in Markdown."
 }
 ```
 
