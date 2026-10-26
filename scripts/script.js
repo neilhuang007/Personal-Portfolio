@@ -22,36 +22,14 @@ checkForMobileAndBlock();
 // Also check on window resize in case orientation changes
 window.addEventListener('resize', checkForMobileAndBlock);
 
-/* Resume Code */
-const codeEl = document.getElementById('resume-code');
+/* Book reading buffer and portfolio stats */
+const readingEl = document.getElementById('reading-text');
 
-// Initialize resume from loaded data
-async function initializeResume() {
+async function initializeStats() {
     const data = await DataLoader.loadData();
     if (!data) return;
 
     const resume = data.resume;
-    const projects = DataLoader.getProjects();
-
-    const codeStr = JSON.stringify({
-        name: resume.personal?.name || "Neil (Gezhi) Huang",
-        age: resume.personal?.age || 15,
-        location: resume.personal?.location || "Shenzhen, China → USA",
-        education: resume.education || {},
-        skills: {
-            languages: resume.skills?.languages?.map(l => l.name) || [],
-            experience: resume.skills?.experience || "6 years",
-            specialties: resume.skills?.specialties || []
-        },
-        selected_projects: projects.map(project => ({
-            name: project.title,
-            focus: project.discipline,
-            link: DataLoader.getProjectLink(project).url
-        })),
-        achievements: resume.achievements || {},
-        unique: ["Antarctica at 15", "Ambidextrous fencer", "Kangaroo taste tester", "3AM debugger"]
-    }, null, 4);
-
     // Update stats dynamically
     if (resume.stats) {
         const stat1 = document.querySelector('.stats .stat:nth-child(1) .value');
@@ -62,13 +40,13 @@ async function initializeResume() {
         if (stat2) stat2.textContent = resume.stats.githubCommits || 547;
         if (stat3) stat3.textContent = resume.stats.languagesKnown || 11;
     }
-
-    renderResumeBuffer(codeStr);
 }
 
-function renderResumeBuffer(source) {
+function renderReadingBuffer() {
+    const lines = readingEl.textContent.split('\n');
     const fragment = document.createDocumentFragment();
-    source.split('\n').forEach((line, index) => {
+    let bookTitle = '';
+    lines.forEach((line, index) => {
         const row = document.createElement('span');
         row.className = 'vim-code-line';
         const number = document.createElement('span');
@@ -77,32 +55,34 @@ function renderResumeBuffer(source) {
         number.textContent = index + 1;
         const content = document.createElement('span');
         content.className = 'vim-line-text';
-        const tokens = /"(?:\\.|[^"\\])*"|\b(?:true|false|null|-?\d+(?:\.\d+)?)\b/g;
-        let offset = 0;
-        for (const match of line.matchAll(tokens)) {
-            content.append(document.createTextNode(line.slice(offset, match.index)));
-            const token = document.createElement('span');
-            const isKey = /^\s*:/.test(line.slice(match.index + match[0].length));
-            token.className = isKey ? 'vim-json-key' : match[0].startsWith('"') ? 'vim-json-string' : 'vim-json-value';
-            token.textContent = match[0];
-            content.append(token);
-            offset = match.index + match[0].length;
-        }
-        content.append(document.createTextNode(line.slice(offset)));
-        if (index === 0) {
-            content.textContent = '';
+        if (/^#{1,2} /.test(line)) content.classList.add('vim-reading-heading');
+        if (line.startsWith('> ')) content.classList.add('vim-reading-quote');
+        if (/^## \d+\./.test(line)) bookTitle = line.slice(3);
+        else if (line.startsWith('## ')) bookTitle += ` ${line.slice(3).trim()}`;
+        const source = line.match(/^\[Source\]\((https:\/\/[^\s)]+)\)$/);
+        if (source) {
+            const link = document.createElement('a');
+            link.className = 'reading-source';
+            link.href = source[1];
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.setAttribute('aria-label', `Source for ${bookTitle}`);
+            link.textContent = '[Source ↗]';
+            content.append(link);
+        } else if (index === 0) {
             const cursor = document.createElement('span');
             cursor.className = 'vim-block-cursor';
-            cursor.textContent = line;
-            content.append(cursor);
-        }
+            cursor.textContent = line.charAt(0);
+            content.append(cursor, document.createTextNode(line.slice(1)));
+        } else content.textContent = line;
         row.append(number, content);
         fragment.append(row);
     });
-    codeEl.replaceChildren(fragment);
-    codeEl.dataset.lines = source.split('\n').length;
-    document.dispatchEvent(new Event('portfolio:resume-ready'));
+    readingEl.replaceChildren(fragment);
+    readingEl.dataset.lines = lines.length;
 }
+
+renderReadingBuffer();
 
 /* Buffer navigation */
 const section1 = document.getElementById('section1');
@@ -259,7 +239,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     console.log('Buffers ready. Scroll content to read, or scroll elsewhere to switch buffers.');
 
     // Initialize with loaded data
-    await initializeResume();
+    await initializeStats();
 });
 
 /* Timeline Toggle Function */

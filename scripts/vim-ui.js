@@ -103,7 +103,7 @@
         let type = 'text';
         let scrollArea = element.querySelector('.modal-content');
         if (element.matches('.editor-container')) {
-            name = 'resume.json'; type = 'json'; scrollArea = element.querySelector('.editor');
+            name = 'bookshelf.md'; type = 'markdown'; scrollArea = element.querySelector('.editor');
         } else if (element.matches('.about-main-card')) {
             name = 'about.md'; type = 'markdown';
         } else if (element.matches('.project-window')) {
@@ -137,7 +137,9 @@
 
         const status = document.createElement('div');
         status.className = 'vim-statusline';
-        const fields = [['vim-mode', 'NORMAL'], ['vim-status-name', name], ['vim-status-format', `${type}  [RO]`], ['vim-position', 'All']];
+        const lineCount = element.querySelector('#reading-text')?.dataset.lines;
+        const format = lineCount ? `${type}  ${lineCount}L  [RO]` : `${type}  [RO]`;
+        const fields = [['vim-mode', 'NORMAL'], ['vim-status-name', name], ['vim-status-format', format], ['vim-position', 'All']];
         for (const [className, text] of fields) {
             const field = document.createElement('span');
             field.className = className;
@@ -155,7 +157,6 @@
             observer.observe(scrollArea);
             element._vimResizeObserver = observer;
         }
-        if (element.matches('.editor-container')) document.addEventListener('portfolio:resume-ready', updatePosition);
         updatePosition();
     }
 
@@ -192,11 +193,6 @@
                 if (Number(button.dataset.buffer) === event.detail.section) button.setAttribute('aria-current', 'page');
                 else button.removeAttribute('aria-current');
             });
-        });
-        document.addEventListener('portfolio:resume-ready', () => {
-            const code = document.getElementById('resume-code');
-            const format = document.querySelector('.editor-container .vim-status-format');
-            if (format) format.textContent = `json  ${code.dataset.lines}L  [RO]`;
         });
     }
 

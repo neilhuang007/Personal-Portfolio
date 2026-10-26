@@ -111,6 +111,14 @@ body, body *, body *::before, body *::after { font-family: var(--vim-font) !impo
 .vim-json-key { color: #d4d4d4; }
 .vim-json-string { color: var(--vim-accent); }
 .vim-json-value { color: #d1b98a; }
+.vim-reading-heading { color: var(--vim-heading); font-weight: 700; }
+.vim-reading-quote { color: var(--vim-accent); }
+.reading-source {
+    color: var(--vim-link);
+    text-underline-offset: 4px;
+}
+.reading-source:hover { color: #eee; }
+.reading-source:focus-visible { outline: 1px dotted #ddd; outline-offset: 4px; }
 
 #section2 .about-container { padding-top: 0; max-width: 1480px; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 18px; }
 .about-main-card { padding: 24px 28px; }

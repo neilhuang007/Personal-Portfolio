@@ -12,21 +12,21 @@
     <script src="scripts/dataloader.js?v=20261025.3"></script>
     <script src="scripts/motion.js?v=20261025.3" defer></script>
     <script src="scripts/ascii-transition.js?v=20261025.3" defer></script>
-    <script src="scripts/script.js?v=20261025.3" defer></script>
+    <script src="scripts/script.js?v=20261025.5" defer></script>
     <script src="scripts/bg.js?v=20261025.3" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <link rel="stylesheet" href="styles/style.css?v=20261025.3">
 
     <link rel="stylesheet" href="styles/section2.css?v=20261025.3">
     <link rel="stylesheet" href="styles/ascii-ui.css?v=20261025.3">
-    <link rel="stylesheet" href="styles/vim-ui.css?v=20261025.3">
+    <link rel="stylesheet" href="styles/vim-ui.css?v=20261025.5">
     <link rel="stylesheet" href="styles/ascii-scrollbars.css?v=20261025.3">
     <link rel="stylesheet" href="styles/ascii-transition.css?v=20261025.3">
     <link rel="stylesheet" href="styles/projects.css?v=20261025.3">
     <link rel="stylesheet" href="styles/section3.css?v=20261025.3">
     <link rel="stylesheet" href="styles/timeline-window.css?v=20261025.3">
     <script src="scripts/ascii-ui.js?v=20261025.3" defer></script>
-    <script src="scripts/vim-ui.js?v=20261025.3" defer></script>
+    <script src="scripts/vim-ui.js?v=20261025.5" defer></script>
     <script src="scripts/ascii-scrollbars.js?v=20261025.3" defer></script>
     <script src="scripts/section2.js?v=20261025.3" defer></script>
     <script src="scripts/section3.js?v=20261025.3" defer></script>
@@ -67,7 +67,7 @@ DesktopRequiredError: expect    esktop,             ile; Des        iredError: e
 <canvas class="junie-hero-section__animation" aria-hidden="true"></canvas>
 <main id="app">
     <nav class="vim-tabline" aria-label="Portfolio buffers">
-        <button type="button" data-buffer="1" aria-current="page"><span>1</span> resume.json</button>
+        <button type="button" data-buffer="1" aria-current="page"><span>1</span> bookshelf.md</button>
         <button type="button" data-buffer="2"><span>2</span> about.md</button>
         <button type="button" data-buffer="3"><span>3</span> skills.json</button>
         <span class="vim-workspace">~/neil/portfolio</span>
@@ -77,11 +77,204 @@ DesktopRequiredError: expect    esktop,             ile; Des        iredError: e
         <div class="editor-container">
             <div class="window-chrome">
                 <span class="vim-buffer-number">1</span>
-                <div class="window-title">resume.json</div>
+                <div class="window-title">bookshelf.md</div>
                 <span class="vim-readonly">[RO]</span>
             </div>
             <div class="editor">
-                <pre><code id="resume-code"></code><span class="caret"></span></pre>
+                <pre id="reading-text" aria-label="Original passages and quotations from ten computer science books"># Computer science bookshelf
+
+## 01. The Art of Computer Programming
+Donald E. Knuth
+Volume 1: Fundamental Algorithms
+Preface
+
+&gt; The process of preparing programs for a digital
+&gt; computer is especially attractive, not only
+&gt; because it can be economically and scientifically
+&gt; rewarding, but also because it can be an
+&gt; aesthetic experience much like composing poetry
+&gt; or music. This book is the first volume of a
+&gt; multi-volume set of books that has been designed
+&gt; to train the reader in various skills that go
+&gt; into a programmer’s craft.
+
+&gt; The following chapters are not meant to serve
+&gt; as an introduction to computer programming; the
+&gt; reader is supposed to have had some previous
+&gt; experience. The prerequisites are actually very
+&gt; simple, but a beginner requires time and practice
+&gt; in order to understand the concept of a digital
+&gt; computer. The reader should possess:
+
+&gt; a) Some idea of how a stored-program digital
+&gt;    computer works; not necessarily the
+&gt;    electronics, rather the manner in which
+&gt;    instructions can be kept in the machine’s
+&gt;    memory and successively executed.
+
+&gt; b) An ability to put the solutions to problems
+&gt;    into such explicit terms that a computer can
+&gt;    “understand” them. (These machines have no
+&gt;    common sense; they do exactly as they are
+&gt;    told, no more and no less. This fact is the
+&gt;    hardest concept to grasp when one first tries
+&gt;    to use a computer.)
+
+&gt; c) Some knowledge of the most elementary computer
+&gt;    techniques, such as looping (performing a set
+&gt;    of instructions repeatedly), the use of
+&gt;    subroutines, and the use of indexed variables.
+
+&gt; d) A little knowledge of common computer jargon —
+&gt;    “memory,” “registers,” “bits,” “floating point,”
+&gt;    “overflow,” “software.” Most words not defined
+&gt;    in the text are given brief definitions in the
+&gt;    index at the close of each volume.
+
+&gt; These four prerequisites can perhaps be summed
+&gt; up into the single requirement that the reader
+&gt; should have already written and tested at least,
+&gt; say, four programs for at least one computer.
+
+&gt; I have tried to write this set of books in such
+&gt; a way that it will fill several needs. In the
+&gt; first place, these books are reference works
+&gt; that summarize the knowledge that has been
+&gt; acquired in several important fields. In the
+&gt; second place, they can be used as textbooks for
+&gt; self-study or for college courses in the computer
+&gt; and information sciences. To meet both of these
+&gt; objectives, I have incorporated a large number
+&gt; of exercises into the text and have furnished
+&gt; answers for most of them. I have also made an
+&gt; effort to fill the pages with facts rather than
+&gt; with vague, general commentary.
+
+[Source](https://www.informit.com/store/art-of-computer-programming-volume-1-fundamental-algorithms-9780201896831)
+
+
+## 02. Introduction to Algorithms
+Thomas H. Cormen, Charles E. Leiserson,
+Ronald L. Rivest, Clifford Stein
+
+&gt; The example above shows that algorithms, like
+&gt; computer hardware, are a technology.
+
+[Source](https://cim.mcgill.ca/~latorres/PEq3.2010/Cormen_Chap1.pdf)
+
+
+## 03. Types and Programming Languages
+Benjamin C. Pierce
+
+&gt; A type system is a tractable syntactic method
+&gt; for proving the absence of certain program
+&gt; behaviors…
+
+[Source](https://kenzhu2000.github.io/cse3302/Pierce_Types_Programming_Languages.pdf)
+
+
+## 04. Structure and Interpretation
+##     of Computer Programs
+Harold Abelson and Gerald Jay Sussman
+with Julie Sussman
+
+&gt; Thus, programs must be written for people to
+&gt; read, and only incidentally for machines to
+&gt; execute.
+
+[Source](https://web.mit.edu/6.001/6.037/sicp.pdf)
+
+
+## 05. The Pragmatic Programmer
+David Thomas and Andrew Hunt
+
+&gt; Good Design Is Easier to Change Than Bad Design
+
+[Source](https://pragprog.com/tips/)
+
+
+## 06. Clean Code
+Robert C. Martin
+Introduction
+
+&gt; Which door represents your code? Which door
+&gt; represents your team or your company?
+
+&gt; Why are we in that room? Is this just a normal
+&gt; code review or have we found a stream of horrible
+&gt; problems shortly after going live? Are we
+&gt; debugging in a panic, poring over code that we
+&gt; thought worked? Are customers leaving in droves
+&gt; and managers breathing down our necks? How can
+&gt; we make sure we wind up behind the right door
+&gt; when the going gets tough? The answer is:
+&gt; craftsmanship.
+
+&gt; There are two parts to learning craftsmanship:
+&gt; knowledge and work. You must gain the knowledge
+&gt; of principles, patterns, practices, and
+&gt; heuristics that a craftsman knows, and you must
+&gt; also grind that knowledge into your fingers,
+&gt; eyes, and gut by working hard and practicing.
+
+&gt; I can teach you the physics of riding a bicycle.
+&gt; Indeed, the classical mathematics is relatively
+&gt; straightforward. Gravity, friction, angular
+&gt; momentum, center of mass, and so forth, can be
+&gt; demonstrated with less than a page full of
+&gt; equations. Given those formulae I could prove
+&gt; to you that bicycle riding is practical and
+&gt; give you all the knowledge you needed to make
+&gt; it work. And you’d still fall down the first
+&gt; time you climbed on that bike.
+
+&gt; Coding is no different. We could write down all
+&gt; the “feel good” principles of clean code and
+&gt; then trust you to do the work (in other words,
+&gt; let you fall down when you get on the bike),
+&gt; but then what kind of teachers would that make
+&gt; us, and what kind of student would that make you?
+
+&gt; No. That’s not the way this book is going to work.
+
+[Source](https://www.informit.com/content/images/9780132350884/samplepages/9780132350884.pdf)
+
+
+## 07. Refactoring
+Martin Fowler
+
+&gt; Any fool can write code that a computer can
+&gt; understand. Good programmers write code that
+&gt; humans can understand.
+
+[Source](https://www.informit.com/store/refactoring-improving-the-design-of-existing-code-9780134757698)
+
+
+## 08. Design Patterns
+Erich Gamma, Richard Helm,
+Ralph Johnson, John Vlissides
+
+&gt; Program to an interface, not an implementation.
+
+[Source](https://www.artima.com/articles/design-principles-from-design-patterns)
+
+
+## 09. The Mythical Man-Month
+Frederick P. Brooks Jr.
+
+&gt; Adding manpower to a late software project
+&gt; makes it later.
+
+[Source](https://ptgmedia.pearsoncmg.com/images/9780135667361/samplepages/9780135667361_sample.pdf)
+
+
+## 10. Designing Data-Intensive Applications
+Martin Kleppmann
+
+&gt; Many applications today are data-intensive,
+&gt; as opposed to compute-intensive.
+
+[Source](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/ch01.html)</pre>
             </div>
         </div>
         <div class="intro">
