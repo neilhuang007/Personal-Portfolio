@@ -6,16 +6,16 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 48,
-    "privateRepos": 59,
+    "privateRepos": 60,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 131,
+    "totalRepos": 133,
     "userCommits": 2986,
     "totalCommits": 6486,
-    "githubApiCommits": 37942,
+    "githubApiCommits": 37966,
     "totalLines": 7747494,
-    "totalBytes": 1853407560,
+    "totalBytes": 1853760289,
     "clocTotalLines": 7747494,
     "clocLanguageCount": 1583
   },
@@ -1619,9 +1619,9 @@
     },
     {
       "name": "Java",
-      "bytes": 404266773,
+      "bytes": 404290479,
       "percentage": 21.8,
-      "lines": 10106669
+      "lines": 10107262
     },
     {
       "name": "C",
@@ -1637,9 +1637,9 @@
     },
     {
       "name": "Python",
-      "bytes": 30424318,
-      "percentage": 1.6,
-      "lines": 760608
+      "bytes": 30721746,
+      "percentage": 1.7,
+      "lines": 768044
     },
     {
       "name": "MLIR",
@@ -1649,15 +1649,15 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14780745,
+      "bytes": 14785899,
       "percentage": 0.8,
-      "lines": 369519
+      "lines": 369647
     },
     {
       "name": "HTML",
-      "bytes": 13231798,
+      "bytes": 13241760,
       "percentage": 0.7,
-      "lines": 330795
+      "lines": 331044
     },
     {
       "name": "Fortran",
@@ -1673,9 +1673,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 4997536,
+      "bytes": 5010783,
       "percentage": 0.3,
-      "lines": 124938
+      "lines": 125270
     },
     {
       "name": "Objective-C",
@@ -1685,9 +1685,9 @@
     },
     {
       "name": "CSS",
-      "bytes": 3881324,
+      "bytes": 3884556,
       "percentage": 0.2,
-      "lines": 97033
+      "lines": 97114
     },
     {
       "name": "CMake",
@@ -2224,15 +2224,15 @@
       "isPrivate": true,
       "isFork": true,
       "stars": 4,
-      "forks": 2,
+      "forks": 3,
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-10-25T09:43:08Z",
-      "pushedAt": "2026-10-25T09:43:04Z",
-      "commits": 3588,
+      "updatedAt": "2026-10-28T23:06:59Z",
+      "pushedAt": "2026-10-28T23:06:55Z",
+      "commits": 3602,
       "languages": {
-        "GLSL": 1736074,
+        "GLSL": 1749321,
         "Python": 25219,
         "Shell": 1065
       }
@@ -2514,11 +2514,11 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2025-08-02T12:18:15Z",
-      "updatedAt": "2026-10-23T10:09:54Z",
-      "pushedAt": "2026-10-23T10:09:49Z",
-      "commits": 68,
+      "updatedAt": "2026-10-27T15:24:37Z",
+      "pushedAt": "2026-10-27T15:24:32Z",
+      "commits": 70,
       "languages": {
-        "Java": 111799
+        "Java": 118192
       }
     },
     {
@@ -2768,7 +2768,7 @@
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
       "updatedAt": "2026-10-24T03:07:33Z",
-      "pushedAt": "2026-10-24T03:07:32Z",
+      "pushedAt": "2026-10-28T01:58:23Z",
       "commits": 1194,
       "languages": {
         "Java": 15498054,
@@ -2985,6 +2985,25 @@
         "PHP": 64,
         "RPC": 28,
         "Mercury": 14
+      }
+    },
+    {
+      "name": "OpenHaedusIRC",
+      "fullName": "Haedus-Industries/OpenHaedusIRC",
+      "description": "A real-time communication framework connecting Minecraft clients.",
+      "url": "https://github.com/Haedus-Industries/OpenHaedusIRC",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 1,
+      "forks": 0,
+      "language": "Java",
+      "topics": [],
+      "createdAt": "2026-10-26T15:37:04Z",
+      "updatedAt": "2026-10-27T15:28:52Z",
+      "pushedAt": "2026-10-26T16:15:58Z",
+      "commits": 3,
+      "languages": {
+        "Java": 17313
       }
     },
     {
@@ -3926,13 +3945,13 @@
       "url": "https://github.com/neilhuang007/neilhuang007",
       "isPrivate": false,
       "isFork": false,
-      "stars": 1,
+      "stars": 2,
       "forks": 0,
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-10-25T03:41:49Z",
-      "pushedAt": "2026-10-25T03:41:45Z",
+      "updatedAt": "2026-10-28T04:56:02Z",
+      "pushedAt": "2026-10-28T04:01:08Z",
       "commits": 83,
       "languages": {}
     },
@@ -4074,13 +4093,13 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-10-25T20:50:11Z",
-      "pushedAt": "2026-10-25T20:50:07Z",
-      "commits": 98,
+      "updatedAt": "2026-10-26T00:52:23Z",
+      "pushedAt": "2026-10-26T00:52:18Z",
+      "commits": 102,
       "languages": {
-        "JavaScript": 185412,
-        "CSS": 120709,
-        "HTML": 15912,
+        "JavaScript": 190566,
+        "CSS": 123941,
+        "HTML": 25874,
         "Batchfile": 885
       }
     },
@@ -4100,6 +4119,25 @@
       "pushedAt": "2026-10-23T17:05:23Z",
       "commits": 2,
       "languages": {}
+    },
+    {
+      "name": "proteinwork",
+      "fullName": "neilhuang007/proteinwork",
+      "description": "Protein sequence sampling research and weekly reports by Neil and Daniel",
+      "url": "https://github.com/neilhuang007/proteinwork",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "Python",
+      "topics": [],
+      "createdAt": "2026-10-25T23:01:12Z",
+      "updatedAt": "2026-10-25T23:01:24Z",
+      "pushedAt": "2026-10-25T23:01:19Z",
+      "commits": 1,
+      "languages": {
+        "Python": 297428
+      }
     },
     {
       "name": "razer",
@@ -4227,12 +4265,12 @@
       "url": "https://github.com/neilhuang007/SkidSuite",
       "isPrivate": false,
       "isFork": true,
-      "stars": 10,
+      "stars": 9,
       "forks": 5,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-09-18T13:25:47Z",
-      "updatedAt": "2026-10-07T20:48:23Z",
+      "updatedAt": "2026-10-27T14:55:21Z",
       "pushedAt": "2025-02-01T12:03:49Z",
       "commits": 447,
       "languages": {
@@ -4403,7 +4441,7 @@
       "url": "https://github.com/TIMER-err/qml4j",
       "isPrivate": false,
       "isFork": false,
-      "stars": 28,
+      "stars": 29,
       "forks": 3,
       "language": "Java",
       "topics": [
@@ -4412,7 +4450,7 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-10-24T15:29:30Z",
+      "updatedAt": "2026-10-27T11:47:47Z",
       "pushedAt": "2026-09-13T02:01:30Z",
       "commits": 566,
       "languages": {
@@ -4425,7 +4463,7 @@
     {
       "name": "OpenTranslatorLite",
       "fullName": "wzhy233/OpenTranslatorLite",
-      "description": null,
+      "description": "A lightweight offline translation engine for Java, powered by CTranslate2.",
       "url": "https://github.com/wzhy233/OpenTranslatorLite",
       "isPrivate": false,
       "isFork": false,
@@ -4434,7 +4472,7 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-03-24T06:00:41Z",
-      "updatedAt": "2026-06-29T06:03:48Z",
+      "updatedAt": "2026-10-26T17:37:21Z",
       "pushedAt": "2026-05-26T15:43:54Z",
       "commits": 48,
       "languages": {
@@ -4484,12 +4522,12 @@
       "url": "https://github.com/yapeteam/minecraft-1.8.9-lwjgl3",
       "isPrivate": false,
       "isFork": false,
-      "stars": 36,
+      "stars": 35,
       "forks": 3,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
-      "updatedAt": "2026-10-06T12:19:06Z",
+      "updatedAt": "2026-10-27T14:54:19Z",
       "pushedAt": "2026-02-20T10:14:59Z",
       "commits": 45,
       "languages": {
@@ -4892,5 +4930,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-10-25T20:50:55.820Z"
+  "_syncedAt": "2026-10-29T04:18:18.815Z"
 }
