@@ -10,12 +10,12 @@
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 133,
+    "totalRepos": 134,
     "userCommits": 2986,
     "totalCommits": 6486,
-    "githubApiCommits": 37966,
+    "githubApiCommits": 37979,
     "totalLines": 7747494,
-    "totalBytes": 1853760289,
+    "totalBytes": 1853785616,
     "clocTotalLines": 7747494,
     "clocLanguageCount": 1583
   },
@@ -1619,9 +1619,9 @@
     },
     {
       "name": "Java",
-      "bytes": 404290479,
+      "bytes": 404308841,
       "percentage": 21.8,
-      "lines": 10107262
+      "lines": 10107721
     },
     {
       "name": "C",
@@ -1673,9 +1673,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 5010783,
+      "bytes": 5017748,
       "percentage": 0.3,
-      "lines": 125270
+      "lines": 125444
     },
     {
       "name": "Objective-C",
@@ -2228,11 +2228,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-10-28T23:06:59Z",
-      "pushedAt": "2026-10-28T23:06:55Z",
-      "commits": 3602,
+      "updatedAt": "2026-10-31T12:56:57Z",
+      "pushedAt": "2026-10-31T12:56:54Z",
+      "commits": 3610,
       "languages": {
-        "GLSL": 1749321,
+        "GLSL": 1756286,
         "Python": 25219,
         "Shell": 1065
       }
@@ -2791,6 +2791,23 @@
       }
     },
     {
+      "name": "nativify-bug-tracker",
+      "fullName": "Haedus-Industries/nativify-bug-tracker",
+      "description": "this is a bug tracker for nativify",
+      "url": "https://github.com/Haedus-Industries/nativify-bug-tracker",
+      "isPrivate": false,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": null,
+      "topics": [],
+      "createdAt": "2026-10-30T17:00:45Z",
+      "updatedAt": "2026-10-30T17:00:47Z",
+      "pushedAt": "2026-10-30T17:00:47Z",
+      "commits": 1,
+      "languages": {}
+    },
+    {
       "name": "nativify-build-plugin",
       "fullName": "Haedus-Industries/nativify-build-plugin",
       "description": "Build plugins for protecting Maven and Gradle artifacts with the hosted Nativify service.",
@@ -2994,12 +3011,12 @@
       "url": "https://github.com/Haedus-Industries/OpenHaedusIRC",
       "isPrivate": false,
       "isFork": false,
-      "stars": 1,
+      "stars": 2,
       "forks": 0,
       "language": "Java",
       "topics": [],
       "createdAt": "2026-10-26T15:37:04Z",
-      "updatedAt": "2026-10-27T15:28:52Z",
+      "updatedAt": "2026-10-30T06:27:00Z",
       "pushedAt": "2026-10-26T16:15:58Z",
       "commits": 3,
       "languages": {
@@ -3951,7 +3968,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-10-28T04:56:02Z",
-      "pushedAt": "2026-10-28T04:01:08Z",
+      "pushedAt": "2026-10-31T04:05:06Z",
       "commits": 83,
       "languages": {}
     },
@@ -4093,9 +4110,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-10-26T00:52:23Z",
-      "pushedAt": "2026-10-26T00:52:18Z",
-      "commits": 102,
+      "updatedAt": "2026-10-29T04:18:54Z",
+      "pushedAt": "2026-10-29T04:18:49Z",
+      "commits": 103,
       "languages": {
         "JavaScript": 190566,
         "CSS": 123941,
@@ -4450,11 +4467,11 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-10-27T11:47:47Z",
-      "pushedAt": "2026-09-13T02:01:30Z",
-      "commits": 566,
+      "updatedAt": "2026-11-01T03:39:15Z",
+      "pushedAt": "2026-11-01T03:39:12Z",
+      "commits": 569,
       "languages": {
-        "Java": 1632565,
+        "Java": 1650927,
         "QML": 374335,
         "ANTLR": 6525,
         "Shell": 4002
@@ -4522,12 +4539,12 @@
       "url": "https://github.com/yapeteam/minecraft-1.8.9-lwjgl3",
       "isPrivate": false,
       "isFork": false,
-      "stars": 35,
+      "stars": 34,
       "forks": 3,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-08-05T02:49:03Z",
-      "updatedAt": "2026-10-27T14:54:19Z",
+      "updatedAt": "2026-10-30T11:41:40Z",
       "pushedAt": "2026-02-20T10:14:59Z",
       "commits": 45,
       "languages": {
@@ -4930,5 +4947,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-10-29T04:18:18.815Z"
+  "_syncedAt": "2026-11-01T04:16:18.249Z"
 }
