@@ -6,18 +6,18 @@
     "followers": 6,
     "following": 4,
     "publicRepos": 48,
-    "privateRepos": 60,
+    "privateRepos": 62,
     "createdAt": "2022-04-01T02:54:00Z"
   },
   "stats": {
-    "totalRepos": 134,
-    "userCommits": 2986,
-    "totalCommits": 6486,
-    "githubApiCommits": 37979,
-    "totalLines": 7747494,
-    "totalBytes": 1853785616,
-    "clocTotalLines": 7747494,
-    "clocLanguageCount": 1583
+    "totalRepos": 135,
+    "userCommits": 2992,
+    "totalCommits": 6497,
+    "githubApiCommits": 38004,
+    "totalLines": 7425714,
+    "totalBytes": 1854708691,
+    "clocTotalLines": 7425714,
+    "clocLanguageCount": 1584
   },
   "clocLanguages": {
     "1": 187246,
@@ -116,7 +116,7 @@
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/AutofillStrikeDatabase/LOCK": 0,
     "tmp-render/chrome-profile-a06b529f3bd44a55b543a47fd548077e/Default/shared_proto_db/metadata/CURRENT": 2,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/Preferences": 2,
-    "Python": 452436,
+    "Python": 465030,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/parcel_tracking_db/LOCK": 0,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Shared": 0,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/Local": 6,
@@ -128,7 +128,7 @@
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/Affiliation": 0,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/discounts_db/LOG": 0,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/Secure": 2,
-    "vsh": 1994,
+    "vsh": 1651,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Secure": 2,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/PreferredApps": 2,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Top": 0,
@@ -279,7 +279,7 @@
     "tmp-render/chrome-profile-28be644d1a934d8db1a0b1129f714b18/Default/commerce_subscription_db/LOCK": 0,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Default/AutofillStrikeDatabase/LOCK": 0,
     "tmp-render/chrome-profile-6e1672428e3a4f02af05d148a4ab8160/Default/README": 2,
-    "in": 444,
+    "in": 458,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Last": 2,
     "tmp-render/chrome-profile-c3446b0bb3224a669026db9cda096037/Default/ClientCertificates/LOCK": 0,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/Network/Network": 2,
@@ -372,7 +372,7 @@
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/chrome_cart_db/LOG": 0,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/parcel_tracking_db/LOG": 0,
     "tmp-render/chrome-profile-1bcdfbdc0ee644f69c3d14735b9f6220/Default/BookmarkMergedSurfaceOrdering": 4,
-    "JavaScript": 294433,
+    "JavaScript": 299129,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/discount_infos_db/LOCK": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/Favicons-journal": 0,
     "def": 534,
@@ -391,7 +391,7 @@
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/shared_proto_db/metadata/LOG": 4,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Affiliation": 0,
     "tmp-render/chrome-profile-3fc14c024ee848b781186065a8c27623/Default/shared_proto_db/metadata/CURRENT": 2,
-    "Java": 4944806,
+    "Java": 4581077,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/shared_proto_db/LOCK": 0,
     "tmp-render/chrome-profile-516250fae7274066945b2edb6cc374a4/Default/PersistentOriginTrials/LOG": 0,
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Local": 6,
@@ -659,11 +659,11 @@
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/PersistentOriginTrials/LOG": 0,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/Network/Reporting": 0,
     "tmp-render/chrome-profile-522c51cb812e48adb0495e544466a34b/Default/Network/Reporting": 0,
-    "gitignore": 4321,
+    "gitignore": 4360,
     "tmp-render/chrome-profile-a7b596b6eaac48beaadc996d3aabe48e/Default/LOCK": 0,
     "tmp-render/chrome-profile-be1d796f91174442be03dee9799bcce3/Default/shared_proto_db/metadata/LOCK": 0,
     "tmp-render/chrome-profile-32df150900814739b6bd40a0dd2d3c36/Default/shared_proto_db/LOCK": 0,
-    "csv": 558092,
+    "csv": 576000,
     "tmp-render/chrome-profile/Default/Secure": 2,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Web": 0,
     "tmp-render/chrome-profile-60f0223416bd4e68aa734f01c26f81fc/Default/PersistentOriginTrials/LOCK": 0,
@@ -1083,6 +1083,7 @@
     "tmp-render/chrome-profile-f07652f0639a4a94ac64d260a4c5ae42/Default/Network/Trust": 0,
     "tmp-render/chrome-profile/Default/BrowsingTopicsSiteData-journal": 0,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/Local": 6,
+    "fasta": 8320,
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/ServerCertificate-journal": 0,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/GCM": 6,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Crashpad/metadata": 0,
@@ -1496,7 +1497,7 @@
     "tmp-render/chrome-profile-b996b7db1b6a461682410c946862f5c2/Default/chrome_cart_db/LOG": 0,
     "tmp-render/chrome-profile-7043b166330447de90a75abd3efc0065/Variations": 2,
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/discounts_db/LOG": 0,
-    "gitattributes": 193,
+    "gitattributes": 197,
     "tmp-render/chrome-profile/Breadcrumbs": 42,
     "tmp-render/chrome-profile-3290a3f876bc4b6b91f0d1a1a0f6bbb1/Default/Session": 6,
     "tmp-render/chrome-profile-8fe1e67837324cdd9e074e9595a9b7e5/Default/Network/Device": 0,
@@ -1577,7 +1578,7 @@
     "tmp-render/chrome-profile-4598e58422ce48b7b56acff64ce2feab/Default/ServerCertificate-journal": 0,
     "webmanifest": 0,
     "tmp-render/chrome-profile-7984088a000a417db0be9c7c426ac064/Default/shared_proto_db/LOG": 4,
-    "fsh": 45624,
+    "fsh": 44341,
     "9/src/main/java/{com/github/haedus_industries/calculation/impl": 2,
     "tmp-render/chrome-profile-93e47d660f644158849870278b9bd82e/Default/Preferences": 2,
     "tmp-render/chrome-profile-1f4a448ea0fd4e869bf4364f83126a8d/Default/shared_proto_db/metadata/CURRENT": 2,
@@ -1608,7 +1609,7 @@
     {
       "name": "LLVM",
       "bytes": 499800960,
-      "percentage": 27,
+      "percentage": 26.9,
       "lines": 12495024
     },
     {
@@ -1619,9 +1620,9 @@
     },
     {
       "name": "Java",
-      "bytes": 404308841,
+      "bytes": 404813975,
       "percentage": 21.8,
-      "lines": 10107721
+      "lines": 10120349
     },
     {
       "name": "C",
@@ -1637,9 +1638,9 @@
     },
     {
       "name": "Python",
-      "bytes": 30721746,
+      "bytes": 30865169,
       "percentage": 1.7,
-      "lines": 768044
+      "lines": 771629
     },
     {
       "name": "MLIR",
@@ -1649,15 +1650,15 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 14785899,
+      "bytes": 14985644,
       "percentage": 0.8,
-      "lines": 369647
+      "lines": 374641
     },
     {
       "name": "HTML",
-      "bytes": 13241760,
+      "bytes": 13297626,
       "percentage": 0.7,
-      "lines": 331044
+      "lines": 332441
     },
     {
       "name": "Fortran",
@@ -1673,9 +1674,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 5017748,
+      "bytes": 5018315,
       "percentage": 0.3,
-      "lines": 125444
+      "lines": 125458
     },
     {
       "name": "Objective-C",
@@ -1685,9 +1686,9 @@
     },
     {
       "name": "CSS",
-      "bytes": 3884556,
+      "bytes": 3897360,
       "percentage": 0.2,
-      "lines": 97114
+      "lines": 97434
     },
     {
       "name": "CMake",
@@ -1715,9 +1716,9 @@
     },
     {
       "name": "Shell",
-      "bytes": 1137134,
+      "bytes": 1139155,
       "percentage": 0.1,
-      "lines": 28428
+      "lines": 28479
     },
     {
       "name": "Starlark",
@@ -1727,9 +1728,9 @@
     },
     {
       "name": "QML",
-      "bytes": 883141,
+      "bytes": 882570,
       "percentage": 0,
-      "lines": 22079
+      "lines": 22064
     },
     {
       "name": "Cuda",
@@ -1745,9 +1746,9 @@
     },
     {
       "name": "PowerShell",
-      "bytes": 476873,
+      "bytes": 480959,
       "percentage": 0,
-      "lines": 11922
+      "lines": 12024
     },
     {
       "name": "HLSL",
@@ -2228,11 +2229,11 @@
       "language": "GLSL",
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
-      "updatedAt": "2026-10-31T12:56:57Z",
-      "pushedAt": "2026-10-31T12:56:54Z",
-      "commits": 3610,
+      "updatedAt": "2026-11-04T11:21:03Z",
+      "pushedAt": "2026-11-04T11:18:59Z",
+      "commits": 3620,
       "languages": {
-        "GLSL": 1756286,
+        "GLSL": 1756853,
         "Python": 25219,
         "Shell": 1065
       }
@@ -2505,7 +2506,7 @@
     {
       "name": "HaedusIRC",
       "fullName": "Haedus-Industries/HaedusIRC",
-      "description": "轻量、高效的适用于我的手艺的跨客户端通信项目",
+      "description": "轻量��高效的适用于我的手艺的跨客户端通信项目",
       "url": "https://github.com/Haedus-Industries/HaedusIRC",
       "isPrivate": true,
       "isFork": false,
@@ -3009,14 +3010,14 @@
       "fullName": "Haedus-Industries/OpenHaedusIRC",
       "description": "A real-time communication framework connecting Minecraft clients.",
       "url": "https://github.com/Haedus-Industries/OpenHaedusIRC",
-      "isPrivate": false,
+      "isPrivate": true,
       "isFork": false,
-      "stars": 2,
+      "stars": 1,
       "forks": 0,
       "language": "Java",
       "topics": [],
       "createdAt": "2026-10-26T15:37:04Z",
-      "updatedAt": "2026-10-30T06:27:00Z",
+      "updatedAt": "2026-11-03T20:36:42Z",
       "pushedAt": "2026-10-26T16:15:58Z",
       "commits": 3,
       "languages": {
@@ -3795,15 +3796,17 @@
       "language": "Java",
       "topics": [],
       "createdAt": "2026-08-26T03:08:53Z",
-      "updatedAt": "2026-10-13T13:02:24Z",
-      "pushedAt": "2026-10-13T13:02:20Z",
-      "commits": 38,
+      "updatedAt": "2026-11-04T15:07:01Z",
+      "pushedAt": "2026-11-04T15:06:55Z",
+      "commits": 39,
       "languages": {
-        "Java": 575919,
-        "Python": 85080,
-        "Shell": 71551,
-        "JavaScript": 66491,
-        "PowerShell": 41950
+        "Java": 1035683,
+        "JavaScript": 266236,
+        "Python": 216902,
+        "Shell": 71923,
+        "PowerShell": 46036,
+        "CSS": 12804,
+        "HTML": 1440
       }
     },
     {
@@ -3967,9 +3970,9 @@
       "language": null,
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
-      "updatedAt": "2026-10-28T04:56:02Z",
-      "pushedAt": "2026-10-31T04:05:06Z",
-      "commits": 83,
+      "updatedAt": "2026-11-01T04:56:28Z",
+      "pushedAt": "2026-11-04T04:52:33Z",
+      "commits": 84,
       "languages": {}
     },
     {
@@ -4110,9 +4113,9 @@
       "language": "JavaScript",
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
-      "updatedAt": "2026-10-29T04:18:54Z",
-      "pushedAt": "2026-10-29T04:18:49Z",
-      "commits": 103,
+      "updatedAt": "2026-11-01T04:16:54Z",
+      "pushedAt": "2026-11-01T04:16:49Z",
+      "commits": 104,
       "languages": {
         "JavaScript": 190566,
         "CSS": 123941,
@@ -4223,12 +4226,12 @@
       "url": "https://github.com/neilhuang007/Refract",
       "isPrivate": false,
       "isFork": false,
-      "stars": 1,
+      "stars": 2,
       "forks": 1,
       "language": "Java",
       "topics": [],
       "createdAt": "2026-03-03T19:15:29Z",
-      "updatedAt": "2026-06-01T04:00:48Z",
+      "updatedAt": "2026-11-02T21:16:58Z",
       "pushedAt": "2026-05-19T01:58:14Z",
       "commits": 51,
       "languages": {
@@ -4236,6 +4239,27 @@
         "GLSL": 568310,
         "PowerShell": 20518,
         "Python": 14394
+      }
+    },
+    {
+      "name": "server-web-security",
+      "fullName": "neilhuang007/server-web-security",
+      "description": null,
+      "url": "https://github.com/neilhuang007/server-web-security",
+      "isPrivate": true,
+      "isFork": false,
+      "stars": 0,
+      "forks": 0,
+      "language": "HTML",
+      "topics": [],
+      "createdAt": "2026-11-03T02:29:22Z",
+      "updatedAt": "2026-11-03T02:42:09Z",
+      "pushedAt": "2026-11-03T02:42:05Z",
+      "commits": 7,
+      "languages": {
+        "HTML": 54426,
+        "Python": 11601,
+        "Shell": 1649
       }
     },
     {
@@ -4467,12 +4491,12 @@
         "skia"
       ],
       "createdAt": "2026-05-26T16:16:05Z",
-      "updatedAt": "2026-11-01T03:39:15Z",
-      "pushedAt": "2026-11-01T03:39:12Z",
-      "commits": 569,
+      "updatedAt": "2026-11-01T15:40:15Z",
+      "pushedAt": "2026-11-01T15:40:11Z",
+      "commits": 574,
       "languages": {
-        "Java": 1650927,
-        "QML": 374335,
+        "Java": 1696297,
+        "QML": 373764,
         "ANTLR": 6525,
         "Shell": 4002
       }
@@ -4947,5 +4971,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-11-01T04:16:18.249Z"
+  "_syncedAt": "2026-11-05T05:00:48.963Z"
 }
