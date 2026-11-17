@@ -80,11 +80,11 @@
     "service": "300+ volunteer hours"
   },
   "stats": {
-    "linesOfCode": 7461280,
-    "githubCommits": 3002,
-    "totalCommits": 6529,
-    "languagesKnown": 10,
-    "projectsCompleted": 136
+    "linesOfCode": 6794859,
+    "githubCommits": 2802,
+    "totalCommits": 6445,
+    "languagesKnown": 11,
+    "projectsCompleted": 137
   },
   "timeline": [
     {
@@ -118,5 +118,5 @@
       "description": "Developed and maintained over 45 repositories across security research, machine learning, and game modding."
     }
   ],
-  "_syncedAt": "2026-11-13T04:58:52.512Z"
+  "_syncedAt": "2026-11-17T06:27:19.209Z"
 }
