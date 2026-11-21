@@ -13,9 +13,9 @@
     "totalRepos": 137,
     "userCommits": 2802,
     "totalCommits": 6445,
-    "githubApiCommits": 46044,
+    "githubApiCommits": 46079,
     "totalLines": 6794859,
-    "totalBytes": 1890265525,
+    "totalBytes": 1891303652,
     "clocTotalLines": 6794859,
     "clocLanguageCount": 1578
   },
@@ -1614,9 +1614,9 @@
     },
     {
       "name": "Java",
-      "bytes": 404937902,
+      "bytes": 404964641,
       "percentage": 21.4,
-      "lines": 10123448
+      "lines": 10124116
     },
     {
       "name": "C",
@@ -1632,9 +1632,9 @@
     },
     {
       "name": "TypeScript",
-      "bytes": 35952852,
-      "percentage": 1.9,
-      "lines": 898821
+      "bytes": 36961163,
+      "percentage": 2,
+      "lines": 924029
     },
     {
       "name": "Python",
@@ -1656,9 +1656,9 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 15546765,
+      "bytes": 15546825,
       "percentage": 0.8,
-      "lines": 388669
+      "lines": 388671
     },
     {
       "name": "Fortran",
@@ -1668,9 +1668,9 @@
     },
     {
       "name": "GLSL",
-      "bytes": 5051000,
+      "bytes": 5054017,
       "percentage": 0.3,
-      "lines": 126275
+      "lines": 126350
     },
     {
       "name": "Objective-C",
@@ -2230,10 +2230,10 @@
       "topics": [],
       "createdAt": "2022-08-28T11:33:33Z",
       "updatedAt": "2026-11-12T12:34:38Z",
-      "pushedAt": "2026-11-16T18:27:52Z",
-      "commits": 3664,
+      "pushedAt": "2026-11-20T16:58:52Z",
+      "commits": 3687,
       "languages": {
-        "GLSL": 1789538,
+        "GLSL": 1792555,
         "Python": 25219,
         "Shell": 1065
       }
@@ -2790,7 +2790,7 @@
       "topics": [],
       "createdAt": "2025-11-08T12:01:28Z",
       "updatedAt": "2026-10-24T03:07:33Z",
-      "pushedAt": "2026-11-15T04:29:11Z",
+      "pushedAt": "2026-11-18T01:57:50Z",
       "commits": 1199,
       "languages": {
         "Java": 15511439,
@@ -3544,17 +3544,17 @@
       "isPrivate": false,
       "isFork": true,
       "stars": 1,
-      "forks": 0,
+      "forks": 1,
       "language": "TypeScript",
       "topics": [],
       "createdAt": "2026-11-14T14:56:49Z",
       "updatedAt": "2026-11-17T04:24:07Z",
-      "pushedAt": "2026-11-16T23:49:25Z",
-      "commits": 7966,
+      "pushedAt": "2026-11-21T05:19:49Z",
+      "commits": 7973,
       "languages": {
-        "TypeScript": 29856126,
+        "TypeScript": 30864437,
         "HTML": 3156391,
-        "JavaScript": 506423,
+        "JavaScript": 506483,
         "CSS": 188832,
         "Go": 174117,
         "Swift": 141906,
@@ -4025,7 +4025,7 @@
       "topics": [],
       "createdAt": "2025-09-25T21:24:21Z",
       "updatedAt": "2026-11-08T04:58:50Z",
-      "pushedAt": "2026-11-16T04:47:00Z",
+      "pushedAt": "2026-11-20T05:44:52Z",
       "commits": 86,
       "languages": {}
     },
@@ -4060,12 +4060,12 @@
       "url": "https://github.com/neilhuang007/Novoline-Buidable",
       "isPrivate": false,
       "isFork": false,
-      "stars": 5,
+      "stars": 6,
       "forks": 0,
       "language": "Java",
       "topics": [],
       "createdAt": "2023-12-01T12:11:51Z",
-      "updatedAt": "2026-09-04T08:40:24Z",
+      "updatedAt": "2026-11-17T15:29:43Z",
       "pushedAt": "2023-12-01T12:25:16Z",
       "commits": 2,
       "languages": {
@@ -4168,8 +4168,8 @@
       "topics": [],
       "createdAt": "2025-07-08T17:52:33Z",
       "updatedAt": "2026-11-09T04:34:54Z",
-      "pushedAt": "2026-11-13T04:59:23Z",
-      "commits": 107,
+      "pushedAt": "2026-11-17T06:27:50Z",
+      "commits": 108,
       "languages": {
         "JavaScript": 190566,
         "CSS": 123941,
@@ -4364,12 +4364,12 @@
       "url": "https://github.com/neilhuang007/SkidSuite",
       "isPrivate": false,
       "isFork": true,
-      "stars": 9,
+      "stars": 8,
       "forks": 5,
       "language": "Java",
       "topics": [],
       "createdAt": "2024-09-18T13:25:47Z",
-      "updatedAt": "2026-10-27T14:55:21Z",
+      "updatedAt": "2026-11-20T22:16:47Z",
       "pushedAt": "2025-02-01T12:03:49Z",
       "commits": 447,
       "languages": {
@@ -4550,10 +4550,10 @@
       ],
       "createdAt": "2026-05-26T16:16:05Z",
       "updatedAt": "2026-11-01T15:40:15Z",
-      "pushedAt": "2026-11-14T13:05:30Z",
-      "commits": 575,
+      "pushedAt": "2026-11-21T02:50:27Z",
+      "commits": 579,
       "languages": {
-        "Java": 1701639,
+        "Java": 1728378,
         "QML": 373764,
         "ANTLR": 6525,
         "Shell": 4002
@@ -4641,7 +4641,7 @@
       "url": "https://github.com/yapeteam/OpenYolBi",
       "isPrivate": false,
       "isFork": false,
-      "stars": 10,
+      "stars": 8,
       "forks": 0,
       "language": "Java",
       "topics": [
@@ -4650,7 +4650,7 @@
         "minecraft"
       ],
       "createdAt": "2024-08-09T12:12:03Z",
-      "updatedAt": "2026-07-20T01:33:13Z",
+      "updatedAt": "2026-11-20T13:48:30Z",
       "pushedAt": "2025-08-03T01:24:46Z",
       "commits": 223,
       "languages": {
@@ -5029,5 +5029,5 @@
       }
     }
   ],
-  "_syncedAt": "2026-11-17T06:27:19.210Z"
+  "_syncedAt": "2026-11-21T05:33:40.328Z"
 }
